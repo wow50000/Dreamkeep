@@ -230,3 +230,5 @@ config/admins.txt
 /config/ezdb.txt
 tgui/src/images/syndicate.svg
 tgui/src/images/nanotrasen.svg
+tgui/src/images/nanotrasen.svg
+tgui/src/images/syndicate.svg
