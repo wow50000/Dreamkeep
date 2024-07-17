@@ -59,7 +59,7 @@
 		if(observer_privilege)
 			used_name = name
 		if(job == "Goblin King")
-			var/used_title =  "King or Queen of the Goblins"
+			var/used_title =  "King or Queen of the Tribe"
 		// Use the possibly modified title in the output
 			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [used_title].")
 		else
@@ -117,7 +117,7 @@
 					commie_text = span_notice("Free man!")
 				else
 					commie_text = span_userdanger("BANDIT!")
-			if(mind.special_role == "Vampire Lord")
+			if(mind.special_role == "Vampire Lord" && !mind.has_antag_datum(/datum/antagonist/vampirelord/).disguised)
 				. += span_userdanger("A MONSTER!")
 			if(mind.assigned_role == "Lunatic")
 				. += span_userdanger("LUNATIC!")

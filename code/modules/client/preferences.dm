@@ -91,6 +91,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = FALSE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female")
 	var/phobia = "spiders"
+	var/shake = TRUE
 
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
@@ -132,6 +133,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/exp = list()
 	var/list/menuoptions
 
+	var/datum/migrant_pref/migrant
+
 	var/action_buttons_screen_locs = list()
 
 	var/domhand = 2
@@ -151,6 +154,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 /datum/preferences/New(client/C)
 	parent = C
+	migrant  = new /datum/migrant_pref(src)
 
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		custom_names[custom_name_id] = get_default_name(custom_name_id)
@@ -261,9 +265,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:right'>"
-			if(SSrole_class_handler.drifter_queue_enabled)
-				dat += "<style>#drifter_queue {color:aliceblue;font-weight: bold;} #drifter_queue:hover{color: #eac0b9;}</style>"
-				dat += "<a id='drifter_queue' href='?_src_=prefs;preference=drifters;task=show_drifter_queue'>Special Latejoin Queue</a>"
 			dat += "</td>"
 			dat += "</tr>"
 
@@ -668,7 +669,12 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			if(PLAYER_READY_TO_PLAY)
 				dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
 	else
-		dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
+		if(!is_active_migrant())
+			dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
+		else
+			dat += "<a class='linkOff' href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
+		dat += " - <a href='?_src_=prefs;preference=migrants'>MIGRATION</a>"
+
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
 	dat += "<b>Be voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a><br>"
@@ -1271,11 +1277,6 @@ Slots: [job.spawn_positions]</span>
 
 	else if(href_list["preference"] == "triumphs")
 		user.show_triumphs_list()
-
-	else if(href_list["preference"] == "drifters")
-		switch(href_list["task"])
-			if("show_drifter_queue")
-				SSrole_class_handler.add_drifter_queue_viewer(user.client)
 
 	else if(href_list["preference"] == "playerquality")
 		check_pq_menu(user.ckey)
@@ -1909,6 +1910,10 @@ Slots: [job.spawn_positions]</span>
 					else
 						to_chat(user, span_warning("You are no longer a voice."))
 
+				if("migrants")
+					migrant.show_ui()
+					return
+
 				if("save")
 					save_preferences()
 					save_character()
@@ -2117,5 +2122,12 @@ Slots: [job.spawn_positions]</span>
 	if(find_index != 9)
 		if(!silent)
 			to_chat(usr, "<span class='warning'>The image must be hosted on one of the following sites: 'Gyazo, Lensdump, Imgbox, Catbox'</span>")
+		return FALSE
+	return TRUE
+
+/datum/preferences/proc/is_active_migrant()
+	if(!migrant)
+		return FALSE
+	if(!migrant.active)
 		return FALSE
 	return TRUE
