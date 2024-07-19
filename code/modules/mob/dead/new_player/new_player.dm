@@ -184,7 +184,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 		if(!SSticker?.IsRoundInProgress())
 			to_chat(usr, span_boldwarning("The game is starting. You cannot join yet."))
 			return
-		
+
 		if(client && client.prefs.is_active_migrant())
 			to_chat(usr, span_boldwarning("You are in the migrant queue."))
 			return
@@ -287,7 +287,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	var/list/dat = list()
 	dat += GLOB.roleplay_readme
 	if(dat)
-		var/datum/browser/popup = new(src, "Primer", "RATWOOD", 460, 550)
+		var/datum/browser/popup = new(src, "Primer", "HEARTHSTONE", 460, 550)
 		popup.set_content(dat.Join())
 		popup.open()
 
@@ -637,7 +637,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 					cat_name = "Apprentices"
 				if (MERCENARIES)
 					cat_name = "Mercenaries"
-				if (GOBLIN)
+				if (TRIBAL)
 					cat_name = "Tribe"
 
 			dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"

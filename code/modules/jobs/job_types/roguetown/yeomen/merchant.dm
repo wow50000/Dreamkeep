@@ -23,25 +23,21 @@
 	..()
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(3,4,4), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, rand(2,4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/mathematics, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
-	//50% chance to be raceswapped to Giza because slop lore
-	if(ishumannorthern(H) && prob(50))
-		H.skin_tone = SKIN_COLOR_GIZA
-		H.update_body()
 	head = /obj/item/clothing/head/roguetown/chaperon
 	neck = /obj/item/clothing/neck/roguetown/horus
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/merchant
@@ -59,4 +55,3 @@
 	H.change_stat("intelligence", 2)
 	H.change_stat("perception", 3)
 	H.change_stat("strength", -1)
-

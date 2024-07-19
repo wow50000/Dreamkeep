@@ -108,7 +108,7 @@
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt
 	name = "shirt"
-	desc = ""
+	desc = "A simple shirt."
 	icon_state = "shortshirt"
 	item_state = "shortshirt"
 	r_sleeve_status = SLEEVE_NORMAL
@@ -133,7 +133,7 @@
 /obj/item/clothing/suit/roguetown/shirt/rags
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "rags"
-	desc = ""
+	desc = "Better than going naked? You be the judge."
 	body_parts_covered = CHEST|GROIN|VITALS
 	color = "#b0b0b0"
 	icon_state = "rags"
@@ -151,6 +151,18 @@
 	icon_state = "tunic"
 	item_state = "undershirt"
 	sleevetype = "tunic"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/suit/roguetown/shirt/tribalrag
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
+	name = "tribalrag"
+	desc = "Rags worn by southern tribals."
+	body_parts_covered = CHEST|VITALS
+	boobed = TRUE
+	icon_state = "tribalrag"
+	item_state = "tribalrag"
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	flags_inv = HIDECROTCH|HIDEBOOB
@@ -218,10 +230,10 @@
 	icon_state = "silkdress"
 	item_state = "silkdress"
 	color = "#e6e5e5"
-	
+
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
 	color = CLOTHING_WHITE
-	
+
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess/Initialize()
 	. = ..()
 	if(GLOB.lordprimary)
@@ -232,13 +244,13 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
-	
+
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/black
 	color = CLOTHING_BLACK
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/green
 	color = CLOTHING_DARK_GREEN
-	
+
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random/Initialize()
 	. = ..()
 	color = pick("#e6e5e5", "#52BE80", "#C39BD3", "#EC7063","#5DADE2")

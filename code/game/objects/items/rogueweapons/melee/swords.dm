@@ -180,7 +180,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "judgement"
-	desc = "A sword with a silver grip, a topaz gem hilt and a steel blade, what more could a noble ask for."
+	desc = "A sword with a silver grip, a topaz gem hilt and a steel blade, what more could a noble ask for?"
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -576,6 +576,8 @@
 				src.last_used = world.time
 		if(V_lord)
 			if(V_lord.vamplevel < 4 && !V)
+				if(V_lord.disguised)
+					H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
 				H.Stun(10)
 				to_chat(H, span_userdanger("The silver burns me!"))
 				H.adjustFireLoss(25)
