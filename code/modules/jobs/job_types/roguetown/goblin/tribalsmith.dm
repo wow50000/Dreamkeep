@@ -12,6 +12,7 @@
 	outfit = /datum/outfit/job/roguetown/tribalsmith
 	min_pq = 0
 	max_pq = null
+	cmode_music = 'sound/music/combat_gronn.ogg'
 
 /datum/outfit/job/roguetown/tribalsmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -22,6 +23,7 @@
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	cloak = /obj/item/clothing/cloak/apron/blacksmith
 	backl = /obj/item/storage/backpack/rogue/satchel
+	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
@@ -38,6 +40,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 3, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", -2)

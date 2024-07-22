@@ -137,6 +137,8 @@
 	ADD_TRAIT(W, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_IGNORESLOWDOWN, TRAIT_GENERIC)
+	ADD_TRAIT(W, TRAIT_HARDDISMEMBER, TRAIT_GENERIC)
+	ADD_TRAIT(W, TRAIT_PIERCEIMMUNE, TRAIT_GENERIC)
 
 	invisibility = oldinv
 
@@ -148,6 +150,8 @@
 		W.internal_organs_slot[ORGAN_SLOT_BREASTS] = /obj/item/organ/breasts/internal
 	if(getorganslot(ORGAN_SLOT_VAGINA))
 		W.internal_organs_slot[ORGAN_SLOT_VAGINA] = /obj/item/organ/vagina/internal
+
+	W.client.prefs.sexable = client.prefs.sexable
 
 /mob/living/carbon/human/proc/werewolf_untransform(dead,gibbed)
 	if(!stored_mob)

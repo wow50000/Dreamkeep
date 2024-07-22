@@ -60,8 +60,8 @@
 	// Dont need to violate self
 	if(user == victim)
 		return FALSE
-	// If user and victim both are not deviant, then user needs to violate target
-	if(user.deviant && victim.deviant)
+	// If user and victim both are not defiant, then no violation needs to happen
+	if(!user.defiant && !victim.defiant)
 		return FALSE
 	// Need to violate AFK clients
 	if(!victim.client)
@@ -101,7 +101,7 @@
 	// ZAPED
 	to_chat(user, span_boldwarning(pick(list("I feel tainted...", "I feel less human..."))))
 	log_combat(user, victim, "Initiated rape against")
-	adjust_playerquality(-2, user.ckey, reason = "Initiated rape on an AFK/resisting person.")
+	adjust_playerquality(-4, user.ckey, reason = "Initiated rape on an AFK/resisting person.")
 	user.client.prefs.violated[victim.mind.key] = world.time
 
 /datum/sex_controller/proc/adjust_speed(amt)
@@ -157,7 +157,7 @@
 		if(ejacmessaged != 1)
 			target.visible_message(span_info("With every load I swallow, with Eora's blessing I feel more satiated so I may go longer."))
 			ejacmessaged = 1
-		target.adjust_nutrition(50)
+		target.adjust_nutrition(100)
 	else
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 	after_ejaculation()
@@ -179,7 +179,7 @@
 	if(ejacmessaged != 1)
 		user.visible_message(span_info("With every ejaculation I feel Eora's blessing satiate me so I may go longer."))
 		ejacmessaged = 1
-	user.adjust_nutrition(25)
+	user.adjust_nutrition(50)
 	set_arousal(40)
 	adjust_charge(-CHARGE_FOR_CLIMAX)
 	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))

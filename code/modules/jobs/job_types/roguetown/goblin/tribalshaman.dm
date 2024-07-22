@@ -13,6 +13,7 @@
 	outfit = /datum/outfit/job/roguetown/tribalshaman
 	min_pq = 0
 	max_pq = null
+	cmode_music = 'sound/music/combat_gronn.ogg'
 
 /datum/outfit/job/roguetown/tribalshaman
 	name = "Tribal Shaman"
@@ -27,13 +28,19 @@
 
 /datum/outfit/job/roguetown/tribalshaman/pre_equip(mob/living/carbon/human/H)
 	. = ..()
+	H.verbs |= /mob/living/carbon/human/proc/tribalannouncement
+	H.verbs |= /mob/living/carbon/human/proc/tribalopenslot
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/clothing/mask/rogue/facemask
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
+	head = /obj/item/clothing/head/roguetown/antlerhood
+	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	r_hand = /obj/item/rogueweapon/woodstaff
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
@@ -52,9 +59,10 @@
 
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
-	C.grant_spells_priest(H)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/cure_rot)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/heal/shaman)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/revive/shaman)
+	C.grant_spells_priest(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 
 /obj/effect/proc_holder/spell/self/convertrole/tribal
