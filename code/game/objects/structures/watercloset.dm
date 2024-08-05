@@ -400,6 +400,7 @@
 
 /obj/structure/sink/copper
 	name = "dwarven sink"
+	icon = 'modular_stonehedge/icons/obj/watercloset.dmi'
 	desc = "mechanical sink used to access underwater reserves with pipes."
 	icon_state = "sink_copper"
 

@@ -74,7 +74,7 @@
 /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 	name = "chainmail bikini"
 	desc = "Try not to get your nipple caught between the chains, and other bits."
-	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
 	icon_state = "chainkini"
 	item_state = "chainkini"
@@ -188,7 +188,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/bikini
 	name = "plate bikini"
 	desc = "Half plate in bikini form, still just as protective somehow."
-	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
 	icon_state = "halfplatekini"
 	item_state = "halfplatekini"
@@ -214,7 +214,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/full/bikini
 	name = "fullplate bikini"
 	desc = "Full plate in bikini form, full package and full exposure."
-	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
 	icon_state = "platekini"
 	allowed_sex = list(FEMALE)
@@ -438,7 +438,7 @@
 /obj/item/clothing/suit/roguetown/armor/leather/bikini
 	name = "leather bikini"
 	desc = "Flexible cowhide armor. Lightweight, better than nothing. Now in tasteful bikini shape."
-	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
 	icon_state = "leatherkini"
 	item_state = "leatherkini"
@@ -456,7 +456,7 @@
 /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini
 	name = "studded leather bikini"
 	desc = "Studded leather is the most durable of all hides and leathers and about as light. This one is in bikini form."
-	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
 	icon_state = "studleatherkini"
 	item_state = "studleatherkini"
@@ -474,7 +474,7 @@
 /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini
 	name = "hide bikini"
 	desc = "A light armor of wildbeast hide. Far more durable than leather. This will not keep a person warm though..."
-	icon = 'modular_stonehedge/icons/armor/inhand/armor.dmi'
+	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
 	icon_state = "hidearmorkini"
 	item_state = "hidearmorkini"

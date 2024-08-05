@@ -130,12 +130,12 @@
 /datum/stressevent/psycurse
 	timer = 5 MINUTES
 	stressadd = 5
-	desc = span_red("Oh no! I've received divine punishment!")
+	desc = span_boldred("Oh no! I've received divine punishment!")
 
 /datum/stressevent/virginchurch
 	timer = 999 MINUTES
 	stressadd = 10
-	desc = span_red("I have broken my oath of chastity to The Gods!")
+	desc = span_boldred("I have broken my oath of chastity to The Gods!")
 
 /datum/stressevent/badmeal
 	timer = 3 MINUTES
@@ -169,12 +169,7 @@
 /datum/stressevent/loinache
 	timer = 1 MINUTES
 	stressadd = 2
-	desc = list(span_green("My loins took a bad beating!"),span_green("My loins got slammed badly!"),span_green("My loins got beaten badly!"))
-
-/datum/stressevent/shunned_race
-	timer = 1 MINUTES
-	stressadd = 1
-	desc = span_red("Better stay away.")
+	desc = list(span_red("My loins took a bad beating!"),span_red("My loins got slammed badly!"),span_red("My loins got beaten badly!"))
 
 /datum/stressevent/paracrowd
 	timer = 15 SECONDS

@@ -116,12 +116,16 @@
 
 /obj/item/clothing/under/roguetown/trou/skirt
 	name = "leather skirt"
+	icon = 'modular_stonehedge/icons/armor/pants.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
 	desc = "Short skirt made of fine leather."
 	icon_state = "leatherskirt"
 	genitalaccess = TRUE
 
 /obj/item/clothing/under/roguetown/chainlegs/iron/studdedskirt
 	name = "studded skirt"
+	icon = 'modular_stonehedge/icons/armor/pants.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
 	desc = "Short studded skirt made of fine leather and iron."
 	icon_state = "studdedskirt"
 	genitalaccess = TRUE
@@ -136,6 +140,8 @@
 	name = "steel chain chausses"
 	desc = "Chain leggings composed of interlinked metal rings."
 	gender = PLURAL
+	icon = 'modular_stonehedge/icons/armor/pants.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
 	icon_state = "chain_legs"
 	item_state = "chain_legs"
 //	adjustable = CAN_CADJUST
@@ -170,6 +176,8 @@
 /obj/item/clothing/under/roguetown/chainlegs/iron
 
 	name = "iron chain chausses"
+	icon = 'modular_stonehedge/icons/armor/pants.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
 	icon_state = "ichain_legs"
 	armor = list("blunt" = 40, "slash" = 80, "stab" = 40, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	anvilrepair = /datum/skill/craft/armorsmithing
@@ -179,6 +187,8 @@
 	name = "plated chausses"
 	desc = "Plated armor to protect the legs."
 	gender = PLURAL
+	icon = 'modular_stonehedge/icons/armor/pants.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
 	icon_state = "plate_legs"
 	item_state = "plate_legs"
 //	adjustable = CAN_CADJUST
@@ -211,12 +221,16 @@
 
 /obj/item/clothing/under/roguetown/chainlegs/skirt
 	name = "chain skirt"
+	icon = 'modular_stonehedge/icons/armor/pants.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
 	icon_state = "chain_skirt"
 	item_state = "chain_skirt"
 	genitalaccess = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/skirt
 	name = "plated skirt"
+	icon = 'modular_stonehedge/icons/armor/pants.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
 	icon_state = "plate_skirt"
 	item_state = "plate_skirt"
 	genitalaccess = TRUE
