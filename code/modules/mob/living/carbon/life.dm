@@ -64,8 +64,6 @@
 					if(!fallingas)
 						to_chat(src, span_warning("I'll fall asleep soon..."))
 					fallingas++
-					if(HAS_TRAIT(src, TRAIT_FASTSLEEP))
-						fallingas++
 					if(fallingas > 15)
 						Sleeping(300)
 				else
@@ -76,14 +74,13 @@
 					if(!fallingas)
 						to_chat(src, span_warning("I'll fall asleep soon, although a bed would be more comfortable..."))
 					fallingas++
-					if(HAS_TRAIT(src, TRAIT_FASTSLEEP))
-						fallingas++
 					if(fallingas > 25)
 						Sleeping(300)
 				else
 					rogstam_add(10)
 			else if(fallingas)
 				fallingas = 0
+			tiredness = min(tiredness + 1, 100)
 
 		handle_brain_damage()
 
@@ -675,6 +672,9 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 
 	if(drunkenness)
 		drunkenness = max(drunkenness - (drunkenness * 0.04) - 0.01, 0)
+		if(drunkenness >= 1)
+			if(has_flaw(/datum/charflaw/addiction/alcoholic))
+				sate_addiction()
 		if(drunkenness >= 3)
 //			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk)
 			if(prob(3))
@@ -684,9 +684,6 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 			add_stress(/datum/stressevent/drunk)
 		else
 			remove_stress(/datum/stressevent/drunk)
-		if(drunkenness >= 8.5) // Roughly 2 cups
-			if(has_flaw(/datum/charflaw/addiction/alcoholic))
-				sate_addiction()
 		if(drunkenness >= 11 && slurring < 5)
 			slurring += 1.2
 

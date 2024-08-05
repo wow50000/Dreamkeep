@@ -362,7 +362,7 @@
 
 /obj/item/clothing/cloak/stabard/bog
 	name = "bogman tabard"
-	desc = "A tabard worn by those that protect the citizenry from the horrors of the Terrorbog" // THE BOG DESERVES A BETTER DESCRIPTION!
+	desc = "A tabard worn by those that protect the citizenry from the horrors of the Terrorbog." // THE BOG DESERVES A BETTER DESCRIPTION!
 	color = CLOTHING_GREEN
 	detail_color = CLOTHING_DARK_GREEN
 
@@ -678,7 +678,6 @@
 
 /obj/item/clothing/cloak/raincloak/brown
 	color = CLOTHING_BROWN
-	sellprice = 25
 
 /obj/item/clothing/cloak/raincloak/green
 	color = CLOTHING_GREEN

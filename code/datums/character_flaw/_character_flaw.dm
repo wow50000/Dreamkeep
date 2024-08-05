@@ -9,6 +9,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	"Narcoleptic"=/datum/charflaw/narcoleptic,
 	"Masochist"=/datum/charflaw/masochist,
 	"Paranoid"=/datum/charflaw/paranoid,
+	"Leper"=/datum/charflaw/rotten,
 	"Cyclops (R)"=/datum/charflaw/noeyer,
 	"Cyclops (L)"=/datum/charflaw/noeyel,
 	"Wood Arm (R)"=/datum/charflaw/limbloss/arm_r,
@@ -474,3 +475,16 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	for(var/atom/movable/content in movable.contents)
 		mammons += get_mammons_in_atom(content)
 	return mammons
+
+	/datum/charflaw/rotten
+	    name = "Leprosy"
+	    desc = "I am cursed, or blessed as some would say, with leprosy. Sometimes I lose control of my limbs, and suffer with constant sickness. Society shuns me for the disease riddled creature I have devolved into."
+	/datum/charflaw/rotten/on_mob_creation(mob/user)
+		..()
+		if(!ishuman(user))
+			return
+		var/mob/living/carbon/human/H = user
+		if(!H.wear_mask)
+			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/lepermask(H), SLOT_WEAR_MASK)
+	 H.apply_status_effect(STATUS_EFFECT_SPASMS)
+	 H.apply_status_effect(STATUS_EFFECT_FAKE_VIRUS)

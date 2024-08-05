@@ -108,6 +108,12 @@
 	created_item = /obj/item/rogueweapon/huntingknife/cleaver
 	i_type = "Weapons"
 
+/datum/anvil_recipe/weapons/falchion
+	name = "Falchion"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/sword/falchion
+	i_type = "Weapons"
+
 /// ADVANCED WEAPONS
 
 /datum/anvil_recipe/weapons/tsword
@@ -355,7 +361,7 @@
 	name = "Arrows 5x (+1 Stick)"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = list(/obj/item/ammo_casing/caseless/rogue/arrow/iron,/obj/item/ammo_casing/caseless/rogue/arrow/iron,/obj/item/ammo_casing/caseless/rogue/arrow/iron, /obj/item/ammo_casing/caseless/rogue/arrow/iron, /obj/item/ammo_casing/caseless/rogue/arrow/iron)
+	created_item = list(/obj/item/ammo_casing/caseless/rogue/arrow,/obj/item/ammo_casing/caseless/rogue/arrow,/obj/item/ammo_casing/caseless/rogue/arrow, /obj/item/ammo_casing/caseless/rogue/arrow, /obj/item/ammo_casing/caseless/rogue/arrow)
 	i_type = "Ammo"
 
 //Rarity

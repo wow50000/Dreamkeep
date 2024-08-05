@@ -891,15 +891,21 @@
 					user.changeNext_move(CLICK_CD_MELEE)
 					if(W.max_blade_int)
 						W.remove_bintegrity(5)
-					L.rogfat_add(rand(4,6))
+					if(!L.rogfat_add(rand(4,6)))
+						if(ishuman(L))
+							var/mob/living/carbon/human/H = L
+							if(H.tiredness >= 50)
+								H.apply_status_effect(/datum/status_effect/debuff/trainsleep)
+						probby = 0
 					if(!(L.mobility_flags & MOBILITY_STAND))
 						probby = 0
 					if(L.STAINT < 3)
 						probby = 0
-					if(prob(probby) && !user.buckled)
+					if(prob(probby) && !L.has_status_effect(/datum/status_effect/debuff/trainsleep) && !user.buckled)
 						user.visible_message(span_info("[user] trains on [src]!"))
-						var/amt2raise = L.STAINT * 0.35
-						if(!can_train_combat_skill(user, W.associated_skill, SKILL_LEVEL_APPRENTICE))
+						var/boon = user.mind.get_learning_boon(W.associated_skill)
+						var/amt2raise = L.STAINT/2
+						if(user.mind.get_skill_level(W.associated_skill) >= SKILL_LEVEL_APPRENTICE)
 							to_chat(user, span_warning("I've learned all I can from doing this, it's time for the real thing."))
 							amt2raise = 0
 						if(amt2raise > 0)
@@ -1137,6 +1143,8 @@
 		L.IgniteMob()
 		return FALSE
 	if(length(message2recognize) > 15)
+		if(L.has_flaw(/datum/charflaw/addiction/godfearing))
+			L.sate_addiction()
 		if(L.mob_timers[MT_PSYPRAY])
 			if(world.time < L.mob_timers[MT_PSYPRAY] + 1 MINUTES)
 				L.mob_timers[MT_PSYPRAY] = world.time

@@ -3,6 +3,8 @@
 	roundend_category = "Werewolves"
 	antagpanel_category = "Werewolf"
 	job_rank = ROLE_WEREWOLF
+	antag_hud_type = ANTAG_HUD_WEREWOLF
+	antag_hud_name = "Werewolf"
 	confess_lines = list(
 		"THE BEAST INSIDE ME!",
 		"BEWARE THE BEAST!",
@@ -13,6 +15,14 @@
 	var/transforming
 	var/untransforming
 	var/wolfname = "Verewolf"
+
+/datum/antagonist/werewolf/apply_innate_effects(mob/living/mob_override)
+	var/mob/living/M = mob_override || owner.current
+	add_antag_hud(antag_hud_type, antag_hud_name, M)
+
+/datum/antagonist/werewolf/remove_innate_effects(mob/living/mob_override)
+	var/mob/living/M = mob_override || owner.current
+	remove_antag_hud(antag_hud_type, M)
 
 /datum/antagonist/werewolf/lesser
 	name = "Lesser Verewolf"
@@ -40,12 +50,14 @@
 		forge_werewolf_objectives()
 
 	wolfname = "[pick(GLOB.wolf_prefixes)] [pick(GLOB.wolf_suffixes)]"
+	ADD_TRAIT(owner, TRAIT_GOODLOVER, "Werewolf")
 	return ..()
 
 /datum/antagonist/werewolf/on_removal()
 	if(!silent && owner.current)
 		to_chat(owner.current,span_danger("I am no longer a [special_role]!"))
 	owner.special_role = null
+	REMOVE_TRAIT(owner, TRAIT_GOODLOVER, "Werewolf")
 	return ..()
 
 /datum/antagonist/werewolf/proc/add_objective(datum/objective/O)

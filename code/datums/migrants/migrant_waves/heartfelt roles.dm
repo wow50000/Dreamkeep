@@ -5,7 +5,6 @@
 	allowed_sexes = list(MALE)
 	allowed_races = RACES_TOLERATED_UP
 	grant_lit_torch = TRUE
-	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/heartfelt/lord/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -57,7 +56,6 @@
 	allowed_sexes = list(FEMALE)
 	allowed_races = RACES_TOLERATED_UP
 	grant_lit_torch = TRUE
-	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/heartfelt/lady/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -100,7 +98,6 @@
 	outfit = /datum/outfit/job/roguetown/heartfelt/hand
 	allowed_races = RACES_TOLERATED_UP
 	grant_lit_torch = TRUE
-	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/heartfelt/hand/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -141,7 +138,6 @@
 	outfit = /datum/outfit/job/roguetown/heartfelt/knight
 	allowed_races = RACES_TOLERATED_UP
 	grant_lit_torch = TRUE
-	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/heartfelt/knight/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -214,7 +210,6 @@
 	outfit = /datum/outfit/job/roguetown/heartfelt/magos
 	allowed_races = RACES_TOLERATED_UP
 	grant_lit_torch = TRUE
-	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/heartfelt/magos
 	allowed_patrons = list(/datum/patron/divine/noc)
@@ -272,7 +267,6 @@
 	outfit = /datum/outfit/job/roguetown/heartfelt/prior
 	allowed_races = RACES_TOLERATED_UP
 	grant_lit_torch = TRUE
-	show_wanderer_examine = FALSE
 
 
 /datum/outfit/job/roguetown/heartfelt/prior
@@ -282,7 +276,6 @@
 	..()
 	H.virginity = TRUE
 	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
-	head = /obj/item/clothing/head/roguetown/priestmask
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
@@ -295,7 +288,6 @@
 	backpack_contents = list(
 		/obj/item/needle/pestra = 1,
 	)
-	ADD_TRAIT(H, TRAIT_CHOSEN, TRAIT_GENERIC)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)

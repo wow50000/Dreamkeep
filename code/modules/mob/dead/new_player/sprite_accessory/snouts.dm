@@ -36,12 +36,6 @@
 	color_keys = 2
 	color_key_names = list("Snout", "Inner")
 
-/datum/sprite_accessory/snout/shark
-	name = "Shark"
-	icon_state = "shark"
-	color_keys = 2
-	color_key_names = list("Snout", "Inner")
-
 /datum/sprite_accessory/snout/bird
 	name = "Beak"
 	icon_state = "bird"
@@ -196,6 +190,16 @@
 	color_keys = 2
 	color_key_names = list("Snout", "Inner")
 
+/datum/sprite_accessory/snout/shark
+	name = "Shark"
+	icon_state = "shark"
+
+/datum/sprite_accessory/snout/hshark
+	name = "hShark"
+	icon_state = "hshark"
+	color_keys = 2
+	color_key_names = list("Snout", "Inner")
+
 /datum/sprite_accessory/snout/toucan
 	name = "Toucan"
 	icon_state = "toucan"
@@ -217,6 +221,12 @@
 /datum/sprite_accessory/snout/sbeak
 	name = "Corvid Beak"
 	icon_state = "corvid"
+
+/datum/sprite_accessory/snout/shark_light
+	name = "Shark Light"
+	icon_state = "sharkblubber"
+	color_keys = 2
+	color_key_names = list("Snout", "Inner")
 
 /datum/sprite_accessory/snout/rat
 	name = "Rat"
@@ -425,6 +435,10 @@
 	icon_state = "fsergal"
 	color_keys = 2
 	color_key_names = list("Snout", "Inner")
+
+/datum/sprite_accessory/snout/front/shark
+	name = "Shark (Top)"
+	icon_state = "fshark"
 
 /datum/sprite_accessory/snout/front/toucan
 	name = "Toucan (Top)"

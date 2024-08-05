@@ -18,17 +18,16 @@
 
 /datum/anvil_recipe/New(datum/P, ...)
 	parent = P
-	num_of_materials += additional_items.len
 	. = ..()
 
 /datum/anvil_recipe/proc/advance(mob/user, breakthrough = FALSE)
 	if(progress == 100)
-		to_chat(user, "<span class='info'>It's ready.</span>")
-		user.visible_message("<span class='warning'>[user] strikes the bar!</span>")
+		to_chat(user, span_info("It's ready."))
+		user.visible_message(span_warning("[user] strikes the bar!"))
 		return FALSE
 	if(needed_item)
-		to_chat(user, "<span class='info'>Now it's time to add a [needed_item_text].</span>")
-		user.visible_message("<span class='warning'>[user] strikes the bar!</span>")
+		to_chat(user, span_info("Now it's time to add a [needed_item_text]."))
+		user.visible_message(span_warning("[user] strikes the bar!"))
 		return FALSE
 	var/moveup = 1
 	var/proab = 3
@@ -50,18 +49,11 @@
 		additional_items -= needed_item
 		progress = 0
 	if(!moveup)
-		if(prob(round(proab/2)))
-			user.visible_message("<span class='warning'>[user] spoils the bar!</span>")
-			if(parent)
-				var/obj/item/P = parent
-				qdel(P)
-			return FALSE
-		else
-			user.visible_message("<span class='warning'>[user] fumbles with the bar!</span>")
-			return FALSE
+		user.visible_message(span_warning("[user] fumbles with the bar!"))
+		return FALSE
 	else
 		if(user.mind && isliving(user))
-			skill_quality += (rand(skill_level*8, skill_level*17)*moveup*(breakthrough == 1 ? 1.5 : 1))
+			skill_quality += (rand(skill_level*8, skill_level*17)*moveup)
 			var/mob/living/L = user
 			var/boon = user.mind.get_learning_boon(appro_skill)
 			var/amt2raise = L.STAINT/2 // (L.STAINT+L.STASTR)/4 optional: add another stat that isn't int
@@ -69,21 +61,29 @@
 			if(amt2raise > 0)
 				user.mind.adjust_experience(appro_skill, amt2raise * boon, FALSE)
 		if(breakthrough)
-			user.visible_message("<span class='warning'>[user] strikes the bar!</span>")
+			user.visible_message(span_warning("[user] strikes the bar!"))
 		else
-			user.visible_message("<span class='info'>[user] strikes the bar!</span>")
+			user.visible_message(span_info("[user] strikes the bar!"))
+			var/obj/item/rogueweapon/heldstuff = user.get_active_held_item()
+			if(istype(heldstuff, /obj/item/rogueweapon/hammer/stone))
+				heldstuff.obj_integrity -= 1
+				if(heldstuff.obj_integrity <= 0)
+					heldstuff.obj_destruction()
 		return TRUE
 
 /datum/anvil_recipe/proc/item_added(mob/user)
 	needed_item = null
-	user.visible_message("<span class='info'>[user] adds [needed_item_text]</span>")
+	user.visible_message(span_info("[user] adds [needed_item_text]"))
 	needed_item_text = null
 
 /datum/anvil_recipe/proc/handle_creation(obj/item/I)
 	material_quality = floor(material_quality/num_of_materials)-2
-	skill_quality = floor(skill_quality/1500)+material_quality
+	skill_quality = floor((skill_quality/num_of_materials)/1500)+material_quality
 	var/modifier
 	switch(skill_quality)
+		if(BLACKSMITH_LEVEL_MIN to BLACKSMITH_LEVEL_SPOIL)
+			I.name = "spoilt [I.name]"
+			modifier = 0.3
 		if(BLACKSMITH_LEVEL_AWFUL)
 			I.name = "awful [I.name]"
 			modifier = 0.5
@@ -94,14 +94,14 @@
 			I.name = "rough [I.name]"
 			modifier = 0.9
 		if(BLACKSMITH_LEVEL_COMPETENT)
-			I.desc = "[I.desc]\nIt is competently made."
+			I.desc = "[I.desc] It is competently made."
 		if(BLACKSMITH_LEVEL_FINE)
 			I.name = "fine [I.name]"
 			modifier = 1.1
 		if(BLACKSMITH_LEVEL_FLAWLESS)
 			I.name = "flawless [I.name]"
 			modifier = 1.2
-		if(BLACKSMITH_LEVEL_LEGENDARY)
+		if(BLACKSMITH_LEVEL_LEGENDARY to BLACKSMITH_LEVEL_MAX)
 			I.name = "legendary [I.name]"
 			modifier = 1.3
 	

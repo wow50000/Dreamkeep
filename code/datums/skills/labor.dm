@@ -9,6 +9,12 @@
 /datum/skill/labor/mining
 	name = "Mining"
 
+/datum/skill/labor/taming
+	name = "Taming"
+
+/datum/skill/labor/mathematics
+	name = "Mathematics"
+
 /datum/skill/labor/fishing
 	name = "Fishing"
 

@@ -355,11 +355,11 @@
 			else
 				user.visible_message(span_warning("You couldn't get the shoddy [src.name] [armed ? "shut close!" : "to open up!"]"))
 /obj/item/restraints/legcuffs/beartrap/proc/close_trap()
+	w_class = WEIGHT_CLASS_NORMAL
 	armed = FALSE
 	alpha = 255
 	update_icon()
 	playsound(src.loc, 'sound/items/beartrap.ogg', 300, TRUE, -1)
-	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/restraints/legcuffs/beartrap/Crossed(AM as mob|obj)
 	if(armed && isturf(loc))
