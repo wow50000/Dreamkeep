@@ -51,6 +51,13 @@
 	inserted.forceMove(drop_location())
 	return ..()
 
+/obj/machinery/gear_painter/dye_bin
+	name = "Dye bin"
+	desc = "A bin used to paint things."
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "dyestation"
+	color = "#ceab5f"
+
 /obj/machinery/gear_painter/attackby(obj/item/I, mob/living/user)
 	if(inserted)
 		inserted.forceMove(drop_location())

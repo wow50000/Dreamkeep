@@ -85,11 +85,13 @@
 			for(var/obj/item/pusscontents as anything in uservag.contents)
 				pusscontents.doMove(get_turf(user))
 				uservag.contents -= pusscontents
-			to_chat(user, span_info("There is now nothing in my pussy."))
+				user.put_in_active_hand(pusscontents)
+			to_chat(user, span_info("There is now nothing in my pussy."))			
 		else
 			playsound(user, 'sound/misc/mat/insert (1).ogg', 8, TRUE, -2, ignore_walls = FALSE)
 			for(var/obj/item/pusscontents as anything in uservag.contents)
 				pusscontents.doMove(get_turf(user))
 				uservag.contents -= pusscontents
+				user.put_in_active_hand(pusscontents)
 			to_chat(user, span_info("There is now nothing in my pussy."))
 	return TRUE

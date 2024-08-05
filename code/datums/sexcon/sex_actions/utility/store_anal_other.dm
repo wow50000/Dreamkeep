@@ -86,14 +86,16 @@
 		if(user.m_intent != MOVE_INTENT_SNEAK)
 			user.visible_message(span_warning("[user] manages to pull [english_list(targetass.contents)] out of [target]'s ass."))
 			playsound(user, 'sound/misc/mat/insert (1).ogg', 15, TRUE, -2, ignore_walls = FALSE)
-			for(var/obj/item/pusscontents as anything in targetass.contents)
-				pusscontents.doMove(get_turf(user))
-				targetass.contents -= pusscontents
-			to_chat(user, span_info("There is now nothing in my anus."))
+			for(var/obj/item/asscontents as anything in targetass.contents)
+				asscontents.doMove(get_turf(user))
+				targetass.contents -= asscontents
+				user.put_in_active_hand(asscontents)
+			to_chat(user, span_info("There is now nothing in my asshole."))
 		else
 			playsound(user, 'sound/misc/mat/insert (1).ogg', 8, TRUE, -2, ignore_walls = FALSE)
-			for(var/obj/item/pusscontents as anything in targetass.contents)
-				pusscontents.doMove(get_turf(user))
-				targetass.contents -= pusscontents
-			to_chat(user, span_info("There is now nothing in my anus."))
+			for(var/obj/item/asscontents as anything in targetass.contents)
+				asscontents.doMove(get_turf(user))
+				targetass.contents -= asscontents
+				user.put_in_active_hand(asscontents)
+			to_chat(user, span_info("There is now nothing in my asshole."))
 	return TRUE

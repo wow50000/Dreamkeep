@@ -85,11 +85,13 @@
 			for(var/obj/item/asscontents as anything in userass.contents)
 				asscontents.doMove(get_turf(user))
 				userass.contents -= asscontents
+				user.put_in_active_hand(asscontents)
 			to_chat(user, span_info("There is now nothing in my asshole."))
 		else
 			playsound(user, 'sound/misc/mat/insert (1).ogg', 8, TRUE, -2, ignore_walls = FALSE)
 			for(var/obj/item/asscontents as anything in userass.contents)
 				asscontents.doMove(get_turf(user))
 				userass.contents -= asscontents
+				user.put_in_active_hand(asscontents)
 			to_chat(user, span_info("There is now nothing in my asshole."))
 	return TRUE

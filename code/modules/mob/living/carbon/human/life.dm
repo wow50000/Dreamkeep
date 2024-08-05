@@ -55,7 +55,6 @@
 					if(has_status_effect(/datum/status_effect/debuff/sleepytime))
 						tiredness = 0
 						remove_status_effect(/datum/status_effect/debuff/sleepytime)
-						remove_stress(/datum/stressevent/sleepytime)
 						if(mind)
 							mind.sleep_adv.advance_cycle()
 						var/datum/game_mode/chaosmode/C = SSticker.mode

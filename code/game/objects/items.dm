@@ -1058,7 +1058,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	if(tool_behaviour == TOOL_MINING && ishuman(user))
 		var/mob/living/carbon/human/H = user
-		skill_modifier = H.mind.get_skill_speed_modifier(/datum/skill/mining)
+		skill_modifier = H.mind.get_skill_speed_modifier(/datum/skill/labor/mining)
 
 	delay *= toolspeed * skill_modifier
 

@@ -199,9 +199,10 @@
 	name = "dye station"
 	result = /obj/machinery/gear_painter
 	reqs = list(/obj/item/natural/stone = 2)
+
 /datum/crafting_recipe/roguetown/structure/dye_bin
 	name = "dye bin"
-	result = /obj/structure/gear_painter/dye_bin
+	result = /obj/machinery/gear_painter/dye_bin
 	reqs = list(
 		/obj/item/grown/log/tree/small = 1,
 	)
