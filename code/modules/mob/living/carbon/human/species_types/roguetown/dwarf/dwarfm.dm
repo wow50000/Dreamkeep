@@ -140,7 +140,3 @@
 
 /datum/species/dwarf/mountain/random_surname()
 	return " [pick(world.file2list("strings/rt/names/dwarf/dwarmlast.txt"))]"
-
-//this accent is HORRIBLE right now, someone please fix this shit
-// oh yeah here we go again 85 to 23
-// changed my mind, if the accent were to return it should just be on a single subset of dwarves.

@@ -1,5 +1,5 @@
 /datum/job/roguetown/veteran
-	title = "Veteran"
+	title = "Veteran Mercenary"
 	flag = VETERAN
 	department_flag = MERCENARIES
 	faction = "Station"
@@ -12,6 +12,8 @@
 	allowed_ages = list(AGE_OLD)
 	display_order = JDO_VET
 	whitelist_req = TRUE
+
+	spells = list(/obj/effect/proc_holder/spell/self/convertrole/mercenary)
 
 	outfit = /datum/outfit/job/roguetown/veteran
 	give_bank_account = 35

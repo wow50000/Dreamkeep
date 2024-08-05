@@ -154,7 +154,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/descriptor_entries = list()
 	var/defiant = TRUE
 
-	var/datum/char_accent/char_accent = "No accent"
+	var/datum/char_accent = new /datum/char_accent/none()
+
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -1573,6 +1574,7 @@ Slots: [job.spawn_positions]</span>
 						if(charflaw.desc)
 							to_chat(user, "<span class='info'>[charflaw.desc]</span>")
 
+
 				if("char_accent")
 					var/list/accent = GLOB.character_accents.Copy()
 					var/result = input(user, "Select an accent", "Roguetown") as null|anything in accent
@@ -1580,8 +1582,6 @@ Slots: [job.spawn_positions]</span>
 						result = accent[result]
 						var/datum/char_accent/C = new result()
 						char_accent = C
-
-
 
 				if("mutant_color")
 					var/new_mutantcolor = color_pick_sanitized_lumi(user, "Choose your character's mutant #1 color:", "Character Preference","#"+features["mcolor"])
@@ -2077,8 +2077,6 @@ Slots: [job.spawn_positions]</span>
 		character.charflaw = new charflaw.type()
 		character.charflaw.on_mob_creation(character)
 
-	character.char_accent = char_accent.name
-
 	character.dna.real_name = character.real_name
 
 	character.headshot_link = headshot_link
@@ -2093,6 +2091,8 @@ Slots: [job.spawn_positions]</span>
 		character.update_body()
 		character.update_hair()
 		character.update_body_parts(redraw = TRUE)
+
+	character.char_accent = char_accent
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)
