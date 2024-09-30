@@ -223,9 +223,7 @@
 		return
 	spawning = TRUE
 	update_icon()
-	spawn(2 SECONDS)
-		createimp()
-	//addtimer(CALLBACK(src, PROC_REF(createimp)), 4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(createimp)), 2 SECONDS)
 
 /obj/structure/imp_portal/Destroy()
 	soundloop.stop()
