@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "cultist"
 	confess_lines = list(
-		"DEATH TO THE SUCCESSORS!", 
+		"DEATH TO THE SUCCESSORS!",
 		"PRAISE ZIZO!",
 		"THE GODHEAD FAVORS ME!",
 	)
@@ -219,7 +219,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		if(istype(A, R.n_req) && !ishuman(A))
 			playsound(src, 'sound/foley/flesh_rem2.ogg', 30)
 			qdel(A)
-	
+
 	for(var/atom/A in get_step(src, SOUTH))
 		if(istype(A, R.s_req) && !ishuman(A))
 			playsound(src, 'sound/foley/flesh_rem2.ogg', 30)
@@ -229,7 +229,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		if(istype(A, R.e_req) && !ishuman(A))
 			playsound(src, 'sound/foley/flesh_rem2.ogg', 30)
 			qdel(A)
-	
+
 	for(var/atom/A in get_step(src, WEST))
 		if(istype(A, R.w_req) && !ishuman(A))
 			playsound(src, 'sound/foley/flesh_rem2.ogg', 30)
@@ -255,7 +255,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		var/ritualnameinput = input(user, "Rituals", "HEARTHSTONE") as null|anything in rituals
 		testing("ritualnameinput [ritualnameinput]")
 		var/datum/ritual/pickritual
-		
+
 		pickritual = GLOB.ritualslist[ritualnameinput]
 		testing("pickritual [pickritual]")
 
@@ -264,7 +264,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 		if(!pickritual)
 			return
-		
+
 		var/dews = 0
 
 		if(pickritual.e_req)
@@ -318,7 +318,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				center_success = TRUE
 				testing("CENTER SUCCESS!")
 				break
-		
+
 		var/badritualpunishment = FALSE
 		if(cardinal_success != TRUE)
 			if(badritualpunishment)
@@ -390,8 +390,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			/obj/effect/decal/cleanable/sigil/SW
 		)
 
-		for(var/i = 1; i <= alldirs.len; i++)
-			var/turf/floor = get_step(src, alldirs[i])
+		for(var/i = 1; i <= GLOB.alldirs.len; i++)
+			var/turf/floor = get_step(src, GLOB.alldirs[i])
 			var/sigil = sigilsPath[i]
 
 			new sigil(floor)
@@ -409,7 +409,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/input = input("Sigil Type", "HEARTHSTONE") as null|anything in runes
 	if(!input)
 		return
-	
+
 	var/turf/open/floor/T = get_turf(src.loc)
 	T.generateSigils(src, input)
 
@@ -439,7 +439,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/name = "DARK AND EVIL RITVAL"
 	var/circle = null // Servantry, Transmutation, Fleshcrafting
 	var/center_requirement = /obj/item
-	// This is absolutely fucking terrible. I tried to do it with lists but it just didn't work and 
+	// This is absolutely fucking terrible. I tried to do it with lists but it just didn't work and
 	//kept runtiming. Something something, can't access list inside a datum.
 	//I couldn't find a more efficient solution to do this, I'm sorry. -7
 	var/n_req = null
@@ -629,7 +629,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	name = "Pact of Unity"
 	circle = "Servantry"
 	center_requirement = /obj/item/paper
-	
+
 	n_req = /obj/item/organ/eyes
 
 	function = /proc/pactofunity
@@ -711,7 +711,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	center_requirement = /obj/item/natural/worms/leech
 	n_req = /obj/item/paper
 	s_req = /obj/item/natural/feather
-	
+
 	function = /proc/propaganda
 
 /proc/propaganda(var/mob/user, var/turf/C)
@@ -724,7 +724,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	center_requirement = /mob/living/carbon/human
 	w_req = /obj/item/paper
 	s_req = /obj/item/natural/feather
-	
+
 	function = /proc/falseidol
 
 /obj/effect/dummy/falseidol
@@ -756,7 +756,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	name = "Invade Mind"
 	circle = "Transmutation"
 	center_requirement = /obj/item/natural/feather
-	
+
 	function = /proc/invademind
 
 /proc/invademind(var/mob/user, var/turf/C)
@@ -880,7 +880,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		trl.forceMove(H)
 		trl.ckey = H.ckey
 		H.gib()
-		
+
 /datum/ritual/gutted
 	name = "Gutted Fish"
 	circle = "Fleshcrafting"
@@ -910,7 +910,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	n_req = /mob/living/carbon/human // the ruler
 	s_req = /mob/living/carbon/human // virgin
-	
+
 	function = /proc/ascend
 
 /proc/ascend(var/mob/user, var/turf/C)
