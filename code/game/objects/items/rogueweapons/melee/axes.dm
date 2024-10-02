@@ -131,6 +131,7 @@
 	return ..()
 
 /obj/item/rogueweapon/stoneaxe/battle/equipped(mob/user, slot, initial = FALSE)
+	. = ..()
 	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_spear.ogg")
 	sheathe_sound = 'sound/items/wood_sharpen.ogg'
 
