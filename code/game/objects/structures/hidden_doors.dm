@@ -185,7 +185,7 @@
 	H.electrocute_act(30, src) //just shock	
 	playsound(src, 'sound/items/stunmace_toggle (3).ogg', 100)
 
-proc/open_word()
+/proc/open_word()
 	var/list/open_word = list(
 		"open", 
 		"pass", 
@@ -201,7 +201,7 @@ proc/open_word()
 		)
 	return pick(open_word)
 
-proc/close_word()
+/proc/close_word()
 	var/list/close_word = list(
 		"close", 
 		"seal", 
@@ -218,7 +218,7 @@ proc/close_word()
 		)
 	return pick(close_word)
 
-proc/magic_word()
+/proc/magic_word()
 	var/list/magic_word = list(
 		"sesame", 
 		"abyss", 
@@ -257,7 +257,7 @@ proc/magic_word()
 		)
 	return pick(magic_word)
 
-proc/flavor_name()
+/proc/flavor_name()
 	var/list/flavor_name = list(
 		"my friend", 
 		"love", 
