@@ -137,19 +137,19 @@
 					log_admin("[src] is trying to init sex on [L]")
 					var/current_action = /datum/sex_action/npc_rimming
 					if(src.gender == FEMALE && L.gender == MALE)
-						switch(rand(2))
-							if(2) //anal
+						switch(rand(1, 2))
+							if(1) //anal
 								current_action = /datum/sex_action/npc_anal_ride_sex
-							if(3) //vaginal
+							if(2) //vaginal
 								current_action = /datum/sex_action/npc_vaginal_ride_sex
 					if(src.gender == MALE && L.gender == MALE)
-						switch(rand(2))
+						switch(rand(1, 2))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_throat_sex
 							if(2) //anal
 								current_action = /datum/sex_action/npc_anal_sex
 					if(src.gender == MALE && L.gender == FEMALE)
-						switch(rand(3))
+						switch(rand(1, 3))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_throat_sex
 							if(2) //anal
@@ -157,7 +157,7 @@
 							if(3) //vaginal
 								current_action = /datum/sex_action/npc_vaginal_sex
 					if(src.gender == FEMALE && L.gender == FEMALE)
-						switch(rand(3))
+						switch(rand(1, 3))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_facesitting
 							if(2) //anal
@@ -310,19 +310,19 @@
 					log_admin("[src] is trying to init sex on [L]")
 					var/current_action = /datum/sex_action/npc_rimming
 					if(src.gender == FEMALE && L.gender == MALE)
-						switch(rand(2))
+						switch(rand(1, 2))
 							if(1) //anal
 								current_action = /datum/sex_action/npc_anal_ride_sex
 							if(2) //vaginal
 								current_action = /datum/sex_action/npc_vaginal_ride_sex
 					if(src.gender == MALE && L.gender == MALE)
-						switch(rand(2))
+						switch(rand(1, 2))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_throat_sex
 							if(2) //anal
 								current_action = /datum/sex_action/npc_anal_sex
 					if(src.gender == MALE && L.gender == FEMALE)
-						switch(rand(3))
+						switch(rand(1, 3))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_throat_sex
 							if(2) //anal
@@ -330,7 +330,7 @@
 							if(3) //vaginal
 								current_action = /datum/sex_action/npc_vaginal_sex
 					if(src.gender == FEMALE && L.gender == FEMALE)
-						switch(rand(3))
+						switch(rand(1, 3))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_facesitting
 							if(2) //anal
