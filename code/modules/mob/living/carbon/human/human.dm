@@ -1186,25 +1186,25 @@
 
 //Vrell - Moving this here to fix load order bugs
 /mob/living/carbon/human/has_penis()
+	RETURN_TYPE(/obj/item/organ/penis)
 	return getorganslot(ORGAN_SLOT_PENIS)
 
 /mob/living/carbon/human/has_testicles()
+	RETURN_TYPE(/obj/item/organ/filling_organ/testicles)
 	return getorganslot(ORGAN_SLOT_TESTICLES)
 
 /mob/living/carbon/human/has_vagina()
+	RETURN_TYPE(/obj/item/organ/filling_organ/vagina)
 	return getorganslot(ORGAN_SLOT_VAGINA)
 
 /mob/living/carbon/human/has_breasts()
+	RETURN_TYPE(/obj/item/organ/filling_organ/breasts)
 	return getorganslot(ORGAN_SLOT_BREASTS)
 
 /mob/living/carbon/human/proc/has_belly()
+	RETURN_TYPE(/obj/item/organ/belly)
 	return getorganslot(ORGAN_SLOT_BELLY)
 
 /mob/living/carbon/human/proc/has_butt()
+	RETURN_TYPE(/obj/item/organ/butt)
 	return getorganslot(ORGAN_SLOT_BUTT)
-
-/mob/living/carbon/human/proc/is_fertile()
-	return getorganslot(ORGAN_SLOT_VAGINA).fertility
-
-/mob/living/carbon/human/proc/is_virile()
-	return getorganslot(ORGAN_SLOT_TESTICLES).virility
