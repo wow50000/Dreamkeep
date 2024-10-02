@@ -102,7 +102,7 @@
 			say("Open: '[open_phrase]', Close: '[close_phrase]'.", language = lang)
 		else
 			say("I don't know you, "+flavor_name()+".", language = lang)
-			triggerdefenses(H, defenses)
+			triggerdefenses(H)
 
 	if(findtext(message2recognize, open_phrase))
 		if(locked)
@@ -123,7 +123,7 @@
 			say("Open phrase has been set, "+flavor_name()+".", language = lang)
 		else
 			say("I don't know you, "+flavor_name()+".", language = lang)
-			triggerdefenses(H, defenses)
+			triggerdefenses(H)
 		
 
 	if(findtext(message2recognize, "set close"))
@@ -133,7 +133,7 @@
 			say("Close phrase has been set, "+flavor_name()+".", language = lang)
 		else
 			say("I don't know you, "+flavor_name()+".", language = lang)
-			triggerdefenses(H, defenses)
+			triggerdefenses(H)
 	
 	if(findtext(message2recognize, "set language"))
 		if(isvip || !locked)
@@ -146,7 +146,7 @@
 				lang = language_choice
 		else
 			say("I don't know you, "+flavor_name()+".", language = lang)
-			triggerdefenses(H, defenses)
+			triggerdefenses(H)
 
 	if(findtext(message2recognize, "set defenses"))
 		if(isvip || !locked)
@@ -157,33 +157,33 @@
 				say("Arcyne defenses deactivated, "+flavor_name()+".", language = lang)
 		else
 			say("I don't know you, "+flavor_name()+".", language = lang)
-			triggerdefenses(H, defenses)
+			triggerdefenses(H)
 
-proc/triggerdefenses(var/mob/living/carbon/human/H, var/D)
-	if (D)
-		if (H)
-		/*
-			LATER MAKE IT LIGHTNING LURE 
-			var/range = 3 SECONDS
-			var/delay = 3 SECONDS
-			var/sprite_changes = 10
-			var/datum/beam/current_beam = null
-			playsound(src, 'sound/items/stunmace_gen (2).ogg', 100)
+/obj/structure/mineral_door/secret/proc/triggerdefenses(var/mob/living/carbon/human/H)
+	if (!H)
+		return
+	/*
+	LATER MAKE IT LIGHTNING LURE 
+	var/range = 3 SECONDS
+	var/delay = 3 SECONDS
+	var/sprite_changes = 10
+	var/datum/beam/current_beam = null
+	playsound(src, 'sound/items/stunmace_gen (2).ogg', 100)
 
-			var/x 
-			for(x=1; x < sprite_changes; x++)
-				current_beam = new(src, H, time=30/sprite_changes, beam_icon_state="lightning[rand(1,12)]", btype=/obj/effect/ebeam, maxdistance=10)
-				INVOKE_ASYNC(current_beam, TYPE_PROC_REF(/datum/beam, Start))
-				sleep(delay/sprite_changes)
+	var/x 
+	for(x=1; x < sprite_changes; x++)
+		current_beam = new(src, H, time=30/sprite_changes, beam_icon_state="lightning[rand(1,12)]", btype=/obj/effect/ebeam, maxdistance=10)
+		INVOKE_ASYNC(current_beam, TYPE_PROC_REF(/datum/beam, Start))
+		sleep(delay/sprite_changes)
 
-			var/dist = get_dist(src, H)
-			if (dist <= range)
-				H.electrocute_act(1, src) //just shock	
-			else
-				playsound(src, 'sound/items/stunmace_toggle (3).ogg', 100)
-		*/
-			H.electrocute_act(30, src) //just shock	
-			playsound(src, 'sound/items/stunmace_toggle (3).ogg', 100)
+	var/dist = get_dist(src, H)
+	if (dist <= range)
+		H.electrocute_act(1, src) //just shock	
+	else
+		playsound(src, 'sound/items/stunmace_toggle (3).ogg', 100)
+	*/
+	H.electrocute_act(30, src) //just shock	
+	playsound(src, 'sound/items/stunmace_toggle (3).ogg', 100)
 
 proc/open_word()
 	var/list/open_word = list(
