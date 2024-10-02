@@ -49,7 +49,7 @@
 				var/mob/living/carbon/human/humanized = M
 				var/obj/item/organ/filling_organ/breasts/tiddies = humanized.getorganslot(ORGAN_SLOT_BREASTS) // tiddy hehe
 				if(user.zone_selected == BODY_ZONE_CHEST) //chest
-					if(!humanized.wear_shirt || (!humanized.wear_shirt.flags_inv & HIDEBOOB || humanized.wear_shirt.genitalaccess))
+					if(!humanized.wear_shirt || !(humanized.wear_shirt.flags_inv & HIDEBOOB) || humanized.wear_shirt.genitalaccess)
 						if(tiddies)
 							if(tiddies.reagents.total_volume > 0)
 								if(reagents.total_volume < volume)
