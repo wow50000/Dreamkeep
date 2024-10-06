@@ -203,7 +203,7 @@
 	icon_state = "wallflag"
 
 /obj/structure/fluff/walldeco/customflag/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else

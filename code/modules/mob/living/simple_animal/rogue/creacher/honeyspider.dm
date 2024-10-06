@@ -58,7 +58,7 @@
 	maxHealth = 130
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/Initialize()
-	..()
+	. = ..()
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE
