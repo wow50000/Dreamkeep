@@ -32,6 +32,8 @@
 	var/static/list/onmob_sprites = list()
 	var/icon/onmob = onmob_sprites["[tag][behind][mirrored][used_index]"]
 	if(!onmob || force_reupdate_inhand)
+		if(force_reupdate_inhand)
+			has_behind_state = null
 		onmob = fcopy_rsc(generateonmob(tag, prop, behind, mirrored))
 		onmob_sprites["[tag][behind][mirrored][used_index]"] = onmob
 	return onmob
@@ -68,6 +70,26 @@
 		if(0.7)
 			return 1
 
+// For checking if we have a specific icon state in an icon.
+// Cached cause asking icons is expensive. This is still expensive, so avoid using it if
+// you can reasonably expect the icon_state to exist beforehand, or if you can cache the
+// value somewhere.
+GLOBAL_LIST_EMPTY(icon_state_cache)
+/proc/check_state_in_icon(var/checkstate, var/checkicon)
+	// isicon() is apparently quite expensive so short-circuit out early if we can.
+	if(!istext(checkstate) || isnull(checkicon) || !(isfile(checkicon) || isicon(checkicon)))
+		return FALSE
+	var/checkkey = "\ref[checkicon]"
+	var/list/check = GLOB.icon_state_cache[checkkey]
+	if(!check)
+		check = list()
+		for(var/istate in icon_states(checkicon))
+			check[istate] = TRUE
+		GLOB.icon_state_cache[checkkey] = check
+	. = check[checkstate]
+
+/obj/item/var/has_behind_state
+
 /obj/item/proc/generateonmob(tag, prop, behind, mirrored)
 	var/list/used_prop = prop
 	var/UH = 64
@@ -77,18 +99,14 @@
 	var/icon/blended
 	var/skipoverlays = FALSE
 	if(behind)
-		var/icon/J = new(icon)
-		var/list/istates = J.IconStates()
-		if(istates.Find("[icon_state]_behind"))
+		if(isnull(has_behind_state))
+			has_behind_state = check_state_in_icon(icon, "[icon_state]_behind")
+		if(has_behind_state)
 			blended=icon("icon"=icon, "icon_state"="[icon_state]_behind")
 			skipoverlays = TRUE
 		else
-		//	blended=icon("icon"=icon, "icon_state"=icon_state)
-//			blended=getFlatIcon(src)
 			blended=icon("icon"=icon, "icon_state"=icon_state)
 	else
-	//	blended=icon("icon"=icon, "icon_state"=icon_state)
-//		blended=getFlatIcon(src)
 		blended=icon("icon"=icon, "icon_state"=icon_state)
 
 	if(!blended)
