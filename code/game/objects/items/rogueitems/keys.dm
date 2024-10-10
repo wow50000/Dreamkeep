@@ -69,6 +69,43 @@
 	icon_state = "ekey"
 	lockid = "prince"
 
+/obj/item/roguekey/manor
+	name = "manor key"
+	desc = "This key will open any manor doors."
+	icon_state = "mazekey"
+	lockid = "manor"
+
+/obj/item/roguekey/clinic
+	name = "clinic key"
+	desc = "This key will open the old clinic in the bog."
+	icon_state = "mazekey"
+	lockid = "vamp"
+
+/obj/item/roguekey/tribe
+	name = "bone key"
+	desc = "This key is made of bone. It will open the tribal fort."
+	icon_state = "cheesekey"
+	lockid = "tribe"
+
+
+/obj/item/roguekey/garrison
+	name = "town watch key"
+	desc = "This key belongs to the town guards."
+	icon_state = "spikekey"
+	lockid = "garrison"
+
+/obj/item/roguekey/dungeon
+	name = "dungeon key"
+	desc = "This key should unlock the rusty bars and doors of the dungeon."
+	icon_state = "rustkey"
+	lockid = "dungeon"
+
+/obj/item/roguekey/noble
+	name = "Noble Manor key"
+	desc = "This key should unlock the noble manor"
+	icon_state = "rustkey"
+	lockid = "nobleguest"
+
 /obj/item/roguekey/vault
 	name = "vault key"
 	desc = "This key opens the mighty vault."

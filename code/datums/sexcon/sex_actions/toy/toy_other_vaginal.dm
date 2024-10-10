@@ -55,7 +55,7 @@
 	else
 		user.visible_message(span_warning("[user] shoves \the [dildo] in [target]'s cunt..."))
 
-/datum/sex_action/toy_other_vagina/on_perform(mob/living/user, mob/living/target)
+/datum/sex_action/toy_other_vagina/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)
 	if(user.sexcon.do_message_signature("[type]"))
 		if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))

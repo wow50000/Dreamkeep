@@ -612,12 +612,6 @@
 	else //not currently sneaking, check if we can sneak
 		if(light_amount < rogue_sneaking_light_threshhold && m_intent == MOVE_INTENT_SNEAK)
 			animate(src, alpha = 0, time = used_time)
-			for(var/mob/living/simple_animal/hostile/nearmob in viewers(12, src))
-				if(nearmob.target == src && !nearmob.Adjacent(src))
-					nearmob.LoseTarget()
-			for(var/mob/living/carbon/human/nearmob in viewers(12, src))
-				if(nearmob.target == src && !nearmob.Adjacent(src))
-					nearmob.back_to_idle()
 			spawn(used_time + 5) regenerate_icons()
 			rogue_sneaking = TRUE
 	return

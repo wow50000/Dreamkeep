@@ -842,21 +842,22 @@
 
 #ifdef MATURESERVER
 	var/mob/living/carbon/userino = user
-	examination += "ø ------------ ø" //automatically lists internal organs that have those functions
-	for(var/obj/item/organ/filling_organ/forgan in userino.internal_organs)
-		if(forgan.reagents.total_volume)
-			if(userino.has_quirk(/datum/quirk/selfawaregeni))
-				examination += span_info("My [pick(forgan.altnames)] are <bold>[forgan.reagents.total_volume]/[forgan.reagents.maximum_volume]</bold> full.")
-			else
-				examination += span_info("My [pick(forgan.altnames)] are about <bold>[round(forgan.reagents.total_volume / 3)]/[round(forgan.reagents.maximum_volume / 3)]</bold> oz full.")
-		if(forgan.contents.len)
-			examination += span_info("There is <bold>[english_list(forgan.contents)]</bold> in my [pick(forgan.altnames)].")
-		continue
+	if(userino.has_quirk(/datum/quirk/selfawaregeni))
+		examination += "ø ------------ ø" //automatically lists internal organs that have those functions
+		for(var/obj/item/organ/filling_organ/forgan in userino.internal_organs)
+			if(forgan.reagents.total_volume)
+				if(userino.has_quirk(/datum/quirk/selfaware))
+					examination += span_info("My [pick(forgan.altnames)] are <bold>[forgan.reagents.total_volume]/[forgan.reagents.maximum_volume]</bold> full.")
+				else
+					examination += span_info("My [pick(forgan.altnames)] are about <bold>[round(forgan.reagents.total_volume / 3)]/[round(forgan.reagents.maximum_volume / 3)]</bold> oz full.")
+			if(forgan.contents.len)
+				examination += span_info("There is <bold>[english_list(forgan.contents)]</bold> in my [pick(forgan.altnames)].")
+			continue
+		examination += "ø ------------ ø</span>"
+		if(!silent)
+			to_chat(user, examination.Join("\n"))
+		return examination
 #endif
-	examination += "ø ------------ ø</span>"
-	if(!silent)
-		to_chat(user, examination.Join("\n"))
-	return examination
 
 /mob/living/carbon/human/proc/check_limb_for_injuries(mob/user = src, choice = BODY_ZONE_CHEST, advanced = FALSE, silent = FALSE)
 	choice = check_zone(choice)

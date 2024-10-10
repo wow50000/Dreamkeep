@@ -26,7 +26,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/thighjob/on_start(mob/living/user, mob/living/target)
+/datum/sex_action/thighjob/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))
 		user.visible_message(span_warning("[user] spreads [target]'s legs apart and shoves his cock inbetween!"))
 	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))
@@ -41,7 +41,7 @@
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
 	user.sexcon.handle_passive_ejaculation()
 
-/datum/sex_action/thighjob/on_finish(mob/living/user, mob/living/target)
+/datum/sex_action/thighjob/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))
 		user.visible_message(span_warning("[user] stops humping [target]'s thigh."))
 	else

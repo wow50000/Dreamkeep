@@ -22,8 +22,8 @@
 	var/last_moan = 0
 	var/last_pain = 0
 	var/beingfucked = FALSE //for npc stuff
-//	var/msg_signature = ""
-//	var/last_msg_signature = 0
+	var/msg_signature = ""
+	var/last_msg_signature = 0
 
 /datum/sex_controller/New(mob/living/owner)
 	user = owner
@@ -54,13 +54,11 @@
 	animate(pixel_x = oldx, pixel_y = oldy, time = time)
 
 /datum/sex_controller/proc/do_message_signature(sigkey)
-/* fuck that -vide
 	var/properkey = "[speed][force][sigkey]"
 	if(properkey == msg_signature && last_msg_signature + 4.0 SECONDS >= world.time)
 		return FALSE
 	msg_signature = properkey
 	last_msg_signature = world.time
-*/
 	return TRUE
 
 /datum/sex_controller/proc/finished_check()
@@ -127,8 +125,7 @@
 		return
 	// ZAPED
 	to_chat(user, span_boldwarning(pick(list("I feel tainted...", "I feel less human..."))))
-	if(!issimple(target) && !issimple(victim))
-		log_combat(user, victim, "Initiated rape against")
+	log_combat(user, victim, "Initiated rape against")
 	adjust_playerquality(-4, user.ckey, reason = "Initiated rape on an AFK/resisting person.")
 	user.client.prefs.violated[victim.mind.key] = world.time
 
@@ -174,24 +171,23 @@
 	show_ui()
 
 /datum/sex_controller/proc/cum_onto()
-	if(!issimple(target))
-		log_combat(user, target, "Came onto [target]")
-		if(HAS_TRAIT(target, TRAIT_GOODLOVER))
-			if(!user.mob_timers["cumtri"])
-				user.mob_timers["cumtri"] = world.time
-				user.adjust_triumphs(1)
-				user.add_stress(/datum/stressevent/cummax)
-				to_chat(user, span_love("Our sex was a true TRIUMPH!"))
-		else
-			user.add_stress(/datum/stressevent/cumok)
+	log_combat(user, target, "Came onto the target")
+	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
+		if(!user.mob_timers["cumtri"])
+			user.mob_timers["cumtri"] = world.time
+			user.adjust_triumphs(1)
+			user.add_stress(/datum/stressevent/cummax)
+			to_chat(user, span_love("Our sex was a true TRIUMPH!"))
+	else
+		user.add_stress(/datum/stressevent/cumok)
 	playsound(target, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(target))
 	after_ejaculation()
 
 /datum/sex_controller/proc/cum_into(oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE)
+	log_combat(user, target, "Came inside [target]")
 	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
 	if(!issimple(target))
-		log_combat(user, target, "Came inside [target]")
 		if(HAS_TRAIT(target, TRAIT_GOODLOVER))
 			if(!user.mob_timers["cumtri"])
 				user.mob_timers["cumtri"] = world.time
@@ -229,18 +225,16 @@
 		after_intimate_climax()
 
 /datum/sex_controller/proc/ejaculate()
-	if(!issimple(user))
-		log_combat(user, user, "Ejaculated")
+	log_combat(user, user, "Ejaculated")
 	user.visible_message(span_lovebold("[user] makes a mess!"))
 	//small heal burst, this should not happen often due the delay on how often one can cum.
 	var/sexhealrand = rand(5, 15)
-	if(!issimple(user))
-		if(HAS_TRAIT(user, TRAIT_SEXDEVO) && !issimple(user))
-			var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
-			if(sexhealmult < 2) //so its never below 2 for ones with trait.
-				sexhealmult = 2
-			sexhealrand *= sexhealmult
-			to_chat(user, span_green("I feel Viiritri's blessing."))
+	if(HAS_TRAIT(user, TRAIT_SEXDEVO) && !issimple(user))
+		var/sexhealmult = user.mind.get_skill_level(/datum/skill/magic/holy)
+		if(sexhealmult < 2) //so its never below 2 for ones with trait.
+			sexhealmult = 2
+		sexhealrand *= sexhealmult
+		to_chat(user, span_green("I feel Viiritri's blessing."))
 	user.adjustBruteLoss(-sexhealrand)
 	sexhealrand *= 0.5
 	user.adjustFireLoss(-sexhealrand)
@@ -632,8 +626,7 @@
 	desire_stop = FALSE
 	current_action = action_type
 	var/datum/sex_action/action = SEX_ACTION(current_action)
-	if(!issimple(target) && !issimple(user))
-		log_combat(user, target, "Started sex action: [action.name]")
+	log_combat(user, target, "Started sex action: [action.name]")
 	INVOKE_ASYNC(src, PROC_REF(sex_action_loop))
 
 /datum/sex_controller/proc/sex_action_loop()

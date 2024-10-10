@@ -535,8 +535,6 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 /mob/living/simple_animal/proc/CanAttack(atom/the_target)
 	if(see_invisible < the_target.invisibility)
 		return FALSE
-	if(the_target.alpha <= 100) //if target has less than or exactly 100 alpha, does not attack.
-		return FALSE
 	if(ismob(the_target))
 		var/mob/M = the_target
 		if(M.status_flags & GODMODE)

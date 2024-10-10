@@ -49,12 +49,6 @@
 		var/mob/living/target = targets[1]
 		if(target.anti_magic_check(TRUE, TRUE))
 			return FALSE
-		for(var/mob/living/simple_animal/hostile/nearmob in viewers(12, target))
-			if(nearmob.target == target)
-				nearmob.LoseTarget()
-		for(var/mob/living/carbon/human/nearmob in viewers(12, target))
-			if(nearmob.target == target)
-				nearmob.back_to_idle()
 		target.visible_message(span_warning("[target] starts to fade into thin air!"), span_notice("You start to become invisible!"))
 		animate(target, alpha = 0, time = 1 SECONDS, easing = EASE_IN)
 		target.mob_timers[MT_INVISIBILITY] = world.time + 15 SECONDS

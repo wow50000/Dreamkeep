@@ -50,6 +50,9 @@
 #define TRAIT_MALUMSGRACE "Malum's Grace" // For now, just means you dont combust when snorting malum's fire.
 #define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage (requires strong intent)
 #define TRAIT_POISONBITE "Venomous Bite" // Adds tox damage on bites
+#define TRAIT_STRONGTHROW "Strong Throw" // 1.5x throw distance and force
+#define TRAIT_MARTIALARTIST "Martial Artist" //more unarmed combat options
+#define TRAIT_PUGILIST "Pugilist" //more punch damage
 //Hearthstone end.
 
 // PATRON GOD TRAITS
@@ -139,7 +142,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
 	TRAIT_SEXDEVO = span_info("Sex is more benefical to me."),
 	TRAIT_ABYSSOR_SWIM = "The Abyssor protects me when I am at sea.",
-	TRAIT_CIVILIZEDBARBARIAN = span_info("Your fists are heavier."),
+	TRAIT_CIVILIZEDBARBARIAN = span_info("Improvised weapons are your specialty."),
 	TRAIT_COMICSANS = span_sans("I am cursed with a odd voice."),
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
 	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
@@ -148,6 +151,9 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_MALUMSGRACE = "Malum is my muse.", // Hearthstone change
 	TRAIT_DEATHBYSNOOSNOO = "It's an unlucky thing to share my bed.", // Hearthstone change
 	TRAIT_POISONBITE = "My bites inject venom into my target.", // Hearthstone change
+	TRAIT_STRONGTHROW = "My throws are mighty!", // Hearthstone change
+	TRAIT_MARTIALARTIST = "I have better kicks.", // Hearthstone change
+	TRAIT_PUGILIST = "I have stronger punches.", // Hearthstone change
 	TRAIT_BOG_TREKKING = "Expert in navigating these lands.", // Hearthstone change
 	TRAIT_TINY = span_info("I am tiny in size and quite fragile!"),
 ))

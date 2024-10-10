@@ -1063,8 +1063,6 @@
 	. = ..()
 	if(race)
 		set_species(race)
-	if(erpable)
-		give_genitals()
 
 /mob/living/carbon/human/species/abductor
 	race = /datum/species/abductor

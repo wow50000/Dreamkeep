@@ -33,13 +33,13 @@
 			return FALSE
 	return TRUE
 
-/datum/sex_action/blowjob/on_start(mob/living/user, mob/living/target)
+/datum/sex_action/blowjob/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))
 		user.visible_message(span_warning("[user] starts licking [target]'s cock..."))	//Changed to licking due to fairy size
 	else
 		user.visible_message(span_warning("[user] starts sucking [target]'s cock..."))
 
-/datum/sex_action/blowjob/on_perform(mob/living/user, mob/living/target)
+/datum/sex_action/blowjob/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.sexcon.do_message_signature("[type]"))
 		if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))
 			user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] licks [target]'s cock..."))
@@ -58,7 +58,7 @@
 			target.visible_message(span_lovebold("[target] cums into [user]'s mouth!"))
 			target.sexcon.cum_into()
 
-/datum/sex_action/blowjob/on_finish(mob/living/user, mob/living/target)
+/datum/sex_action/blowjob/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))
 		user.visible_message(span_warning("[user] stops licking [target]'s cock ..."))
 	else

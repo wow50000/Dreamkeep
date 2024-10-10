@@ -9003,6 +9003,10 @@
 /obj/item/seeds/sweetleaf,
 /obj/item/seeds/sweetleaf,
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
+/obj/item/reagent_containers/food/snacks/grown/shroom,
+/obj/item/reagent_containers/food/snacks/grown/shroom,
+/obj/item/seeds/shroom,
+/obj/item/seeds/shroom,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/magiciantower{
 	name = "Schoolgrounds";
@@ -9388,6 +9392,9 @@
 /obj/structure/flora/roguegrass,
 /obj/structure/flora/roguegrass/maneater/real{
 	aggroed = 1
+	},
+/obj/structure/flora/rogueshroom{
+	icon_state = "mush2"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -13901,7 +13908,7 @@
 	},
 /area/rogue)
 "hoI" = (
-/obj/structure/bookcase/random/archive,
+/obj/structure/fluff/alch,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town/magician{
 	name = "Academy"
@@ -24100,6 +24107,32 @@
 /area/rogue/outdoors/town{
 	first_time_text = "The Town of Stone Hedge"
 	})
+"mXW" = (
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor,
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor,
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor,
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor,
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor,
+/obj/item/clothing/shoes/roguetown/boots/spellslingerboots,
+/obj/item/clothing/shoes/roguetown/boots/spellslingerboots,
+/obj/item/clothing/shoes/roguetown/boots/spellslingerboots,
+/obj/item/clothing/shoes/roguetown/boots/spellslingerboots,
+/obj/item/clothing/shoes/roguetown/boots/spellslingerboots,
+/obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm,
+/obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm,
+/obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm,
+/obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm,
+/obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm,
+/obj/item/clothing/gloves/roguetown/plate/spellslingergauntlets,
+/obj/item/clothing/gloves/roguetown/plate/spellslingergauntlets,
+/obj/item/clothing/gloves/roguetown/plate/spellslingergauntlets,
+/obj/item/clothing/gloves/roguetown/plate/spellslingergauntlets,
+/obj/item/clothing/gloves/roguetown/plate/spellslingergauntlets,
+/obj/structure/rack/rogue,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/indoors/town)
 "mXX" = (
 /obj/effect/landmark/start/vagrant,
 /obj/structure/chair/wood/rogue/fancy{
@@ -240761,7 +240794,7 @@ xxn
 sVk
 sKm
 jMU
-mzD
+mXW
 mzD
 mzD
 mzD

@@ -1,5 +1,5 @@
 /datum/sex_action/npc_vaginal_ride_sex
-	name = "NPC Ride them"
+	name = "Ride them"
 	stamina_cost = 0
 	check_same_tile = FALSE
 

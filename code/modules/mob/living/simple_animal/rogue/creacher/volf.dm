@@ -148,3 +148,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/safe/horny
 	seeksfuck = TRUE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf/familiar
+	name = "familiar volf"
+	faction = list("neutral")

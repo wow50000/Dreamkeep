@@ -27,7 +27,7 @@
 
 /datum/quirk/curseofcain
 	name = "Flawed Immortality"
-	desc = "I don't need to eat or breathe anymore... Is this normal?"
+	desc = "I feel like I don't need to eat anymore, and my veins feel empty... Is this normal?"
 	value = 3
 
 /datum/quirk/curseofcain/on_spawn()

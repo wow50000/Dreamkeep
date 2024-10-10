@@ -24,7 +24,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/armpit_nuzzle/on_start(mob/living/user, mob/living/target)
+/datum/sex_action/armpit_nuzzle/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.visible_message(span_warning("[user] moves their head against [target]'s armpit..."))
 
 /datum/sex_action/armpit_nuzzle/on_perform(mob/living/user, mob/living/target)

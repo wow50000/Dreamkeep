@@ -226,9 +226,6 @@
 		cuff_resist(I)
 
 /mob/living/carbon/human/proc/should_target(mob/living/L)
-	if(!L)
-		return FALSE
-
 	if(HAS_TRAIT(src, TRAIT_PACIFISM))
 		return FALSE
 

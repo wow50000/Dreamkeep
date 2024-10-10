@@ -157,10 +157,25 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/ooc_notes
 
+	var/nsfw_info
+
+	var/background_image
+
+/* useless shit from hearthstone.
+	var/alias
+	var/height
+	var/interest
+	var/personality
+	var/strengths
+	var/weakness
+*/
+
+	var/theme
 	var/list/violated = list()
 	var/list/descriptor_entries = list()
 	var/list/custom_descriptors = list()
 	var/defiant = TRUE
+
 	/// Tracker to whether the person has ever spawned into the round, for purposes of applying the respawn ban
 	var/has_spawned = FALSE
 
@@ -217,6 +232,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	headshot_link = null
 	nudeshot_link = null
+
+	background_image = null
 
 	customizer_entries = list()
 	validate_customizer_entries()
@@ -429,7 +446,18 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<a href='?_src_=prefs;preference=view_nudeshot;task=input'>View</a>"
 			dat += "<br><b>Flavor Text:</b> <a href='?_src_=prefs;preference=flavor;task=input'>Change</a>"
 			dat += "<br><b>OOC Notes:</b> <a href='?_src_=prefs;preference=oocnotes;task=input'>Change</a>"
+			dat += "<br><b>Infocard Background:</b> <a href='?_src_=prefs;preference=background;task=input'>Change</a>"
+/* useless hearthstone shit.
+			dat += "<br><b>Title:</b> <a href='?_src_=prefs;preference=alias;task=input'>Change</a>"
+			dat += "<br><b>Height:</b> <a href='?_src_=prefs;preference=height;task=input'>Change</a>"
+			dat += "<br><b>Interest:</b> <a href='?_src_=prefs;preference=interest;task=input'>Change</a>"
+			dat += "<br><b>Personality:</b> <a href='?_src_=prefs;preference=personality;task=input'>Change</a>"
+			dat += "<br><b>Strengths:</b> <a href='?_src_=prefs;preference=strengths;task=input'>Change</a>"
+			dat += "<br><b>Weaknesses:</b> <a href='?_src_=prefs;preference=weakness;task=input'>Change</a>"
+*/
+			dat += "<br><b>Theme:</b> <a href='?_src_=prefs;preference=theme;task=input'>Change</a>"
 			dat += "<br><b>Loadout Item:</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "None"]</a>"
+			dat += "<br><b>NSFW Info:</b> <a href='?_src_=prefs;preference=nsfwinfo;task=input'>Change</a>"
 			dat += "</td>"
 
 			dat += "</tr></table>"
@@ -1599,11 +1627,146 @@ Slots: [job.spawn_positions]</span>
 							return
 						voice_pitch = new_voice_pitch
 
+				if("background")
+					to_chat(user, "<span class='notice'>This will be used for the background image of your infocard")
+					to_chat(user, "<span class='notice'>This works best with a repeating pattern image, as the image placed in the background will be repeated.</span>")
+					var/new_background_image = input(user, "Input the background image link (https, hosts: gyazo,lensdump, imgbox, catbox):", "background", background_image) as text|null
+					if(new_background_image == null)
+						return
+					if(new_background_image == "")
+						background_image = null
+						ShowChoices(user)
+						return
+					if(!valid_background_image(user, new_background_image))
+						background_image = null
+						ShowChoices(user)
+						return
+					background_image = new_background_image
+					to_chat(user, "<span class='notice'>Successfully updated infocard background image.</span>")
+					log_game("[user] has set their background image to '[background_image]'.")
+/* useless shit from hearthstone.
+				if("alias")
+					to_chat(user, "<span class='notice'>What do they call you? (Having a headshot and a title enables the new infocard)</span>")
+					var/new_alias = input(user, "Type your title here:", "alias", alias) as message|null
+					if(new_alias == null)
+						return
+					if(new_alias == "")
+						alias = null
+						ShowChoices(user)
+						return
+					if(!valid_alias(user, new_alias))
+						alias = null
+						ShowChoices(user)
+						return
+					alias = new_alias
+					to_chat(user, "<span class='notice'>Successfully updated alias</span>")
+					log_game("[user] has set their alias to '[alias]'.")
+				if("height")
+					to_chat(user, "<span class='notice'>How tall are you?</span>")
+					var/new_height = input(user, "Input your height:", "height", height) as message|null
+					if(new_height == null)
+						return
+					if(new_height == "")
+						height = null
+						ShowChoices(user)
+						return
+					if(!valid_height(user, new_height))
+						height = null
+						ShowChoices(user)
+						return
+					height = new_height
+					to_chat(user, "<span class='notice'>Successfully updated height</span>")
+					log_game("[user] has set their height to '[height]'.")
+
+				if("interest")
+					to_chat(user, "<span class='notice'>Adventure? Casting Magic? Inspiring Rebellion?</span>")
+					var/new_interest = input(user, "Input your interest as this character:", "interest", interest) as message|null
+					if(new_interest == null)
+						return
+					if(new_interest == "")
+						interest = null
+						ShowChoices(user)
+						return
+					if(!valid_interest(user, new_interest))
+						interest = null
+						ShowChoices(user)
+						return
+					interest = new_interest
+					to_chat(user, "<span class='notice'>Successfully updated interest</span>")
+					log_game("[user] has set their interest to '[interest]'.")
+				if("personality")
+					to_chat(user, "<span class='notice'>3 words to describe yourself.</span>")
+					var/new_personality = input(user, "Short and simple, Input your character's personality:", "personality", personality) as message|null
+					if(new_personality == null)
+						return
+					if(new_personality == "")
+						personality = null
+						ShowChoices(user)
+						return
+					if(!valid_personality(user, new_personality))
+						personality = null
+						ShowChoices(user)
+						return
+					personality = new_personality
+					to_chat(user, "<span class='notice'>Successfully updated personality</span>")
+					log_game("[user] has set their personality to '[personality]'.")
+
+				if("strengths")
+					to_chat(user, "<span class='notice'>What are your characters strengths?</span>")
+					var/new_strengths = input(user, "Name your strengths:", "strengths", strengths) as message|null
+					if(new_strengths == null)
+						return
+					if(new_strengths == "")
+						strengths = null
+						ShowChoices(user)
+						return
+					if(!valid_strengths(user, new_strengths))
+						strengths = null
+						ShowChoices(user)
+						return
+					strengths = new_strengths
+					to_chat(user, "<span class='notice'>Successfully updated strengths</span>")
+					log_game("[user] has set their strengths to '[strengths]'.")
+
+				if("weakness")
+					to_chat(user, "<span class='notice'>What are your characters weaknesses?</span>")
+					var/new_weakness = input(user, "Name your weaknesses:", "weakness", weakness) as message|null
+					if(new_weakness == null)
+						return
+					if(new_weakness == "")
+						weakness = null
+						ShowChoices(user)
+						return
+					if(!valid_weakness(user, new_weakness))
+						weakness = null
+						ShowChoices(user)
+						return
+					weakness = new_weakness
+					to_chat(user, "<span class='notice'>Successfully updated weaknesses</span>")
+					log_game("[user] has set their weaknesses to '[weakness]'.")
+*/
+				if("theme")
+					to_chat(user, "<span class='notice'>Spice up your character profile with a nice theme.</span>")
+					var/new_theme = input(user, "Input your link here:", "theme", theme) as message|null
+					if(new_theme == null)
+						return
+					if(new_theme == "")
+						theme = null
+						ShowChoices(user)
+						return
+					if(!valid_theme(user, new_theme))
+						theme = null
+						ShowChoices(user)
+						return
+					theme = new_theme
+					to_chat(user, "<span class='notice'>Successfully updated theme.</span>")
+					log_game("[user] has set their theme to '[theme]'.")
+
 				if("headshot")
 					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
 					to_chat(user, "<span class='notice'>Resolution: 525x575 pixels.</span>")
-					var/new_headshot_link = input(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", headshot_link) as text|null
+					var/new_headshot_link = input(user, "Input the headshot link (https, hosts: gyazo, lensdump, imgbox, catbox):", "Headshot", headshot_link) as text|null
 					if(new_headshot_link == null)
 						return
 					if(new_headshot_link == "")
@@ -1635,7 +1798,7 @@ Slots: [job.spawn_positions]</span>
 					log_game("[user] has set their description to '[flavor_text]'.")
 
 				if("oocnotes")
-					to_chat(user, "<span class='notice'>Please use this for Out of Character information that you wish to share, such as sexual preferences and consent information.</span>")
+					to_chat(user, "<span class='notice'>Please use this for Out of Character information that you wish to share, such as basic consent information and roleplay preferences. In-depth NSFW Information should go into the NSFW section.</span>")
 					var/new_ooc_notes = input(user, "Type your OOC Notes here:", "OOC Notes", ooc_notes) as message|null
 					if(new_ooc_notes == null)
 						return
@@ -1650,6 +1813,25 @@ Slots: [job.spawn_positions]</span>
 					ooc_notes = new_ooc_notes
 					to_chat(user, "<span class='notice'>Successfully updated OOC Notes</span>")
 					log_game("[user] has set their OOC Notes to '[ooc_notes]'.")
+
+				if("nsfwinfo")
+					to_chat(user, "<span class='notice'>Please use this for things such as image links, f-list links, or any additional NSFW information.</span>")
+					var/new_nsfw_info = input(user, "Type your NSFW Info here:", "NSFW Info", nsfw_info) as message|null
+					if(new_nsfw_info == null)
+						return
+					if(new_nsfw_info == "")
+						nsfw_info = null
+						ShowChoices(user)
+						return
+					if(!valid_nsfw_info(user, new_nsfw_info))
+						nsfw_info = null
+						ShowChoices(user)
+						return
+					nsfw_info = new_nsfw_info
+					to_chat(user, "<span class='notice'>Successfully updated NSFW Info.</span>")
+					log_game("[user] has set their NSFW Info to '[nsfw_info]'.")
+
+
 				if("loadout_item")
 					var/list/loadouts_available = list("None")
 					for (var/path as anything in GLOB.loadout_items)
@@ -1666,13 +1848,13 @@ Slots: [job.spawn_positions]</span>
 							loadout = loadouts_available[loadout_input]
 							to_chat(user, "<font color='yellow'><b>[loadout.name]</b></font>")
 							if(loadout.desc)
-								to_chat(user, "[loadout.desc]. I can retrieve it by right-clicking a tree, clock or statue as well as any stashed item.")
+								to_chat(user, "[loadout.desc]")
 
 				if("nudeshot")
 					to_chat(user, "<span class='notice'>["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
 					to_chat(user, "<span class='notice'>Resolution: 560x680 pixels.</span>")
-					var/new_nudeshot_link = input(user, "Input the nudeshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Nudeshot", nudeshot_link) as text|null
+					var/new_nudeshot_link = input(user, "Input the nudeshot link (https, hosts: gyazo, lensdump, imgbox, catbox):", "Nudeshot", nudeshot_link) as text|null
 					if(new_nudeshot_link == null)
 						return
 					if(new_nudeshot_link == "")
@@ -2258,11 +2440,24 @@ Slots: [job.spawn_positions]</span>
 
 	character.headshot_link = headshot_link
 	character.nudeshot_link = nudeshot_link
+	character.background_image = background_image
 
 
 	character.flavor_text = flavor_text
-
 	character.ooc_notes = ooc_notes
+
+/* useless shit from hearthstone.
+	character.alias = alias
+	character.height = height
+	character.interest = interest
+	character.personality = personality
+	character.strengths = strengths
+	character.weakness = weakness
+*/
+
+	character.theme = theme
+
+	character.nsfw_info = nsfw_info
 	// LETHALSTONE ADDITION BEGIN: additional customizations
 
 	character.statpack = statpack
@@ -2335,7 +2530,7 @@ Slots: [job.spawn_positions]</span>
 		reset_all_customizer_accessory_colors()
 
 /proc/valid_headshot_link(mob/user, value, silent = FALSE)
-	var/static/link_regex = regex("i.gyazo.com|a.l3n.co|b.l3n.co|c.l3n.co|images2.imgbox.com|thumbs2.imgbox.com|files.catbox.moe") //gyazo, discord, lensdump, imgbox, catbox
+	var/static/link_regex = regex("i.gyazo.com|a.l3n.co|b.l3n.co|c.l3n.co|images2.imgbox.com|thumbs2.imgbox.com|files.catbox.moe") //gyazo, lensdump, imgbox, catbox
 	var/static/list/valid_extensions = list("jpg", "png", "jpeg") // Regex works fine, if you know how it works
 
 	if(!length(value))
@@ -2366,6 +2561,74 @@ Slots: [job.spawn_positions]</span>
 			to_chat(usr, "<span class='warning'>The image must be hosted on one of the following sites: 'Gyazo, Lensdump, Imgbox, Catbox'</span>")
 		return FALSE
 	return TRUE
+
+/proc/valid_theme(mob/user, value, silent = FALSE)
+	var/static/link_regex = regex("cdn.discordapp.com") //gyazo, lensdump, imgbox, catbox
+	var/static/list/valid_extensions = list("mp3") // Regex works fine, if you know how it works
+
+	if(!length(value))
+		return FALSE
+
+	var/find_index = findtext(value, "https://")
+	if(find_index != 1)
+		if(!silent)
+			to_chat(user, "<span class='warning'>Your link must be https!</span>")
+		return FALSE
+
+	if(!findtext(value, "."))
+		if(!silent)
+			to_chat(user, "<span class='warning'>Invalid link!</span>")
+		return FALSE
+	var/list/value_split = splittext(value, ".")
+
+	// extension will always be the last entry
+	var/extension = value_split[length(value_split)]
+	if(!(extension in valid_extensions))
+		if(!silent)
+			to_chat(usr, "<span class='warning'>The theme must be one of the following extensions: '[english_list(valid_extensions)]'</span>")
+		return FALSE
+
+	find_index = findtext(value, link_regex)
+	if(find_index != 9)
+		if(!silent)
+			to_chat(usr, "<span class='warning'>The theme must be hosted on one of the following sites: 'Discord'</span>")
+		return FALSE
+	return TRUE
+
+/proc/valid_background_image(mob/user, value, silent = FALSE)
+	var/static/link_regex = regex("i.gyazo.com|a.l3n.co|b.l3n.co|c.l3n.co|images2.imgbox.com|thumbs2.imgbox.com|files.catbox.moe") //gyazo, lensdump, imgbox, catbox
+	var/static/list/valid_extensions = list("jpg", "png", "jpeg") // Regex works fine, if you know how it works
+
+	if(!length(value))
+		return FALSE
+
+	var/find_index = findtext(value, "https://")
+	if(find_index != 1)
+		if(!silent)
+			to_chat(user, "<span class='warning'>Your link must be https!</span>")
+		return FALSE
+
+	if(!findtext(value, "."))
+		if(!silent)
+			to_chat(user, "<span class='warning'>Invalid link!</span>")
+		return FALSE
+	var/list/value_split = splittext(value, ".")
+
+	// extension will always be the last entry
+	var/extension = value_split[length(value_split)]
+	if(!(extension in valid_extensions))
+		if(!silent)
+			to_chat(usr, "<span class='warning'>The image must be one of the following extensions: '[english_list(valid_extensions)]'</span>")
+		return FALSE
+
+	find_index = findtext(value, link_regex)
+	if(find_index != 9)
+		if(!silent)
+			to_chat(usr, "<span class='warning'>The image must be hosted on one of the following sites: 'Gyazo, Lensdump, Imgbox, Catbox'</span>")
+		return FALSE
+	return TRUE
+
+
 /proc/valid_flavor_text(mob/user, value, silent = FALSE)
 
 	if(!length(value))
@@ -2376,7 +2639,43 @@ Slots: [job.spawn_positions]</span>
 	if(!length(value))
 		return FALSE
 	return TRUE
+/proc/valid_alias(mob/user, value, silent = FALSE)
 
+	if(!length(value))
+		return FALSE
+	return TRUE
+/proc/valid_height(mob/user, value, silent = FALSE)
+
+	if(!length(value))
+		return FALSE
+	return TRUE
+
+/proc/valid_interest(mob/user, value, silent = FALSE)
+
+	if(!length(value))
+		return FALSE
+	return TRUE
+/proc/valid_personality(mob/user, value, silent = FALSE)
+
+	if(!length(value))
+		return FALSE
+	return TRUE
+/proc/valid_strengths(mob/user, value, silent = FALSE)
+
+	if(!length(value))
+		return FALSE
+	return TRUE
+/proc/valid_weakness(mob/user, value, silent = FALSE)
+
+	if(!length(value))
+		return FALSE
+	return TRUE
+
+/proc/valid_nsfw_info(mob/user, value, silent = FALSE)
+
+	if(!length(value))
+		return FALSE
+	return TRUE
 /datum/preferences/proc/is_active_migrant()
 	if(!migrant)
 		return FALSE

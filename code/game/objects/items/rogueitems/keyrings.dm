@@ -267,6 +267,9 @@
 /obj/item/storage/keyring/councillor
 	keys = list(/obj/item/roguekey/sheriff_office, /obj/item/roguekey/keep_dungeon, /obj/item/roguekey/town_dungeon, /obj/item/roguekey/bog_barracks, /obj/item/roguekey/keep_barracks, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)
 
+/obj/item/storage/keyring/nobleguest
+	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/noble)
+
 /obj/item/storage/keyring/guard
 	keys = list(/obj/item/roguekey/keep_dungeon, /obj/item/roguekey/town_dungeon, /obj/item/roguekey/bog_barracks)
 

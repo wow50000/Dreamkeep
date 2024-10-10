@@ -478,7 +478,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 	return TRUE
 
 /mob/proc/linepoint(atom/A as mob|obj|turf in view(), params)
-	if(world.time < lastpoint + 10)
+	if(world.time < lastpoint + 50)
 		return FALSE
 
 	if(stat)
