@@ -1,5 +1,6 @@
 /obj/item
-	var/list/onprop = list()
+	/// A lazylist to store inhands data.
+	var/list/onprop
 	var/d_type = "blunt"
 //#ifdef TESTSERVER
 	var/force_reupdate_inhand = TRUE
@@ -734,16 +735,10 @@ GLOBAL_LIST_EMPTY(icon_state_cache)
 		if(!used_cat)
 			used_cat = "gen"
 
-		for(var/X in I.onprop)
-			if(X == used_cat)
-				var/list/L = I.onprop[X]
-				if(L.len)
-					if(!needtofind in L)
-						L += needtofind
-					for(var/P in L)
-						if(P == needtofind)
-							L[P] += 0.1
-							to_chat(LI, "[needtofind] = [L[P]]")
+		if(length(I.onprop?[used_cat]))
+			var/list/L = I.onprop[used_cat]
+			L[needtofind] += 0.1
+			to_chat(LI, "[needtofind] = [L[needtofind]]")
 	LI.update_inv_hands()
 	LI.update_inv_belt()
 	LI.update_inv_back()
@@ -778,16 +773,10 @@ GLOBAL_LIST_EMPTY(icon_state_cache)
 		if(!used_cat)
 			used_cat = "gen"
 
-		for(var/X in I.onprop)
-			if(X == used_cat)
-				var/list/L = I.onprop[X]
-				if(L.len)
-					if(!needtofind in L)
-						L += needtofind
-					for(var/P in L)
-						if(P == needtofind)
-							L[P] -= 0.1
-							to_chat(LI, "[needtofind] = [L[P]]")
+		if(length(I.onprop?[used_cat]))
+			var/list/L = I.onprop[used_cat]
+			L[needtofind] -= 0.1
+			to_chat(LI, "[needtofind] = [L[needtofind]]")
 	LI.update_inv_hands()
 	LI.update_inv_belt()
 	LI.update_inv_back()
