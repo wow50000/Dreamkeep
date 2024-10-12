@@ -776,7 +776,7 @@ There are several things that need to be remembered:
 			if(beltl.experimental_onhip)
 				var/list/prop
 				if(beltl.force_reupdate_inhand)
-					prop = beltl.onprop["onbelt"]
+					prop = beltl.onprop?["onbelt"]
 					if(!prop)
 						prop = beltl.getonmobprop("onbelt")
 						LAZYSET(beltl.onprop, "onbelt", prop)
@@ -943,7 +943,7 @@ There are several things that need to be remembered:
 			if(backr.experimental_onback)
 				var/list/prop
 				if(backr.force_reupdate_inhand)
-					prop = backr.onprop["onback"]
+					prop = backr.onprop?["onback"]
 					if(!prop)
 						prop = backr.getonmobprop("onback")
 						LAZYSET(backr.onprop, "onback", prop)
@@ -996,7 +996,7 @@ There are several things that need to be remembered:
 			if(backl.experimental_onback)
 				var/list/prop
 				if(backl.force_reupdate_inhand)
-					prop = backl.onprop["onback"]
+					prop = backl.onprop?["onback"]
 					if(!prop)
 						prop = backl.getonmobprop("onback")
 						LAZYSET(backl.onprop, "onback", backl.getonmobprop("onback"))
