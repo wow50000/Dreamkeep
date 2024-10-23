@@ -118,7 +118,7 @@
 /obj/item/organ/eyes/night_vision
 	name = "shadow eyes"
 	desc = ""
-	see_in_dark = 8
+	see_in_dark = 14
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	actions_types = list(/datum/action/item_action/organ_action/use)
 	var/night_vision = TRUE
@@ -165,23 +165,22 @@
 	name = "fung-eye"
 	desc = ""
 
-/obj/item/organ/eyes/elf
+/obj/item/organ/eyes/night_vision/elf
 	name = "elf eyes"
 	desc = ""
-	see_in_dark = 4
-	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	see_in_dark = 14
 
 /obj/item/organ/eyes/halfelf
 	name = "half-elf eyes"
 	desc = ""
-	see_in_dark = 3
-	lighting_alpha = LIGHTING_PLANE_ALPHA_LESSER_NV_TRAIT
+	see_in_dark = 7
+	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 
 /obj/item/organ/eyes/goblin
 	name = "goblin eyes"
 	desc = ""
 	see_in_dark = 15
-	lighting_alpha = 200
+	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 
 ///Robotic
 

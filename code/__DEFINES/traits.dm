@@ -45,10 +45,11 @@
 #define TRAIT_CIVILIZEDBARBARIAN "Tavern Brawler"
 #define TRAIT_COMICSANS "Annoying Face"
 #define TRAIT_WATERBREATHING "Water Breathing"
+#define TRAIT_BLINDFIGHTING "Blind Fighting"
 
 //Hearthstone change
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker" //! Will always find any tracks and analyzes them perfectly.
-#define TRAIT_NOCSIGHT "Blessing of Noc" // I can see just a bit more clearly in darkness.
+#define TRAIT_NOCSNEAK "Blessing of Noc" // I can see just a bit more clearly in darkness.
 #define TRAIT_MALUMSGRACE "Malum's Grace" // For now, just means you dont combust when snorting malum's fire.
 #define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage (requires strong intent)
 #define TRAIT_POISONBITE "Venomous Bite" // Adds tox damage on bites
@@ -170,7 +171,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
 	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
 	TRAIT_PERFECT_TRACKER = span_info("I am the perfect tracker. No tracks will deceive my eyes, nor will they hide their secrets from me."),//Hearthstone change.
-	TRAIT_NOCSIGHT = "Lune blesses my eyes to be unburdened by the night.", //Hearthstone change.
+	TRAIT_NOCSIGHT = "Lune graces me with her darkest face, allowing me to hide in dim light.", //Hearthstone change.
 	TRAIT_MALUMSGRACE = "The Forge is my Muse.", // Hearthstone change
 	TRAIT_DEATHBYSNOOSNOO = "It's an unlucky thing to share my bed.", // Hearthstone change
 	TRAIT_POISONBITE = "My bites inject venom into my target.", // Hearthstone change
@@ -182,6 +183,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NUDE_SLEEPER = span_warning("I can't fall asleep unless I'm nude and in bed."),
 	TRAIT_TINY = span_info("I am tiny in size and quite fragile!"),
 	TRAIT_FASTSLEEP = span_info("I am narcoleptic and may fall asleep where I stand. Moondust can help me stay awake."),
+	TRAIT_BLINDFIGHTING = span_info("I have an incredible sense of awareness, allowing me to dodge and parry attacks even when I can't see them coming with my eyes."),
 ))
 
 // trait accessor defines
