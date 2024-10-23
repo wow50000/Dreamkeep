@@ -220,6 +220,7 @@
 				user.apply_status_effect(/datum/status_effect/debuff/stealthcd)
 				to_chat(src, span_userdanger("SNEAK ATTACK!!! MY ARMOR IS BYPASSED FOR MASSIVE DAMAGE!"))
 				to_chat(user, span_userdanger("SNEAK ATTACK!!! THEIR ARMOR IS BYPASSED FOR MASSIVE DAMAGE!"))
+				user.mind.adjust_experience(/datum/skill/misc/sneaking, user.STAINT * 5, FALSE)
 			else
 				user.used_intent.penfactor = initial(user.used_intent.penfactor)//Sanity check to make sure intent penfactor gets reset when the attack isn't a sneak attack.
 		apply_damage(statforce, I.damtype, affecting)
