@@ -425,8 +425,8 @@
 			var/sneakmult = 2 + (user.mind.get_skill_level(/datum/skill/misc/sneaking))
 			newforce *= sneakmult
 			user.apply_status_effect(/datum/status_effect/debuff/stealthcd)
-			to_chat(src, span_userdanger("SNEAK ATTACK!!! THEIR ATTACK DEALS GREATER DAMAGE!"))
-			to_chat(user, span_userdanger("SNEAK ATTACK!!! MY ATTACK DOES GREATER DAMAGE!"))
+			to_chat(src, span_userdanger("BACKSTAB!!! THE ATTACK DEALS GREATER DAMAGE!"))
+			to_chat(user, span_userdanger("BACKSTAB!!! MY ATTACK DOES GREATER DAMAGE!"))
 		apply_damage(newforce, I.damtype, def_zone = hitlim)
 		if(I.damtype == BRUTE)
 			next_attack_msg.Cut()
