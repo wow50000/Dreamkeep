@@ -2,17 +2,17 @@
 //Will need rebalancing costs and stuff.
 
 /datum/quirk/greaternightvision
-	name = "Greater Night Vision"
+	name = "Darkvision"
 	desc = "I can easily see in the dark."
-	value = 3
+	value = 2
 
 /datum/quirk/nightvision/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 	if(!eyes)
 		return
-	eyes.see_in_dark = 3
-	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	eyes.see_in_dark = 7
+	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	eyes.Insert(H)
 
 /datum/quirk/thickskin
@@ -275,7 +275,7 @@
 /datum/quirk/nimrod/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.change_stat("speed", -2)
-	H.change_stat("intelligence", -4)	
+	H.change_stat("intelligence", -4)
 
 /datum/quirk/nopouch
 	name = "No Pouch"
