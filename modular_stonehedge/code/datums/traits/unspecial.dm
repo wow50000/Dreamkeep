@@ -18,7 +18,7 @@
 /datum/quirk/thickskin
 	name = "Tough"
 	desc = "I feel it. Thick Skin. Dense Flesh. Durable Bones. I'm a punch-taking machine."
-	value = 2
+	value = 3
 
 /datum/quirk/thickskin/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -34,6 +34,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NOHUNGER, QUIRK_TRAIT)
 	ADD_TRAIT(H, TRAIT_NOBREATH, QUIRK_TRAIT)
+	H.change_stat("endurance", 2)
 
 /datum/quirk/deadened
 	name = "Deadened"
@@ -45,13 +46,13 @@
 	ADD_TRAIT(H, TRAIT_NOMOOD, QUIRK_TRAIT)
 
 /datum/quirk/value
-	name = "Appraiser"
+	name = "Skilled Appraiser"
 	desc = "I know how to estimate an item's value, more or less."
 	value = 1
 
 /datum/quirk/value/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_SEEPRICES_SHITTY, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_SEEPRICES, QUIRK_TRAIT)
 
 /datum/quirk/night_owl
 	name = "Night Owl"
@@ -65,7 +66,7 @@
 /datum/quirk/beautiful
 	name = "Beautiful"
 	desc = "My face is a work of art"
-	value = 2
+	value = 1
 
 /datum/quirk/beautiful/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -75,7 +76,7 @@
 /datum/quirk/duelist
 	name = "Swordmaster"
 	desc = "I was the student of a legendary sword master, my skill is rivalled by few! I've also hidden a rapier."
-	value = 5
+	value = 4
 
 /datum/quirk/duelist/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -86,20 +87,20 @@
 /datum/quirk/eagle_eyed
 	name = "Eagle Eyed"
 	desc = "With my sharp aim I could always hit distant targets, I've also hidden a crossbow and some bolts."
-	value = 5
+	value = 4
 
 /datum/quirk/eagle_eyed/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.change_stat("perception", 2)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 5, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 5, TRUE)
 	H.mind.special_items["Crossbow"] = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	H.mind.special_items["Bolts"] = /obj/item/quiver/bolts
 
 /datum/quirk/mule
 	name = "Mule"
 	desc = "I've been dealing drugs and I have a stash hidden away"
-	value = 3
+	value = 2
 
 /datum/quirk/mule/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -120,13 +121,13 @@
 /datum/quirk/arsonist
 	name = "Arsonist"
 	desc = "I like seeing things combust and burn. I have hidden around two firebobms"
-	value = 1
+	value = 2
 
 /datum/quirk/arsonist/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.special_items["Firebomb One"] = /obj/item/bomb
 	H.mind.special_items["Firebomb Two"] = /obj/item/bomb
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
 
 /datum/quirk/pineapple
 	name = "No safeword."
@@ -169,7 +170,7 @@
 /datum/quirk/languagesavant
 	name = "Polyglot"
 	desc = "I have always picked up on languages easily, even those that are forbidden to mortals."
-	value = 6
+	value = 3
 
 /datum/quirk/languagesavant/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -210,15 +211,13 @@
 
 /datum/quirk/bleublood
 	name = "Noble Lineage"
-	desc = "I am of noble blood and I carry a pouch full of mammons."
-	value = 2
+	desc = "I am of noble blood."
+	value = 1
 
 /datum/quirk/bleublood/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NOBLE, QUIRK_TRAIT)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
-	var/obj/item/pouch = new /obj/item/storage/belt/rogue/pouch/coins/rich(get_turf(H))
-	H.put_in_hands(pouch, forced = TRUE)
 
 /datum/quirk/richpouch
 	name = "Rich Pouch"
@@ -244,8 +243,8 @@
 
 /datum/quirk/gourmand
 	name = "Gourmand"
-	desc = "I can eat even the most spoiled, raw, or toxic food and water as if they were delicacies.."
-	value = 1
+	desc = "I can eat even the most spoiled, raw, or toxic food and water as if they were delicacies. I'm even immune to the berry poison some folk like to coat their arrows with."
+	value = 3
 
 /datum/quirk/gourmand/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -270,7 +269,7 @@
 /datum/quirk/nimrod
 	name = "Nimrod"
 	desc = "In the past I learned slower than my peers, and I tend to be clumsy."
-	value = -3
+	value = -6
 
 /datum/quirk/nimrod/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -345,7 +344,7 @@
 /datum/quirk/outlaw
 	name = "Known Outlaw"
 	desc = "Whether for crimes I did or was accused of, I have been declared an outlaw!"
-	value = -2
+	value = -4
 
 /datum/quirk/outlaw/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -364,7 +363,7 @@
 /datum/quirk/unlucky
 	name = "Unlucky"
 	desc = "Ever since you knocked over that glass vase, you just feel... off"
-	value = -1
+	value = -6
 
 /datum/quirk/unlucky/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -394,18 +393,18 @@
 /datum/quirk/atrophy
 	name = "Atrophy"
 	desc = "When growing up I could barely feed myself... this left me weak and fragile"
-	value = -3
+	value = -6
 
 /datum/quirk/atrophy/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.change_stat("strength", -2)
 	H.change_stat("constitution", -2)
-	H.change_stat("endurance", -1)
+	H.change_stat("endurance", -2)
 
 /datum/quirk/nude_sleeper
 	name = "Picky Sleeper"
 	desc = "I just can't seem to fall asleep unless I'm <i>truly</i> comfortable..."
-	value = -2 //bothersome so i guess -2 is fine, especially with armor remove and equip delays, and overall risk.
+	value = -3 //Sleeping people are already rather vulnerable. Having to take off literally everything is more than just bothersome.
 
 /datum/quirk/nude_sleeper/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder

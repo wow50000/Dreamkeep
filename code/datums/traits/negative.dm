@@ -290,7 +290,7 @@
 /datum/quirk/frail
 	name = "Frail"
 	desc = "My bones are like sticks."
-	value = -2
+	value = -4
 	mob_trait = TRAIT_EASYLIMBDISABLE
 	gain_text = span_danger("I feel frail.")
 	lose_text = span_notice("I feel sturdy again.")
@@ -351,7 +351,7 @@
 	H.put_in_hands(glasses)
 	H.equip_to_slot(glasses, SLOT_GLASSES)
 	H.regenerate_icons() //this is to remove the inhand icon, which persists even if it's not in their hands
-
+*/
 /datum/quirk/nyctophobia
 	name = "Nyctophobia"
 	desc = ""
@@ -367,20 +367,17 @@
 	if(lums <= 0.2)
 		if(quirk_holder.m_intent == MOVE_INTENT_RUN)
 			to_chat(quirk_holder, span_warning("Easy, easy, take it slow... you're in the dark..."))
-			quirk_holder.toggle_move_intent()
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "nyctophobia", /datum/mood_event/nyctophobia)
-	else
-		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "nyctophobia")
+			quirk_holder.toggle_move_intent(MOVE_INTENT_WALK)
 
 /datum/quirk/nonviolent
 	name = "Pacifist"
 	desc = ""
-	value = -2
+	value = -6
 	mob_trait = TRAIT_PACIFISM
 	gain_text = span_danger("I feel repulsed by the thought of violence!")
 	lose_text = span_notice("I think you can defend myself again.")
 	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."
-
+/*
 /datum/quirk/paraplegic
 	name = "Paraplegic"
 	desc = ""
