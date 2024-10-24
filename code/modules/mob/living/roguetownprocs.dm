@@ -444,6 +444,9 @@
 		prob2defend = clamp(prob2defend, 5, 90)
 		if(client?.prefs.showrolls)
 			to_chat(src, span_info("Roll to dodge... [prob2defend]%"))
+		if(!can_see_cone(user) || user.alpha <=15)
+			if(!HAS_TRAIT(src, TRAIT_BLINDFIGHTING))
+				prob2defend = 5//Have to roll a nat 20 to dodge an attack we can't sense coming.
 		if(!prob(prob2defend))
 			return FALSE
 	dodgecd = TRUE

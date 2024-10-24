@@ -33,13 +33,15 @@
 
 
 	if(L.d_intent == INTENT_DODGE)
-		if(!L.mind)//Feinting an NPC will now perform a 'Trip' combat manuever. This feature is designed as a way to counter the AI's ability to dodge attacks that have a hit delay by constantly moving around..
+		if(!L.mind && !user.has_status_effect(/datum/status_effect/debuff/feintcd))//Feinting an NPC will now perform a 'Trip' combat manuever. This feature is designed as a way to counter the AI's ability to dodge attacks that have a hit delay by constantly moving around..
 			if(prob(80) || istype(user.rmb_intent, /datum/rmb_intent/feint))//Guaranteed if you're actually in a feinting stance.
 				L.Knockdown(30)
 				L.Immobilize(30)
 				to_chat(user, span_notice("[L] is tripped up by my combat maneuver and momentarily stunned!"))
+				user.apply_status_effect(/datum/status_effect/debuff/feintcd)
 			else
 				to_chat(user, span_warning("[L] avoids my trip maneuver... 80%"))
+			return
 		else
 			perc = 0
 

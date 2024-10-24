@@ -76,7 +76,7 @@
 	if(owner.mind)
 		duration = duration - (owner.mind.get_skill_level(/datum/skill/misc/sneaking))
 	if(owner.m_intent == MOVE_INTENT_SNEAK)
-		owner.toggle_rogmove_intent(MOVE_INTENT_SNEAK)
+		owner.toggle_rogmove_intent(MOVE_INTENT_WALK)
 		owner.update_sneak_invis()
 	return ..()
 
