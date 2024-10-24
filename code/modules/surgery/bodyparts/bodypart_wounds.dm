@@ -195,6 +195,7 @@
 			user.apply_status_effect(/datum/status_effect/debuff/stealthcd)
 			to_chat(src, span_userdanger("SNEAK ATTACK!!! CRITICAL HIT CHANCE INCREASED!"))
 			to_chat(user, span_userdanger("SNEAK ATTACK!!! CRITICAL HIT CHANCE INCREASED!"))
+			user.mind?.adjust_experience(/datum/skill/misc/sneaking, user.STAINT * 5, TRUE)
 	if(bclass in GLOB.dislocation_bclasses)
 		used = round(damage_dividend * 20 + (dam / 3), 1)
 		if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
@@ -254,6 +255,7 @@
 			user.apply_status_effect(/datum/status_effect/debuff/stealthcd)
 			to_chat(src, span_userdanger("SNEAK ATTACK!!! CRITICAL HIT CHANCE INCREASED!"))
 			to_chat(user, span_userdanger("SNEAK ATTACK!!! CRITICAL HIT CHANCE INCREASED!"))
+			user.mind?.adjust_experience(/datum/skill/misc/sneaking, user.STAINT * 5, TRUE)
 	if ((bclass = BCLASS_PUNCH) && (user && dam))
 		if(user && HAS_TRAIT(user, TRAIT_PUGILIST))
 			dam += 15
@@ -322,6 +324,7 @@
 			user.apply_status_effect(/datum/status_effect/debuff/stealthcd)
 			to_chat(src, span_userdanger("SNEAK ATTACK!!! CRITICAL HIT CHANCE INCREASED!"))
 			to_chat(user, span_userdanger("SNEAK ATTACK!!! CRITICAL HIT CHANCE INCREASED!"))
+			user.mind?.adjust_experience(/datum/skill/misc/sneaking, user.STAINT * 5, TRUE)
 	if((bclass in GLOB.dislocation_bclasses) && (total_dam >= max_damage))
 		used = round(damage_dividend * 20 + (dam / 3), 1)
 		if(prob(used))
