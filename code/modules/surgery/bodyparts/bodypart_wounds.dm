@@ -186,7 +186,7 @@
 		if(user.goodluck(2))
 			dam += 10
 	if(owner.resting)
-		dam += 20
+		dam += 30
 	if(from_behind || user.alpha <= 15)//Dreamkeep change -- Attacks from stealth should be much more likely to crit
 		if(user.mind && !HAS_TRAIT(owner, TRAIT_BLINDFIGHTING) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))
 			var/sneakmult = 2 + (user.mind.get_skill_level(/datum/skill/misc/sneaking))
@@ -246,7 +246,7 @@
 		if(user.goodluck(2))
 			dam += 10
 	if(owner.resting)
-		dam += 20
+		dam += 30
 	if(from_behind || user.alpha <= 15)//Dreamkeep change -- Attacks from stealth should have greatly increased crit rate.
 		if(user.mind && !HAS_TRAIT(owner, TRAIT_BLINDFIGHTING) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))
 			var/sneakmult = 2 + (user.mind.get_skill_level(/datum/skill/misc/sneaking))
@@ -315,7 +315,7 @@
 		if(user.goodluck(2))
 			dam += 10
 	if(owner.resting)
-		dam += 20
+		dam += 30
 	if(from_behind || user.alpha <= 15)//Dreamkeep change -- Attacks from stealth should have greatly increased crit rate.
 		if(user.mind && !HAS_TRAIT(owner, TRAIT_BLINDFIGHTING) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))
 			var/sneakmult = 2 + (user.mind.get_skill_level(/datum/skill/misc/sneaking))
