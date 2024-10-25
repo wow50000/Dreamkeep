@@ -49,7 +49,7 @@
 
 //Hearthstone change
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker" //! Will always find any tracks and analyzes them perfectly.
-#define TRAIT_NOCSNEAK "Blessing of Noc" // I can see just a bit more clearly in darkness.
+#define TRAIT_NOCSNEAK "Blessing of Noc" // I can hide in dim light.
 #define TRAIT_MALUMSGRACE "Malum's Grace" // For now, just means you dont combust when snorting malum's fire.
 #define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage (requires strong intent)
 #define TRAIT_POISONBITE "Venomous Bite" // Adds tox damage on bites
