@@ -54,6 +54,7 @@
 	STAEND = 10
 	STASPD = 10
 	STALUC = 10
+/*		Bye-bye stat drift RNG
 	for(var/S in MOBSTATS)
 		if(prob(33))
 			change_stat(S, 1)
@@ -63,6 +64,7 @@
 			change_stat(S, -1)
 			if(prob(33))
 				change_stat(S, 1)
+*/
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
 		/* - Old way of handling race/gender stats, no longer used. See: Statpacks.
@@ -73,7 +75,7 @@
 			else
 				for(var/S in H.dna.species.specstats)
 					change_stat(S, H.dna.species.specstats[S])*/
-		
+
 		if (H.statpack)
 			H.statpack.apply_to_human(H)
 		if (H.dna?.species) // LETHALSTONE EDIT: apply our race bonus, if we have one
