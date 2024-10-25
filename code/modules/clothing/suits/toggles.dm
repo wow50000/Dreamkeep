@@ -83,7 +83,7 @@
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
-/obj/item/clothing/dropped()
+/obj/item/clothing/dropped(mob/user)
 	..()
 	if(hoodtype)
 		RemoveHood()

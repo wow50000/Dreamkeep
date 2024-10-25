@@ -130,6 +130,7 @@
 
 /datum/customizer/organ/horns/humanoid/tiefling
 	customizer_choices = list(/datum/customizer_choice/organ/horns/humanoid/tiefling)
+	allows_disabling = FALSE
 	default_disabled = FALSE
 
 /datum/customizer_choice/organ/horns/humanoid/tiefling

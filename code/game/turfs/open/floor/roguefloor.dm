@@ -186,8 +186,8 @@
 	dirt_amt = 3
 
 /turf/open/floor/rogue/dirt/snow
-	name = "dirt-s"
-	desc = "The dirt is pocked with the scars of countless wars."
+	name = "snow"
+	desc = "The is terrain is covered in snow and frozen."
 	icon_state = "dirt-s"
 	layer = MID_TURF_LAYER
 	footstep = FOOTSTEP_GRASS
@@ -444,6 +444,35 @@
 	neighborlay = "dirtedge"
 	slowdown = 0
 	muddy = FALSE
+
+/turf/open/floor/rogue/dirt/road/tropicalsand
+	name = "sand"
+	desc = "It's coarse and rough and irritating and it gets everywhere."
+	icon = 'modular_hearthstone/icons/turfs/celianna_TileA2.dmi'
+	icon_state = "Sand"
+	canSmoothWith = list(/turf/open/floor/rogue/dirt/road/newgrass, /turf/open/water/ocean)
+
+/turf/open/floor/rogue/dirt/road/newgrass
+	name = "grass"
+	desc = "This grass is short and easy to walk on."
+	icon = 'modular_hearthstone/icons/turfs/celianna_TileA2.dmi'
+	icon_state = "Grass"
+	canSmoothWith = list(/turf/open/floor/rogue/dirt/road/tropicalsand, /turf/open/water/ocean)
+
+/turf/open/floor/rogue/dirt/road/newsnow
+	name = "snow"
+	desc = "It's very cold."
+	icon = 'modular_hearthstone/icons/turfs/celianna_TileA2.dmi'
+	icon_state = "Snow"
+	canSmoothWith = list(/turf/open/floor/rogue/dirt/road/newgrass, /turf/open/water/ocean)
+
+/turf/open/floor/rogue/dirt/road/desertsand
+	name = "sand"
+	desc = "It's coarse and rough and irritating and it gets everywhere."
+	icon = 'modular_hearthstone/icons/turfs/desertsand.dmi'
+	icon_state = "sand1"
+	canSmoothWith = list(/turf/open/floor/rogue/dirt/road/newgrass, /turf/open/water/ocean)
+
 
 /turf/open/floor/rogue/underworld/road
 	name = "ash"

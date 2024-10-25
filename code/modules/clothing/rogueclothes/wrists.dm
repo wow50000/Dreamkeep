@@ -6,6 +6,15 @@
 	sleevetype = "shirt"
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/clothing/wrists/roguetown/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		STR.max_w_class = WEIGHT_CLASS_SMALL
+		STR.max_items = 1
+		STR.rustle_sound = FALSE
+		STR.quickdraw = TRUE
+
 /obj/item/clothing/wrists/roguetown/bracers
 	name = "bracers"
 	desc = "Steel bracers to protect the forearm."
@@ -96,8 +105,8 @@
 	smeltresult = /obj/item/ash
 
 /obj/item/clothing/wrists/roguetown/hiddenblade
-	name = "bracers"
-	desc = "Bracers with a hidden blade within."
+	name = "leather bracers"
+	desc = "Leather bracers worn on the wrists... With a hidden blade within."
 	body_parts_covered = ARMS
 	icon_state = "lbracers"
 	item_state = "lbracers"
@@ -109,6 +118,11 @@
 	smeltresult = /obj/item/ingot/steel
 	var/extended = FALSE
 	var/obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden/hid
+
+/obj/item/clothing/wrists/roguetown/hiddenblade/dropped(mob/user)
+	. = ..()
+	if(extended)
+		toggleblades(user)
 
 /obj/item/clothing/wrists/roguetown/hiddenblade/attack_right(mob/user)
 	toggleblades(user)
@@ -142,3 +156,4 @@
 	desc = ""
 	embedding = list("embedded_pain_multiplier" = 0, "embed_chance" = 0, "embedded_fall_chance" = 0)
 	item_flags = DROPDEL
+	slot_flags = null

@@ -837,3 +837,10 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket
 	craftdiff = 3
 	i_type = "Armor"
+
+/datum/anvil_recipe/armor/roguetown/hiddenblades
+	name = "Assassin bracers (+Leather Bracers, +Cog)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/clothing/wrists/roguetown/bracers/leather, /obj/item/roguegear)
+	created_item = /obj/item/clothing/wrists/roguetown/hiddenblade
+	i_type = "Armor"

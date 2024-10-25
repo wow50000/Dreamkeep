@@ -3,8 +3,8 @@
 #define DRUGRADE_NOTAX				(1<<5)
 
 /obj/structure/roguemachine/drugmachine
-	name = "PURITY"
-	desc = "You want to destroy your life."
+	name = "TEMPTRESS"
+	desc = "The mouth of an adultress is a deep pit..."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "streetvendor1"
 	density = TRUE
@@ -56,7 +56,7 @@
 			if(drugrade_flags & DRUGRADE_MONEYB)
 				amt = recent_payments * 0.75
 			recent_payments = 0
-			send_ooc_note("<b>Income from PURITY:</b> [amt]", job = "Nightmaster")
+			send_ooc_note("<b>Income from TEMPTRESS:</b> [amt]", job = "Nightmaster")
 			secret_budget += amt
 
 /obj/structure/roguemachine/drugmachine/Topic(href, href_list)
@@ -77,9 +77,9 @@
 				budget -= full_price
 				recent_payments += held_items[O]["PRICE"]
 				if(!(drugrade_flags & DRUGRADE_NOTAX))
-					SStreasury.give_money_treasury(tax_amt, "purity import tax")
+					SStreasury.give_money_treasury(tax_amt, "TEMPTRESS import tax")
 			else
-				say("Not enough!")
+				say("No sugar, no spice.")
 				return
 		var/obj/item/I = new O(get_turf(src))
 		M.put_in_hands(I)
@@ -135,7 +135,7 @@
 				if(drugrade_flags & DRUGRADE_MONEYA)
 					return
 				if(budget < 55)
-					say("Ask again when you're serious.")
+					say("Business before pleasure.")
 					playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 					return
 				budget -= 55
@@ -145,7 +145,7 @@
 				if(drugrade_flags & DRUGRADE_MONEYB)
 					return
 				if(budget < 145)
-					say("Ask again when you're serious.")
+					say("I know what I'm worth.")
 					playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 					return
 				budget -= 145
@@ -166,10 +166,10 @@
 	var/canread = user.can_read(src, TRUE)
 	var/contents
 	if(canread)
-		contents = "<center>PURITY - In the name of pleasure.<BR>"
+		contents = "<center>TEMPTRESS - Just a taste.<BR>"
 		contents += "<a href='?src=[REF(src)];change=1'>MAMMON LOADED:</a> [budget]<BR>"
 	else
-		contents = "<center>[stars("PURITY - In the name of pleasure.")]<BR>"
+		contents = "<center>[stars("TEMPTRESS - Just a taste.")]<BR>"
 		contents += "<a href='?src=[REF(src)];change=1'>[stars("MAMMON LOADED:")]</a> [budget]<BR>"
 
 
@@ -225,13 +225,16 @@
 	. = ..()
 	START_PROCESSING(SSroguemachine, src)
 	update_icon()
-	held_items[/obj/item/reagent_containers/powder] = list("PRICE" = 55,"NAME" = "chuckledust")
-	held_items[/obj/item/reagent_containers/powder/ozium] = list("PRICE" = 45,"NAME" = "ozium")
+	held_items[/obj/item/reagent_containers/hypospray/medipen/snekbt] = list("PRICE" = 45,"NAME" = "snake bite")
+	held_items[/obj/item/reagent_containers/powder] = list("PRICE" = 25,"NAME" = "chuckledust")
+	held_items[/obj/item/reagent_containers/powder/ozium] = list("PRICE" = 30,"NAME" = "ozium")
 	held_items[/obj/item/reagent_containers/powder/moondust] = list("PRICE" = 25,"NAME" = "moondust")
 	held_items[/obj/item/clothing/mask/cigarette/rollie/cannabis] = list("PRICE" = 20,"NAME" = "swampweed zig")
 	held_items[/obj/item/clothing/mask/cigarette/rollie/nicotine] = list("PRICE" = 10,"NAME" = "zig")
 	held_items[/obj/item/reagent_containers/glass/bottle/rogue/wine] = list("PRICE" = 20,"NAME" = "vino")
-	held_items[/obj/item/reagent_containers/glass/bottle/rogue/nourish] = list("PRICE" = 20,"NAME" = "NOURISH")
+	held_items[/obj/item/reagent_containers/hypospray/medipen/nourish] = list("PRICE" = 20,"NAME" = "NOURISH")
+	held_items[/obj/item/storage/fancy/shhig] = list("PRICE" = 20,"NAME" = "box of ssssigs")
+	held_items[/obj/item/storage/box/matches] = list("PRICE" = 10,"NAME" = "tinderbox")
 
 #undef DRUGRADE_MONEYA
 #undef DRUGRADE_MONEYB

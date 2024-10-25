@@ -151,13 +151,17 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/dirt,
 				/turf/open/floor/rogue/grass)
 	ambush_mobs = list(
+				/mob/living/carbon/human/species/skeleton/npc/dungeon/ambush = 30,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 20,
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 40,
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 60,
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 40,
 				/mob/living/simple_animal/hostile/retaliate/rogue/poison/giant_spider = 30,
 				/mob/living/simple_animal/hostile/retaliate/rogue/poison/giant_spider/hunter = 30,
-				/mob/living/carbon/human/species/goblin/npc/ambush = 30)
+				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30,
+				/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 50,
+				/mob/living/simple_animal/hostile/retaliate/rogue/wolf/gator = 50,
+				/mob/living/simple_animal/hostile/retaliate/rogue/wendigo = 40)
 	first_time_text = "THE MURDERWOOD"
 	converted_type = /area/rogue/indoors/shelter/woods
 /area/rogue/indoors/shelter/woods
@@ -205,6 +209,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/poison/giant_spider/hunter = 30,
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30,
 				/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 50,
+				/mob/living/simple_animal/hostile/retaliate/rogue/wolf/gator = 50,
 				/mob/living/simple_animal/hostile/retaliate/rogue/wendigo = 40)
 	first_time_text = "THE TERRORBOG"
 	converted_type = /area/rogue/indoors/shelter/bog
@@ -773,13 +778,13 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 // Proc to generate the cavern layout dynamically
 /area/rogue/under/deep_caverns/proc/generate_deep_caverns_layout()
     var/list/turfs = list()
-    
+
     for (var/turf/T in world)
         if (T.loc == src)
             turfs += T
 
     var/total_turfs = length(turfs)
-    
+
     if (total_turfs == 0)
         return
 
@@ -865,19 +870,19 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
     list(/obj/structure/flora/rogueshroom, 0.30),
     list(/obj/structure/glowshroom, 0.20),
     list(/obj/effect/spawner/lootdrop/roguetown/dungeon/misc, 0.085),
-    
+
     // Rare objects
     list(/obj/effect/decal/remains/human, 0.02),
     list(/obj/effect/decal/cleanable/blood/old, 0.02),
     list(/obj/item/rogueweapon/pick, 0.015),
     list(/mob/living/simple_animal/hostile/retaliate/rogue/mole, 0.02),
     list(/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated, 0.05),
-    
+
     // Superrare objects
     list(/obj/item/roguegem, 0.010),
     list(/obj/item/roguecoin/silver/pile, 0.005),
     list(/obj/structure/bed/rogue/shit, 0.01),
-    list(/obj/item/rope/chain, 0.009) 
+    list(/obj/item/rope/chain, 0.009)
 )
 
     var/list/placed_objects = list()

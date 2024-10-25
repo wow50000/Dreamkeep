@@ -19,3 +19,9 @@
 	possible_item_intents = list(INTENT_GENERIC, /datum/intent/fill, INTENT_POUR, INTENT_SPLASH)
 	drop_sound = 'sound/foley/dropsound/shovel_drop.ogg'
 	slot_flags = null
+
+/obj/item/reagent_containers/glass/bucket/pot/stone
+	name = "stone pot"
+	desc = "A shabby small stone pot."
+	w_class = WEIGHT_CLASS_NORMAL
+	volume = 40

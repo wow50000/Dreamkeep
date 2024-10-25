@@ -1,3 +1,4 @@
+//mercs that are unaffiliated with guilds would be sellswords i suppose.
 /datum/job/roguetown/mercenary/sellsword
 	title = "Sellsword"
 	flag = SELLSWORD
@@ -9,11 +10,11 @@
 	display_order = JDO_SELLSWORD
 	selection_color = JCOLOR_MERCENARY
 	faction = "Station"
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 10
+	spawn_positions = 10
 	min_pq = 0
 	max_pq = null	
-	advclass_cat_rolls = list(CTAG_MERCENARY = 20)
+	advclass_cat_rolls = list(CTAG_SELLSWORD = 20)
 	advjob_examine = TRUE
 	always_show_on_latechoices = TRUE
 
@@ -43,7 +44,7 @@
 	outfit = /datum/outfit/job/roguetown/mercenary/sellsword/longsword
 	tutorial = "You are well versed in the ways of the longsword.\
 	You have a steel sword and a leather helmet."
-	category_tags = list(CTAG_MERCENARY)
+	category_tags = list(CTAG_SELLSWORD)
 
 /datum/advclass/rapier
 	name = "Fencer"
@@ -52,7 +53,7 @@
 	outfit = /datum/outfit/job/roguetown/mercenary/sellsword/rapier
 	tutorial = "You are well versed in the ways of the rapier.\
 	You have a rapier and a tricorn."
-	category_tags = list(CTAG_MERCENARY)
+	category_tags = list(CTAG_SELLSWORD)
 
 /datum/advclass/cutlass
 	name = "Cutthroat"
@@ -61,7 +62,7 @@
 	outfit = /datum/outfit/job/roguetown/mercenary/sellsword/cutlass
 	tutorial = "You are well versed in the ways of the Cutlass.\
 	You have a cutlass and a maritime outfit."
-	category_tags = list(CTAG_MERCENARY)
+	category_tags = list(CTAG_SELLSWORD)
 
 /datum/outfit/job/roguetown/mercenary/sellsword/longsword/pre_equip(mob/living/carbon/human/H)
 	..()

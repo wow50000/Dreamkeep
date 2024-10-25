@@ -120,13 +120,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = list("Mercenary")
 
 /obj/effect/landmark/start/seelie
-	name = "Town Seelie"
+	name = "Forest Seelie"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/seelielate
 	name = "Seelielate"
 	icon_state = "arrow"
-	jobspawn_override = list("Town Seelie")
+	jobspawn_override = list("Forest Seelie")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/desertriderlate

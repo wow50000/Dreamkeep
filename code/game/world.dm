@@ -491,5 +491,5 @@ GLOBAL_VAR(restart_counter)
 	var/dll = GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (dll)
 		call_ext(dll, "auxtools_shutdown")()
-	
+
 	. = ..()

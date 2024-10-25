@@ -12,6 +12,15 @@
 	equip_delay_self = 30
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/clothing/shoes/roguetown/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		STR.max_w_class = WEIGHT_CLASS_SMALL
+		STR.max_items = 1
+		STR.rustle_sound = FALSE
+		STR.quickdraw = TRUE
+
 /obj/item/clothing/shoes/roguetown/boots
 	name = "dark boots"
 	//dropshrink = 0.75
