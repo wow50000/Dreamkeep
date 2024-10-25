@@ -734,6 +734,9 @@
 /atom/movable/screen/rogmove/proc/toggle(mob/user)
 	if(isobserver(user))
 		return
+	if(HMN.has_status_effect(/datum/status_effect/debuff/stealthcd))
+		to_chat(user, span_danger("I need to wait a bit longer to enter stealth again!"))
+		return
 	if(user.m_intent == MOVE_INTENT_SNEAK)
 		user.toggle_rogmove_intent(MOVE_INTENT_WALK)
 	else
