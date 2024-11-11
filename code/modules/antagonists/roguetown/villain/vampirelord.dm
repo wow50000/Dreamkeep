@@ -342,7 +342,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	V.update_body_parts(redraw = TRUE)
 	V.mob_biotypes = MOB_UNDEAD
 	if(isspawn)
-		V.vampire_disguise()
+		V.vampire_disguise(src)
 
 /datum/antagonist/vampirelord/on_life(mob/user)
 	if(!user)

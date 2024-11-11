@@ -800,8 +800,11 @@
 	if(H.mind && H.mind.antag_datums)
 		for(var/datum/antagonist/D in H.mind.antag_datums)
 			if(istype(D, /datum/antagonist/vampirelord) || istype(D, /datum/antagonist/vampire) || istype(D, /datum/antagonist/bandit) || istype(D, /datum/antagonist/lich))
-				qdel(src)
-				return
+				// STONEKEEP CHANGE START, let quirky vampires use advsetup
+				if(!istype(D, /datum/antagonist/vampirelord/lesser/secret))
+					qdel(src)
+					return
+				// STONEKEEP CHANGE END, let quirky vampires use advsetup
 	if(H.advsetup)
 		alpha = 0
 		icon = 'icons/mob/advsetup.dmi'
