@@ -280,7 +280,7 @@
 		add_growth(2 MINUTES)
 
 /obj/structure/soil/proc/fertilize_soil()
-	blessed_time = 60 MINUTES //Meant to outlast the effects of dendor's blessing
+	blessed_time = INFINITY //Farmers can do things other than babysit their crops
 
 	// Similar effects on nutrition
 	if(nutrition < 100)
