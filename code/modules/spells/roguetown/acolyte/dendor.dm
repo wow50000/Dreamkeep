@@ -18,14 +18,9 @@
 /obj/effect/proc_holder/spell/targeted/blesscrop/cast(list/targets,mob/user = usr)
 	. = ..()
 	var/growed = FALSE
-	var/amount_blessed = 0
 	for(var/obj/structure/soil/soil in view(4))
 		soil.bless_soil()
 		growed = TRUE
-		amount_blessed++
-		// Blessed only up to 5 crops
-		if(amount_blessed >= 5)
-			break
 	if(growed)
 		visible_message(span_green("[usr] blesses the nearby crops with swirling nature energy!"))
 	return growed
