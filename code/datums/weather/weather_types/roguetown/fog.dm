@@ -7,8 +7,8 @@
 	telegraph_sound = 'sound/blank.ogg'
 	weather_message = ""
 	weather_overlay = "rain"
-	weather_duration_lower = 2.5 MINUTES
-	weather_duration_upper = 5 MINUTES
+	weather_duration_lower = 2 MINUTES
+	weather_duration_upper = 4 MINUTES
 	weather_sound = 'sound/blank.ogg'
 	weather_alpha = 100
 

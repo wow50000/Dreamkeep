@@ -8,7 +8,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/rare
 
 	pickprob = 5
-	category_tags = list(CTAG_PILGRIM)
+	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/roguetown/adventurer/rare/pre_equip(mob/living/carbon/human/H)
 	..()

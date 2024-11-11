@@ -5,8 +5,8 @@
 	icon_state = "goblin"
 	race = /datum/species/goblin
 	gender = MALE
-	bodyparts = list(/obj/item/bodypart/chest/goblin, /obj/item/bodypart/head/goblin, /obj/item/bodypart/l_arm/goblin,
-					 /obj/item/bodypart/r_arm/goblin, /obj/item/bodypart/r_leg/goblin, /obj/item/bodypart/l_leg/goblin)
+	bodyparts = list(/obj/item/bodypart/chest, /obj/item/bodypart/head/goblin, /obj/item/bodypart/l_arm/,
+					 /obj/item/bodypart/r_arm, /obj/item/bodypart/r_leg, /obj/item/bodypart/l_leg)
 	rot_type = /datum/component/rot/corpse/goblin
 	var/gob_outfit = /datum/outfit/job/roguetown/npc/goblin
 	ambushable = FALSE
@@ -17,7 +17,7 @@
 	//If someone ends up writing custom messages for goblins, lewd talk could be used ig -vide
 	//lewd_talk = TRUE
 	//skin color is "e8b59b"
-	show_genitals = FALSE  //would be good but colors just wont work.
+	show_genitals = TRUE  //would be good but colors just wont work.
 	skin_tone = "e8b59b"
 	hair_color = "291e01"
 
@@ -89,6 +89,58 @@
 /mob/living/carbon/human/species/goblin/npc/horny
 	seeksfuck = TRUE
 
+
+/obj/item/organ/butt/goblin
+	name = "goblin butt"
+	accessory_type = /datum/sprite_accessory/butt/goblin
+
+/datum/sprite_accessory/butt/goblin
+	name = "goblin butt"
+	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
+	icon_state = "goblinbutt"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/obj/item/organ/penis/goblin
+	name = "goblin penis"
+	accessory_type = /datum/sprite_accessory/penis/goblin
+
+/datum/sprite_accessory/penis/goblin
+	name = "goblin penis"
+	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
+	icon_state = "goblin"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/obj/item/organ/filling_organ/testicles/goblin
+	name = "goblin testicles"
+	accessory_type = /datum/sprite_accessory/testicles/goblin
+
+/datum/sprite_accessory/testicles/goblin
+	name = "goblin"
+	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
+	icon_state = "goblinballs"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/obj/item/organ/filling_organ/breasts/goblin
+	name = "goblin breasts"
+	accessory_type = /datum/sprite_accessory/breasts/goblin
+
+/datum/sprite_accessory/breasts/goblin
+	name = "goblin"
+	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
+	icon_state = "goblinbreasts"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/obj/item/organ/filling_organ/vagina/goblin
+	name = "goblin vagina"
+	accessory_type = /datum/sprite_accessory/vagina/goblin
+
+/datum/sprite_accessory/vagina/goblin
+	name = "goblin"
+	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
+	icon_state = "goblinpussy"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/* //why not
 /obj/item/bodypart/chest/goblin
 	dismemberable = 0
 /obj/item/bodypart/l_arm/goblin
@@ -99,6 +151,7 @@
 	dismemberable = 0
 /obj/item/bodypart/l_leg/goblin
 	dismemberable = 0
+*/
 
 /obj/item/bodypart/head/goblin/update_icon_dropped()
 	return
@@ -132,7 +185,7 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-//		ORGAN_SLOT_BUTT = /obj/item/organ/butt,
+		ORGAN_SLOT_BUTT = /obj/item/organ/butt/goblin,
 		ORGAN_SLOT_ANUS = /obj/item/organ/filling_organ/anus,
 		)
 	offset_features = list(
@@ -144,7 +197,7 @@
 		OFFSET_ID_F = list(0,-5), OFFSET_GLOVES_F = list(0,-4), OFFSET_WRISTS_F = list(0,-4), OFFSET_HANDS_F = list(0,-4), \
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-5), OFFSET_HEAD_F = list(0,-5), \
 		OFFSET_FACE_F = list(0,-5), OFFSET_BELT_F = list(0,-4), OFFSET_BACK_F = list(0,-4), \
-		OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
+		OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_BUTT = list(0,-4), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
 	var/raceicon = "goblin"
@@ -457,3 +510,59 @@
 /obj/structure/gob_portal/Destroy()
 	soundloop.stop()
 	. = ..()
+
+//gotta not randomize the sizes cuz bandaid fix, also to give them their proper organs.
+/mob/living/carbon/human/species/goblin/give_genitals()
+	erpable = TRUE
+	if(sexcon == null)
+		sexcon = new /datum/sex_controller(src)
+	if(!issimple(src))
+		var/mob/living/carbon/human/species/user = src
+		if(!user.getorganslot(ORGAN_SLOT_ANUS))
+			var/obj/item/organ/filling_organ/anus/ass = user.getorganslot(ORGAN_SLOT_ANUS)
+			ass = new /obj/item/organ/filling_organ/anus
+			ass.Insert(user)
+		if(gender == MALE)
+			var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
+			if(!show_genitals)
+				testicles = new /obj/item/organ/filling_organ/testicles/internal
+			else
+				testicles = new /obj/item/organ/filling_organ/testicles/goblin
+			testicles.Insert(user)
+			var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
+			if(!show_genitals)
+				penis = new /obj/item/organ/penis/internal
+			else
+				penis = new /obj/item/organ/penis/goblin
+			penis.Insert(user)
+		if(gender == FEMALE)
+			var/obj/item/organ/butt/buttie = user.getorganslot(ORGAN_SLOT_BUTT)
+			if(buttie)
+				buttie.Insert(user)
+			var/obj/item/organ/filling_organ/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
+			if(!show_genitals)
+				breasts = new /obj/item/organ/filling_organ/breasts/internal
+			else
+				breasts = new /obj/item/organ/filling_organ/breasts/goblin
+			breasts.organ_size = rand(3,4)
+			breasts.Insert(user)
+			var/obj/item/organ/filling_organ/vagina/vagina = user.getorganslot(ORGAN_SLOT_VAGINA)
+			if(!show_genitals)
+				vagina = new /obj/item/organ/filling_organ/vagina/internal
+			else
+				vagina = new /obj/item/organ/filling_organ/vagina/goblin
+			vagina.Insert(user)
+			if(prob(3)) //3 chance to be dickgirl.
+				var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
+				if(!show_genitals)
+					testicles = new /obj/item/organ/filling_organ/testicles/internal
+				else
+					testicles = new /obj/item/organ/filling_organ/testicles/goblin
+				testicles.Insert(user)
+				var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
+				if(!show_genitals)
+					penis = new /obj/item/organ/penis/internal
+				else
+					penis = new /obj/item/organ/penis/goblin
+				penis.Insert(user)
+//	src.sexcon.manual_arousal = SEX_MANUAL_AROUSAL_MAX

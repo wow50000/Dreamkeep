@@ -51,7 +51,7 @@
 			var/datum/sex_controller/sc = fucktarg.sexcon
 			if(!src.aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
 				continue
-			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && !sc.beingfucked)
+			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && !sc.beingfucked && CanAttack(fucktarg))
 				chasesfuck = TRUE
 				if(src.gender == MALE)
 					src.visible_message(span_boldwarning("[src] has his eyes on [fucktarg], cock throbbing!"))
@@ -82,6 +82,8 @@
 		stoppedfucking(timedout = TRUE)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/proc/seeklewd()
+	if(!erpable)
+		return
 	var/mob/living/carbon/human/L
 	var/list/around = view(aggro_vision_range, src)
 	var/list/foundfuckmeat = list()
@@ -270,7 +272,7 @@
 	if(isfucking && fuckcd > 0)
 		return
 	for(var/mob/living/carbon/human/fucktarg in around)
-		if(fucktarg.has_quirk(/datum/quirk/monsterhunter))
+		if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && should_target(fucktarg))
 			foundfuckmeat += fucktarg
 			L = fucktarg
 			STOP_PROCESSING(SShumannpc,src)
@@ -409,7 +411,6 @@
 //Call this proc to give genitals automatically where needed.
 //hidden organs are on by default due to coloring issues.
 /mob/living/proc/give_genitals()
-	defiant = 0
 	erpable = TRUE
 	if(sexcon == null)
 		sexcon = new /datum/sex_controller(src)
@@ -451,8 +452,6 @@
 				vagina = new /obj/item/organ/filling_organ/vagina/internal
 			else
 				vagina = new /obj/item/organ/filling_organ/vagina
-				//only goblins use this for now and to be fair if we are using this proc its usually uncivilized things n whatever.
-				vagina.accessory_type = /datum/sprite_accessory/vagina/extrahairy
 			vagina.Insert(user)
 			if(prob(3)) //3 chance to be dickgirl.
 				var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)

@@ -354,3 +354,6 @@
 	var/obj/item/natural/saddle/S = new(src)
 	ssaddle = S
 	update_icon()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga/shapeshift
+	erpable = TRUE

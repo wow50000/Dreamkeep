@@ -478,7 +478,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 //Vikings Additions
 
 /obj/effect/landmark/start/highking
-	name = "Northmen King"
+	name = "Dwarf Artificer"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/highkinglate

@@ -2422,7 +2422,6 @@ Slots: [job.spawn_positions]</span>
 	character.detail = detail
 	character.set_patron(selected_patron)
 	character.backpack = backpack
-	character.defiant = defiant
 
 	character.jumpsuit_style = jumpsuit_style
 

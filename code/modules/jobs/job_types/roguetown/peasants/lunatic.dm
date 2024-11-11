@@ -37,3 +37,39 @@
 	H.change_stat("constitution", -4)
 	H.change_stat("endurance", -4)
 	H.change_stat("speed", -4)
+
+/datum/job/roguetown/lunatic/griefer
+	title = "Dumb Whoreson"
+	flag = LUNATIC
+	department_flag = PEASANTS
+	faction = "Station"
+	total_positions = 50 //shitcode solution until overflow roles are fixed
+	spawn_positions = 50
+
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = RACES_ALL_KINDS
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	outfit = /datum/outfit/job/roguetown/griefer
+	bypass_lastclass = TRUE
+	banned_leprosy = FALSE
+	banned_lunatic = FALSE
+	min_pq = null
+	max_pq = -100
+	tutorial = "You are son of a whore and you were not afraid to show it, your mother was too busy bouncing on cock to care about you and it left you weak."
+	display_order = JDO_LUNATIC
+
+	cmode_music = 'sound/music/combat_bum.ogg'
+
+/datum/outfit/job/roguetown/griefer/pre_equip(mob/living/carbon/human/H)
+	..()
+	ADD_TRAIT(H, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_ATHEISM_CURSE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_ENDOWMENT, TRAIT_GENERIC)
+	neck = /obj/item/clothing/neck/roguetown/gorget/prisoner
+	H.change_stat("strength", -10)
+	H.change_stat("intelligence", -10)
+	H.change_stat("constitution", -10)
+	H.change_stat("endurance", -10)
+	H.change_stat("speed", -10)
+	if(H.client.prefs.defiant)
+		H.client.prefs.defiant = FALSE

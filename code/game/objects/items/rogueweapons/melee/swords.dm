@@ -5,7 +5,7 @@
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
-	name = "sword"
+	name = "steel sword"
 	desc = "A simple steel sword, clean and effective."
 	icon_state = "sword1"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -426,7 +426,7 @@
 	return
 
 /obj/item/rogueweapon/sword/iron
-	name = "sword"
+	name = "iron sword"
 	desc = "A simple iron sword, the most classical war weapon."
 	icon_state = "isword"
 	minstr = 6

@@ -90,7 +90,7 @@
 				/obj/item/ingot/iron=22,
 				/obj/item/rogueweapon/huntingknife/cleaver=22,
 				/obj/item/rogueweapon/mace=22,
-				/obj/item/clothing/cloak/raincloak/mortus=22,
+				/obj/item/clothing/cloak/raincloak/rogue=22,
 				/obj/item/reagent_containers/food/snacks/butter=22,
 				/obj/item/clothing/mask/cigarette/pipe=10,
 				/obj/item/clothing/mask/cigarette/pipe/westman=10,

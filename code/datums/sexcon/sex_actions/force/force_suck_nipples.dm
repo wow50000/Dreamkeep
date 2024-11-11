@@ -45,7 +45,7 @@
 		user.sexcon.perform_deepthroat_oxyloss(target, 0.6)
 	target.sexcon.handle_passive_ejaculation()
 
-	var/obj/item/organ/filling_organ/breasts/tiddies = target.getorganslot(ORGAN_SLOT_BREASTS)
+	var/obj/item/organ/filling_organ/breasts/tiddies = user.getorganslot(ORGAN_SLOT_BREASTS)
 	var/milk_to_add = min(max(tiddies.organ_size, 1), tiddies.reagents.total_volume)
 	if(milk_to_add > 0 && prob(25))
 		tiddies.reagents.trans_to(target, milk_to_add, TRUE, TRUE, FALSE, user, FALSE, INGEST)

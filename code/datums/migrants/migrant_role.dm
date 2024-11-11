@@ -30,11 +30,11 @@
 /datum/migrant_role/pilgrim
 	name = "Pilgrim"
 	banned_leprosy = FALSE
-	advclass_cat_rolls = list(CTAG_PILGRIM = 20)
+	advclass_cat_rolls = list(CTAG_PILGRIM = 30)
 
 /datum/migrant_role/adventurer
 	name = "Adventurer"
-	advclass_cat_rolls = list(CTAG_ADVENTURER = 20)
+	advclass_cat_rolls = list(CTAG_ADVENTURER = 30)
 
 /datum/migrant_role/bandit
 	name = "Bandit"

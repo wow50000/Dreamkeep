@@ -458,6 +458,10 @@
 	for(var/mob/living/carbon/spirit/bigchungus in GLOB.player_list)
 		candidates += bigchungus
 
+
+	for(var/mob/dead/new_player/lobby_nerd in GLOB.player_list)
+		candidates += lobby_nerd
+
 	return pollCandidates(Question, jobbanType, gametypeCheck, be_special_flag, poll_time, ignore_category, flashwindow, candidates)
 
 /proc/pollCandidates(Question, jobbanType, datum/game_mode/gametypeCheck, be_special_flag = 0, poll_time = 300, ignore_category = null, flashwindow = TRUE, list/group = null)

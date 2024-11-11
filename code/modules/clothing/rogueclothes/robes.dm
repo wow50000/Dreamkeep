@@ -192,7 +192,7 @@
 	sleeved = null
 	boobed = TRUE
 	color = null
-	flags_inv = HIDEBOOB|HIDETAIL
+	flags_inv = HIDEBOOB|HIDETAIL|HIDEBUTT
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 
@@ -278,7 +278,7 @@
 	sleeved = null
 	boobed = TRUE
 	color = null
-	flags_inv = HIDEBOOB|HIDETAIL|HIDECROTCH
+	flags_inv = HIDEBOOB|HIDETAIL|HIDECROTCH|HIDEBUTT
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 
@@ -292,7 +292,7 @@
 	sleeved = null
 	boobed = TRUE
 	color = null
-	flags_inv = HIDEBOOB|HIDETAIL|HIDECROTCH
+	flags_inv = HIDEBOOB|HIDETAIL|HIDECROTCH|HIDEBUTT
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 
@@ -306,6 +306,6 @@
 	sleeved = null
 	boobed = TRUE
 	color = null
-	flags_inv = HIDEBOOB|HIDETAIL
+	flags_inv = HIDEBOOB|HIDETAIL|HIDEBUTT
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL

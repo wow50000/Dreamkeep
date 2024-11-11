@@ -326,7 +326,7 @@
 				frustration = 0
 				face_atom(target)
 				monkey_attack(target)
-				if(flee_in_pain && (target.stat == CONSCIOUS))
+				if(flee_in_pain && (target?.stat == CONSCIOUS))
 					var/paine = get_complex_pain()
 					if(paine >= ((STAEND * 10)*0.9))
 //						mode = AI_FLEE

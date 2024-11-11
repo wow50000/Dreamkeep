@@ -17,11 +17,11 @@
 	var/convert_damage_type = BRUTE //Since simplemobs don't have advanced damagetypes, what to convert damage back into.
 
 	var/shapeshift_type
-	var/list/possible_shapes = list(/mob/living/simple_animal/hostile/retaliate/rogue/spider,
-	/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
-	/mob/living/simple_animal/hostile/retaliate/rogue/bigrat,
-	/mob/living/simple_animal/hostile/retaliate/rogue/mole,
-	/mob/living/simple_animal/hostile/retaliate/rogue/saiga)
+	var/list/possible_shapes = list(/mob/living/simple_animal/hostile/retaliate/rogue/spider/shapeshift,
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf/shapeshift,
+	/mob/living/simple_animal/hostile/retaliate/rogue/bigrat/shapeshift,
+	/mob/living/simple_animal/hostile/retaliate/rogue/mole/shapeshift,
+	/mob/living/simple_animal/hostile/retaliate/rogue/saiga/shapeshift)
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/cast(list/targets,mob/user = usr)
 	if(src in user.mob_spell_list)

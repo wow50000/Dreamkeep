@@ -15,6 +15,7 @@
 		"STICK IT TO THE MAN!",
 		"NO GODS, NO MASTERS!",
 	)
+	rogue_enabled = FALSE
 	increase_votepwr = FALSE
 	var/datum/team/prebels/rev_team
 

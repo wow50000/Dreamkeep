@@ -73,6 +73,8 @@
 	M.adjustFireLoss(-1.5*REM, 0)
 	M.adjustOxyLoss(-3, 0)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -3*REM)
+	for(var/obj/item/organ/filling_organ/forgan in M.internal_organs) //auto detected heal of filling organs
+		M.adjustOrganLoss(forgan.slot, -1*REM)
 	M.adjustCloneLoss(-3*REM, 0)
 	..()
 	. = 1

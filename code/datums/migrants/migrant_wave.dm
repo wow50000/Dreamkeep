@@ -17,7 +17,7 @@
 	/// The relative probability this wave will be picked, from all available waves
 	var/weight = 100
 	/// Name of the latejoin spawn landmark for the wave to decide where to spawn
-	var/spawn_landmark = "Pilgrim"
+	var/spawn_landmark = "delf"
 	/// Text to greet all players in the wave with
 	var/greet_text
 	/// Whether this wave can roll at all. If not, it can still be forced to be ran, or used as "downgrade" wave

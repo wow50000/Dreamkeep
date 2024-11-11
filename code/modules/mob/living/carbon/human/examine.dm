@@ -562,7 +562,7 @@
 
 	if(!obscure_name && headshot_link)
 		. += "<a href='?src=[REF(src)];task=view_headshot;'>View face closely</a>"
-	if(nudeshot_link && !wear_shirt)
+	if(nudeshot_link && !wear_shirt && !wear_armor)
 		. += "<a href='?src=[REF(src)];task=view_nudeshot;'>View body closely</a>"
 	if(!obscure_name && flavor_text && !headshot_link)
 		. += "<a href='?src=[REF(src)];task=view_flavor;'>View Description</a>"

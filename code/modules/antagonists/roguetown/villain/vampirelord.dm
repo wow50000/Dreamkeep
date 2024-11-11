@@ -33,6 +33,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/cache_hair
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform //attached to the datum itself to avoid cloning memes, and other duplicates
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/gaseousform/gas
+	var/ashes = FALSE
+	var/is_solo = FALSE
 
 /datum/antagonist/vampirelord/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/vampirelord/lesser))
@@ -66,8 +68,10 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	ADD_TRAIT(owner.current, TRAIT_TOXIMMUNE, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_TOLERANT, "[type]")
+	ADD_TRAIT(owner.current, TRAIT_ZOMBIE_IMMUNE, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOSLEEP, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
+	owner.current.faction = list("undead")
 	for(var/obj/structure/fluff/traveltile/vampire/tile in GLOB.traveltiles)
 		tile.show_travel_tile(owner.current)
 	owner.current.cmode_music = 'sound/music/combat_vamp.ogg'
@@ -81,6 +85,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.current.verbs |= /mob/living/carbon/human/proc/vampire_telepathy
 	vamp_look()
 	owner.current.verbs |= /mob/living/carbon/human/proc/disguise_button
+	if(is_solo)
+		return
+
 	if(isspawn)
 		add_objective(/datum/objective/vlordserve)
 		finalize_vampire_lesser()
@@ -100,7 +107,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		equip_lord()
 		addtimer(CALLBACK(owner.current, TYPE_PROC_REF(/mob/living/carbon/human, choose_name_popup), "VAMPIRE LORD"), 5 SECONDS)
 		greet()
-	return ..()
 
 // OLD AND EDITED
 /datum/antagonist/vampirelord/proc/equip_lord()
@@ -336,7 +342,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	V.update_body_parts(redraw = TRUE)
 	V.mob_biotypes = MOB_UNDEAD
 	if(isspawn)
-		V.vampire_disguise()
+		V.vampire_disguise(src)
 
 /datum/antagonist/vampirelord/on_life(mob/user)
 	if(!user)
@@ -481,6 +487,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		"MY MASTER COMMANDS",
 		"THE SUN IS ENEMY!",
 	)
+	rogue_enabled = TRUE
 	isspawn = TRUE
 
 /datum/antagonist/vampirelord/lesser/move_to_spawnpoint()

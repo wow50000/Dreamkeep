@@ -17,6 +17,7 @@
 	else
 		new /obj/effect/decal/remains/human(loc)
 
+
 /proc/rogueviewers(range, object)
 	. = list(viewers(range, object))
 	if(isliving(object))
@@ -41,8 +42,20 @@
 	if(mind)
 		if(!gibbed)
 			var/datum/antagonist/vampirelord/VD = mind.has_antag_datum(/datum/antagonist/vampirelord)
-			if(VD)
+			if(VD && VD.ashes)
 				dust(just_ash=TRUE,drop_items=TRUE)
+				return
+		var/datum/antagonist/lich/L = mind.has_antag_datum(/datum/antagonist/lich)
+		if (L && !L.out_of_lives)
+			if(L.consume_phylactery())
+				visible_message(span_warning("[src]'s body begins to shake violently, as eldritch forces begin to whisk them away!"))
+				to_chat(src, span_userdanger("Death is not the end for me. I begin to rise again."))
+				playsound(src, 'sound/magic/antimagic.ogg', 100, FALSE)
+				gibbed = FALSE
+			else
+				to_chat(src, span_userdanger("No, NO! This cannot be!"))
+				L.out_of_lives = TRUE
+				gib()
 				return
 
 	if(!gibbed)
@@ -85,11 +98,13 @@
 				if(real_name in GLOB.outlawed_players)
 					yeae = FALSE
 
+/*
 		if(get_triumphs() > 0)
 			if(tris2take)
 				adjust_triumphs(tris2take)
 			else
 				adjust_triumphs(-1)
+*/
 
 		switch(job)
 			if("Monarch")

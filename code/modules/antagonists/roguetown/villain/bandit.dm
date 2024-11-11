@@ -11,6 +11,7 @@
 		"I WILL NOT LIVE IN YOUR WALLS!",
 		"I WILL NOT FOLLOW YOUR RULES!",
 	)
+	rogue_enabled = TRUE
 	var/tri_amt
 	var/contrib
 

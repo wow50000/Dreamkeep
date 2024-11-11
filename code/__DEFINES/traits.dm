@@ -198,7 +198,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_FASTSLEEP = span_info("I am narcoleptic and may fall asleep where I stand. Moondust can help me stay awake."),
 	TRAIT_NIGHT_VISION = span_info("Whether because of my species, my career choice, or by some boon of my patron, my eyes have adapted to see well in the dark."),
 	TRAIT_SUPER_NV = span_info("My ability to see in the dark extends further than that of most others, and I can consciously control how bright my surroundings appear to me."),
-	TRAIT_BLINDFIGHTING = span_info("I have an incredible sense of awareness, allowing me to dodge and parry attacks even when I can't see them coming, and I'm never in danger from sneak attacks."),
+	TRAIT_BLINDFIGHTING = span_info("I have an incredible sense of awareness, allowing me to dodge and parry attacks even when I can't see them coming, If i am in high awareness, I can even prevent sneak attacks."),
 ))
 
 // trait accessor defines

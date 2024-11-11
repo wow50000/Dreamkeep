@@ -134,6 +134,7 @@ window "outputwindow"
 		is-default = true
 		border = sunken
 		saved-params = ""
+		command = ""
 
 window "statwindow"
 	elem "statwindow"
@@ -208,4 +209,3 @@ window "preferencess_window"
 		right-click = true
 		icon-size = 64
 		zoom-mode = "distort"
-

@@ -89,7 +89,7 @@
 	if(user == victim)
 		return FALSE
 	// If user and victim both are not defiant, then no violation needs to happen
-	if(!user.defiant && !victim.defiant)
+	if(!user.client?.prefs.defiant && !victim.client?.prefs.defiant)
 		return FALSE
 	// Need to violate AFK clients
 	if(!victim.mind || !victim.mind.key || !victim.client) // Changed to OR statements to remove ZAPE of mobs without minds or keys
@@ -186,7 +186,7 @@
 	show_ui()
 
 /datum/sex_controller/proc/cum_onto()
-	if(!issimple(target))
+	if(!issimple(target) && target.mind)
 		log_combat(user, target, "Came onto [target]")
 		if(HAS_TRAIT(target, TRAIT_GOODLOVER))
 			if(!user.mob_timers["cumtri"])
@@ -202,7 +202,7 @@
 
 /datum/sex_controller/proc/cum_into(oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE)
 	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
-	if(!issimple(target))
+	if(!issimple(target) && target.mind)
 		log_combat(user, target, "Came inside [target]")
 		if(HAS_TRAIT(target, TRAIT_GOODLOVER))
 			if(!user.mob_timers["cumtri"])

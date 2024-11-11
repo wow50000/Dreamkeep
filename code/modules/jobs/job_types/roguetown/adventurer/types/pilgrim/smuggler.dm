@@ -6,7 +6,6 @@
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/smuggler
 	category_tags = list(CTAG_PILGRIM)
-	pickprob = 75
 	maximum_possible_slots = 2
 	cmode_music = 'sound/music/combat_pirate.ogg'
 

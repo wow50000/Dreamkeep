@@ -229,8 +229,10 @@
 	relevant_layers = list(BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/butt/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_PANTS, OFFSET_PANTS_F)
-
+	if(!isdwarf(owner) && !isgoblinp(owner))
+		generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_PANTS, OFFSET_PANTS_F)
+	else
+		generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BUTT, OFFSET_BUTT)
 /datum/sprite_accessory/butt/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	var/obj/item/organ/butt/buttie = organ
 	return "butt_[icon_state]_[buttie.organ_size]"
@@ -241,7 +243,7 @@
 		return FALSE
 	if(!buttie.visible_organ)
 		return FALSE
-	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
+	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH|HIDEBUTT)
 
 /datum/sprite_accessory/butt/pair
 	name = "Pair"

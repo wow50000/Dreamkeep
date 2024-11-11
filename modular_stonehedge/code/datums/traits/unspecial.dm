@@ -411,3 +411,31 @@
 	H.change_stat("endurance", 1) //since sleeping naked will probably get you sick or some shit.
 	H.change_stat("constitution", 1)
 	ADD_TRAIT(H, TRAIT_NUDE_SLEEPER, QUIRK_TRAIT)
+
+// disgustingly hooking into quirks to provide a convenient way to become a vampire
+/datum/quirk/vampire
+	name = "Cursed Blood (Vampire)"
+	desc = "You've existed long before the gods existed, you know the truth and have no reason to worship them. You are faithless. After attaining power, Zizo has cursed your people, bringing bad omens where ever you go. For this reason, the people of Rockhill have shunned you and discriminated against you, there is no possible way an antediluvian will ever hold a position of power in Rockhill, let alone be welcomed. Zizo has only shown favor to one antediluvian, rewarding them with the title of Vampire Lord, and gifting them powers far beyond that of a regular nitecreacher. Your pale skin, fangs, and eerie eyes are EASILY identifable features, so it is best to stay covered at all times in public areas."
+
+/datum/quirk/vampire/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/antagonist/vampirelord/lesser/secret/new_antag = new ()
+	H.mind.add_antag_datum(new_antag)
+
+/datum/antagonist/vampirelord/lesser/secret
+	ashes = FALSE
+	is_solo = TRUE
+	confess_lines = list(
+		"THE CRIMSON CALLS!",
+		"THE SUN IS ENEMY!",
+	)
+
+/datum/antagonist/vampirelord/lesser/secret/on_gain()
+	. = ..()
+	owner.current.verbs -= /mob/living/carbon/human/proc/vampire_telepathy
+
+/datum/antagonist/vampirelord/lesser/secret/roundend_report()
+	return
+
+/datum/antagonist/vampirelord/lesser/secret/move_to_spawnpoint()
+	return

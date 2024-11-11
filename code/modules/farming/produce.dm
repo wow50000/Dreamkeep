@@ -123,6 +123,7 @@
 	worn_y_dimension = 64
 	rotprocess = 20 MINUTES
 	can_distill = TRUE
+	mill_result = /obj/item/reagent_containers/powder/heal
 	distill_reagent = /datum/reagent/medicine/shroomt
 	mill_result = /obj/item/reagent_containers/powder/flour // mushroom flour. it exists. and its gross.
 

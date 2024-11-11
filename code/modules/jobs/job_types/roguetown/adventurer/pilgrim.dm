@@ -13,7 +13,7 @@
 	bypass_lastclass = TRUE
 	banned_leprosy = FALSE
 
-	advclass_cat_rolls = list(CTAG_PILGRIM = 20, CTAG_ADVENTURER = 3)	//Get some adventurer options sometimes.
+	advclass_cat_rolls = list(CTAG_PILGRIM = 30, CTAG_ADVENTURER = 3)	//Get some adventurer options sometimes.
 	PQ_boost_divider = 10
 
 	display_order = JDO_PILGRIM

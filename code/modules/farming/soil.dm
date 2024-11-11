@@ -436,8 +436,8 @@
 #define WEED_RESISTANCE_DECAY_RATE 20 / (1 MINUTES)
 
 // These get multiplied by 0.0 to 1.0 depending on amount of weeds
-#define WEED_WATER_CONSUMPTION_RATE 5 / (1 MINUTES)
-#define WEED_NUTRITION_CONSUMPTION_RATE 5 / (1 MINUTES)
+#define WEED_WATER_CONSUMPTION_RATE 3 / (1 MINUTES)
+#define WEED_NUTRITION_CONSUMPTION_RATE 1 / (1 MINUTES)
 
 /obj/structure/soil/proc/process_weeds(dt)
 	// Blessed soil will have the weeds die

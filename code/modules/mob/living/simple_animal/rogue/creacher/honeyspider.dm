@@ -167,3 +167,6 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/tame
 	tame = TRUE
 	deaggroprob = 30
+
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/shapeshift
+	erpable = TRUE

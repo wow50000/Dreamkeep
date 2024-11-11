@@ -10,6 +10,7 @@
 	speak_chance = 1
 	turns_per_move = 2
 	see_in_dark = 10
+	pixel_x = -32 //fucking 64x64 sprite.
 	move_to_delay = 3
 	base_intents = list(/datum/intent/simple/minotaur_unarmed)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 10,
@@ -43,8 +44,12 @@
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/item/rogueweapon/stoneaxe/battle
+	erpable = TRUE
+	hornychance = 50 //since they arent as numerous usually.
 
-
+/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/Initialize()
+	. = ..()
+	give_genitals()
 
 /obj/item/natural/mino_head
 	name = "minotaur's head"
@@ -69,6 +74,7 @@
 	icon_state = "MinotaurFem"
 	icon_living = "MinotaurFem"
 	icon_dead = "MinotaurFem_dead"
+	gender = FEMALE
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 10,
 						/obj/item/natural/hide = 10, /obj/item/natural/bundle/bone/full = 2, /obj/item/natural/mino_head/female	 = 1)
 
@@ -185,3 +191,10 @@
 	candodge = TRUE
 	canparry = TRUE
 	item_d_type = "stab"
+
+/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/horny
+	seeksfuck = TRUE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/female/horny
+	seeksfuck = TRUE
+	

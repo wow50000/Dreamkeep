@@ -19,6 +19,7 @@
 		"DRINK THE BLOOD!",
 		"CHILD OF KAIN!",
 	)
+	rogue_enabled = TRUE
 	var/disguised = TRUE
 	var/vitae = 1000
 	var/last_transform
@@ -59,12 +60,14 @@
 		owner.adjust_skillrank(/datum/skill/combat/unarmed, 6, TRUE)
 		ADD_TRAIT(owner.current, TRAIT_NOBLE, TRAIT_GENERIC)
 	owner.special_role = name
+	owner.current.faction = list("undead")
 	ADD_TRAIT(owner.current, TRAIT_STRONGBITE, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOBREATH, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_NOPAIN, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
+	ADD_TRAIT(owner.current, TRAIT_ZOMBIE_IMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_TOLERANT, TRAIT_GENERIC)
 	owner.current.cmode_music = 'sound/music/combat_vamp2.ogg'

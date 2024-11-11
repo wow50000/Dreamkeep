@@ -15,8 +15,8 @@
 	plane = GAME_PLANE_UPPER
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	destroy_sound = 'sound/misc/woodhit.ogg'
-	debris = list(/obj/item/grown/log/tree/stick = 4)
-	static_debris = list(/obj/item/grown/log/tree = 2)
+	debris = list(/obj/item/grown/log/tree/stick = 8)
+	static_debris = list(/obj/item/grown/log/tree = 4)
 	alpha = 200
 	leanable = TRUE
 	var/stump_type = /obj/structure/flora/roguetree/stump
@@ -714,8 +714,8 @@
 	plane = GAME_PLANE_UPPER
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	destroy_sound = 'sound/misc/woodhit.ogg'
-	debris = list(/obj/item/grown/log/tree/stick = 2)
-	static_debris = list(/obj/item/grown/log/tree = 1)
+	debris = list(/obj/item/grown/log/tree/stick = 4)
+	static_debris = list(/obj/item/grown/log/tree = 2)
 	alpha = 200
 	var/stump_type = /obj/structure/flora/roguetree/stump
 

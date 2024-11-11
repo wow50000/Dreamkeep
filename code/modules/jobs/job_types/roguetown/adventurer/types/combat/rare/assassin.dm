@@ -37,7 +37,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/hiddenblade
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
+	cloak = /obj/item/clothing/cloak/raincloak/rogue
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel

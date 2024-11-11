@@ -35,7 +35,7 @@
 		/obj/item/storage/belt/rogue/pouch/skit = 1,
 	)
 	if(H.gender == MALE)
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
+		armor = /obj/item/clothing/suit/roguetown/shirt/robe/surgrobe
 		pants = /obj/item/clothing/under/roguetown/trou
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 		head = /obj/item/clothing/head/roguetown/nightman

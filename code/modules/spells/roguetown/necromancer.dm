@@ -79,9 +79,19 @@
 
 /obj/effect/proc_holder/spell/invoked/raise_undead/cast(list/targets, mob/living/user)
 	. = ..()
+	if(istype(targets[1], /mob/living/carbon/human/species/skeleton/npc))
+		var/mob/living/carbon/target = targets[1]
+		var/list/candidates = pollCandidatesForMob("Do you want to play as a Necromancer's skeleton?", null, null, null, 200, target, POLL_IGNORE_NECROMANCER_SKELETON)
+		if(LAZYLEN(candidates))
+			var/mob/C = pick(candidates)
+			target.key = C.key
+			target.visible_message(span_warning("[target]'s eyes shine with an eerie glow!"))
+		else
+			target.visible_message(span_warning("[target]'s eyes remain dully devoid of life."))
+		return TRUE
 	var/turf/T = get_turf(targets[1])
 	if(isopenturf(T))
-		new /mob/living/carbon/human/species/skeleton/npc/no_equipment(T)
+		new /mob/living/carbon/human/species/skeleton/npc(T)
 		return TRUE
 	to_chat(user, span_warning("The targeted location is blocked. My summon fails to come forth."))
 	return FALSE

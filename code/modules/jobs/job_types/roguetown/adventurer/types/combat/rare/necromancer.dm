@@ -6,7 +6,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/necromancer
 	pickprob = 30
 	traits_applied = list(TRAIT_ZOMBIE_IMMUNE)
-	category_tags = list(CTAG_DISABLED)
+	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/necromancer
 	allowed_patrons = list(/datum/patron/inhumen/zizo,/datum/patron/divine/necra,/datum/patron/divine/pestra)

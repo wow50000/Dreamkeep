@@ -663,18 +663,13 @@
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = 1
 
-/obj/item/clothing/cloak/raincloak/dropped(mob/living/carbon/human/user)
-	..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		var/list/things = STR.contents()
-		for(var/obj/item/I in things)
-			STR.remove_from_storage(I, get_turf(src))
-
-
 
 /obj/item/clothing/cloak/raincloak/red
 	color = CLOTHING_RED
+
+/obj/item/clothing/cloak/raincloak/rogue
+	desc = "A cloak worn by people who want to stay in the shadows."
+	color = CLOTHING_BLACK
 
 /obj/item/clothing/cloak/raincloak/mortus
 	name = "funeral cloak"
@@ -705,7 +700,7 @@
 	dynamic_hair_suffix = ""
 	edelay_type = 1
 	body_parts_covered = HEAD
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDETAIL
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDETAIL|HIDEBUTT
 	block2add = FOV_BEHIND
 
 /obj/item/clothing/head/hooded/equipped(mob/user, slot)

@@ -6,7 +6,7 @@
 	show_obscured = TRUE
 
 /datum/mob_descriptor/defiant/can_describe(mob/living/described)
-	if(!described.defiant)
+	if(!described.client?.prefs.defiant)
 		return FALSE
 	return TRUE
 
@@ -206,6 +206,8 @@
 			vagina_type = "gaping vagina"
 		if(/datum/sprite_accessory/vagina/cloaca)
 			vagina_type = "cloaca"
+		if(/datum/sprite_accessory/vagina/goblin)
+			vagina_type = "very hairy vagina"
 	return "a [vagina_type]"
 
 /datum/mob_descriptor/breasts
