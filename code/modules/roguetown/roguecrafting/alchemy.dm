@@ -70,7 +70,7 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/minorhealthpot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1,
-		/obj/item/reagent_containers/food/snacks/grown/herbs = 2,
+		/obj/item/reagent_containers/food/snacks/grown/herbs = 1,
 		/obj/item/ash = 1)
 	craftdiff = 0
 
