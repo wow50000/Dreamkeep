@@ -85,12 +85,6 @@
 	M.adjustToxLoss(3, 0)
 	M.blood_volume = min(M.blood_volume+100, BLOOD_VOLUME_MAXIMUM) // Full to bursting.
 
-/datum/chemical_reaction/sublime_ambrosia
-	name = "Sublime Ambrosia"
-	id = /datum/reagent/medicine/sublimeambrosia
-	results = list(/datum/reagent/medicine/sublimeambrosia = 5)
-	required_reagents = list (/datum/reagent/medicine/healthpot = 45, /datum/reagent/medicine/minorhealthpot = 45, /datum/reagent/medicine/majorhealthpot = 45)
-
 /datum/reagent/medicine/sublimeambrosia
 	name = "Sublime Ambrosia"
 	description = "Rapidly regenerates all types of damage, and reverses death."
@@ -112,6 +106,7 @@
 		M.update_damage_overlays()
 	M.adjustBruteLoss(-4.5*REM, 0)
 	M.adjustFireLoss(-4.5*REM, 0)
+	M.adjustToxLoss(-4.5*REM, 0)
 	M.adjustOxyLoss(-9, 0)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -9*REM)
 	M.adjustCloneLoss(-9*REM, 0)
@@ -120,7 +115,7 @@
 
 /datum/reagent/medicine/sublimeambrosia/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(iscarbon(M) && M.stat == DEAD)
-		if(M.mob_biotypes & MOB_UNDEAD)
+		if(M.mob_biotypes & MOB_UNDEAD)//cure rot first
 			return FALSE
 		if(!M.revive(full_heal = FALSE))
 			M.visible_message(span_notice("[M]'s body does not seem to react to the ambrosia..."))
