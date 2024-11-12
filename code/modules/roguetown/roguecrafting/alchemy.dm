@@ -264,6 +264,12 @@
 	craftdiff = 0
 	subtype_reqs = TRUE
 
+/datum/crafting_recipe/roguetown/alchemy/w2l
+	name = "combine small logs into large log"
+	result = list(/obj/item/grown/log/tree = 1)
+	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/natural/fibers)
+	craftdiff = 0
+
 /datum/crafting_recipe/roguetown/alchemy/l2coa
 	name = "transmute log to coal"
 	result = list(/obj/item/rogueore/coal = 4)
