@@ -172,15 +172,15 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/antipreg_pot
-	name = "Anti Pregnancy Potion"
+	name = "Sterility Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/antipregnancy)
-	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/ash = 1, /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/reagent_containers/powder/crystalglass = 1, /obj/item/clothing/head/peaceflower = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/antipreg_pot_3x
-	name = "3x Anti Pregnancy Potion"
+	name = "3x Sterility Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/antipregnancy,/obj/item/reagent_containers/glass/bottle/rogue/antipregnancy,/obj/item/reagent_containers/glass/bottle/rogue/antipregnancy)
-	reqs = list(/obj/item/reagent_containers/glass/bottle = 3, /obj/item/ash = 2, /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 2)
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 3, /obj/item/reagent_containers/powder/crystalglass = 2, /obj/item/clothing/head/peaceflower = 2)
 	craftdiff = 1
 
 /// bottle craft
