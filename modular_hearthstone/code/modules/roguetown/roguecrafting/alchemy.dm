@@ -11,7 +11,7 @@
 	name = "3x Paralysis Poison"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/paralysispot,/obj/item/reagent_containers/glass/bottle/rogue/paralysispot,/obj/item/reagent_containers/glass/bottle/rogue/paralysispot)
 	reqs = list(
-		/obj/item/reagent_containers/glass/bottle = 1,
+		/obj/item/reagent_containers/glass/bottle = 3,
 		/obj/item/reagent_containers/powder/crystalglass = 2,
 		/obj/item/natural/antler = 2)
 	craftdiff = 4
@@ -21,7 +21,6 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/soporpot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1,
-		/obj/item/ash = 1,
 		/obj/item/reagent_containers/powder/crystalglass = 1,
 		/obj/item/reagent_containers/food/snacks/grown/carrot = 1 )
 	craftdiff = 4
