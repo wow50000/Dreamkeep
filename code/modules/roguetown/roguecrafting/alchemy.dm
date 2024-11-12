@@ -349,7 +349,7 @@
 	craftdiff = 5
 
 /datum/crafting_recipe/roguetown/alchemy/r2dia
-	name = "transmute ruby to iamond"
+	name = "transmute ruby to diamond"
 	result = list(/obj/item/roguegem/diamond = 1)
 	reqs = list(
 		/obj/item/roguegem/red = 1,
