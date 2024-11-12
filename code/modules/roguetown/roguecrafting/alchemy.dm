@@ -388,6 +388,7 @@
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate)
 	reqs = list(
 		/obj/item/reagent_containers/powder/gemerald = 1,
@@ -397,6 +398,8 @@
 /datum/crafting_recipe/roguetown/alchemy/s2sub
 	name = "Sublimate Sapphire Dust"
 	result = list(
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
@@ -413,6 +416,9 @@
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate)
 	reqs = list(
 		/obj/item/reagent_containers/powder/blortz = 1,
@@ -422,6 +428,9 @@
 /datum/crafting_recipe/roguetown/alchemy/r2sub
 	name = "Sublimate Ruby Dust"
 	result = list(
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
@@ -444,7 +453,11 @@
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
-		/obj/item/reagent_containers/powder/sublimate)
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,)
 	reqs = list(
 		/obj/item/reagent_containers/powder/dorpel = 1,
 		/obj/item/reagent_containers/powder/moondust = 1)
@@ -464,7 +477,19 @@
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
-		/obj/item/reagent_containers/powder/sublimate)
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,)
 	reqs = list(
 		/obj/item/reagent_containers/powder/mfire = 1,
 		/obj/item/reagent_containers/powder/moondust = 1)
