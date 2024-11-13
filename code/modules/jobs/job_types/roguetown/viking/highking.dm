@@ -5,13 +5,12 @@
 	flag = HIGHKING
 	department_flag = VIKING
 	faction = "Station"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 10
+	spawn_positions = 10
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(/datum/species/dwarf/mountain)
-	spells = list(/obj/effect/proc_holder/spell/invoked/mending5e,)
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
-	spells = list(/obj/effect/proc_holder/spell/self/convertrole/viking)
+	spells = list(/obj/effect/proc_holder/spell/self/convertrole/viking, /obj/effect/proc_holder/spell/invoked/mending5e,)
 	tutorial = "Hailing from a Dwarf Fortress, you are one of the Artificers who came to occupy this Forge-Chapel of Svaeryog for many years, now. You and your fellow Artificers rule this slice of the underdark in relative safety; free to craft and venture forth however you please."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/highking
@@ -59,6 +58,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 
 		H.change_stat("strength", 3) //Less strength than royal guard. Same as Captain
 		H.change_stat("intelligence", 3)

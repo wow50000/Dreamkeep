@@ -86,6 +86,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	vamp_look()
 	owner.current.verbs |= /mob/living/carbon/human/proc/disguise_button
 	if(is_solo)
+		add_objective(/datum/objective/solovamp)
 		return
 
 	if(isspawn)
@@ -500,7 +501,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/datum/game_mode/chaosmode/C = SSticker.mode
 	if(istype(C))
 		if(C.kingsubmit)
-			to_chat(src, "I am already the Master of Enigma.")
+			to_chat(src, "I am already the Master of Stonehedge.")
 			return
 	for(var/mob/living/carbon/human/H in oview(1))
 		if(SSticker.rulermob == H)
@@ -975,6 +976,11 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	name = "serve"
 	explanation_text = "I must serve my master, and ensure that they triumph."
 	triumph_count = 3
+
+/datum/objective/solovamp
+	name = "survive"
+	explanation_text = "I must survive, find blood while not giving the mortals a reason to try and destroy me."
+	triumph_count = 0
 
 /datum/objective/vlordserve/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode

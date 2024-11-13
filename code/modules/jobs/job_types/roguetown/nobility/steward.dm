@@ -9,7 +9,7 @@
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_STEWARD
-	tutorial = "Coin, Coin, Coin! Oh beautiful coin: You're addicted to it, and you hold the position as the King's personal treasurer of both coin and information. You know the power silver and gold has on a man's mortal soul, and you know just what lengths they'll go to in order to get even more. Keep your festering economy and your rats alive, the'yre the only two things you can weigh any trust into anymore."
+	tutorial = "Coin, Coin, Coin! Oh beautiful coin: The Magi's Trading Union put you here as an appraiser so you might -actually- fund this operation. You're the closest thing this place has to a banker, and it's up to you to fund public projects from the hordes of wealth these ludicrous murder-hobos seem to pull in from literally thin air. You work for the Guild captain, but most of the time youre batting off adventurers from raiding your vault. Don't forget the magic password you enchanted.."
 	outfit = /datum/outfit/job/roguetown/steward
 	give_bank_account = 17
 	min_pq = 0

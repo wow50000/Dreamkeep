@@ -32,7 +32,7 @@
 		user.sexcon.perform_sex_action(target, 0, 2, FALSE)
 	else
 		user.sexcon.perform_sex_action(target, 0, 7, FALSE)
-		user.sexcon.perform_deepthroat_oxyloss(target, 2.6)
+		user.sexcon.perform_deepthroat_oxyloss(target, 1.3)
 	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/npc_throat_sex/on_finish(mob/living/user, mob/living/target)

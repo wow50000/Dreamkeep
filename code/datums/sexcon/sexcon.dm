@@ -196,6 +196,16 @@
 				to_chat(user, span_love("Our sex was a true TRIUMPH!"))
 		else
 			user.add_stress(/datum/stressevent/cumok)
+	if(!issimple(user) && user.mind)
+		log_combat(target, user, "Came inside [user]")
+		if(HAS_TRAIT(user, TRAIT_GOODLOVER))
+			if(!target.mob_timers["cumtri"])
+				target.mob_timers["cumtri"] = world.time
+				target.adjust_triumphs(1)
+				target.add_stress(/datum/stressevent/cummax)
+				to_chat(target, span_love("Our sex was a true TRIUMPH!"))
+	else
+		target.add_stress(/datum/stressevent/cumok)
 	playsound(target, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(target))
 	after_ejaculation()
@@ -212,6 +222,16 @@
 				to_chat(user, span_love("Our sex was a true TRIUMPH!"))
 	else
 		user.add_stress(/datum/stressevent/cumok)
+	if(!issimple(user) && user.mind)
+		log_combat(target, user, "Came inside [user]")
+		if(HAS_TRAIT(user, TRAIT_GOODLOVER))
+			if(!target.mob_timers["cumtri"])
+				target.mob_timers["cumtri"] = world.time
+				target.adjust_triumphs(1)
+				target.add_stress(/datum/stressevent/cummax)
+				to_chat(target, span_love("Our sex was a true TRIUMPH!"))
+	else
+		target.add_stress(/datum/stressevent/cumok)
 	if(issimple(target))
 		if(testes) //simple target just remove the coom.
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
