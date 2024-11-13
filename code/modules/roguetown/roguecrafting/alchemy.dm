@@ -183,6 +183,12 @@
 	reqs = list(/obj/item/reagent_containers/glass/bottle = 3, /obj/item/reagent_containers/powder/crystalglass = 2, /obj/item/clothing/head/peaceflower = 2)
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/alchemy/peacebloom
+	name = "Peacebloom"
+	result = list(/obj/item/clothing/head/peaceflower = 1)
+	reqs = list(/obj/item/rogueweapon/huntingknife/stoneknife = 1, /obj/item/reagent_containers/powder/crystalglass = 1, /obj/item/reagent_containers/food/snacks/grown/poppy)
+	craftdiff = 1
+
 /// bottle craft
 
 
