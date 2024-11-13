@@ -16,7 +16,7 @@
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	destroy_sound = 'sound/misc/woodhit.ogg'
 	debris = list(/obj/item/grown/log/tree/stick = 8)
-	static_debris = list(/obj/item/grown/log/tree = 4)
+	static_debris = list(/obj/item/grown/log/tree/large = 4)
 	alpha = 200
 	leanable = TRUE
 	var/stump_type = /obj/structure/flora/roguetree/stump
@@ -193,7 +193,7 @@
 	opacity = 0
 	max_integrity = 200
 	blade_dulling = DULLING_CUT
-	static_debris = list(/obj/item/grown/log/tree = 1)
+	static_debris = list(/obj/item/grown/log/tree/large = 1)
 	climb_offset = 14
 	stump_type = FALSE
 
@@ -417,7 +417,7 @@
 	layer = 4.81
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	destroy_sound = 'sound/misc/woodhit.ogg'
-	static_debris = list(/obj/item/grown/log/tree = 2,/obj/item/grown/log/tree/small = 1)
+	static_debris = list(/obj/item/grown/log/tree/large = 2,/obj/item/grown/log/tree/small = 1)
 	dir = SOUTH
 
 /obj/structure/flora/rogueshroom/attack_right(mob/user)
@@ -715,7 +715,7 @@
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	destroy_sound = 'sound/misc/woodhit.ogg'
 	debris = list(/obj/item/grown/log/tree/stick = 4)
-	static_debris = list(/obj/item/grown/log/tree = 2)
+	static_debris = list(/obj/item/grown/log/tree/large = 2)
 	alpha = 200
 	var/stump_type = /obj/structure/flora/roguetree/stump
 
