@@ -121,7 +121,7 @@
 
 /datum/crafting_recipe/roguetown/alchemy/endurancepot3x
 	name = "3x Endurance Potion"
-	result = list(/obj/item/reagent_containers/glass/bottle/rogue/endurancepot)
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/endurancepot,/obj/item/reagent_containers/glass/bottle/rogue/endurancepot,/obj/item/reagent_containers/glass/bottle/rogue/endurancepot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 3,
 		/obj/item/reagent_containers/powder/sublimate = 2,
@@ -139,7 +139,7 @@
 
 /datum/crafting_recipe/roguetown/alchemy/constitutionpot3x
 	name = "3x Ironskin Potion"
-	result = list(/obj/item/reagent_containers/glass/bottle/rogue/constitutionpot)
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/constitutionpot,/obj/item/reagent_containers/glass/bottle/rogue/constitutionpot,/obj/item/reagent_containers/glass/bottle/rogue/constitutionpot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 3,
 		/obj/item/reagent_containers/powder/sublimate = 2,
@@ -229,7 +229,7 @@
 
 /datum/crafting_recipe/roguetown/alchemy/virilitypot3x
 	name = "Virility Potion"
-	result = list(/obj/item/reagent_containers/glass/bottle/rogue/virilitypot)
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/virilitypot,/obj/item/reagent_containers/glass/bottle/rogue/virilitypot,/obj/item/reagent_containers/glass/bottle/rogue/virilitypot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 3,
 		/obj/item/reagent_containers/powder/sublimate = 2,
