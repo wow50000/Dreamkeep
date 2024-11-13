@@ -15,6 +15,8 @@
 	obj_flags = CAN_BE_HIT
 	w_class = WEIGHT_CLASS_HUGE
 
+/obj/item/grown/log/tree/large
+
 /obj/item/grown/log/tree/small
 	name = "small log"
 	desc = "Smaller log that came from a larger log. Suitable for building."
