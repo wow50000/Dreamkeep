@@ -45,7 +45,7 @@
 				user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("I fell [src] with the [W]."), span_hear("I hear the sound of a tree falling."))
 				playsound(get_turf(src), 'sound/blank.ogg', 100 , FALSE, FALSE)
 				for(var/i=1 to log_amount)
-					new /obj/item/grown/log/tree(get_turf(src))
+					new /obj/item/grown/log/tree/large(get_turf(src))
 
 				var/obj/structure/flora/stump/S = new(loc)
 				S.name = "[name] stump"
