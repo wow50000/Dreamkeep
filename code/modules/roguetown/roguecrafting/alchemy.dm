@@ -272,7 +272,7 @@
 
 /datum/crafting_recipe/roguetown/alchemy/l2coa
 	name = "transmute log to coal"
-	result = list(/obj/item/rogueore/coal = 4)
+	result = list(/obj/item/rogueore/coal,/obj/item/rogueore/coal,/obj/item/rogueore/coal,/obj/item/rogueore/coal)
 	reqs = list(/obj/item/grown/log/tree = 1)
 	craftdiff = 1
 	subtype_reqs = TRUE
