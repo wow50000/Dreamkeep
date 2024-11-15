@@ -60,7 +60,8 @@
 /*Design philosophy: "Jack of all tades, master of.. few" - Peasent, so bow, axe, and polearm skill. Knows most combat skills, but other than those not great with them.
 Also given some non-combat skills that a peasent would have, just to support themselves, but not anything to replace soilsons with.*/
 /datum/outfit/job/roguetown/bogguardsman/proc/assign_skills(mob/living/carbon/human/H)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(4,4,5), TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)

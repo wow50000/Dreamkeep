@@ -157,10 +157,3 @@
 					crosstype = /obj/item/clothing/neck/roguetown/psicross
 		H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
 
-/// ALCOHOLIC
-
-/datum/charflaw/addiction/lovefiend
-	name = "Love-Fiend"
-	desc = "I must make love!"
-	time = 50 MINUTES
-	needsate_text = "Time to get happy."

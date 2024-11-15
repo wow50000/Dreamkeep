@@ -1,5 +1,5 @@
 /datum/job/roguetown/grandmaster
-	title = "Grandmaster Templar"
+	title = "Grandmaster Paladin"
 	department_flag = CHURCHMEN
 	faction = "Station"
 	tutorial = "The Strongest. You have vowed and sworn your life to the Divine of this city. Interfaith politics or lordly politics have never interested you ever and todae marks your solem vigil over the land."

@@ -619,7 +619,7 @@
 	remarks = list("Foe rubiginem meam..", "Pestilentia in terris..", "Trabes putrida..")
 
 /obj/item/book/granter/spell/blackstone/strengthen_undead
-	name = "Scroll of Bone Chill"
+	name = "Scroll of Strengthen Undead"
 	spell = /obj/effect/proc_holder/spell/invoked/strengthen_undead
 	spellname = "Bone Chill"
 	icon_state ="scrolldarkred"

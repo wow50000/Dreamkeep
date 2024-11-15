@@ -385,9 +385,9 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 /datum/game_mode/chaosmode/proc/pick_cultist()
 	var/remaining = 3 // 1 heresiarch, 2 cultists
 	restricted_jobs = list("Duke",
-	"Duchess Courtier",
-	"Merchant",
-	"Priest",
+	"Duke Courtier",
+	"Merchant Prince",
+	"Prophet",
 	"Bandit")
 	antag_candidates = get_players_for_role(ROLE_ZIZOIDCULTIST)
 	antag_candidates = shuffle(antag_candidates)
@@ -421,13 +421,13 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 
 	restricted_jobs = list(
 	"Duke",
-	"Duchess Consort",
+	"Duke Courtier",
 	"Dungeoneer",
 	"Inquisitor",
 	"Confessor",
 	"Watchman",
 	"Man at Arms",
-	"Priest",
+	"Prophet",
 	"Acolyte",
 	"Cleric",
 	"Retinue Captain",
@@ -517,8 +517,6 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Watchman",
 	"Man at Arms",
 	"Prophet",
-	"Priest",
-	"Priest",
 	"Watchmen Captain",
 	"Magician",
 	"Paladin",

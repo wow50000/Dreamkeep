@@ -21,7 +21,6 @@
 	C.liches |= owner
 	. = ..()
 	owner.special_role = name
-	skele_look()
 	equip_lich()
 	greet()
 	return ..()
@@ -33,11 +32,16 @@
 
 /datum/antagonist/lich/proc/skele_look()
 	var/mob/living/carbon/human/L = owner.current
+	/* coolor to be white
 	L.hairstyle = "Bald"
 	L.facial_hairstyle = "Shaved"
+	*/
+	L.hair_color = "bababa"
 	L.update_body()
 	L.update_hair()
 	L.update_body_parts(redraw = TRUE)
+	for(var/obj/item/bodypart/B in L.bodyparts)
+		B.skeletonize(FALSE)
 
 /datum/antagonist/lich/proc/equip_lich()
 	owner.unknow_all_people()
@@ -145,6 +149,7 @@
 /datum/antagonist/lich/proc/rise_anew()
 	var/mob/living/carbon/human/bigbad = owner.current
 	bigbad.revive(TRUE, TRUE)
+	skele_look()
 
 	for(var/obj/item/bodypart/B in bigbad.bodyparts)
 		B.skeletonize(FALSE)

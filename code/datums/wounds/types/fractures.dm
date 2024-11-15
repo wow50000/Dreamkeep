@@ -16,7 +16,7 @@
 	can_cauterize = FALSE
 	disabling = TRUE
 	critical = TRUE
-	sleep_healing = 0 // no sleep healing that is retarded
+	sleep_healing = 1 // no sleep healing that is retarded
 	zombie_infection_probability = 0
 	werewolf_infection_probability = 0
 	/// Whether or not we can be surgically set
@@ -59,7 +59,7 @@
 	)
 	sound_effect = "headcrush"
 	whp = 150
-	sleep_healing = 0
+	sleep_healing = 1
 	/// Most head fractures are serious enough to cause paralysis
 	var/paralysis = FALSE
 	/// Some head fractures are so serious they cause instant death
@@ -107,7 +107,7 @@
 		"The cranium is torn!",
 	)
 	embed_chance = 100
-	paralysis = FALSE
+	paralysis = TRUE
 	mortal = FALSE
 	dents_brain = TRUE
 
@@ -120,7 +120,7 @@
 		"The eye socket is pierced!",
 	)
 	embed_chance = 100
-	paralysis = FALSE
+	paralysis = TRUE
 	mortal = TRUE
 	dents_brain = FALSE
 
@@ -133,7 +133,7 @@
 		"The ear canal is pierced!",
 	)
 	embed_chance = 100
-	paralysis = FALSE
+	paralysis = TRUE
 	mortal = TRUE
 	dents_brain = FALSE
 
@@ -144,7 +144,7 @@
 		"The nasal bone is pierced!",
 	)
 	embed_chance = 100
-	paralysis = FALSE
+	paralysis = TRUE
 	mortal = FALSE
 	dents_brain = FALSE
 
@@ -158,7 +158,7 @@
 		"The jaw caves in!",
 	)
 	whp = 80
-	sleep_healing = 0
+	sleep_healing = 1
 
 /datum/wound/fracture/mouth/on_mob_gain(mob/living/affected)
 	. = ..()
@@ -180,7 +180,7 @@
 		"The spine is broken!",
 	)
 	whp = 100
-	sleep_healing = 0
+	sleep_healing = 1
 
 /datum/wound/fracture/neck/on_mob_gain(mob/living/affected)
 	. = ..()
@@ -211,7 +211,7 @@
 
 /datum/wound/fracture/chest/on_mob_gain(mob/living/affected)
 	. = ..()
-	affected.Stun(0)
+//	affected.Stun(20)
 
 /datum/wound/fracture/chest/on_life()
 	. = ..()

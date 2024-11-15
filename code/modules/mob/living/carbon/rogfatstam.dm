@@ -1,4 +1,5 @@
 /mob/living/proc/update_rogfat() //update hud and regen after last_fatigued delay on taking
+	maxrogfat = maxrogstam / 10
 	var/athletics_skill = 0
 	if(mind)
 		athletics_skill = mind.get_skill_level(/datum/skill/misc/athletics)

@@ -118,7 +118,7 @@
 
 /mob/living/carbon/human/proc/churchexcommunicate()
 	set name = "Excommunicate"
-	set category = "Priest"
+	set category = "Prophet"
 	if(stat)
 		return
 	var/inputty = input("Excommunicate someone, removing their ability to use miracles... (excommunicate them again to remove it)", "Sinner Name") as text|null
@@ -147,7 +147,7 @@
 
 /mob/living/carbon/human/proc/churchhereticsbrand()
 	set name = "Brand Heretic"
-	set category = "Priest"
+	set category = "Prophet"
 	if(stat)
 		return
 	var/inputty = input("Brand someone as a foul heretic... (brand them again to remove it)", "Sinner Name") as text|null
