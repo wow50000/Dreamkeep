@@ -342,26 +342,6 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 		GLOB.pre_setup_antags |= antag
 	restricted_jobs = list()
 
-/datum/game_mode/chaosmode/proc/pick_lich()
-	restricted_jobs = list("Monarch", "Consort", "Royal Guard", "Guard Captain")
-	antag_candidates = get_players_for_role(ROLE_LICH)
-	var/datum/mind/lichman = pick_n_take(antag_candidates)
-	if(lichman)
-		var/blockme = FALSE
-		if(!(lichman in allantags))
-			blockme = TRUE
-		if(blockme)
-			return
-		allantags -= lichman
-		pre_liches += lichman
-		lichman.special_role = ROLE_LICH
-		lichman.restricted_roles = restricted_jobs.Copy()
-		testing("[key_name(lichman)] has been selected as the [lichman.special_role]")
-		log_game("[key_name(lichman)] has been selected as the [lichman.special_role]")
-	for(var/antag in pre_liches)
-		GLOB.pre_setup_antags |= antag
-	restricted_jobs = list()
-
 /datum/game_mode/chaosmode/proc/pick_maniac()
 	restricted_jobs = list("Duke", "Duke Courtier")
 	antag_candidates = get_players_for_role(ROLE_MANIAC)
