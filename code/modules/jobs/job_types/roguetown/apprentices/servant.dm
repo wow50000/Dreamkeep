@@ -10,7 +10,7 @@
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_ages = list(AGE_ADULT)
 
-	tutorial = "Granted a life of comfortable servitute in the King's manor, you follow the Head Butler/Maid's commands and spend your day performing necessary but menial tasks."
+	tutorial = "Granted a comfortable life in the Duke's manor as one of his servants! You will appreciate it more and more every day as you clean the floors and are beaten for nothing."
 
 	outfit = /datum/outfit/job/roguetown/servant
 	display_order = JDO_SERVANT

@@ -10,13 +10,14 @@
 	antag_hud_name = "rev"
 	show_in_roundend = FALSE
 	confess_lines = list(
-		"VIVA!", 
+		"VIVA!",
 		"DEATH TO THE NOBLES!",
 		"STICK IT TO THE MAN!",
 		"NO GODS, NO MASTERS!",
 	)
 	rogue_enabled = FALSE
 	increase_votepwr = FALSE
+	rogue_enabled = TRUE
 	var/datum/team/prebels/rev_team
 
 /datum/antagonist/prebel/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)

@@ -8,6 +8,16 @@
 	stressadd = -1
 	desc = span_red("It's raining.")
 
+/datum/stressevent/cumok
+	timer = 5 MINUTES
+	stressadd = -1
+	desc = "<span class='green'>I came.</span>"
+
+/datum/stressevent/lovezizo
+	timer = 99999 MINUTES
+	stressadd = -666 // :)
+	desc = "<span class='green'>ZIZOZIZOZIZO</span>"
+
 /datum/stressevent/viewsinpunish
 	timer = 5 MINUTES
 	stressadd = -2

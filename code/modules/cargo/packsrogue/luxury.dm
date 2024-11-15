@@ -159,3 +159,7 @@
 	cost = 100
 	contains = list(/obj/item/book/granter/spell/spells5e/mending5e)
 
+/datum/supply_pack/rogue/luxury/tarot_deck
+	name = "Tarot Deck"
+	cost = 5
+	contains = list(/obj/item/toy/cards/deck/tarot)

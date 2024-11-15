@@ -96,6 +96,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	//Breathing!
 	var/obj/item/organ/lungs/mutantlungs = null
 	var/breathid = "o2"
+
+	var/obj/item/organ/brain/mutant_brain = /obj/item/organ/brain
+	var/obj/item/organ/heart/mutant_heart = /obj/item/organ/heart
+	var/obj/item/organ/eyes/mutanteyes = /obj/item/organ/eyes
+	var/obj/item/organ/ears/mutantears = /obj/item/organ/ears
+	var/obj/item/mutanthands
+	var/obj/item/organ/tongue/mutanttongue = /obj/item/organ/tongue
+	var/obj/item/organ/tail/mutanttail = null
+
+	var/obj/item/organ/liver/mutantliver
+	var/obj/item/organ/stomach/mutantstomach
+	var/obj/item/organ/guts/mutantguts
 	var/override_float = FALSE
 
 	//Bitflag that controls what in game ways can select this species as a spawnable source
@@ -142,27 +154,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		/datum/descriptor_choice/prominent_four,
 	)
 
-	var/list/specstats = list(
-		"strength" = 0, 
-		"perception" = 0, 
-		"intelligence" = 0, 
-		"constitution" = 0, 
-		"endurance" = 0, 
-		"speed" = 0, 
-		"fortune" = 0
-		)
-	var/list/specstats_m = list(
-		"constitution" = 1, 
-		"intelligence" = -1,
-	)
-	var/list/specstats_f = list(
-		"strength" = -1, 
-		"speed" = 1,
-	)
-	var/list/specskills
-	var/list/specskills_m
-	var/list/specskills_f
-	var/obj/item/mutanthands
 
 	/// List of organ customizers for preferences to customize organs.
 	var/list/customizers

@@ -2,8 +2,8 @@ GLOBAL_VAR(lordsurname)
 GLOBAL_LIST_EMPTY(lord_titles)
 
 /datum/job/roguetown/lord
-	title = "Monarch"
-	f_title = "Monarch"
+	title = "Duke"
+	f_title = "Duchess"
 	flag = LORD
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -35,8 +35,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	required = TRUE
 
 /datum/job/roguetown/exlord //just used to change the lords title
-	title = "King Emeritus"
-	f_title = "Queen Emeritus"
+	title = "Duke Emeritus"
+	f_title = "Duchess Emeritus"
 	flag = LORD
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -57,12 +57,11 @@ GLOBAL_LIST_EMPTY(lord_titles)
 			GLOB.lordsurname = "of [L.real_name]"
 		SSticker.select_ruler()
 		if(L.gender != FEMALE)
-			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is King of StoneHedge.</span></span></b>")
+			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Duke of the Realm.</span></span></b>")
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
 		else
-			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Queen of StoneHedge.</span></span></b>")
+			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Duchess of the Realm.</span></span></b>")
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
-
 /datum/outfit/job/roguetown/lord/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/crown/serpcrown
@@ -154,6 +153,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 /obj/effect/proc_holder/spell/self/grant_title
 	name = "Grant Title"
 	desc = "Grant someone a title of honor... Or shame."
+	overlay_state = "recruit_titlegrant"
 	antimagic_allowed = TRUE
 	charge_max = 100
 	/// Maximum range for title granting

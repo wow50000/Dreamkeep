@@ -12,32 +12,32 @@
 	var/list/phylacteries = list()
 	var/out_of_lives = FALSE
 
+/mob/living/carbon/human
+	/// List of minions that this mob has control over. Used for things like the Lich's "Command Undead" spell.
+	var/list/mob/minions = list()
+
 /datum/antagonist/lich/on_gain()
 	var/datum/game_mode/C = SSticker.mode
 	C.liches |= owner
 	. = ..()
 	owner.special_role = name
+	skele_look()
 	equip_lich()
 	greet()
 	return ..()
 
 /datum/antagonist/lich/greet()
-	to_chat(owner.current, span_userdanger("The secret of immortality is mine, but this is not enough. This land need a new ruler. One that will reign eternal."))
+	to_chat(owner.current, span_userdanger("The secret of immortality is mine, but this is not enough. A thousand lichdoms have risen and fallen over the eras. Mine will be the one to last."))
 	owner.announce_objectives()
 	..()
 
 /datum/antagonist/lich/proc/skele_look()
 	var/mob/living/carbon/human/L = owner.current
-	/* cooler to be white
 	L.hairstyle = "Bald"
 	L.facial_hairstyle = "Shaved"
-	*/
-	L.hair_color = "bababa"
 	L.update_body()
 	L.update_hair()
 	L.update_body_parts(redraw = TRUE)
-	for(var/obj/item/bodypart/B in L.bodyparts)
-		B.skeletonize(FALSE)
 
 /datum/antagonist/lich/proc/equip_lich()
 	owner.unknow_all_people()
@@ -59,6 +59,8 @@
 	ADD_TRAIT(L, TRAIT_ZOMBIE_IMMUNE, "[type]")
 	ADD_TRAIT(L, TRAIT_LIMBATTACHMENT, "[type]")
 	ADD_TRAIT(L, TRAIT_SEEPRICES, "[type]")
+	ADD_TRAIT(L, TRAIT_CRITICAL_RESISTANCE, "[type]")
+	ADD_TRAIT(L, TRAIT_HEAVYARMOR, "[type]")
 	L.cmode_music = 'sound/music/combat_cult.ogg'
 	L.faction = list("undead")
 	if(L.charflaw)
@@ -70,16 +72,18 @@
 		QDEL_NULL(eyes)
 	eyes = new /obj/item/organ/eyes/night_vision/zombie
 	eyes.Insert(L)
+	for(var/obj/item/bodypart/B in L.bodyparts)
+		B.skeletonize(FALSE)
 	L.equipOutfit(/datum/outfit/job/roguetown/lich)
 	L.set_patron(/datum/patron/inhumen/zizo)
 
 /datum/outfit/job/roguetown/lich/pre_equip(mob/living/carbon/human/H)
 	..()
+	head = /obj/item/clothing/head/roguetown/necromhood
 	pants = /obj/item/clothing/under/roguetown/chainlegs
-	shoes = /obj/item/clothing/shoes/roguetown/boots
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+	armor = /obj/item/clothing/suit/roguetown/shirt/robe/necromancer
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/ucolored
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	gloves = /obj/item/clothing/gloves/roguetown/chain
@@ -89,20 +93,20 @@
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
 	r_hand = /obj/item/rogueweapon/woodstaff/wise
 
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 6, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
 
 	H.change_stat("strength", -1)
 	H.change_stat("intelligence", 5)
@@ -110,11 +114,13 @@
 	H.change_stat("endurance", -1)
 	H.change_stat("speed", -1)
 
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/bonechill)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/command_undead)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/strengthen_undead)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/raise_undead)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/sickness)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/bloodlightning)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/eyebite)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/sickness)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	H.ambushable = FALSE
@@ -130,16 +136,15 @@
 		new_phylactery.possessor = lichman
 		H.equip_to_slot_or_del(new_phylactery,SLOT_IN_BACKPACK, TRUE)
 
-/datum/antagonist/lich/proc/consume_phylactery()
+/datum/antagonist/lich/proc/consume_phylactery(timer = 10 SECONDS)
 	for(var/obj/item/phylactery/phyl in phylacteries)
-		phyl.be_consumed()
+		phyl.be_consumed(timer)
 		phylacteries -= phyl
 		return TRUE
 
 /datum/antagonist/lich/proc/rise_anew()
 	var/mob/living/carbon/human/bigbad = owner.current
 	bigbad.revive(TRUE, TRUE)
-	skele_look()
 
 	for(var/obj/item/bodypart/B in bigbad.bodyparts)
 		B.skeletonize(FALSE)
