@@ -267,7 +267,7 @@
 /datum/quirk/backproblems
 	name = "Giant"
 	desc = "I've always been called a giant (atleast among my kin). I am valued for my stature, but, this world made for smaller folk has forced me to move cautiously."
-	value = 2
+	value = 0 //-2 speed is -30% movement speed, and the single point of constitution is traded for a significantly larger sprite. Remove the speed penalty or it stays neutral.
 
 /datum/quirk/backproblems/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
