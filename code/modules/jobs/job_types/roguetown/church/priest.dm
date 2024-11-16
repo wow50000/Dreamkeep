@@ -107,9 +107,9 @@
 		SSjob.type_occupations[/datum/job/roguetown/lord].add_spells(HU)
 		switch(HU.gender)
 			if("male")
-				SSticker.rulertype = "Duke"
+				SSticker.rulertype = "Monarch"
 			if("female")
-				SSticker.rulertype = "Duchess"
+				SSticker.rulertype = "Queen"
 		SSticker.rulermob = HU
 		var/dispjob = mind.assigned_role
 		removeomen(OMEN_NOLORD)
@@ -118,7 +118,7 @@
 
 /mob/living/carbon/human/proc/churchexcommunicate()
 	set name = "Excommunicate"
-	set category = "Prophet"
+	set category = "Priest"
 	if(stat)
 		return
 	var/inputty = input("Excommunicate someone, removing their ability to use miracles... (excommunicate them again to remove it)", "Sinner Name") as text|null
@@ -128,8 +128,7 @@
 			return FALSE
 		if(inputty in GLOB.excommunicated_players)
 			GLOB.excommunicated_players -= inputty
-			priority_announce("[real_name] has forgiven [inputty]. Once more walk in the divine!", title = "Hail the Gods!", sound = 'sound/misc/bell.ogg')
-			for(var/mob/living/carbon/human/H in GLOB.player_list)
+			priority_announce("[real_name] has forgiven [inputty]. Once more walk in the divine!", title = "Hail the Gods!", sound = 'sound/misc/bell.ogg')			for(var/mob/living/carbon/human/H in GLOB.player_list)
 				if(H.real_name == inputty)
 					H.remove_stress(/datum/stressevent/psycurse)
 					H.devotion.recommunicate()
@@ -148,7 +147,7 @@
 
 /mob/living/carbon/human/proc/churchhereticsbrand()
 	set name = "Brand Heretic"
-	set category = "Prophet"
+	set category = "Priest"
 	if(stat)
 		return
 	var/inputty = input("Brand someone as a foul heretic... (brand them again to remove it)", "Sinner Name") as text|null
@@ -180,14 +179,24 @@
 /mob/living/carbon/human/proc/churchannouncement()
 	set name = "Announcement"
 	set category = "Prophet"
-	if(stat)
+
+	if(!COOLDOWN_FINISHED(src, church_announcement))
+		to_chat(src, span_warning("I should wait..."))
 		return
+
+	if(stat)
+		return FALSE
+
 	var/inputty = input("Make an announcement", "STONEHEDGE") as text|null
-	if(inputty)
-		if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
-			to_chat(src, span_warning("I need to do this from the Temple or shrine, if I know where those are..."))
-			return FALSE
-		priority_announce("[inputty]", title = "The Prophet Speaks", sound = 'sound/misc/bell.ogg')
+	if(!inputty)
+		return FALSE
+
+	if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
+		to_chat(src, span_warning("I need to do this from the Temple or shrine, if I know where those are..."))
+		return FALSE
+
+	priority_announce("[inputty]", title = "The Prophet Speaks", sound = 'sound/misc/bell.ogg')
+	COOLDOWN_START(src, church_announcement, 30 SECONDS)
 
 /obj/effect/proc_holder/spell/self/convertrole/templar
 	name = "Recruit Templar"
@@ -203,6 +212,6 @@
 	new_role = "Acolyte"
 	overlay_state = "recruit_acolyte"
 	recruitment_faction = "Church"
-	recruitment_message = "Serve the ten, %RECRUIT!"
-	accept_message = "FOR THE TEN!"
+	recruitment_message = "Serve the divine, %RECRUIT!"
+	accept_message = "FOR THE DIVINE!"
 	refuse_message = "I refuse."
