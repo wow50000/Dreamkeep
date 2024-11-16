@@ -20,6 +20,7 @@
 	var/ai_when_client = FALSE
 	var/next_idle = 0
 	var/next_seek = 0
+	var/next_stand = 0
 	var/next_passive_detect = 0
 	var/flee_in_pain = FALSE
 	var/stand_attempts = 0
@@ -252,9 +253,6 @@
 	if(L == src)
 		return FALSE
 
-	if (L.alpha == 0 && L.rogue_sneaking)
-		return FALSE
-
 	if(!is_in_zweb(src.z,L.z))
 		return FALSE
 
@@ -286,15 +284,14 @@
 				for(var/mob/living/L in view(7, src)) // scan for enemies
 					if(should_target(L))
 						retaliate(L)
-					
-					if (world.time >= next_passive_detect && L.alpha == 0 && L.rogue_sneaking && prob(STAPER / 2))
+					if (world.time >= next_passive_detect && L.alpha > 100 && prob(STAPER / 2))
 						if (!npc_detect_sneak(L, -20)) // attempt a passive detect with 20% increased difficulty
 							next_passive_detect = world.time + STAPER SECONDS
 
 		if(AI_HUNT)		// hunting for attacker
 			if(target != null)
 				if(!should_target(target))
-					if (target.alpha == 0 && target.rogue_sneaking) // attempt one detect since we were just fighting them and have lost them
+					if (target.alpha <= 100 && target.rogue_sneaking) // attempt one detect since we were just fighting them and have lost them
 						if (npc_detect_sneak(target))
 							retaliate(target)
 					else
@@ -438,7 +435,7 @@
 	if(L == src)
 		return
 	if(mode != AI_OFF)
-		if (L.alpha == 0 && L.rogue_sneaking)
+		if (L.alpha <= 100)
 			// we just got hit by something hidden so try and find them
 			if (prob(5))
 				visible_message(span_notice("[src] begins searching around frantically..."))
@@ -452,8 +449,9 @@
 			emote("aggro")
 		target = L
 		enemies |= L
+
 /mob/living/proc/npc_detect_sneak(mob/living/target, extra_prob = 0)
-	if (target.alpha > 0 || !target.rogue_sneaking)
+	if (target.alpha > 100)
 		return TRUE
 	var/probby = 4 * STAPER //this is 10 by default - npcs get an easier time to detect to slightly thwart cheese
 	probby += extra_prob

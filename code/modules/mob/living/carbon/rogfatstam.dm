@@ -1,8 +1,5 @@
 /mob/living/proc/update_rogfat() //update hud and regen after last_fatigued delay on taking
-	var/athletics_skill = 0
-	if(mind)
-		athletics_skill = mind.get_skill_level(/datum/skill/misc/athletics)
-	maxrogfat = (STAEND + (athletics_skill) / 2) * 10 //This here is the calculation for max FATIGUE / GREEN
+	maxrogfat = maxrogstam / 10
 
 	if(world.time > last_fatigued + 50) //regen fatigue
 		var/added = rogstam / maxrogstam
@@ -20,7 +17,7 @@
 	var/athletics_skill = 0
 	if(mind)
 		athletics_skill = mind.get_skill_level(/datum/skill/misc/athletics)
-	maxrogstam = (STAEND + (athletics_skill) / 2) * 100 // STAMINA / BLUE
+	maxrogstam = (STAEND + (athletics_skill/2 ) ) * 100
 	if(cmode)
 		if(!HAS_TRAIT(src, TRAIT_BREADY))
 			rogstam_add(-2)
@@ -30,8 +27,6 @@
 
 /mob/living/rogstam_add(added as num)
 	if(HAS_TRAIT(src, TRAIT_NOROGSTAM) || HAS_TRAIT(src, TRAIT_ZOMBIE_SPEECH))
-		return TRUE
-	if(HAS_TRAIT(src, TRAIT_NOSLEEP))
 		return TRUE
 	if(m_intent == MOVE_INTENT_RUN)
 		mind.adjust_experience(/datum/skill/misc/athletics, (STAINT*0.08))

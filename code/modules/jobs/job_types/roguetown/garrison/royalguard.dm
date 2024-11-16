@@ -1,5 +1,5 @@
 /datum/job/roguetown/royalguard
-	title = "Royal Knight"
+	title = "Pegasian Knight"
 	flag = ROYALGUARD
 	department_flag = GARRISON
 	faction = "Station"

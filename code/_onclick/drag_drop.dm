@@ -60,7 +60,6 @@
 	var/goal
 	var/progress
 	var/doneset
-	var/aghost_toggle
 
 /atom
 	var/blockscharging = FALSE

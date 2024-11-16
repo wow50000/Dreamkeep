@@ -18,7 +18,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		"I AM THE LAND!",
 		"CHILD OF BLOOD!",
 	)
-	rogue_enabled = TRUE
 	var/isspawn = FALSE
 	var/disguised = FALSE
 	var/ascended = FALSE
@@ -945,7 +944,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/two/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/noblejobs = list("Duke", "Duke Courtier", "Royal Heir", "Hand", "Steward")
+	var/list/noblejobs = list("Monarch", "Consort", "Royal Heir", "Hand", "Steward")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in noblejobs)
 			return TRUE
@@ -1332,7 +1331,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				to_chat(L, "<font color='white'>The silver symbol shines and protect me from the enchantment magic.</font>")
 				to_chat(user, span_userdanger("[L] has my BANE!It causes me to fail to ensnare their mind!"))
 			else
-				L.drowsyness = min(L.drowsyness + 50, 150)
+				L.drowsyness += min(L.drowsyness + 50, 150)
 				switch(L.drowsyness)
 					if(0 to 50)
 						to_chat(L, "You feel like a curtain is coming over your mind.")
@@ -1409,7 +1408,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		if(L.cmode)
 			willroll += 15
 		if(bloodroll >= willroll)
-			L.drowsyness = min(L.drowsyness + 50, 150)
+			L.drowsyness += min(L.drowsyness + 50, 150)
 			switch(L.drowsyness)
 				if(0 to 50)
 					to_chat(L, "You feel like a curtain is coming over your mind.")

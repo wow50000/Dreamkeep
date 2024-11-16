@@ -67,7 +67,7 @@ SUBSYSTEM_DEF(ticker)
 	var/end_state = "undefined"
 	var/job_change_locked = FALSE
 	var/list/royals_readied = list()
-	var/rulertype = "Duke" // reports whether king or queen rules
+	var/rulertype = "Monarch" // reports whether king or queen rules
 	var/rulermob = null // reports what the ruling mob is.
 	var/rulermob2 = null // for queen
 	var/failedstarts = 0
@@ -556,7 +556,7 @@ SUBSYSTEM_DEF(ticker)
 	for(var/mob/living/carbon/human/K in world)
 		if(istype(K, /mob/living/carbon/human/dummy))
 			continue
-		if(K.job == "Duke")
+		if(K.job == "Monarch")
 			rulermob = K
 			return
 

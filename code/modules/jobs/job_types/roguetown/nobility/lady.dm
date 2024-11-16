@@ -1,5 +1,5 @@
 /datum/job/roguetown/lady
-	title = "Duke Courtier"
+	title = "Consort"
 	flag = LADY
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -10,10 +10,8 @@
 	allowed_races = RACES_ALL_KINDS
 	tutorial = "Picked out of your political value rather than likely any form of love, you have become the King's most trusted confidant and likely friend throughout your arrangement. Your loyalty and, perhaps, love; will be tested this day. For the daggers that threaten your beloved are as equally pointed at your own throat."
 
-	spells = list(/obj/effect/proc_holder/spell/self/convertrole/servant,
-	/obj/effect/proc_holder/spell/self/grant_nobility,
-	/obj/effect/proc_holder/spell/self/convertrole/mercenary)
-	
+	spells = list(/obj/effect/proc_holder/spell/self/convertrole/servant)
+	outfit = /datum/outfit/job/roguetown/lady
 
 	display_order = JDO_LADY
 	give_bank_account = TRUE
@@ -84,19 +82,8 @@
 /obj/effect/proc_holder/spell/self/convertrole/servant
 	name = "Recruit Servant"
 	new_role = "Servant"
-	overlay_state = "recruit_servant"
 	recruitment_faction = "Servants"
 	recruitment_message = "Serve the crown, %RECRUIT!"
 	accept_message = "FOR THE CROWN!"
-	refuse_message = "I refuse."
-	charge_max = 100
-
-/obj/effect/proc_holder/spell/self/convertrole/mercenary
-	name = "Recruit Mercenary"
-	new_role = "Mercenary"
-	overlay_state = "recruit_guard"
-	recruitment_faction = "MERCENARIES"
-	recruitment_message = "Serve the Guild, %RECRUIT!"
-	accept_message = "FOR THE GUILD!"
 	refuse_message = "I refuse."
 	charge_max = 100

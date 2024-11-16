@@ -200,7 +200,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30,
 				/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 50,
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf/gator = 50)
-	first_time_text = "THE TERRROBOG"
+	first_time_text = "THE FOREST"
 	converted_type = /area/rogue/indoors/shelter/bog
 
 /area/rogue/outdoors/goblinfort

@@ -61,7 +61,7 @@
 	whp = 150
 	sleep_healing = 0
 	/// Most head fractures are serious enough to cause paralysis
-	var/paralysis = FALSE
+	var/paralysis = TRUE
 	/// Some head fractures are so serious they cause instant death
 	var/mortal = FALSE
 	/// Funny easter egg
@@ -107,7 +107,7 @@
 		"The cranium is torn!",
 	)
 	embed_chance = 100
-	paralysis = FALSE
+	paralysis = TRUE
 	mortal = FALSE
 	dents_brain = TRUE
 
@@ -120,7 +120,7 @@
 		"The eye socket is pierced!",
 	)
 	embed_chance = 100
-	paralysis = FALSE
+	paralysis = TRUE
 	mortal = TRUE
 	dents_brain = FALSE
 
@@ -133,7 +133,7 @@
 		"The ear canal is pierced!",
 	)
 	embed_chance = 100
-	paralysis = FALSE
+	paralysis = TRUE
 	mortal = TRUE
 	dents_brain = FALSE
 
@@ -211,7 +211,7 @@
 
 /datum/wound/fracture/chest/on_mob_gain(mob/living/affected)
 	. = ..()
-	affected.Stun(0)
+	affected.Stun(20)
 
 /datum/wound/fracture/chest/on_life()
 	. = ..()
@@ -219,7 +219,7 @@
 		return
 	var/mob/living/carbon/carbon_owner = owner
 	if(!carbon_owner.stat && prob(5))
-		carbon_owner.vomit(1, blood = TRUE, stun = FALSE)
+		carbon_owner.vomit(1, blood = TRUE, stun = TRUE)
 
 /datum/wound/fracture/groin
 	name = "pelvic fracture"

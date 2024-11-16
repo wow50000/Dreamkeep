@@ -56,12 +56,20 @@
 	. = ..()
 	if(get_dist(user, target) > 7)
 		return
-	if(istype(user.used_intent, /datum/intent/lordpoint))
-		user.changeNext_move(CLICK_CD_MELEE)
-		user.visible_message(span_warning("[user] points [src] at [target]."))
-		if(ishuman(user))
-			var/mob/living/carbon/human/HU = user
-			if((HU.job != "Duke") && (HU.job != "Duke Courtier"))
+
+	user.changeNext_move(CLICK_CD_MELEE)
+
+	if(ishuman(user))
+		var/mob/living/carbon/human/HU = user
+
+		if((HU.job != "Monarch") && (HU.job != "Consort"))
+			to_chat(user, span_danger("The rod doesn't obey me."))
+			return
+
+		if(ishuman(target))
+			var/mob/living/carbon/human/H = target
+
+			if(H == HU)
 				return
 
 			if(H.anti_magic_check())

@@ -68,7 +68,6 @@
 	H.verbs |= /mob/living/carbon/human/proc/coronate_lord
 	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate
 	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
-	H.verbs |= /mob/living/carbon/human/proc/churchhereticsbrand
 //	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 
 /mob/living/carbon/human/proc/coronate_lord()
@@ -82,29 +81,30 @@
 	for(var/mob/living/carbon/human/HU in get_step(src, src.dir))
 		if(!HU.mind)
 			continue
-		if(HU.mind.assigned_role == "Duke")
+		if(HU.mind.assigned_role == "Monarch")
 			continue
 		if(!HU.head)
 			continue
 		if(!istype(HU.head, /obj/item/clothing/head/roguetown/crown/serpcrown))
 			continue
 
-		//Abdicate previous Duke
+		//Abdicate previous King
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.mind)
-				if(HL.mind.assigned_role == "Duke" || HL.mind.assigned_role == "Duke Courtier")
+				if(HL.mind.assigned_role == "Monarch" || HL.mind.assigned_role == "Consort")
 					HL.mind.assigned_role = "Towner" //So they don't get the innate traits of the king
 			//would be better to change their title directly, but that's not possible since the title comes from the job datum
-			if(HL.job == "Duke")
+			if(HL.job == "Monarch")
 				HL.job = "King Emeritus"
-			if(HL.job == "Duke Courtier")
+			if(HL.job == "Consort")
 				HL.job = "Queen Dowager"
 			SSjob.type_occupations[/datum/job/roguetown/lord].remove_spells(HL)
 
-		//Coronate new Duke (or Duchess)
-		HU.mind.assigned_role = "Duke"
-		HU.job = "Duke"
+		//Coronate new King (or Queen)
+		HU.mind.assigned_role = "Monarch"
+		HU.job = "Monarch"
 		SSjob.type_occupations[/datum/job/roguetown/lord].add_spells(HU)
+
 		switch(HU.gender)
 			if("male")
 				SSticker.rulertype = "Monarch"
@@ -113,51 +113,22 @@
 		SSticker.rulermob = HU
 		var/dispjob = mind.assigned_role
 		removeomen(OMEN_NOLORD)
-		say("By the authority of the gods, I pronounce you Ruler of all the Realm!")
-		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of the Realm!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
+		say("By the authority of the gods, I pronounce you Ruler of all Stone Hedge!")
+		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of STONEHEDGE!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
 
 /mob/living/carbon/human/proc/churchexcommunicate()
-	set name = "Excommunicate"
-	set category = "Priest"
+	set name = "Curse"
+	set category = "Prophet"
 	if(stat)
 		return
-	var/inputty = input("Excommunicate someone, removing their ability to use miracles... (excommunicate them again to remove it)", "Sinner Name") as text|null
+	var/inputty = input("Curse someone... (curse them again to remove it)", "Sinner Name") as text|null
 	if(inputty)
 		if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
-			to_chat(src, span_warning("I need to do this from the Church's chapel."))
+			to_chat(src, span_warning("I need to do this from the chapel."))
 			return FALSE
 		if(inputty in GLOB.excommunicated_players)
 			GLOB.excommunicated_players -= inputty
-			priority_announce("[real_name] has forgiven [inputty]. Once more walk in the divine!", title = "Hail the Gods!", sound = 'sound/misc/bell.ogg')			for(var/mob/living/carbon/human/H in GLOB.player_list)
-				if(H.real_name == inputty)
-					H.remove_stress(/datum/stressevent/psycurse)
-					H.devotion.recommunicate()
-			return
-		var/found = FALSE
-		for(var/mob/living/carbon/human/H in GLOB.player_list)
-			if(H.real_name == inputty)
-				found = TRUE
-				H.add_stress(/datum/stressevent/psycurse)
-				H.devotion.excommunicate()
-		if(!found)
-			return FALSE
-
-		GLOB.excommunicated_players += inputty
-		priority_announce("[real_name] has excommunicated [inputty] from the Church!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
-
-/mob/living/carbon/human/proc/churchhereticsbrand()
-	set name = "Brand Heretic"
-	set category = "Priest"
-	if(stat)
-		return
-	var/inputty = input("Brand someone as a foul heretic... (brand them again to remove it)", "Sinner Name") as text|null
-	if(inputty)
-		if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
-			to_chat(src, span_warning("I need to do this from the Church."))
-			return FALSE
-		if(inputty in GLOB.heretical_players)
-			GLOB.heretical_players -= inputty
-			priority_announce("[real_name] has removed the Heretic's Brand from [inputty]. Once more walk in the light!", title = "Hail the Ten!", sound = 'sound/misc/bell.ogg')
+			priority_announce("[real_name] has forgiven [inputty]. Once more walk in the divine!", title = "Hail the Gods!", sound = 'sound/misc/bell.ogg')
 			for(var/mob/living/carbon/human/H in GLOB.player_list)
 				if(H.real_name == inputty)
 					H.remove_stress(/datum/stressevent/psycurse)
@@ -171,10 +142,11 @@
 				H.add_stress(/datum/stressevent/psycurse)
 		if(!found)
 			return FALSE
+		GLOB.excommunicated_players += inputty
+		priority_announce("[real_name] has put a curse of woe on [inputty] for offending the faith! They are to be denied healing and ought to be presented before the divine for penance!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
 
-		GLOB.heretical_players += inputty
-		priority_announce("[real_name] has placed a Heretic's Brand upon [inputty]!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
-
+/mob/living/carbon/human
+	COOLDOWN_DECLARE(church_announcement)
 
 /mob/living/carbon/human/proc/churchannouncement()
 	set name = "Announcement"
@@ -201,7 +173,6 @@
 /obj/effect/proc_holder/spell/self/convertrole/templar
 	name = "Recruit Templar"
 	new_role = "Templar"
-	overlay_state = "recruit_templar"
 	recruitment_faction = "Templars"
 	recruitment_message = "Serve the ten, %RECRUIT!"
 	accept_message = "FOR THE TEN!"
@@ -209,8 +180,7 @@
 
 /obj/effect/proc_holder/spell/self/convertrole/monk
 	name = "Recruit Acolyte"
-	new_role = "Acolyte"
-	overlay_state = "recruit_acolyte"
+	new_role = "Priest"
 	recruitment_faction = "Church"
 	recruitment_message = "Serve the divine, %RECRUIT!"
 	accept_message = "FOR THE DIVINE!"

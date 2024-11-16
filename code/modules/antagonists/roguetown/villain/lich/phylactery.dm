@@ -15,11 +15,11 @@
 	..()
 	filters += filter(type="drop_shadow", x=0, y=0, size=1, offset=2, color=rgb(rand(1,255),rand(1,255),rand(1,255)))
 
-/obj/item/phylactery/proc/be_consumed(timer)
+/obj/item/phylactery/proc/be_consumed()
 	var/offset = prob(50) ? -2 : 2
 	animate(src, pixel_x = pixel_x + offset, time = 0.2, loop = -1) //start shaking
 	visible_message(span_warning("[src] begins to glow and shake violently!"))
-	spawn(timer)
+	spawn(100)
 		possessor.owner.current.forceMove(get_turf(src))
 		possessor.rise_anew()
 		qdel(src)
