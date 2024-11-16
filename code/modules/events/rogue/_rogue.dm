@@ -34,11 +34,11 @@ GLOBAL_LIST_INIT(badomens, list())
 	var/used
 	switch(eventreason)
 		if(OMEN_ROUNDSTART)
-			used = "Zizo."
+			used = "Levishth."
 		if(OMEN_NOLORD)
-			used = "The Monarch is dead! We need a new ruler."
+			used = "The Duke is dead! We need a new ruler."
 		if(OMEN_NOPRIEST)
-			used = "The High Priest is dead!"
+			used = "The Prophet is dead!"
 		if(OMEN_NOBLEDEATH)
 			used = "A Noble has perished."
 		if(OMEN_SUNSTEAL)
@@ -46,7 +46,7 @@ GLOBAL_LIST_INIT(badomens, list())
 		if(OMEN_SKELETONSIEGE)
 			used = "Unwelcome visitors!"
 		if("ascend")
-			used = "Zizo will rise once again."
+			used = "Levishth will rise once again."
 	if(eventreason && used)
 		priority_announce(used, "Bad Omen", 'sound/misc/evilevent.ogg')
 
