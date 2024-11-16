@@ -127,8 +127,8 @@
 	var/collegechoice = input("Choose your college", "Available colleges") as anything in colleges
 	switch(collegechoice)
 		if("College of Lore")
-			H.mind.adjust_skillrank_up_to(/datum/skill/misc/music, 1, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 
 		if("College of Eloquence")
 			ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
@@ -136,16 +136,16 @@
 		if("College of Spirits")
 			ADD_TRAIT(H, TRAIT_SPIRITUAL, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_SOUL_EXAMINE, TRAIT_GENERIC)
-			H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 
 		if("College of Swords")
-			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 1, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 			H.give_fightingstyle() //gives one fighting style
 
 		if("College of Whispers")
-			H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 2, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/misc/lockpicking, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 			backpack_contents = list(/obj/item/lockpickring/mundane)
 
 	if(H.dna?.species)
