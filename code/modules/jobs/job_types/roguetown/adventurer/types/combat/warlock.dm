@@ -18,6 +18,7 @@
 	H.adjust_blindness(-3)
 	if(H.mind)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e)
+		H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn) // base arcane skill means all warlocks get 2 points to spend
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, pick(0,1), TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
@@ -155,6 +156,8 @@
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 1)
 
+	H.mind.adjust_spellpoints(3) // general arcane power, less total gain than other trees, 5 points total (it's hard to give "celestial" a real spell theme)
+
 	givehealing(H, patronchoice, TRUE)
 
 	H.visible_message(span_info("I made a deal with a celestial being from the heavens."))
@@ -190,6 +193,10 @@
 	H.change_stat("constitution", 2)
 	H.change_stat("endurance", 1)
 	H.change_stat("speed", -1)
+
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/acidsplash5e)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/frostbite5e) // "water" and ice magic, less arcane power because armor and dodge training
+
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_WATERBREATHING, TRAIT_GENERIC)
@@ -199,8 +206,8 @@
 /datum/outfit/job/roguetown/adventurer/warlock/proc/fiendpatron(mob/living/carbon/human/H, patronchoice) //hellish fiend
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
-		
+	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
+	
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	mask = /obj/item/clothing/mask/rogue/facemask/gold
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/magered
@@ -216,6 +223,7 @@
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 1)
 
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball) // fireball is a very strong spell, fiendkiss makes it even stronger
 	ADD_TRAIT(H, TRAIT_NOFIRE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_FIENDKISS, TRAIT_GENERIC)
 
@@ -241,6 +249,10 @@
 	H.change_stat("endurance", 1) // 
 	H.change_stat("speed", 2)
 	H.change_stat("fortune", 2)
+
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/haste)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/push_spell) // going with wind theme, speed and airblast, possibly eventual picker for "which type of genie did you make a deal with"
+
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 
 	H.visible_message(span_info("I made a deal with a djinn from a magic lamptern."))
@@ -267,8 +279,7 @@
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 1)
 
-	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
-	H.mind.adjust_spellpoints(4)
+	H.mind.adjust_spellpoints(4) // 8 total spell points after arcane adjust; forbidden eldritch knowledge to build your own spellbook, but you get nothing else
 
 	H.visible_message(span_info("Most minds would fracture having spoken to the creecher I made a deal with..."))
 
@@ -308,6 +319,8 @@
 	H.change_stat("endurance", 1)
 	H.change_stat("speed", -1)
 
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/greenflameblade5e) // put that new weapon to work! martial focus means less magic
+	
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
@@ -351,13 +364,15 @@
 	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 3)
 
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/cloakofflies)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/infestation5e)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/chilltouch5e) // decay-themed magic and a skeletal hand to attack people with
+
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 
 	H.visible_message(span_info("I made a deal with a horror from the grave."))
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/cloakofflies)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/infestation5e)
 
 ///////////////////////////////
 //	Faithless Healing
