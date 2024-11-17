@@ -135,7 +135,7 @@
 /obj/item/clothing/shoes/roguetown/boots/carapace/dragon
 	name = "dragonscale boots"
 	desc = "Boots made from dragonscale for added protection."
-	color = "red"
+	color = "black"
 	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 
 

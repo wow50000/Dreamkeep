@@ -58,7 +58,7 @@
 /obj/item/clothing/wrists/roguetown/bracers/carapace/dragon
 	name = "dragonscale bracers"
 	desc = "Fiber bracers lined with dragonscale to protect your wrists"
-	color = "red"
+	color = "black"
 	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/wrists/roguetown/bracers/leather
