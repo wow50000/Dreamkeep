@@ -12,7 +12,7 @@
 
 	outfit = /datum/outfit/job/roguetown/alchemist
 	display_order = 6
-	give_bank_account = 12
+	give_bank_account = 25
 	min_pq = 5
 	max_pq = null
 
@@ -35,8 +35,15 @@
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
 		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
+		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		cloak = /obj/item/clothing/cloak/apron/brown
+		backl = /obj/item/storage/backpack/rogue/backpack
+		backpack_contents = list(
+		/obj/item/reagent_containers/glass/alembic = 1,
+		/obj/item/storage/fancy/ifak = 1,
+		/obj/item/clothing/ring/lantern = 1,
+		/obj/item/storage/box/matches = 1,
+		)
 		H.change_stat("intelligence", 3)
 		H.change_stat("speed", -1)
 	else
@@ -44,7 +51,14 @@
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
 		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
+		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		cloak = /obj/item/clothing/cloak/apron/brown
-		H.change_stat("intelligence", 2)
-		H.change_stat("speed", -2)
+		backl = /obj/item/storage/backpack/rogue/backpack
+		backpack_contents = list(
+		/obj/item/reagent_containers/glass/alembic = 1,
+		/obj/item/storage/fancy/ifak = 1,
+		/obj/item/clothing/ring/lantern = 1,
+		/obj/item/storage/box/matches = 1,
+		)
+		H.change_stat("intelligence", 3) // bob I like your code work but you are a sexist prick and I hate wiping your ass of this lil subtle stab shit.
+		H.change_stat("speed", -1)
