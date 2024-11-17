@@ -187,7 +187,7 @@
 	name = "dragonscale armor"
 	desc = "Armor crafted from the hardened scales of a dragon."
 	body_parts_covered = CHEST|GROIN|VITALS
-	color = "black"
+	color = "#9e5761"
 	icon_state = "carapace"
 	item_state = "carapace"
 	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
@@ -199,7 +199,7 @@
 	name = "dragonscale cuirass"
 	desc = "Vest styled dragonscale chest armor sewn in layers."
 	body_parts_covered = CHEST|GROIN|VITALS
-	color = "black"
+	color = "#9e5761"
 	icon_state = "carapacecuirass"
 	item_state = "carapacecuirass"
 	max_integrity = 450

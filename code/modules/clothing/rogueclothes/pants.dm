@@ -303,7 +303,7 @@
 	name = "dragonscale platelegs"
 	desc = "Dragonscale armor to protect the legs."
 	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
-	color = "black"
+	color = "#9e5761"
 	sellprice = 50
 
 /obj/item/clothing/under/roguetown/carapacelegs/dragon/skirt
