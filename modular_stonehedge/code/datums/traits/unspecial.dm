@@ -83,6 +83,17 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.special_items["Short Sword"] = /obj/item/rogueweapon/sword/short
 
+/datum/quirk/fence
+	name = "Fencer"
+	desc = "I have trained in agile sword fighting. I dodge more easily and have stashed my rapier nearby"
+	value = 6
+
+/datum/quirk/fence/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, QUIRK_TRAIT)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+	H.mind.special_items["Rapier"] = /obj/item/rogueweapon/sword/rapier
+
 /datum/quirk/training2
 	name = "Mace Training"
 	desc = "I have mace training and stashed a mace."
