@@ -548,7 +548,7 @@
 /datum/quirk/nymphomaniac
 	name = "Nymphomaniac"
 	desc = "I am so senstiive even my pants are enough to constantly arouse me... I must not wear pants or wear things that don't touch my groin. Atleast my experiences with certain things make me good in bed."
-	value = -5 // this thing really really sucks to have. I watched someone suffer all round with it.
+	value = -3 // this thing really really sucks to have. I watched someone suffer all round with it.
 
 /datum/quirk/nymphomaniac/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
