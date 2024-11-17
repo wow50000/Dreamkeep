@@ -1221,6 +1221,7 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "dragonslayer full helm"
 	desc = "Helmet crafted from the head of a dragon."
+	body_parts_covered = HEAD|HAIR|EARS|NOSE|NECK
 	color = "red"
 	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 	max_integrity = 300
