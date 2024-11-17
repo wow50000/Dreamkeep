@@ -75,13 +75,12 @@
 //positive
 /datum/quirk/duelist
 	name = "Swordmaster"
-	desc = "I was the student of a sword master, I am unmatched in swordsmanship! I've also hidden a rapier."
-	value = 6
+	desc = "I was the student of a sword master, I am skilled in swordsmanship! I've also hidden a rapier."
+	value = 5
 
 /datum/quirk/duelist/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.change_stat("speed", 2)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
 	H.mind.special_items["Rapier"] = /obj/item/rogueweapon/sword/rapier
 
 /datum/quirk/training1
@@ -237,7 +236,7 @@
 /datum/quirk/pineapple/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.special_items["Whip"] = /obj/item/rogueweapon/whip
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 4, TRUE)
 
 /datum/quirk/packed_lunch
 	name = "Packed Lunch"
