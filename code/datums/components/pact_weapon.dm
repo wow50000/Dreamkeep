@@ -5,7 +5,7 @@
 	var/weapons = list(
 		/obj/item/rogueweapon/huntingknife/cleaver, /obj/item/rogueweapon/huntingknife/idagger/steel, //daggers
 		/obj/item/rogueweapon/sword/rapier, /obj/item/rogueweapon/sword/long, /obj/item/rogueweapon/greatsword, //swords
-		/obj/item/rogueweapon/mace/steel, /obj/item/rogueweapon/mace/goden/steel //blunt
+		/obj/item/rogueweapon/mace/steel, /obj/item/rogueweapon/mace/goden/steel, //blunt
 		/obj/item/rogueweapon/stoneaxe/woodcut/steel, /obj/item/rogueweapon/stoneaxe/battle, //axes
 		/obj/item/rogueweapon/whip, /obj/item/rogueweapon/flail, //flails
 		/obj/item/rogueweapon/spear, /obj/item/rogueweapon/halberd, /obj/item/rogueweapon/sickle/scythe //polearms
