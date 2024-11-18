@@ -70,7 +70,8 @@
 /atom/movable/screen/alert/status_effect/debuff/stealthcd
 	name = "Stealth Broken"
 	desc = "I've recently dealt a sneak attack and can't sneak again for a short while"
-	icon_state = "sleepy"
+	icon = 'modular_stonehedge/icons/mob/screen_alert.dmi'
+	icon_state = "stealthcd"
 
 /datum/status_effect/debuff/stealthcd/on_apply()
 	if(owner.mind)

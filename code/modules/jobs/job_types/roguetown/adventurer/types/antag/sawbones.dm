@@ -17,7 +17,16 @@
 	beltr = /obj/item/rogueweapon/huntingknife/cleaver /// proper self defense an tree aquiring
 	pants = /obj/item/clothing/under/roguetown/trou
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-	backl = /obj/item/storage/backpack/rogue/backpack/surgery
+	backl = /obj/item/storage/backpack/rogue/backpack
+	backpack_contents = list(
+		/obj/item/reagent_containers/glass/alembic = 1,
+		/obj/item/storage/fancy/ifak = 1,
+		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 1,
+		/obj/item/clothing/mask/rogue/physician = 1,
+		/obj/item/storage/box/matches = 1, /// for carterizer and lantern.
+		/obj/item/clothing/ring/lantern = 1,
+		/obj/item/storage/fancy/skit = 1,
+	)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 4, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
@@ -31,7 +40,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) //Given for consistencysake as the idol still provides scalemail.
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) //Given for consistency sake as the idol still provides scalemail.
 	H.change_stat("strength", 3)
 	H.change_stat("endurance", 2)
 	H.change_stat("intelligence", 1)
@@ -41,5 +50,8 @@
 		H.change_stat("intelligence", 1)
 		H.change_stat("perception", 1)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/docheal)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/stable)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/purge)
 	H.verbs |= /mob/proc/haltyell
 	H.ambushable = FALSE

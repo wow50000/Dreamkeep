@@ -9235,6 +9235,8 @@
 	})
 "fkI" = (
 /obj/structure/rack/rogue/shelf/big,
+/obj/item/rope,
+/obj/item/rope,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/shelter/bog)
 "fkN" = (
@@ -11439,7 +11441,8 @@
 	})
 "gBb" = (
 /obj/structure/bars/passage{
-	name = "Cell C"
+	name = "Cell C";
+	redstone_id = "Cell C"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/bog)
@@ -11723,6 +11726,10 @@
 /area/rogue/indoors/shelter/town)
 "gKZ" = (
 /obj/structure/rack/rogue/shelf/big,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/indoors/shelter/bog)
 "gLO" = (
@@ -12592,13 +12599,6 @@
 /obj/structure/chair/bench/ultimacouch,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/indoors/shelter/town)
-"hpA" = (
-/obj/structure/flora/grass/jungle/b,
-/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/woods{
-	first_time_text = "The Deepwoods"
-	})
 "hpB" = (
 /obj/effect/landmark/start/barkeeper,
 /turf/open/floor/rogue/wood,
@@ -18268,6 +18268,10 @@
 /obj/effect/mist,
 /turf/open/floor/rogue/dirt/ambush,
 /area/rogue/outdoors/caves)
+"kHH" = (
+/obj/structure/long_sleep/mushroom,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/cavewet)
 "kHU" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/wildplant/wild_herbs,
@@ -19593,8 +19597,8 @@
 	name = "Underkeep"
 	})
 "lyd" = (
-/obj/structure/flora/grass/jungle{
-	icon_state = "grassa1"
+/obj/structure/sword/sif{
+	name = "Sword of Minhur"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
@@ -20063,6 +20067,13 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
+	})
+"lNG" = (
+/obj/structure/long_sleep/mushroom,
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town/manor{
+	first_time_text = "Underkeep";
+	name = "Underkeep"
 	})
 "lOA" = (
 /obj/structure/fluff/railing/border{
@@ -22617,6 +22628,10 @@
 	icon_state = "tablewood1";
 	dir = 1
 	},
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/shelter/bog)
 "nqC" = (
@@ -27600,8 +27615,9 @@
 /obj/structure/lever/wall{
 	dir = 4;
 	pixel_x = 0;
-	redstone_id = "weaponsmith_shutter";
-	pixel_y = 0
+	redstone_id = "Cell A";
+	pixel_y = 0;
+	name = "Cell A"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/bog)
@@ -29993,7 +30009,6 @@
 	first_time_text = "Stonehedge"
 	})
 "rub" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -31375,6 +31390,13 @@
 	icon_state = "wooddark-k"
 	},
 /area/rogue/indoors/shelter/town)
+"slu" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/long_sleep/mushroom,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Mountain Passe"
+	})
 "slU" = (
 /obj/structure/mineral_door/wood{
 	name = "Fancy Room III";
@@ -31714,6 +31736,13 @@
 /obj/structure/chair/bench/coucha,
 /turf/open/floor/rogue/hexstone,
 /area/chapel/main)
+"swH" = (
+/obj/structure/long_sleep/mushroom,
+/turf/open/floor/rogue/blocks/stone/stonepattern3,
+/area/rogue/indoors/town/manor{
+	first_time_text = "Underkeep";
+	name = "Underkeep"
+	})
 "swN" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/grass,
@@ -37711,6 +37740,10 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/bronze,
 /area/rogue/indoors/shelter/town/dwarf)
+"vWQ" = (
+/obj/structure/long_sleep/mushroom,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/river)
 "vWS" = (
 /obj/structure/flora/roguegrass/water,
 /turf/open/water/river,
@@ -38145,6 +38178,8 @@
 /area/rogue/under/cavewet)
 "wji" = (
 /obj/structure/closet/crate/chest,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/bog)
 "wjl" = (
@@ -105072,7 +105107,7 @@ wyR
 wyR
 tSg
 wyR
-rrf
+kHH
 ogt
 ogt
 ogt
@@ -183263,7 +183298,7 @@ gZA
 psN
 hSX
 fch
-ugq
+rrf
 psN
 aAG
 lOR
@@ -184320,7 +184355,7 @@ psN
 wyR
 ufU
 rrf
-ugq
+rrf
 rrf
 jHB
 fch
@@ -206435,7 +206470,7 @@ uyO
 uyO
 uyO
 qrL
-vyr
+vWQ
 jSD
 vyr
 rYj
@@ -217781,7 +217816,7 @@ ogt
 ogt
 ctF
 ctF
-cbx
+swH
 xHG
 niZ
 vox
@@ -230102,7 +230137,7 @@ ctF
 iDk
 pwq
 xnI
-htD
+lNG
 htD
 htD
 eIU
@@ -268123,7 +268158,7 @@ kFT
 omX
 uWo
 kFT
-hpA
+swN
 ggZ
 omX
 ggZ
@@ -272991,7 +273026,7 @@ ggZ
 whj
 swN
 ggZ
-uBN
+dWA
 kIs
 uBN
 uBN
@@ -309211,7 +309246,7 @@ nMe
 nMe
 nMe
 nMe
-rAo
+slu
 gii
 jQQ
 jQQ
@@ -454888,7 +454923,7 @@ eee
 ruL
 bbv
 sRh
-eAk
+vdB
 gik
 dsO
 fkI

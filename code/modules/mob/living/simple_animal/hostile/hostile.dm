@@ -51,7 +51,7 @@
 	var/lose_patience_timer_id //id for a timer to call LoseTarget(), used to stop mobs fixating on a target they can't reach
 	var/lose_patience_timeout = 300 //30 seconds by default, so there's no major changes to AI behaviour, beyond actually bailing if stuck forever
 
-	var/del_on_deaggro = 0 //seconds to delete after losing aggro
+//	var/del_on_deaggro = 0 //seconds to delete after losing aggro /*Gisela moved it to living_defines */
 	var/last_aggro_loss = null
 
 	var/retreat_health

@@ -322,7 +322,7 @@
 	max_integrity = 10
 
 	var/oxy_drain = 2
-	var/pleasure = 1
+	var/pleasure = 5 //pleasurable quicker since they bleed inevitably due embed
 	var/curprocs = 0
 	var/procsmax = 180
 	var/pleasureaccepted = FALSE

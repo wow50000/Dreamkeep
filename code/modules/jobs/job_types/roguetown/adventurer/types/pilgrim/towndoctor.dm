@@ -15,23 +15,22 @@
 	..()
 	mask = /obj/item/clothing/mask/rogue/feldmask
 	head = /obj/item/clothing/head/roguetown/roguehood/feldhood
-	neck = /obj/item/storage/belt/rogue/pouch/coins/mid /// they are a fine dressed doctor. no one else gonna pay em. psycross removed since it was a hold over for secular
+	neck = /obj/item/storage/belt/rogue/pouch/coins/rich /// they are a fine dressed doctor. no one else gonna pay em. psycross removed since it was a hold over for secular
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/surgrobe
 	shirt = /obj/item/clothing/suit/roguetown/shirt/vest
 	gloves = /obj/item/clothing/gloves/roguetown/feldgloves
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/flashlight/flare/torch/lantern
 	beltr = /obj/item/rogueweapon/huntingknife/cleaver /// proper self defense an tree aquiring
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backpack_contents = list(
-		/obj/item/natural/worms/leech/cheele = 1,
-		/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot = 1,
+		/obj/item/reagent_containers/glass/alembic = 1,
+		/obj/item/storage/fancy/ifak = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 1,
 		/obj/item/clothing/mask/rogue/physician = 1,
-		/obj/item/storage/box/matches = 1, /// for carterizer and lantern.
-		/obj/item/natural/cloth = 2,
+		/obj/item/storage/box/matches = 1, /// for carterizer and ring.
+		/obj/item/clothing/ring/lantern = 1, //lantern+
 		/obj/item/storage/fancy/skit = 1,
 	)
 	if(H.gender == MALE)
@@ -62,3 +61,6 @@
 		H.change_stat("fortune", 2)
 		H.change_stat("constitution", 2) ///regular health checks to self. I dunno man give em something. miricles already shits all over surgery healin.
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/docheal)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/stable)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/purge)

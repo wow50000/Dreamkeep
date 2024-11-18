@@ -66,6 +66,7 @@
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/mindsliver5e)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/soulspeak)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/arcyne_storm)
 		if("Enchanter")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You specialize in Enchantments and Mental Magick. Unlike most Mages, this leads to a perculiar study between alchemy and Smithing that tends to have you in higher demand in a city."))
@@ -120,6 +121,7 @@
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/greenflameblade5e)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/bladeward5e)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/slowdown_spell_aoe)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/push_spell)
 
 
 

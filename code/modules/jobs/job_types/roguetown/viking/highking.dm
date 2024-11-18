@@ -36,7 +36,6 @@
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_VIKINGCAMP, TRAIT_GENERIC)
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE) // Chieftess gets nearly same skills as guard.
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 2, TRUE)
@@ -48,18 +47,19 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 3 , TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/labor/fishing, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/firearms, 4, TRUE)
 
 		H.change_stat("strength", 3) //Less strength than royal guard. Same as Captain
 		H.change_stat("intelligence", 3)

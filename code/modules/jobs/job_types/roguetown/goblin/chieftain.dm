@@ -63,7 +63,7 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
 		H.change_stat("strength", 2)
 		H.change_stat("intelligence", 2)
-		H.change_stat("constitution", 6)
+		H.change_stat("constitution", 3)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", 2)
 
