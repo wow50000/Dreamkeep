@@ -54,10 +54,10 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	if(ready)
 		for(var/mob/living/M in view(detect_range, src))
 			if((objfaction[1] in M.faction) || M.incapacitated() || M.restrained() || M.IsSleeping() || (M.stat == DEAD) || M.InFullCritical())
-				return
+				continue
 			else
 				playsound(src, pick(spawn_sound), 100)
-				shake_camera(M, 3, 1)
+//				shake_camera(M, 3, 1)
 				M.visible_message("<span class='danger'>[text_faction] [spawn_text] [src]</span>")
 				activated = TRUE
 				break
@@ -75,6 +75,8 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 				activate()*/
 
 /obj/structure/mobspawner/proc/activate()
+	for(var/mob/living/M in view(detect_range, src))
+		shake_camera(M, 3, 1)
 	last_activated = world.time
 	mobs_to_spawn = rand(min_mobs, max_mobs)
 	while(mobs < mobs_to_spawn)
@@ -186,10 +188,10 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	if(ready)
 		for(var/mob/living/M in view(detect_range, src))
 			if((objfaction[1] in M.faction) || M.incapacitated() || M.restrained() || M.IsSleeping() || (M.stat == DEAD) || M.InFullCritical())
-				return
+				continue
 			else
 				playsound(src, pick(spawn_sound), 100)
-				shake_camera(M, 3, 1)
+	//			shake_camera(M, 3, 1)
 				M.visible_message("<span class='danger'>[text_faction] [picked_string]</span>")
 				activated = TRUE
 				break
@@ -197,6 +199,8 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 		activate()
 
 /obj/effect/mobspawner/proc/activate()
+	for(var/mob/living/M in view(detect_range, src))
+		shake_camera(M, 3, 1)
 	last_activated = world.time
 	mobs_to_spawn = rand(min_mobs, max_mobs)
 	while(mobs < mobs_to_spawn)
@@ -261,6 +265,7 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	notification_strings = list("climbs out of", "emerges from", "crawls out of", "creeps out from")
 	objfaction = list("test")
 	mymobs = list()
+	debris = list(/obj/item/natural/rock = 3, /obj/item/natural/stone = 3)
 	var/fill = 0
 	var/filltoseal = 3
 
@@ -274,6 +279,16 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 
 /obj/effect/mobspawner/hole/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	if(islist(debris))
+		for(var/I in debris)
+			var/count = debris[I] + rand(-1,1)
+			if(count > 0)
+				for(var/i in 1 to count)
+					new I (get_turf(src))
+	if(islist(static_debris))
+		for(var/I in static_debris)
+			for(var/i in 1 to static_debris[I])
+				new I (get_turf(src))
 	return ..()
 
 /obj/effect/mobspawner/hole/process()
@@ -283,9 +298,12 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	if(ready)
 		for(var/mob/living/M in view(detect_range, src))
 			if((objfaction[1] in M.faction) || M.incapacitated() || M.restrained() || M.IsSleeping() || (M.stat == DEAD) || M.InFullCritical())
-				return
+				continue
 			else
-				activate()
+				activated = TRUE
+				break
+	if(activated)
+		activate()
 
 /obj/effect/mobspawner/hole/activate()
 	last_activated = world.time
@@ -313,6 +331,8 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 /obj/effect/mobspawner/hole/reset()
 	mobs_to_spawn = 3
 	mobs = 0
+	ready = FALSE
+	activated = FALSE
 
 
 /obj/effect/mobspawner/hole/attackby(obj/item/attacking_item, mob/user, params)
@@ -328,17 +348,19 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 			if(fill >= filltoseal)
 				playsound(loc,'sound/foley/break_stone.ogg', 100, TRUE)
 				src.visible_message("<span class='danger'>[user] seals [src] with dirts!</span>")
-				qdel(src)
+				Destroy()
+
 	if(istype(attacking_item, /obj/item/rogueweapon/pick))
 		var/obj/item/rogueweapon/pick/attacking_pick = attacking_item
-		playsound(loc,'sound/items/empty_shovel.ogg', 100, TRUE)
+		playsound(loc,'sound/foley/hit_rock.ogg', 100, TRUE)
 		src.visible_message("<span class='danger'>[user] is picking at the [src] with [attacking_pick]!</span>")
 		if(do_after(user, rand(30,60), src))
 			src.visible_message("<span class='danger'>[user] picked some rocks into [src] with [attacking_pick]!</span>")
+			new /obj/effect/particle_effect/sparks(src.loc)
 			playsound(loc,'sound/foley/hit_rock.ogg', 100, TRUE)
 			fill++
 			if(fill >= filltoseal)
 				playsound(loc,'sound/foley/break_stone.ogg', 100, TRUE)
-				src.visible_message("<span class='danger'>[user] seals [src] with dirts!</span>")
-				qdel(src)
+				src.visible_message("<span class='danger'>[user] collapsed [src] with [attacking_pick]!</span>")
+				Destroy()
 	..()
