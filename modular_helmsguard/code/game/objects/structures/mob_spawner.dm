@@ -24,7 +24,8 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	var/last_activated
 	var/detect_range = 6
 	var/spawn_range = 3
-	var/restart_time = 8 MINUTES
+	var/restart_time = 2 MINUTES
+	var/activated = FALSE
 	var/min_mobs = 1
 	var/max_mobs = 3
 	var/mobs = 0
@@ -58,8 +59,12 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 				playsound(src, pick(spawn_sound), 100)
 				shake_camera(M, 3, 1)
 				M.visible_message("<span class='danger'>[text_faction] [spawn_text] [src]</span>")
-				activate()
-
+				activated = TRUE
+				break
+	if(activated)
+		activate()
+	else
+		return
 /*/obj/structure/mobspawner/HasProximity(atom/movable/AM)
 	if(ready)
 		if(istype(AM, /mob/living))
@@ -74,8 +79,7 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	mobs_to_spawn = rand(min_mobs, max_mobs)
 	while(mobs < mobs_to_spawn)
 		spawn_mob()
-		if(mobs == mobs_to_spawn)
-			ready = FALSE
+		if(mobs >= mobs_to_spawn)
 			reset()
 			break
 
@@ -100,6 +104,8 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 /obj/structure/mobspawner/proc/reset()
 	mobs_to_spawn = 3
 	mobs = 0
+	ready = FALSE
+	activated = FALSE
 
 
 /obj/structure/mobspawner/deconstruct(disassembled = TRUE)
@@ -138,6 +144,8 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 
 /obj/effect/mobspawner
 	name = "mob spawner"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "random_loot"
 	desc = ""
 	anchored = TRUE
 	density = FALSE
@@ -146,7 +154,8 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	var/mobs = 0
 	var/detect_range = 6
 	var/spawn_range = 3
-	var/restart_time = 8 MINUTES
+	var/restart_time = 2 MINUTES
+	var/activated = FALSE
 	var/min_mobs = 1
 	var/max_mobs = 3
 	var/mobs_to_spawn = 3
@@ -158,13 +167,6 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	var/list/spawn_sound = list('sound/misc/jumpscare (1).ogg', 'sound/misc/jumpscare (2).ogg', 'sound/misc/jumpscare (3).ogg', 'sound/misc/jumpscare (4).ogg')
 	var/list/objfaction = list("test")
 	var/list/mymobs = list()
-	//so this is visible to mapper.
-	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "x2"
-	anchored = TRUE
-	layer = MID_LANDMARK_LAYER
-	invisibility = INVISIBILITY_ABSTRACT
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/effect/mobspawner/Initialize()
 	. = ..()
@@ -189,15 +191,17 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 				playsound(src, pick(spawn_sound), 100)
 				shake_camera(M, 3, 1)
 				M.visible_message("<span class='danger'>[text_faction] [picked_string]</span>")
-				activate()
+				activated = TRUE
+				break
+	if(activated)
+		activate()
 
 /obj/effect/mobspawner/proc/activate()
 	last_activated = world.time
 	mobs_to_spawn = rand(min_mobs, max_mobs)
 	while(mobs < mobs_to_spawn)
 		spawn_mob()
-		if(mobs == mobs_to_spawn)
-			ready = FALSE
+		if(mobs >= mobs_to_spawn)
 			reset()
 			break
 
@@ -224,6 +228,8 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 /obj/effect/mobspawner/proc/reset()
 	mobs_to_spawn = 3
 	mobs = 0
+	ready = FALSE
+	activated = FALSE
 
 
 
@@ -255,6 +261,9 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	notification_strings = list("climbs out of", "emerges from", "crawls out of", "creeps out from")
 	objfaction = list("test")
 	mymobs = list()
+	var/fill = 0
+	var/filltoseal = 3
+
 
 /obj/effect/mobspawner/hole/Initialize()
 	. = ..()
@@ -283,7 +292,7 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	mobs_to_spawn = rand(min_mobs, max_mobs)
 	while(mobs < mobs_to_spawn)
 		spawn_mob()
-		if(mobs == mobs_to_spawn)
+		if(mobs >= mobs_to_spawn)
 			ready = FALSE
 			reset()
 			break
@@ -304,3 +313,32 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 /obj/effect/mobspawner/hole/reset()
 	mobs_to_spawn = 3
 	mobs = 0
+
+
+/obj/effect/mobspawner/hole/attackby(obj/item/attacking_item, mob/user, params)
+	if(istype(attacking_item, /obj/item/rogueweapon/shovel))
+		var/obj/item/rogueweapon/shovel/attacking_shovel = attacking_item
+		if(user.used_intent.type != /datum/intent/shovelscoop)
+			return
+		if(attacking_shovel.heldclod)
+			playsound(loc,'sound/items/empty_shovel.ogg', 100, TRUE)
+			QDEL_NULL(attacking_shovel.heldclod)
+			src.visible_message("<span class='danger'>[user] shoveled some dirt clods into [src]!</span>")
+			fill ++
+			if(fill >= filltoseal)
+				playsound(loc,'sound/foley/break_stone.ogg', 100, TRUE)
+				src.visible_message("<span class='danger'>[user] seals [src] with dirts!</span>")
+				qdel(src)
+	if(istype(attacking_item, /obj/item/rogueweapon/pick))
+		var/obj/item/rogueweapon/pick/attacking_pick = attacking_item
+		playsound(loc,'sound/items/empty_shovel.ogg', 100, TRUE)
+		src.visible_message("<span class='danger'>[user] is picking at the [src] with [attacking_pick]!</span>")
+		if(do_after(user, rand(30,60), src))
+			src.visible_message("<span class='danger'>[user] picked some rocks into [src] with [attacking_pick]!</span>")
+			playsound(loc,'sound/foley/hit_rock.ogg', 100, TRUE)
+			fill++
+			if(fill >= filltoseal)
+				playsound(loc,'sound/foley/break_stone.ogg', 100, TRUE)
+				src.visible_message("<span class='danger'>[user] seals [src] with dirts!</span>")
+				qdel(src)
+	..()
