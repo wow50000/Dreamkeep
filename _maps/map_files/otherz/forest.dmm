@@ -8027,7 +8027,7 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "VD" = (
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/rogue/dirt/road,
+/turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Mountain Passe"
 	})
@@ -8374,8 +8374,8 @@
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
 "XK" = (
-/obj/structure/flora/grass/jungle/b,
-/turf/open/floor/rogue/dirt,
+/obj/structure/flora/newtree,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Mountain Passe"
 	})
@@ -62106,7 +62106,7 @@ SX
 Ap
 SX
 Ap
-Kr
+XK
 bO
 bO
 bO
@@ -62238,16 +62238,16 @@ vX
 vX
 vX
 vX
-Ap
-SX
-Kr
+vX
+vX
+vX
 ef
 bO
 bO
 bO
 Kr
 HK
-Ap
+dR
 dR
 dR
 IN
@@ -62373,16 +62373,16 @@ vX
 vX
 vX
 vX
-ga
-XK
+Ny
+VD
 VD
 Sk
 rC
 nR
-Kz
-Ap
-dR
-dR
+vX
+vX
+vX
+vX
 RP
 RP
 RP
@@ -62508,11 +62508,11 @@ vX
 vX
 vX
 Ny
+VD
 nX
-nX
 pP
 pP
-pP
+vX
 vX
 vX
 vX
