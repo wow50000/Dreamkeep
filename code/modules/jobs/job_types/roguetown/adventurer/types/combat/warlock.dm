@@ -513,37 +513,51 @@
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/giveweapon(mob/living/carbon/human/H, patronchoice)
 	H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 3, TRUE) // guaranteed journeyman-equivalent "weapon" skill for patrons who wouldn't otherwise give it, because magic weapons use magic skill instead of martial
-	var/item_pick = pick(1,2,3,4,5,6,7,8,9,10)
-	var/item_type
-	switch(item_pick)
-		if(1)
-			item_type = /obj/item/rogueweapon/sword
+	
+	var/weaponpicks = list( //what weapon did your patron grant you?
+		"rapier",
+		"greatsword",
+		"spear",
+		"halberd",
+		"battleaxe",
+		"grand mace",
+		"steel mace",
+		"dagger",
+		"flail",
+		"whip"
+	)
+
+	var/weaponchoice = input("What weapon did your patron grant you?", "Available weapons") as anything in weaponpicks
+
+	switch(weaponchoice) //these aren't all equally powerful but if a warlock wants to take a dagger over a greatsword for rp reasons i'm not gonna stop them
+		if("rapier")
+			item_type = /obj/item/rogueweapon/sword/rapier
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-		if(2)
+		if("greatsword")
 			item_type = /obj/item/rogueweapon/greatsword
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-		if(3)
+		if("spear") 
 			item_type = /obj/item/rogueweapon/spear
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
-		if(4)
+		if("halberd") 
 			item_type = /obj/item/rogueweapon/halberd
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
-		if(5)
+		if("battleaxe")
 			item_type = /obj/item/rogueweapon/stoneaxe/battle
 			H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
-		if(6)
+		if("grand mace")
 			item_type = /obj/item/rogueweapon/mace/goden/steel
 			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-		if(7)
+		if("steel mace") 
 			item_type = /obj/item/rogueweapon/mace/steel
 			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-		if(8)
+		if("dagger") 
 			item_type = /obj/item/rogueweapon/huntingknife/idagger/steel
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		if(9)
-			item_type = /obj/item/rogueweapon/flail
+		if("flail")
+			item_type = /obj/item/rogueweapon/flail/sflail
 			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
-		if(10)
+		if("whip")
 			item_type = /obj/item/rogueweapon/whip
 			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 
