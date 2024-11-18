@@ -17,9 +17,5 @@ map dreamhold
 	default
 endmap
 
-map elfkeep
-	disabled
-endmap
-
 map roguetest
 endmap
