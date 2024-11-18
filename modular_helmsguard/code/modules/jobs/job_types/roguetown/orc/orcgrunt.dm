@@ -7,7 +7,7 @@
 	spawn_positions = 10
 	selection_color = JCOLOR_ORC
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = "FOR TESTING PURPOSES ONLY"
 	display_order = JDO_ORCGRUNT

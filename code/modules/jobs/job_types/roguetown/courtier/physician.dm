@@ -6,7 +6,7 @@
 	total_positions = 2
 	spawn_positions = 2
 
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_PHYSICIAN
 	tutorial = "You were a child born into good wealth - But poor health. \

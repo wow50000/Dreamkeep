@@ -7,7 +7,7 @@
 	spawn_positions = 3
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_patrons = ALL_DIVINE_PATRONS //gets set to necra on the outfit anyways lol
 	tutorial = "As an acolyte of a death god, you have been given the honor and rites  of putting the dead to rest instead of healing the living. Yamais bestows much wisdom in her reminders of our balance in life. Will you toil for her?"
 

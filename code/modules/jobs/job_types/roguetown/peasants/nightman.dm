@@ -8,7 +8,7 @@
 	spawn_positions = 1
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 
 	tutorial = "You are renting out the bath-house in a joint operation with the barkeep. Providing security for the Courtesans and helping them find work... And deal in other shady businesses behind closed doors."
 

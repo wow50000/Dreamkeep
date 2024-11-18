@@ -7,7 +7,7 @@
 	spawn_positions = 15
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	tutorial = "Though the title 'public servant' may sound like you are not a slave, matter of fact you are. Stripped of your rights to even your own body, you must work to try to pay off your debt you made previously so you may reclaim your freedom."
 
 	outfit = /datum/outfit/job/roguetown/prisonerd

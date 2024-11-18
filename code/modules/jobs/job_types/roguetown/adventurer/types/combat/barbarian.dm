@@ -3,7 +3,7 @@
 	name = "Barbarian"
 	tutorial = "A jack-of-all-trades warrior sort. Is skilled in all weapons, but master of none"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/barbarian
 	traits_applied = list(TRAIT_CRITICAL_RESISTANCE, TRAIT_NOPAINSTUN, TRAIT_STEELHEARTED, TRAIT_BLINDFIGHTING)
 	cmode_music = 'sound/music/combat_gronn.ogg'

@@ -169,9 +169,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/personality
 	var/strengths
 	var/weakness
+	var/theme
 */
 
-	var/theme
 	var/list/violated = list()
 	var/list/descriptor_entries = list()
 	var/list/custom_descriptors = list()
@@ -450,8 +450,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<br><b>Personality:</b> <a href='?_src_=prefs;preference=personality;task=input'>Change</a>"
 			dat += "<br><b>Strengths:</b> <a href='?_src_=prefs;preference=strengths;task=input'>Change</a>"
 			dat += "<br><b>Weaknesses:</b> <a href='?_src_=prefs;preference=weakness;task=input'>Change</a>"
-*/
 			dat += "<br><b>Infocard Music:</b> <a href='?_src_=prefs;preference=theme;task=input'>Change</a>"
+*/
 			dat += "<br><b>__________________________</b>"
 			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
@@ -1628,7 +1628,6 @@ Slots: [job.spawn_positions]</span>
 							to_chat(user, "<font color='red'>Value must be between [MIN_VOICE_PITCH] and [MAX_VOICE_PITCH].</font>")
 							return
 						voice_pitch = new_voice_pitch
-
 				if("background")
 					to_chat(user, "<span class='notice'>This will be used for the background image of your infocard")
 					to_chat(user, "<span class='notice'>This works best with a repeating pattern image, as the image placed in the background will be repeated.</span>")
@@ -1746,7 +1745,6 @@ Slots: [job.spawn_positions]</span>
 					weakness = new_weakness
 					to_chat(user, "<span class='notice'>Successfully updated weaknesses</span>")
 					log_game("[user] has set their weaknesses to '[weakness]'.")
-*/
 				if("theme")
 					to_chat(user, "<span class='notice'>Spice up your character profile with a nice theme.</span>")
 					var/new_theme = input(user, "Input your link here:", "theme", theme) as message|null
@@ -1763,6 +1761,7 @@ Slots: [job.spawn_positions]</span>
 					theme = new_theme
 					to_chat(user, "<span class='notice'>Successfully updated theme.</span>")
 					log_game("[user] has set their theme to '[theme]'.")
+*/
 
 				if("customracename")
 					to_chat(user, "<span class='notice'>What are you?</span>")
@@ -2462,10 +2461,9 @@ Slots: [job.spawn_positions]</span>
 	character.personality = personality
 	character.strengths = strengths
 	character.weakness = weakness
+	character.theme = theme
 */
 	character.custom_race_name = custom_race_name
-
-	character.theme = theme
 
 	character.nsfw_info = nsfw_info
 	// LETHALSTONE ADDITION BEGIN: additional customizations

@@ -4,7 +4,7 @@
 	name = "Monk of the Gentle Palm"
 	tutorial = "Since birth your mind, spirit, and fists have been honed until perfection. You are a pacifist by nature, and enforce peace onto all others, as well."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/rare
 
 	pickprob = 5

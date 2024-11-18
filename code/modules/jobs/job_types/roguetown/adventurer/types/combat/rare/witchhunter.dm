@@ -3,7 +3,7 @@
 	name = "Wytcher"
 	tutorial = "Wytchers hunt the various supernatural threats to the World of Astralith; and it's denizens who are supernaturally dangerous. They find frequent work in Stone Hedge, given it's closeness to magickal phenomena."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/puritan
 	maximum_possible_slots = 2
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_PERFECT_TRACKER)

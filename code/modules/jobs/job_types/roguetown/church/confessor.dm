@@ -18,7 +18,7 @@
 		/datum/patron/divine/malum,
 	)
 
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
 	tutorial = "Confessors are shady agents of the church hired to spy on the populace and keep them moral. As the most fanatical members of the clergy, their main concern is assisting the local Inquisitor with their work in extracting confessions of sin as well as hunting night beasts and cultists that hide in plain sight."
 

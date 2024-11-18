@@ -4,7 +4,7 @@
 	and those who aren't are usually treated as such anyway, \
 	they are most commonly associated with the god Xylix due to their skills in thievery"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/rogue
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_rogue.ogg'

@@ -2,7 +2,7 @@
 	name = "Thug"
 	tutorial = "Not everyone manages a practical trade, although you found one in distrupting the monopoly of violence the garrison has. The only thing keeping you from being a brigand is the roof over your head and the taxes you pay; ensure it stays that way, bandits typically lose their heads! You find work where people need a strong back and an imposing figure."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/thug
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 

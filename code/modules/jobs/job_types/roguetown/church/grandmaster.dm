@@ -4,7 +4,7 @@
 	faction = "Station"
 	tutorial = "The Strongest. You have vowed and sworn your life to the Divine of this city. Interfaith politics or lordly politics have never interested you ever and todae marks your solem vigil over the land."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_patrons = ALL_CLERIC_PATRONS
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/roguetown/grandmaster

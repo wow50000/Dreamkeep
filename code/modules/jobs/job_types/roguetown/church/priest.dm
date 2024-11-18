@@ -7,7 +7,7 @@
 	spawn_positions = 5
 	selection_color = JCOLOR_CHURCH
 	f_title = "Prophetess"
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_patrons = ALL_DIVINE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
 	tutorial = "The Divine is all that matters in a world made in their many images. You are a Prophet of the divinity you have chosen. Maintaining the temple is your primary duty - so that they may find their own divine in time."

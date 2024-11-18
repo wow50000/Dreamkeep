@@ -4,7 +4,7 @@
 	gaining supernatural powers in exchange for their faith or other significant sacrifice. \
 	Their powers are derived from sources beyond mortal understanding and are often associated with dark magic and forbidden knowledge."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/warlock
 	//traits_applied = list(TRAIT_DODGEEXPERT)
 	category_tags = list(CTAG_ADVENTURER)

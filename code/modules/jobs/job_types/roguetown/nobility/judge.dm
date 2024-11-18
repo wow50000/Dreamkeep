@@ -6,7 +6,7 @@
 	total_positions = 0
 	spawn_positions = 0
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	display_order = JDO_JUDGE
 	tutorial = "You are both judge and executioner, this is a career you honed over many years of study and practice. You help plan with the Councillors and maybe the Monarch on any new issues, laws, and judgement on any problems that may arise. You have two assistant Councillors that may serve as jurors to assist you in your job. You are required to enforce taxes for the King, judge people for breaking the law, make sure the town and manor are not in decay, and to help plan or construct new buildings. You are allowed some limited control over Guards, however it is not the focus of your job unless special circumstances are to change this. In matters of heresy, work alongside the church as best as possible."
 	whitelist_req = FALSE

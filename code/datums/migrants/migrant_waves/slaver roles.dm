@@ -3,7 +3,7 @@
 	greet_text = "You are here to collect permanent residents for the Underdark. You and your fellow slavers have spent a long time within the underdark; twisted by cruelty and the harshness of the sunless realm. Your Masters in the Underkeep demand fresh blood for their own devices. Take the unwilling and bring them to the underkeep to work. Break them in however is needed."
 	outfit = /datum/outfit/job/roguetown/slaver/master
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDSPLUS
 	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/slaver/master/pre_equip(mob/living/carbon/human/H)
@@ -52,7 +52,7 @@
 	greet_text = "A prestigious warrior of the underdark. You are trusted enough you were selected to accompany the Slave Master, as their blades."
 	outfit = /datum/outfit/job/roguetown/slaver/slavemercsword
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDSPLUS
 	grant_lit_torch = TRUE
 	show_wanderer_examine = FALSE
 
@@ -103,7 +103,7 @@
 	greet_text = "In the underdark, you are known as one of the finest taskmasters. Your skills with the whip are unmatched; beasts and mortals alike will submit."
 	outfit = /datum/outfit/job/roguetown/slaver/slavemercwhip
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDSPLUS
 	grant_lit_torch = TRUE
 	show_wanderer_examine = FALSE
 	show_wanderer_examine = FALSE
@@ -155,7 +155,7 @@
 	greet_text = "A hired arm for the Zybantine Slave troup, and also a discount first aider. You have come from the western deserts of Zybantine, and are hired for the week you are spending on this island."
 	outfit = /datum/outfit/job/roguetown/slaver/slavemercbow
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDSPLUS
 	grant_lit_torch = TRUE
 	show_wanderer_examine = FALSE
 
@@ -205,7 +205,7 @@
 	name = "Slave"
 	greet_text = "An unlucky slave, captured and trained. The party of Slavers found you some time ago, and you've been brought with as they intend to capture more."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	grant_lit_torch = TRUE
 	show_wanderer_examine = FALSE
 

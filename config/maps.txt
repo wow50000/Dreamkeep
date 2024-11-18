@@ -14,11 +14,11 @@ Format:
 endmap
 
 map dreamhold
-	disabled
+	default
 endmap
 
 map elfkeep
-	default
+	disabled
 endmap
 
 map roguetest

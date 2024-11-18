@@ -7,7 +7,7 @@
 	total_positions = 10
 	spawn_positions = 10
 
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
 	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
 	display_order = JDO_MAGICIAN

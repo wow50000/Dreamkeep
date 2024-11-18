@@ -7,7 +7,7 @@
 	but you swore to chop down trees only when it is necessary."
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/mastercarpenter
 	category_tags = list(CTAG_DISABLED)
 	maximum_possible_slots = 1

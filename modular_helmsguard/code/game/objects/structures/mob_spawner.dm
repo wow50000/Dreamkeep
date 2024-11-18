@@ -158,6 +158,13 @@ THESE SPAWNERS SPAWN MOBS BY CHOOSING RANDOM TILES AROUND IT AND SCATTERING THE 
 	var/list/spawn_sound = list('sound/misc/jumpscare (1).ogg', 'sound/misc/jumpscare (2).ogg', 'sound/misc/jumpscare (3).ogg', 'sound/misc/jumpscare (4).ogg')
 	var/list/objfaction = list("test")
 	var/list/mymobs = list()
+	//so this is visible to mapper.
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "x2"
+	anchored = TRUE
+	layer = MID_LANDMARK_LAYER
+	invisibility = INVISIBILITY_ABSTRACT
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/effect/mobspawner/Initialize()
 	. = ..()

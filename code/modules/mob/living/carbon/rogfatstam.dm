@@ -120,7 +120,7 @@
 /mob/proc/do_freakout_scream() // currently solely used for vampire snowflake stuff
 	emote("scream", forced=TRUE)
 
-/mob/living/carbon/freak_out() // currently solely used for vampire snowflake stuff
+/mob/living/carbon/freak_out(add_stress = TRUE) // currently solely used for vampire snowflake stuff
 	if(mob_timers["freakout"])
 		if(world.time < mob_timers["freakout"] + 10 SECONDS)
 			flash_fullscreen("stressflash")
@@ -129,7 +129,9 @@
 	shake_camera(src, 1, 3)
 	flash_fullscreen("stressflash")
 	changeNext_move(CLICK_CD_EXHAUSTED)
-	add_stress(/datum/stressevent/freakout)
+	Stun(20)
+	if(add_stress)
+		add_stress(/datum/stressevent/freakout)
 	emote("fatigue", forced = TRUE)
 	if(hud_used)
 		var/matrix/skew = matrix()

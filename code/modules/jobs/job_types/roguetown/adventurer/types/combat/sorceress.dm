@@ -2,7 +2,7 @@
 	name = "Witch"
 	tutorial = "In some places, women are banned from the study of magic. Those that do even then are afforded the title Sorceress in honor of their resolve."
 	allowed_sexes = list(FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/sorceress
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	category_tags = list(CTAG_DISABLED)

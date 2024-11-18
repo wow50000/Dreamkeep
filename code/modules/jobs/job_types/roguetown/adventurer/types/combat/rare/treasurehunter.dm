@@ -3,7 +3,7 @@
 	name = "Treasure Hunter"
 	tutorial = "A treasure hunter trained for years in artifact finding and crawling through the darkest of dungeons, your fortune could be hidden anywhere."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/gravedigger
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_SEEPRICES)
 	category_tags = list(CTAG_ADVENTURER)

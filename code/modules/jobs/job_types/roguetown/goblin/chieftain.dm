@@ -8,7 +8,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/tribal)
 	tutorial = "Chieftain of the Woodland Clan; you guide the wildlings through the dangers of this Enchanted Forest. You have seen it's shadows and taken it's beasts wisdom."
 	whitelist_req = FALSE

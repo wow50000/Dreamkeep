@@ -7,7 +7,7 @@
 	spawn_positions = 2
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	tutorial = "You are a slave in the tribe, likely for your crimes against it... Or something else, either way you live, mine and likely do other things as the tribals tell you to do."
 
 	outfit = /datum/outfit/job/roguetown/prisonerc

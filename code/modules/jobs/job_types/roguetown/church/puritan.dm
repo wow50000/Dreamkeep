@@ -7,7 +7,7 @@
 	spawn_positions = 5
 	allowed_sexes = list(MALE, FEMALE)
 	spells = list (/obj/effect/proc_holder/spell/invoked/sacred_flame_rogue,new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_patrons = list(
 		/datum/patron/old_god,
 		/datum/patron/divine/astrata,

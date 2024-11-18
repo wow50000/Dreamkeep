@@ -6,7 +6,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	tutorial = "Tribal smith responsible for forging weapons, armor, and tools for the tribe."
 	display_order = JDO_TRIBALSMITH
 	outfit = /datum/outfit/job/roguetown/tribalsmith

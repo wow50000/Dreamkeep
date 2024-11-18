@@ -7,7 +7,7 @@
 	spawn_positions = 10
 	selection_color = JCOLOR_SOLDIER
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = " You decided to protect the dream dales oneday, and you joined the hedgecademy within the rangers keep. Learning from the best you can muster, you're a certified monster hunter as much as you are a ranger and guard. Keeping these woodlands safe is your duty."
 	display_order = JDO_TOWNGUARD

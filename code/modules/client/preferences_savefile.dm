@@ -500,11 +500,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["weakness"]			>> weakness
 	if(!valid_weakness(null, weakness, TRUE))
 		weakness = null
-*/
 	S["theme"]			>> theme
 	if(!valid_theme(null, theme, TRUE))
 		theme = null
-
+*/
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
@@ -662,8 +661,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["personality"] , personality)
 	WRITE_FILE(S["strengths"] , strengths)
 	WRITE_FILE(S["weakness"] , weakness)
-*/
 	WRITE_FILE(S["theme"] , theme)
+*/
 	WRITE_FILE(S["custom_race_name"] , custom_race_name)
 
 	WRITE_FILE(S["char_accent"] , char_accent)

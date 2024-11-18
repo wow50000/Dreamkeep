@@ -6,7 +6,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	tutorial = "A tribal druidic shaman that works with shaman magic to heal the wounded and bring the dead back. They also take care of the farming on the side."
 	display_order = JDO_TRIBALSHAMAN
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/tribal, /obj/effect/proc_holder/spell/invoked/cure_rot, /obj/effect/proc_holder/spell/invoked/heal/shaman, /obj/effect/proc_holder/spell/invoked/revive/shaman)

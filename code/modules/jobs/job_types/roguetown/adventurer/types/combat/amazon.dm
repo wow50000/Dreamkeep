@@ -2,7 +2,7 @@
 	name = "Amazon"
 	tutorial = "Amazons are warrior-women from the deep jungles of an unknown continent."
 	allowed_sexes = list(FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/amazon
 
 	category_tags = list(CTAG_ADVENTURER)

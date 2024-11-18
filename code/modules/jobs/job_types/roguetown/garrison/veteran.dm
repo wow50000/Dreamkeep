@@ -7,7 +7,7 @@
 	spawn_positions = 1
 
 	allowed_sexes = list(MALE, FEMALE) //same as town guard
-	allowed_races = RACES_ALL_KINDS // same as town guard
+	allowed_races = RACES_ALL_KINDSPLUS // same as town guard
 	tutorial = "You've known combat your entire life. There isn't a way to kill a man or beast you havent practiced in the tapestries of adventuring itself. You would call yourself a hero, given how you made much of this legacy through those you didn't leave behind. those belong to the men left rotting in the fields of where you practiced your ancient trade. You've slept better at night ever since you found purpose here..."
 	display_order = JDO_VET
 	whitelist_req = FALSE

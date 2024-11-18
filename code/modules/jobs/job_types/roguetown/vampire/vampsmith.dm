@@ -6,7 +6,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/vampire,
 	/obj/effect/proc_holder/spell/targeted/shapeshift/bat)

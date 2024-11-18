@@ -6,7 +6,7 @@
 	total_positions = 0
 	spawn_positions = 0
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_COUNCILLOR
 	tutorial = "You may have inherited this role, bought your way into it, or were appointed by the King; \

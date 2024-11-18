@@ -1,7 +1,7 @@
 /datum/advclass/cavalry
 	name = "Cavalry" // Medium armor fighter, melee-focused, expert at 1 weapon + some wrestling proefficiency, mediocre at rest. 
 	tutorial = "You wandered off from your home seeking adventure, roaming to greener pastures for honor and chilvalry. You became an instrument of war, sitting atop a saiga, weapon and shield in hand! What will await here?"
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/roguetown/adventurer/cavalry

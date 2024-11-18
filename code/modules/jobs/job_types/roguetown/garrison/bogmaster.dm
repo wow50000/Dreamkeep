@@ -7,7 +7,7 @@
 	spawn_positions = 1
 	allowed_patrons = ALL_DIVINE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = " You are one of the most experienced members of the Elven Forest-Guard. You have the experience of a Ranger and the Strategum of a Wizard - the Respect of the Nation to boot. Your purpose is to protect the borders of the realm and handle the threats within it, with your trusty Hedge Knights - and those good adventurefolk you can trust."
 	display_order = JDO_BOGMASTER

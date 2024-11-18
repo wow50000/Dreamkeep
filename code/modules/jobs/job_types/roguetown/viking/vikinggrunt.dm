@@ -8,7 +8,7 @@
 	total_positions = 0
 	spawn_positions = 0
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
 	tutorial = "Hailing from the freezing cold Frost Lands, you have come to know Graggar, and though you may worship gods foreign to these lands, it was he who showed the Northmen to sail to other lands. And it is in his name that you will fight to conquer the new world."
 	whitelist_req = FALSE

@@ -6,7 +6,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	tutorial = "Cook, farm, butcher. Make king or queen happy with apple pies! Don't forget about your brothers and sisters."
 	cmode_music = 'sound/music/combat_gronn.ogg'
 

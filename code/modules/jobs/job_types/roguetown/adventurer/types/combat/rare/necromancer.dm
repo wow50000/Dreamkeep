@@ -2,7 +2,7 @@
 	name = "Necromancer"
 	tutorial = "Ostracized and hunted by society for their mastery over death magicks in most realms; Necromancers have been known to summon ghosts, ghouls, and zombies; A rare few using their powers to fight undeath from a different side."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/necromancer
 	traits_applied = list(TRAIT_ZOMBIE_IMMUNE)
 	category_tags = list(CTAG_ADVENTURER)

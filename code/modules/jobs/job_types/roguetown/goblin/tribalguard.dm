@@ -6,7 +6,7 @@
 	total_positions = 5
 	spawn_positions = 5
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	tutorial = "Tribal guards rensposible for the defence of their tribe and their chieftain."
 	display_order = JDO_TRIBALGUARD
 	outfit = /datum/outfit/job/roguetown/tribalguard

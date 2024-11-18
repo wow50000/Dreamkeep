@@ -5,7 +5,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
 	cmode_music = 'sound/music/combat_squire.ogg'

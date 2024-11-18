@@ -235,10 +235,11 @@
 		if(world.time < owner.mob_timers["baotha_curse"] + rand(15,90)SECONDS)
 			return
 	owner.mob_timers["baotha_curse"] = world.time
-	if(owner.wear_pants || !(owner.wear_pants.flags_inv & HIDECROTCH || owner.wear_pants.genitalaccess))
-		if(rand(5))
-			to_chat(owner, span_love("I feel my [owner.wear_pants] rub against me..."))
-		owner.sexcon.arousal += rand(1,30)
+	if(owner.wear_pants)
+		if(owner.wear_pants.flags_inv & HIDECROTCH && !owner.wear_pants.genitalaccess)
+			if(rand(5))
+				to_chat(owner, span_love("I feel my [owner.wear_pants] rub against me..."))
+			owner.sexcon.arousal += rand(1,30)
 
 /datum/curse/graggar/on_life(mob/living/carbon/human/owner)
 	. = ..()		
