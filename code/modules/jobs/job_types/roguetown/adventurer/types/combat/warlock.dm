@@ -118,7 +118,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/mage
@@ -162,7 +162,7 @@
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 1)
 
-	H.mind.adjust_spellpoints(3) // general arcane power, less total gain than other trees, 5 points total (it's hard to give "celestial" a real spell theme)
+	H.mind.adjust_spellpoints(2) // general arcane power, less total gain than other trees, 4 points total (it's hard to give "celestial" a real spell theme)
 
 	givehealing(H, patronchoice, TRUE)
 
@@ -271,7 +271,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/roguehood/mage
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
@@ -290,7 +290,7 @@
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 1)
 
-	H.mind.adjust_spellpoints(4) // 8 total spell points after arcane adjust; forbidden eldritch knowledge to build your own spellbook, but you get nothing else
+	H.mind.adjust_spellpoints(3) // 6 total spell points after arcane adjust; forbidden eldritch knowledge to build your own spellbook, but you get nothing else
 
 	H.visible_message(span_info("Most minds would fracture having spoken to the creecher I made a deal with..."))
 
@@ -301,7 +301,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 1, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 1, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE) // patron weapon scales off of arcane for some reason so hexblade needs this for expert weapon skill
+	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE) // patron weapon scales off of arcane for some reason
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
 
 	shoes = /obj/item/clothing/shoes/roguetown/boots
@@ -512,40 +512,29 @@
 ///////////////////////////////
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/giveweapon(mob/living/carbon/human/H, patronchoice)
-	H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 3, TRUE) // guaranteed journeyman-equivalent "weapon" skill for patrons who wouldn't otherwise give it, because magic weapons use magic skill instead of martial
 	var/item_pick = pick(1,2,3,4,5,6,7,8,9,10)
 	var/item_type
 	switch(item_pick)
 		if(1)
 			item_type = /obj/item/rogueweapon/sword
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		if(2)
 			item_type = /obj/item/rogueweapon/greatsword
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		if(3)
 			item_type = /obj/item/rogueweapon/spear
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 		if(4)
 			item_type = /obj/item/rogueweapon/halberd
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 		if(5)
 			item_type = /obj/item/rogueweapon/stoneaxe/battle
-			H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
 		if(6)
 			item_type = /obj/item/rogueweapon/mace/goden/steel
-			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 		if(7)
 			item_type = /obj/item/rogueweapon/mace/steel
-			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 		if(8)
 			item_type = /obj/item/rogueweapon/huntingknife/idagger/steel
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		if(9)
 			item_type = /obj/item/rogueweapon/flail
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 		if(10)
 			item_type = /obj/item/rogueweapon/whip
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 
 	var/obj/item/item
 	item = new item_type
