@@ -115,7 +115,7 @@
 			else
 				target.visible_message(span_info("A choral sound comes from above and [target] is healed!"), span_notice("I am bathed in healing choral hymns!"))
 
-		var/healing = 2.5
+		var/healing = 5
 		if (conditional_buff)
 			to_chat(user, "Channeling my patron's power is easier in these conditions!")
 			healing += situational_bonus
@@ -124,6 +124,7 @@
 			var/mob/living/carbon/C = target
 			var/datum/status_effect/buff/healing/heal_effect = C.apply_status_effect(/datum/status_effect/buff/healing)
 			heal_effect.healing_on_tick = healing
+			target.blood_volume += BLOOD_VOLUME_SURVIVE/4
 		else
 			target.adjustBruteLoss(-healing*10)
 			target.adjustFireLoss(-healing*10)
