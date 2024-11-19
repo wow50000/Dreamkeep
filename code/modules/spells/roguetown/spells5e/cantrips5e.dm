@@ -65,7 +65,7 @@
 /obj/projectile/magic/acidsplash5e
 	name = "acid bubble"
 	icon_state = "green_laser"
-	damage = 10
+	damage = 15
 	damage_type = BURN
 	flag = "magic"
 	range = 15
@@ -151,13 +151,12 @@
 /obj/effect/proc_holder/spell/self/bladeward5e/cast(mob/user = usr)
 	var/mob/living/target = user
 	target.apply_status_effect(/datum/status_effect/buff/bladeward5e)
-	ADD_TRAIT(target, TRAIT_BREADY, TRAIT_GENERIC)
 	user.visible_message("<span class='info'>[user] traces a warding sigil in the air.</span>", "<span class='notice'>I trace a a sigil of warding in the air.</span>")
 
 /datum/status_effect/buff/bladeward5e
 	id = "blade ward"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/bladeward5e
-	effectedstats = list("constitution" = 2)
+	effectedstats = list("constitution" = 3)
 	duration = 20 SECONDS
 	var/static/mutable_appearance/ward = mutable_appearance('icons/effects/beam.dmi', "purple_lightning", -MUTATIONS_LAYER)
 
@@ -176,7 +175,6 @@
 	var/mob/living/target = owner
 	target.cut_overlay(ward)
 	target.update_vision_cone()
-	REMOVE_TRAIT(target, TRAIT_BREADY, TRAIT_GENERIC)
 	. = ..()
 
 //==============================================
@@ -1146,7 +1144,7 @@
 	sound = 'sound/magic/whiteflame.ogg'
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
-	cost = 1
+	cost = 2 // might even deserve a cost of 3
 
 	xp_gain = TRUE
 	miracle = FALSE
@@ -1519,7 +1517,7 @@
 /datum/status_effect/buff/rayoffrost5e
 	id = "frostbite"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/rayoffrost5e
-	duration = 3 SECONDS
+	duration = 6 SECONDS
 	var/static/mutable_appearance/frost = mutable_appearance('icons/roguetown/mob/coldbreath.dmi', "breath_m", ABOVE_ALL_MOB_LAYER)
 	effectedstats = list("speed" = -2)
 
@@ -1535,7 +1533,7 @@
 	target.update_vision_cone()
 	var/newcolor = rgb(136, 191, 255)
 	target.add_atom_colour(newcolor, TEMPORARY_COLOUR_PRIORITY)
-	addtimer(CALLBACK(target, TYPE_PROC_REF(/atom, remove_atom_colour), TEMPORARY_COLOUR_PRIORITY, newcolor), 3 SECONDS)
+	addtimer(CALLBACK(target, TYPE_PROC_REF(/atom, remove_atom_colour), TEMPORARY_COLOUR_PRIORITY, newcolor), 6 SECONDS)
 	target.add_movespeed_modifier(MOVESPEED_ID_ADMIN_VAREDIT, update=TRUE, priority=100, multiplicative_slowdown=4, movetypes=GROUND)
 
 /datum/status_effect/buff/rayoffrost5e/on_remove()
