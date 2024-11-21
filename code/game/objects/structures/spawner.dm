@@ -33,18 +33,6 @@
 	mob_types = list(/mob/living/simple_animal/hostile/syndicate/ranged)
 	faction = list(ROLE_SYNDICATE)
 
-/obj/structure/spawner/skeleton
-	name = "bone pit"
-	desc = ""
-	icon_state = "hole"
-	icon = 'icons/mob/nest.dmi'
-	max_integrity = 150
-	max_mobs = 15
-	spawn_time = 150
-	mob_types = list(/mob/living/simple_animal/hostile/skeleton)
-	spawn_text = "climbs out of"
-	faction = list("skeleton")
-
 /obj/structure/spawner/clown
 	name = "Laughing Larry"
 	desc = ""
@@ -92,3 +80,63 @@
 	name = "wumborian fugu den"
 	desc = ""
 	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/fugu)
+
+/obj/structure/spawner/skeleton/simple
+	name = "bone pit"
+	desc = ""
+	icon_state = "hole"
+	icon = 'icons/mob/nest.dmi'
+	max_integrity = 150
+	max_mobs = 1
+	spawn_time = 3000
+	mob_types = list(
+	/mob/living/simple_animal/hostile/rogue/skeleton/axe = 6,
+	/mob/living/simple_animal/hostile/rogue/skeleton/spear = 6,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard = 5,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/spear = 5,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/shield = 4,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow = 3,
+	/mob/living/simple_animal/hostile/rogue/skeleton/bow = 4,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard = 2,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear = 2,
+	/mob/living/simple_animal/hostile/rogue/gravelord = 1
+	)
+	spawn_text = "climbs out of"
+	faction = list("undead")
+
+/obj/structure/spawner/skeleton/hard
+	name = "bone pit"
+	desc = ""
+	icon_state = "hole"
+	icon = 'icons/mob/nest.dmi'
+	max_integrity = 150
+	max_mobs = 1
+	spawn_time = 3000
+	mob_types = list(
+	/mob/living/carbon/human/species/skeleton/npc = 6,
+	/mob/living/simple_animal/hostile/rogue/skeleton/bow = 4,
+	/mob/living/carbon/human/species/skeleton/dwarf/npc = 4,
+	/mob/living/carbon/human/species/skeleton/npc/dungeon = 3,
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow = 3,
+	/mob/living/carbon/human/species/skeleton/dwarf/npc/dungeon = 2)
+	spawn_text = "climbs out of"
+	faction = list("undead")
+
+/obj/structure/spawner/goblin
+	name = "hole"
+	desc = ""
+	icon = 'modular_helmsguard/icons/obj/structure/spawners.dmi'
+	icon_state = "hole"
+	max_integrity = 150
+	max_mobs = 1
+	spawn_time = 3000
+	mob_types = list(
+	/mob/living/carbon/human/species/goblin/npc = 6,
+	/mob/living/simple_animal/hostile/retaliate/rogue/goblin/cave = 3,		//archer
+	/mob/living/simple_animal/hostile/retaliate/rogue/goblin = 3,		//archer
+	/mob/living/carbon/human/species/goblin/npc/hell = 1,
+	/mob/living/carbon/human/species/goblin/npc/cave = 4,
+	/mob/living/carbon/human/species/goblin/npc/sea= 1,
+	/mob/living/carbon/human/species/goblin/npc/moon = 1)
+	spawn_text = "climbs out of"
+	faction = list("orc")
