@@ -6,7 +6,6 @@
 	faction = "Station"
 	total_positions = 10
 	spawn_positions = 10
-	cmode_music = 'sound/music/combat_bandit_mage.ogg'
 
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
@@ -20,6 +19,8 @@
 	give_bank_account = 2500
 	min_pq = 8
 	max_pq = null
+
+	cmode_music = 'sound/music/combat_bandit_mage.ogg'
 
 /datum/outfit/job/roguetown/magician
 
