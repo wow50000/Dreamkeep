@@ -411,7 +411,7 @@
 /datum/quirk/hussite/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	GLOB.excommunicated_players += H.real_name
-	H.devotion.excommunicate()
+	H.devotion?.excommunicate()
 
 /datum/quirk/bounty
 	name = "Hunted Man"

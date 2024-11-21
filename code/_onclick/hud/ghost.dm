@@ -58,7 +58,7 @@
 						O.ckey = G.ckey
 						O.set_patron(O.client.prefs.selected_patron)
 						SSdroning.area_entered(get_area(O), O.client)
-					G.client.verbs -= GLOB.ghost_verbs
+					G.client?.verbs -= GLOB.ghost_verbs
 
 				return
 
