@@ -9,6 +9,7 @@
 	traits_applied = list(TRAIT_HEAVYARMOR)
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 5		//Supposed to be a rare role, thus why it's in donator category. It's a Templar-equal role.
+	cmode_music = 'sound/music/combat_clergy.ogg'
 
 /datum/outfit/job/roguetown/adventurer/paladin
 	allowed_patrons = ALL_CLERIC_PATRONS
