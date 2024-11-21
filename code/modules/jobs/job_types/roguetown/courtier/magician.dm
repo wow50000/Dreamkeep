@@ -6,6 +6,7 @@
 	faction = "Station"
 	total_positions = 10
 	spawn_positions = 10
+	cmode_music = 'sound/music/combat_bandit_mage.ogg'
 
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
