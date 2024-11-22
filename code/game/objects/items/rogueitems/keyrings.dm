@@ -316,7 +316,7 @@
 	keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/walls, /obj/item/roguekey/keep_dungeon, /obj/item/roguekey/town_dungeon, /obj/item/roguekey/bog_barracks, /obj/item/roguekey/keep_barracks, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)
 
 /obj/item/storage/keyring/steward
-	keys = list(/obj/item/roguekey/steward, /obj/item/roguekey/walls, /obj/item/roguekey/keep_dungeon, /obj/item/roguekey/town_dungeon, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)
+	keys = list(/obj/item/roguekey/steward, /obj/item/roguekey/walls, /obj/item/roguekey/keep_dungeon, /obj/item/roguekey/town_dungeon, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard, /obj/item/roguekey/vault)
 
 /obj/item/storage/keyring/clerk
 	keys = list(/obj/item/roguekey/walls, /obj/item/roguekey/keep_dungeon, /obj/item/roguekey/town_dungeon, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)

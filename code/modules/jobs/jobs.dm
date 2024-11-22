@@ -174,14 +174,14 @@ GLOBAL_LIST_INIT(goblin_positions, list(
 ))
 
 GLOBAL_LIST_INIT(viking_positions, list(
-	"Northmen King",
+	"Dwarf Artificer",
 	"Northern Hostage",
 	"Northmen Berserkir"
 ))
 
 GLOBAL_LIST_INIT(vampire_positions, list(
-	"Antediluvian Peasant",
-	"Vampire Smith"
+	"Underdark Peasant",
+	"Underdark Smithy"
 ))
 
 

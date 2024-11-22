@@ -502,7 +502,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/highkinglate
 	name = "NorthmenKinglate"
 	icon_state = "arrow"
-	jobspawn_override = list("Northmen King")
+	jobspawn_override = list("Dwarf Artificer")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vikingfarmer
@@ -528,23 +528,23 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 //Vampire Additions
 
 /obj/effect/landmark/start/vampthrall
-	name = "Antediluvian Peasant"
+	name = "Underdark Peasant"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/vampthralllate
 	name = "Vampirethralllate"
 	icon_state = "arrow"
-	jobspawn_override = list("Antediluvian Peasant")
+	jobspawn_override = list("Underdark Peasant")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampsmith
-	name = "Vampire Smith"
+	name = "Underdark Smithy"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/vampsmithlate
 	name = "vampsmitelate"
 	icon_state = "arrow"
-	jobspawn_override = list("Vampire Smith")
+	jobspawn_override = list("Underdark Smithy")
 	delete_after_roundstart = FALSE
 
 // START LANDMARKS FOLLOW. Don't change the names unless

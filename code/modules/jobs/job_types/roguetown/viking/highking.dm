@@ -36,6 +36,7 @@
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_ARTIFICER, TRAIT_GENERIC)
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE) // Chieftess gets nearly same skills as guard.
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 2, TRUE)
