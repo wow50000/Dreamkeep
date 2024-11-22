@@ -284,17 +284,20 @@
 	mob_types = list(
 	/mob/living/simple_animal/hostile/retaliate/rogue/wolf/poison = 5,
 	/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 8)
+	faction = list("wolfs")
 
 /obj/structure/spawner/invisible/monster/spider
 	max_mobs = 2
 	mob_types = list(
 	/mob/living/simple_animal/hostile/retaliate/rogue/spider = 3,
 	/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated = 1)
+	faction = list("spiders")
 
 /obj/structure/spawner/invisible/monster/mossback
 	max_mobs = 1
 	mob_types = list(
 	/mob/living/simple_animal/hostile/retaliate/rogue/mossback = 6)
+	faction = list("crabs")
 
 /obj/structure/spawner/invisible/monster/troll
 	max_mobs = 1
@@ -308,4 +311,4 @@
 	/mob/living/simple_animal/hostile/retaliate/rogue/goblin/cave = 3,		//archer
 	/mob/living/simple_animal/hostile/retaliate/rogue/goblin = 3)		//archer
 	spawn_text = "appears out of hiding!"
-	faction = list("orc")
+	faction = list("orcs")

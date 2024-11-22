@@ -35,12 +35,11 @@
 	obj_damage = 1
 	speak_emote = list("grunts")
 	speak = list("WAAAGH!", "KRUSH AND KILL!", "Never should have come here!", "Slaughter them all!", "Kill everything!", "Hahaha! Die!")
-	loot = list(/obj/effect/mob_spawn/human/orc/corpse/savageorc,
-			/obj/item/rogueweapon/stoneaxe/boneaxe,
+	loot = list(/obj/item/rogueweapon/stoneaxe/boneaxe,
 			/obj/effect/decal/cleanable/blood)
 	faction = list("orcs")
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	del_on_death = TRUE
+	del_on_death = FALSE
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/natural/hide = 2, /obj/item/natural/bundle/bone/full = 1)
 	aggressive = 1
@@ -50,8 +49,7 @@
 	icon_state = "savageorc2"
 	icon_living = "savageorc2"
 	icon_dead = "savageorc2"
-	loot = list(/obj/effect/mob_spawn/human/orc/corpse/savageorc2,
-			/obj/item/rogueweapon/stoneaxe/boneaxe,
+	loot = list(/obj/item/rogueweapon/stoneaxe/boneaxe,
 			/obj/effect/decal/cleanable/blood)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/orc/orc_marauder
@@ -64,8 +62,7 @@
 	armor_penetration = 35
 	maxHealth = 200
 	health = 200
-	loot = list(/obj/effect/mob_spawn/human/orc/corpse/orcmarauder,
-			/obj/item/rogueweapon/sword/iron/messer,
+	loot = list(/obj/item/rogueweapon/sword/iron/messer,
 			/obj/effect/decal/cleanable/blood)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/orc/orc_marauder/spear
@@ -73,8 +70,7 @@
 	icon_living = "orcmarauder_spear"
 	icon_dead = "orcmarauder_spear"
 	base_intents = list(/datum/intent/simple/spear)
-	loot = list(/obj/effect/mob_spawn/human/orc/corpse/orcmarauder,
-			/obj/item/rogueweapon/spear,
+	loot = list(/obj/item/rogueweapon/spear,
 			/obj/effect/decal/cleanable/blood)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/orc/orc_marauder/ravager
@@ -86,8 +82,7 @@
 	armor_penetration = 40
 	maxHealth = 500
 	health = 500
-	loot = list(/obj/effect/mob_spawn/human/orc/corpse/orcravager,
-			/obj/item/rogueweapon/halberd/bardiche,
+	loot = list(/obj/item/rogueweapon/halberd/bardiche,
 			/obj/effect/decal/cleanable/blood)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/orc/spear
@@ -101,8 +96,7 @@
 	attack_verb_continuous = list("stabs", "slashes", "skewers")
 	attack_verb_simple = "stab"
 	attack_sound = 'sound/blank.ogg'
-	loot = list(/obj/effect/mob_spawn/human/orc/corpse/savageorc,
-			/obj/item/rogueweapon/spear/bonespear,
+	loot = list(/obj/item/rogueweapon/spear/bonespear,
 			/obj/effect/decal/cleanable/blood)
 
 
@@ -112,8 +106,7 @@
 	icon_state = "savageorc_spear2"
 	icon_living = "savageorc_spear2"
 	icon_dead = "savageorc_spear2"
-	loot = list(/obj/effect/mob_spawn/human/orc/corpse/savageorc2,
-			/obj/item/rogueweapon/spear/bonespear,
+	loot = list(/obj/item/rogueweapon/spear/bonespear,
 			/obj/effect/decal/cleanable/blood)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/orc/get_sound(input)
@@ -211,8 +204,7 @@
 	minimum_distance = 5
 	ranged_cooldown_time = 60
 	check_friendly_fire = 1
-	loot = list(/obj/effect/mob_spawn/human/orc/corpse/savageorc2,
-			/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
+	loot = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
 			/obj/item/quiver/arrows,
 			/obj/effect/decal/cleanable/blood)
 	maxHealth = 50
@@ -266,13 +258,12 @@
 	defdrain = 20
 	obj_damage = 1
 	speak_emote = list("grunts")
-	loot = list(/obj/effect/mob_spawn/human/goblin,
-			/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
+	loot = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
 			/obj/item/quiver/arrows,
 			/obj/effect/decal/cleanable/blood)
 	faction = list("orcs")
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	del_on_death = TRUE
+	del_on_death = FALSE
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/natural/hide = 2, /obj/item/natural/bundle/bone/full = 1)
 	aggressive = 1
@@ -283,8 +274,7 @@
 	icon_state = "goblinarcher2"
 	icon_living = "goblinarcher2"
 	icon_dead = "goblinarcher2_dead"
-	loot = list(/obj/effect/mob_spawn/human/goblin_cave,
-			/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
+	loot = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
 			/obj/item/quiver/arrows,
 			/obj/effect/decal/cleanable/blood)
 
