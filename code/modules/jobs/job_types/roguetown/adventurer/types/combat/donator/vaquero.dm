@@ -47,7 +47,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/sword/rapier
 	backr = /obj/item/rogue/instrument/guitar
-	backpack_contents = list(/obj/item/gun/ballistic/arquebus_pistol = 1, /obj/item/gun/ballistic/arquebus_pistol = 1, /obj/item/powderflask = 1)
+	backpack_contents = list(/obj/item/ammo_casing/caseless/rogue/bullet = 3, /obj/item/gun/ballistic/arquebus_pistol = 1, /obj/item/powderflask = 1)
 	H.change_stat("intelligence", 2)
 	H.change_stat("endurance", 2)
 	H.change_stat("speed", 2)

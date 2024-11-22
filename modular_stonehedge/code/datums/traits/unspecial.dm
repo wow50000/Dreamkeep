@@ -405,7 +405,7 @@
 
 /datum/quirk/hussite
 	name = "Excommunicated"
-	desc = "I've been denounced by common faiths for either reasons legitimate or not! Clerics and Healers may outright refuse me, or worse!"
+	desc = "I've been denounced by powerful men of faith, for reasons legitimate or not, and can no longer use divine magic, if I could in the first place. I came to Stonehedge on a rumor that the local Adventurers' Guild could put in a good word for me with the local shrine and find the Gods' forgiveness."
 	value = -1
 
 /datum/quirk/hussite/on_spawn()
@@ -415,7 +415,7 @@
 
 /datum/quirk/bounty
 	name = "Hunted Man"
-	desc = "Someone put a bounty on my head whether for legitimate reasons or not, My life is in danger!"
+	desc = "Someone put a bounty on my head, whether for legitimate reasons or not. The local Adventurers' Guild might be able to protect me if I can make some friends there, but my life will always be in danger from those seeking to collect."
 	value = -3
 
 /datum/quirk/bounty/on_spawn()
@@ -455,7 +455,7 @@
 
 /datum/quirk/outlaw
 	name = "Ex-Criminal"
-	desc = "I was once on the wrong side of the law and never got brought in. They might still be after me.."
+	desc = "I was once on the wrong side of the law, decided that life wasn't for me, and managed to avoid capture. I came to Stonehedge on a rumor that the Adventurers' Guild could offer me its protection while I learn how to make something better of myself."
 	value = -1
 
 /datum/quirk/outlaw/on_spawn()

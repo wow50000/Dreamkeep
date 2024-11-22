@@ -56,11 +56,9 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
 			ADD_TRAIT(H, TRAIT_SCHIZO_AMBIENCE, TRAIT_GENERIC)
 			H.change_stat("strength", 2)
-			H.change_stat("endurance", 1)
-			H.change_stat("constitution", 2)
-			H.change_stat("intelligence", -1)
-			H.change_stat("speed", -1)
-			H.change_stat("perception", -1) // The idea here is a knight with good proficiency at spears and shield! He can still learn something, maybe.
+			H.change_stat("endurance", 2)
+			H.change_stat("constitution", 1)
+			H.change_stat("perception", 2) // The idea here is a knight with good proficiency at spears and shield! He can still learn something, maybe.
 		if("Vanguard")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You've seen battle, and you've known victory! Yet here you are- forced to roam for glory. If all men knew that banishment would be like this, we'd have a world of exiles."))
@@ -96,12 +94,10 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/labor/lumberjacking, 2, TRUE) //i mean, if you have axes, might as well?
-			H.change_stat("perception", -2)
-			H.change_stat("endurance", 2)
-			H.change_stat("intelligence", -2)
-			H.change_stat("speed", -1)
-			H.change_stat("strength", 2)
-			H.change_stat("constitution",1) // Gimmick is war. Hand to hand, axe is rad. War. Ideally, still on saiga. good axe, good wrestling/unarmed, shit otherwise
+			H.change_stat("endurance", 1)
+			H.change_stat("strength", 3)
+			H.change_stat("constitution", 2)
+			H.change_stat("speed", 1) // Gimmick is war. Hand to hand, axe is rad. War. Ideally, still on saiga. good axe, good wrestling/unarmed, shit otherwise
 		if("Conqueror")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You can't quite recall something such as an easy life. Your arms are accustomed to the weight of a tool of war in hand. Gladly you obey and go where duty calls - to confront destiny, weapon in hand."))
@@ -132,9 +128,8 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 1, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
-			H.change_stat("perception", -2)
-			H.change_stat("endurance", 1)
-			H.change_stat("intelligence", -2)
+			H.change_stat("perception", 1)
+			H.change_stat("endurance", 2)
 			H.change_stat("strength", 2)
 			H.change_stat("speed", -1)
 			H.change_stat("constitution", 3) // You're the closest to a civilized barbarian. You smash shit. You crush armor. That is it. Yes, it's a For Honor reference.

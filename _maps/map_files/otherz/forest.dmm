@@ -104,9 +104,11 @@
 /turf/closed/mineral/rogue/iron,
 /area/rogue/outdoors/woods/wraithhouse)
 "aC" = (
-/obj/effect/mobspawner/skeleton_spawner_simple,
-/turf/open/water/swamp,
-/area/rogue/indoors/shelter/woods/overgrownfort)
+/mob/living/carbon/human/species/goblin/npc/ambush,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Deepwoods"
+	})
 "aF" = (
 /obj/structure/flora/roguegrass/water,
 /obj/structure/flora/newtree,
@@ -498,7 +500,7 @@
 	},
 /area/rogue/outdoors/river)
 "cN" = (
-/obj/effect/mobspawner/goblin_spawner,
+/mob/living/carbon/human/species/goblin/npc/ambush,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -639,8 +641,7 @@
 	name = "Wood elf Tribes"
 	})
 "dx" = (
-/obj/structure/chair/stool/rogue,
-/obj/effect/mobspawner/goblin_spawner,
+/mob/living/carbon/human/species/goblin/npc/ambush,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "dz" = (
@@ -1408,6 +1409,10 @@
 /obj/structure/flora/rogueshroom/happyrandom,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
+"iq" = (
+/mob/living/carbon/human/species/goblin/npc/ambush,
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/shelter/woods/overgrownfort)
 "it" = (
 /obj/structure/flora/grass/jungle/b{
 	name = "Vines";
@@ -2740,7 +2745,6 @@
 	})
 "qf" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/mobspawner/goblin_spawner,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
@@ -2946,12 +2950,8 @@
 	first_time_text = "The Mountain Passe"
 	})
 "rF" = (
-/obj/effect/mobspawner/goblin_spawner{
-	min_mobs = 1;
-	max_mobs = 2;
-	mobs_to_spawn = 2
-	},
-/turf/open/floor/rogue/blocks,
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "rH" = (
 /obj/structure/flora/rogueshroom/happyrandom,
@@ -4871,10 +4871,6 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/woods/overgrownfort)
-"CP" = (
-/obj/effect/mobspawner/skeleton_spawner_hard,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods/overgrownfort)
 "CR" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/roguegrass,
@@ -5692,7 +5688,7 @@
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
 "HH" = (
-/obj/effect/mobspawner/goblin_spawner,
+/mob/living/carbon/human/species/goblin/npc/ambush,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
@@ -6916,6 +6912,7 @@
 	icon_state = "cobweb2"
 	},
 /obj/structure/flora/grass/jungle/b,
+/obj/structure/closet/crate/chest/refilling/treasure,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "OC" = (
@@ -7231,10 +7228,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"Qm" = (
-/obj/effect/mobspawner/skeleton_spawner_simple,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods/overgrownfort)
 "Qo" = (
 /obj/structure/spider/stickyweb{
 	icon_state = "stickyweb2"
@@ -7508,8 +7501,8 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/cave/underdark)
 "Se" = (
-/obj/effect/mobspawner/hole/spiders/wall,
-/turf/closed/wall/mineral/rogue/stone/moss,
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "Sh" = (
 /obj/structure/flora/roguetree/stump/log,
@@ -22538,7 +22531,7 @@ Wx
 BJ
 BJ
 iB
-CP
+BJ
 BJ
 BJ
 BJ
@@ -23865,7 +23858,7 @@ Jt
 eR
 JT
 iB
-aC
+iB
 iB
 iB
 wT
@@ -40090,7 +40083,7 @@ Ly
 Ly
 BP
 bK
-BJ
+Se
 BJ
 BP
 Qq
@@ -40487,12 +40480,12 @@ wO
 Ly
 Ly
 Ly
-Se
+BP
 BJ
-bK
+rF
 BJ
 WP
-BJ
+Se
 BJ
 CO
 BP
@@ -40630,7 +40623,7 @@ bu
 Rj
 BP
 WP
-BJ
+Se
 iB
 BP
 Ly
@@ -40891,7 +40884,7 @@ bX
 BJ
 CM
 BJ
-BJ
+Se
 OO
 KG
 BP
@@ -41021,7 +41014,7 @@ Ly
 Ly
 BP
 BJ
-BJ
+Se
 CO
 bu
 BJ
@@ -41694,7 +41687,7 @@ CM
 Lc
 BP
 BJ
-Qm
+BJ
 BJ
 BJ
 Ud
@@ -58187,7 +58180,7 @@ jz
 DU
 Hp
 RX
-EK
+RX
 ZU
 BP
 NI
@@ -58712,13 +58705,13 @@ BP
 BP
 Bi
 ew
-ew
+dx
 ew
 ew
 EK
 BP
 xp
-RX
+iq
 gW
 pI
 BP
@@ -58857,7 +58850,7 @@ Cu
 AP
 Ng
 El
-Xg
+HH
 Xg
 Tt
 BP
@@ -58984,8 +58977,8 @@ ew
 PL
 BP
 NO
-rF
 RX
+iq
 pI
 bl
 Mx
@@ -59118,7 +59111,7 @@ sO
 BP
 Cu
 RX
-RX
+iq
 Cu
 AP
 vw
@@ -59244,7 +59237,7 @@ BP
 BP
 lF
 Cg
-dx
+Cg
 ew
 Or
 iF
@@ -59256,7 +59249,7 @@ xp
 BP
 kD
 Tt
-Xg
+HH
 Xg
 gA
 WQ
@@ -59379,7 +59372,7 @@ Ir
 wA
 hp
 Cg
-ew
+dx
 sO
 BP
 IP
@@ -59776,7 +59769,7 @@ BP
 BP
 gN
 ew
-ew
+dx
 ew
 ew
 RX
@@ -59920,8 +59913,8 @@ RX
 Ou
 BP
 Ja
-Ja
-HH
+aC
+Xg
 Xg
 Tt
 hi
@@ -60049,11 +60042,11 @@ BP
 BP
 RX
 RX
-RX
+iq
 RX
 BP
 Vt
-Xg
+HH
 Xg
 Xg
 Tt
@@ -60181,7 +60174,7 @@ Tq
 RX
 BP
 RX
-rF
+RX
 RX
 RX
 BP
@@ -60321,7 +60314,7 @@ LN
 Xg
 Xg
 Xg
-Xg
+HH
 Ja
 hi
 uB
@@ -60447,7 +60440,7 @@ cl
 RX
 BP
 Lm
-RX
+iq
 RX
 RX
 BP
@@ -76552,7 +76545,7 @@ Pc
 Tm
 mi
 db
-db
+cN
 db
 Ms
 qM
@@ -76950,8 +76943,8 @@ Pc
 Pc
 Tm
 db
-db
 cN
+db
 db
 BP
 Pc
@@ -77350,8 +77343,8 @@ Pc
 Wr
 db
 db
-db
-db
+cN
+cN
 Wr
 Pc
 Pc

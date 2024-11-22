@@ -14,8 +14,7 @@
 /datum/outfit/job/roguetown/adventurer/monk/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/roguehood
-	mouth = /obj/item/needle
-	neck = /obj/item/clothing/neck/roguetown/psicross
+	neck = /obj/item/reagent_containers/glass/bottle/waterskin
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe
@@ -26,10 +25,11 @@
 	beltr = /obj/item/flashlight/flare/torch
 	backl = /obj/item/storage/backpack/rogue/backpack
 	r_hand = /obj/item/rogueweapon/woodstaff
-	l_hand = /obj/item/rogueweapon/huntingknife
+	l_hand = /obj/item/rogueweapon/duster
+	backpack_contents = list(/obj/item/needle = 1,)
 	if(H.mind)
 		to_chat(src, span_warning("Monks are pilgrims of powerful belief who empart the teachings of their Temple or God by their interactions with the people of the world. A good monk would seek to help travellers on the road, feed the hungry and teach the weak to become strong. A bad one however..."))
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE) 
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 5, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 2, TRUE)
@@ -51,4 +51,4 @@
 		ADD_TRAIT(H, TRAIT_MISSILESNARING, TRAIT_GENERIC)
 		H.mind.martial_art.projectile_deflect = TRUE
 		ADD_TRAIT(H, TRAIT_LEAPER, TRAIT_GENERIC) //crouching tiger hidden dragon
-		
+

@@ -30,10 +30,12 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	head = /obj/item/clothing/head/roguetown/chaperon/greyscale
+	neck = /obj/item/clothing/neck/roguetown/horus
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	beltr = /obj/item/storage/keyring/steward
-	beltl = /obj/item/storage/keyring/merchant
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
+	beltl = /obj/item/rogueweapon/huntingknife/idagger/silver
 	backl = /obj/item/storage/backpack/rogue/satchel
+	backpack_contents = list(/obj/item/roguekey/vault =1, /obj/item/storage/keyring/steward =1, /obj/item/storage/keyring/merchant =1, )
 
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 6, TRUE)

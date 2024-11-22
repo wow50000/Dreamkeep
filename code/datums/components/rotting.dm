@@ -118,8 +118,10 @@
 		var/turf/open/T = get_turf(L)
 		if(istype(T))
 			T.add_pollutants(/datum/pollutant/rot, 5)
-	if(amount > 25 MINUTES)
-		qdel(src)
+	if(amount > 20 MINUTES)
+		L.visible_message(span_notice("[src] decomposes..."))
+		qdel(L)
+		//qdel(src)
 		return L.dust(drop_items=TRUE)
 
 /datum/component/rot/gibs
