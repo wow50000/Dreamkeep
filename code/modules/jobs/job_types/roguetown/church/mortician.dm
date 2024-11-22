@@ -31,21 +31,23 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/roguekey/graveyard)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver =1, /obj/item/toy/cards/deck/tarot =1, /obj/item/scrying =1,)
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backr = /obj/item/rogueweapon/shovel
+	backl = /obj/item/rogueweapon/sickle/scythe
 	backl = /obj/item/storage/backpack/rogue/satchel
 	if(H.mind)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 5, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 5, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 1, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 3, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 1, TRUE)
 		H.change_stat("strength", 1)

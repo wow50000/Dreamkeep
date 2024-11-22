@@ -20,6 +20,8 @@
 	min_pq = 8
 	max_pq = null
 
+	cmode_music = 'sound/music/combat_bandit_mage.ogg'
+
 /datum/outfit/job/roguetown/magician
 
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)

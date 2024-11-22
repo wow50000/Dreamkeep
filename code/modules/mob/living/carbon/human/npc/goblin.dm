@@ -342,10 +342,13 @@
 		return
 	var/should_update = FALSE
 	if(amount > 20 MINUTES)
+		C.visible_message(span_notice("[src] decomposes..."))
+		qdel(C)
+		/*
 		for(var/obj/item/bodypart/B in C.bodyparts)
 			if(!B.skeletonized)
 				B.skeletonized = TRUE
-				should_update = TRUE
+				should_update = TRUE*/
 	else if(amount > 12 MINUTES)
 		for(var/obj/item/bodypart/B in C.bodyparts)
 			if(!B.rotted)

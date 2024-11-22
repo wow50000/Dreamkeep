@@ -4,7 +4,7 @@
 	clothes_req = FALSE
 	human_req = FALSE
 	charge_max = 200
-	cooldown_min = 50
+	cooldown_min = 20 SECONDS
 	range = -1
 	include_user = TRUE
 	invocation = ""
@@ -85,8 +85,6 @@
 	name = "Dragon Form"
 	desc = ""
 	invocation = "RAAAAAAAAWR!"
-	convert_damage = FALSE
-
 
 	shapeshift_type = /mob/living/simple_animal/hostile/retaliate/rogue/megafauna/dragon/lesser
 

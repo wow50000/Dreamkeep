@@ -20,7 +20,7 @@
 			to_chat(H, span_warning("Rangers are masters of nature, often hired as pathfinders, bodyguards and mercenaries in areas of wilderness untraversable to common soldiery."))
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
+			neck = /obj/item/reagent_containers/glass/bottle/waterskin
 			gloves = /obj/item/clothing/gloves/roguetown/leather
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			belt = /obj/item/storage/belt/rogue/leather

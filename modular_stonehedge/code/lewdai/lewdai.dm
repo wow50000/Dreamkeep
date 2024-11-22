@@ -282,11 +282,11 @@
 					isfucking = TRUE
 					chasesfuck = FALSE
 					if(L.cmode)
-						L.SetImmobilized(20)
-						L.SetKnockdown(20)
+						L.SetImmobilized(40)
+						L.SetKnockdown(40)
 					else //sneak attacked i guess.
-						L.SetImmobilized(50)
-						L.SetKnockdown(50)
+						L.SetImmobilized(60)
+						L.SetKnockdown(60)
 					if(!L.lying) //i guess if already targeted but got up somehow.
 						L.emote("gasp")
 					if(!L.cmode && L.wear_pants) //pants off if not in cmode
@@ -296,7 +296,6 @@
 						thepants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
 					else if(L.cmode && L.wear_pants)
 						src.visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
-
 					var/datum/sex_controller/sc = src.sexcon
 					if(aggressive)
 						sc.force = SEX_FORCE_MAX
