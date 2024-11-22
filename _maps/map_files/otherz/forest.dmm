@@ -54,18 +54,23 @@
 /obj/item/pestle,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods/wraithhouse)
+"al" = (
+/obj/effect/wisp,
+/obj/structure/spawner/invisible/skeleton,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/indoors/shelter/woods/overgrownfort)
 "ao" = (
 /obj/structure/flora/roguegrass/thorn_bush,
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/water/swamp,
 /area/rogue/outdoors/river)
 "ap" = (
 /obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
+	dir = 1;
+	icon_state = "tablewood1"
 	},
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
@@ -76,6 +81,10 @@
 "ar" = (
 /turf/open/floor/rogue/metal,
 /area/rogue/indoors/cave/underdark)
+"as" = (
+/obj/structure/spawner/invisible/goblin,
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/shelter/woods/overgrownfort)
 "at" = (
 /obj/structure/bed/rogue/inn/hay,
 /turf/open/floor/rogue/naturalstone,
@@ -312,9 +321,9 @@
 "bV" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -330,8 +339,8 @@
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "bX" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 1
+	dir = 1;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/woods/overgrownfort)
@@ -349,9 +358,9 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/tribalfort{
@@ -361,8 +370,8 @@
 "cf" = (
 /obj/structure/closet/crate/chest/refilling/spells,
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "ch" = (
@@ -424,12 +433,12 @@
 	})
 "ct" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 8
+	dir = 8;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "cv" = (
@@ -447,6 +456,11 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"cy" = (
+/obj/structure/chair/stool/rogue,
+/obj/structure/spawner/invisible/goblin,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/shelter/woods/overgrownfort)
 "cB" = (
 /obj/structure/closet/crate/chest/refilling/weapon,
 /turf/open/floor/rogue/blocks,
@@ -505,21 +519,17 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/shelter/woods/overgrownfort)
-"cQ" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/horny,
-/turf/open/floor/grass,
-/area/rogue/indoors/cave/minotaurcave)
 "cU" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/bed/rogue/inn/hay,
 /obj/effect/landmark/start/tribalvillager,
@@ -579,15 +589,15 @@
 "dk" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort{
@@ -600,17 +610,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"do" = (
-/obj/structure/fluff/railing/wood{
-	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/tribalfort{
-	first_time_text = "The Woodland Tribe";
-	name = "Wood elf Tribes"
-	})
 "dp" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
@@ -619,8 +618,8 @@
 	})
 "ds" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 10
+	dir = 10;
+	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/glass/cup/steel,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
@@ -628,9 +627,9 @@
 "dw" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/stairs{
 	dir = 4
@@ -644,12 +643,6 @@
 /mob/living/carbon/human/species/goblin/npc/ambush,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/woods/overgrownfort)
-"dz" = (
-/turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 4
-	},
-/area/rogue/outdoors/river)
 "dD" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/roguegrass/water/reeds,
@@ -772,8 +765,8 @@
 "er" = (
 /obj/structure/flora/roguegrass,
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -904,6 +897,12 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/water/river,
 /area/rogue/outdoors/river)
+"ff" = (
+/obj/structure/flora/roguegrass/water/reeds,
+/obj/structure/flora/roguegrass/maneater/real,
+/obj/structure/spawner/invisible/skeleton,
+/turf/open/water/swamp,
+/area/rogue/indoors/shelter/woods/overgrownfort)
 "fg" = (
 /obj/structure/rack/rogue/shelf/big,
 /turf/open/floor/rogue/grass,
@@ -913,8 +912,8 @@
 	})
 "fl" = (
 /obj/structure/table/wood{
-	icon_state = "longtable_mid";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable_mid"
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -926,8 +925,8 @@
 /area/rogue/indoors/cave/underdark)
 "fo" = (
 /obj/structure/flora/roguetree/happyrandom{
-	icon_state = "t6";
-	desc = "An old, beloved tree that even elves could love."
+	desc = "An old, beloved tree that even elves could love.";
+	icon_state = "t6"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -950,8 +949,8 @@
 /area/rogue/outdoors/woods/wraithhouse)
 "fA" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 4
+	dir = 4;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods{
@@ -964,8 +963,8 @@
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "fF" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 6
+	dir = 6;
+	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/glass/cup/skull,
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
@@ -1022,8 +1021,8 @@
 "fT" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/rooftop{
-	icon_state = "roof";
-	dir = 4
+	dir = 4;
+	icon_state = "roof"
 	},
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
@@ -1086,6 +1085,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"gv" = (
+/obj/structure/spawner/invisible/monster/minotaur,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave/minotaurcave)
 "gy" = (
 /obj/structure/spider/stickyweb{
 	icon_state = "stickyweb2"
@@ -1136,6 +1139,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"gH" = (
+/obj/structure/spawner/invisible/monster/minotaur,
+/turf/open/floor/grass,
+/area/rogue/indoors/cave/minotaurcave)
 "gN" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/rogue/blocks,
@@ -1166,8 +1173,8 @@
 	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "hi" = (
@@ -1194,8 +1201,8 @@
 /area/rogue/under/cavewet)
 "hp" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 10
+	dir = 10;
+	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -1214,8 +1221,8 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "hw" = (
 /obj/structure/table/wood{
-	icon_state = "tablewood2";
-	dir = 10
+	dir = 10;
+	icon_state = "tablewood2"
 	},
 /obj/item/reagent_containers/glass/mortar,
 /obj/item/pestle,
@@ -1273,6 +1280,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"hI" = (
+/obj/structure/spawner/invisible/skeleton,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/indoors/shelter/woods/overgrownfort)
 "hJ" = (
 /turf/closed,
 /area/rogue/outdoors/tribalfort{
@@ -1289,8 +1300,8 @@
 "hO" = (
 /obj/structure/flora/roguegrass/maneater/real,
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/water/swamp,
 /area/rogue/outdoors/river)
@@ -1341,8 +1352,8 @@
 	})
 "hX" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 8
+	dir = 8;
+	icon_state = "stickyweb2"
 	},
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods{
@@ -1415,8 +1426,8 @@
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "it" = (
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/river)
@@ -1591,8 +1602,8 @@
 /area/rogue/outdoors/woods/wraithhouse)
 "jk" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 4
+	dir = 4;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -1637,8 +1648,8 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "jG" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 4
+	dir = 4;
+	icon_state = "stickyweb2"
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/shelter/woods/overgrownfort)
@@ -1679,7 +1690,7 @@
 "jO" = (
 /obj/structure/bed/rogue/inn/hay,
 /obj/item/bedsheet/rogue/cloth,
-/mob/living/simple_animal/hostile/rogue/skeleton/axe,
+/obj/structure/spawner/invisible/skeleton,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "jP" = (
@@ -1841,8 +1852,8 @@
 	})
 "kO" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 8
+	dir = 8;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
@@ -1929,8 +1940,8 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "lv" = (
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -2066,8 +2077,8 @@
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "mj" = (
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods{
@@ -2124,8 +2135,8 @@
 	})
 "mx" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 4
+	dir = 4;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/woods/overgrownfort)
@@ -2180,9 +2191,9 @@
 "mK" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -2359,9 +2370,9 @@
 /obj/effect/landmark/start/triballate,
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort{
@@ -2459,9 +2470,9 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "ot" = (
 /obj/structure/bars/passage{
-	redstone_id = "dwarfinner2";
+	gid = "dwarfinner2";
 	name = "Inner Workshop";
-	gid = "dwarfinner2"
+	redstone_id = "dwarfinner2"
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/cave/underdark)
@@ -2545,9 +2556,9 @@
 "oX" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -2576,8 +2587,8 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "pg" = (
@@ -2710,10 +2721,6 @@
 /obj/effect/wisp,
 /turf/open/water/river,
 /area/rogue/outdoors/river)
-"pZ" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave/minotaurcave)
 "qa" = (
 /obj/structure/table/church,
 /obj/structure/table/church{
@@ -2835,8 +2842,8 @@
 	dir = 8
 	},
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 6
+	dir = 6;
+	icon_state = "largetable"
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/woods{
@@ -2861,9 +2868,9 @@
 "qY" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/twig,
@@ -2886,9 +2893,9 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort{
@@ -2898,14 +2905,14 @@
 "rj" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/woods{
@@ -2980,7 +2987,6 @@
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "rO" = (
 /obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe,
 /turf/open/floor/grass,
 /area/rogue/indoors/cave/minotaurcave)
 "rP" = (
@@ -3023,9 +3029,9 @@
 "rX" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -3062,12 +3068,12 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "se" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 1
+	dir = 1;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "sf" = (
@@ -3091,9 +3097,9 @@
 "sm" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/metal,
@@ -3218,8 +3224,8 @@
 "th" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
+	dir = 1;
+	icon_state = "tablewood1"
 	},
 /obj/structure/bars/steel{
 	icon_state = "barsbent"
@@ -3237,12 +3243,6 @@
 	first_time_text = "The Woodland Tribe";
 	name = "Wood elf Tribes"
 	})
-"tl" = (
-/turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 8
-	},
-/area/rogue/outdoors/river)
 "to" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/grass/jungle,
@@ -3308,8 +3308,8 @@
 "tD" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
+	dir = 1;
+	icon_state = "tablewood1"
 	},
 /turf/open/floor/rogue/metal,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -3365,8 +3365,8 @@
 	dir = 4
 	},
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 1
+	dir = 1;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/blocks{
 	icon_state = "paving"
@@ -3375,8 +3375,8 @@
 "uc" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/twig,
@@ -3432,9 +3432,9 @@
 "us" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort{
@@ -3715,8 +3715,8 @@
 	})
 "vV" = (
 /obj/structure/fluff/traveltile/bandit{
-	aportalid = "banditexit";
-	aportalgoesto = "banditin"
+	aportalgoesto = "banditin";
+	aportalid = "banditexit"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods{
@@ -3802,8 +3802,8 @@
 	})
 "wn" = (
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "wp" = (
@@ -3832,8 +3832,8 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "wA" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 9
+	dir = 9;
+	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/glass/cup/silver,
 /obj/item/clothing/neck/roguetown/psicross/dendor,
@@ -3855,8 +3855,8 @@
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "wN" = (
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/dirt/road,
@@ -3898,8 +3898,8 @@
 "wW" = (
 /obj/structure/closet/crate/chest/refilling/tools,
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "wZ" = (
@@ -3929,8 +3929,8 @@
 "xh" = (
 /obj/item/natural/rock,
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -3955,8 +3955,8 @@
 	})
 "xo" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 5
+	dir = 5;
+	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -3997,8 +3997,8 @@
 "xF" = (
 /obj/structure/flora/roguegrass/water,
 /turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 8
+	dir = 8;
+	icon_state = "rockwd"
 	},
 /area/rogue/outdoors/river)
 "xG" = (
@@ -4008,9 +4008,9 @@
 "xO" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/stairs{
 	dir = 4
@@ -4035,8 +4035,8 @@
 /area/rogue/outdoors/river)
 "xV" = (
 /obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
+	dir = 1;
+	icon_state = "tablewood1"
 	},
 /obj/structure/bars/steel{
 	icon_state = "barsbent"
@@ -4082,8 +4082,8 @@
 /area/rogue/indoors/cave/minotaurcave)
 "yk" = (
 /obj/structure/flora/roguetree/happyrandom{
-	icon_state = "t3";
-	desc = "An old, beloved tree that even elves could love."
+	desc = "An old, beloved tree that even elves could love.";
+	icon_state = "t3"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods/wraithhouse)
@@ -4134,6 +4134,14 @@
 /obj/machinery/light/rogue/forge,
 /turf/open/floor/rogue/metal,
 /area/rogue/indoors/cave/underdark)
+"yC" = (
+/obj/structure/spider/stickyweb{
+	dir = 1;
+	icon_state = "stickyweb2"
+	},
+/obj/structure/spawner/invisible/monster/spider,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/indoors/shelter/woods/overgrownfort)
 "yD" = (
 /obj/structure/closet/crate/chest/refilling/weapon,
 /turf/open/floor/rogue/ruinedwood{
@@ -4180,8 +4188,8 @@
 	},
 /obj/structure/closet/crate/chest/refilling/materials,
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "yO" = (
@@ -4277,8 +4285,8 @@
 	})
 "zA" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 1
+	dir = 1;
+	icon_state = "stickyweb2"
 	},
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods{
@@ -4440,9 +4448,9 @@
 "Ay" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -4504,8 +4512,8 @@
 /area/rogue/under/cavewet)
 "AV" = (
 /obj/structure/table/wood{
-	icon_state = "tablewood2";
-	dir = 10
+	dir = 10;
+	icon_state = "tablewood2"
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort{
@@ -4518,9 +4526,9 @@
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/tribalfort{
@@ -4626,9 +4634,9 @@
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/dryingrack,
 /turf/open/floor/rogue/twig,
@@ -4638,8 +4646,8 @@
 	})
 "BA" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 10
+	dir = 10;
+	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/glass/cup/silver,
 /obj/item/clothing/neck/roguetown/psicross/dendor,
@@ -4653,16 +4661,12 @@
 	})
 "BC" = (
 /turf/open/floor/rogue/rooftop{
-	icon_state = "roof";
-	dir = 4
+	dir = 4;
+	icon_state = "roof"
 	},
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"BF" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/horny,
-/turf/open/floor/rogue/dirt,
-/area/rogue/indoors/cave/minotaurcave)
 "BI" = (
 /obj/structure/flora/newtree,
 /turf/open/water/swamp,
@@ -4704,8 +4708,8 @@
 	dir = 8
 	},
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 1
+	dir = 1;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/woods/overgrownfort)
@@ -4742,8 +4746,8 @@
 	},
 /obj/structure/spider/stickyweb,
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "Cg" = (
@@ -4764,9 +4768,9 @@
 	})
 "Ck" = (
 /obj/structure/fluff/statue/femalestatue{
+	desc = "This statue depicts the flower maiden amidst the clearwater pool. She smiles at you, inviting you closer.";
 	icon_state = "5";
-	name = "Statue to Viiritri";
-	desc = "This statue depicts the flower maiden amidst the clearwater pool. She smiles at you, inviting you closer."
+	name = "Statue to Viiritri"
 	},
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/woods{
@@ -4826,10 +4830,10 @@
 /area/rogue/indoors/cave/underdark)
 "Cy" = (
 /obj/structure/lever/wall{
-	pixel_x = 32;
-	redstone_id = "dwarfinner1";
 	gid = "dwarfinner1";
-	name = "Inner Portcullis Lever"
+	name = "Inner Portcullis Lever";
+	pixel_x = 32;
+	redstone_id = "dwarfinner1"
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -4885,8 +4889,8 @@
 "CU" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /obj/structure/bed/rogue/inn/hay,
 /obj/effect/landmark/start/tribalvillager,
@@ -4939,9 +4943,9 @@
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort{
@@ -4964,8 +4968,8 @@
 /area/rogue/under/cavewet)
 "Dh" = (
 /obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
+	dir = 1;
+	icon_state = "tablewood1"
 	},
 /obj/item/reagent_containers/glass/cup/wooden,
 /obj/item/reagent_containers/glass/cup/wooden,
@@ -5053,8 +5057,8 @@
 	})
 "DK" = (
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
@@ -5143,9 +5147,9 @@
 "Em" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/twig,
@@ -5189,8 +5193,8 @@
 	})
 "Ez" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 6
+	dir = 6;
+	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/glass/cup/silver,
 /obj/item/clothing/neck/roguetown/psicross/dendor,
@@ -5204,15 +5208,15 @@
 	})
 "EB" = (
 /obj/structure/bars/passage{
-	redstone_id = "dwarfinner1";
-	gid = "dwarfinner1"
+	gid = "dwarfinner1";
+	redstone_id = "dwarfinner1"
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/cave/underdark)
 "EC" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 9
+	dir = 9;
+	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -5255,13 +5259,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"EU" = (
-/obj/structure/flora/roguegrass/water/reeds,
-/turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 4
-	},
-/area/rogue/outdoors/river)
 "EV" = (
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/dirt,
@@ -5276,8 +5273,8 @@
 	})
 "EZ" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 6
+	dir = 6;
+	icon_state = "largetable"
 	},
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -5371,9 +5368,9 @@
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort{
@@ -5386,9 +5383,9 @@
 "FO" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/woods{
@@ -5454,6 +5451,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"Gu" = (
+/obj/structure/spawner/invisible/ghost/wraiths,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods/wraithhouse)
 "Gv" = (
 /obj/structure/stairs{
 	dir = 4
@@ -5465,8 +5466,8 @@
 	})
 "Gw" = (
 /obj/structure/flora/roguetree/happyrandom{
-	icon_state = "t12";
-	desc = "An old, beloved tree that even elves could love."
+	desc = "An old, beloved tree that even elves could love.";
+	icon_state = "t12"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -5540,8 +5541,8 @@
 "GT" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/twig,
@@ -5586,9 +5587,9 @@
 "Hf" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -5676,8 +5677,8 @@
 /area/rogue/outdoors/river)
 "HF" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 4
+	dir = 4;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
@@ -5733,8 +5734,8 @@
 "HS" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
+	dir = 1;
+	icon_state = "tablewood1"
 	},
 /obj/item/candle/skull/lit,
 /turf/open/floor/rogue/twig,
@@ -5835,8 +5836,8 @@
 /area/rogue/under/cavewet)
 "IA" = (
 /obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
+	dir = 1;
+	icon_state = "tablewood1"
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/shelter/woods/overgrownfort)
@@ -5857,8 +5858,8 @@
 "IE" = (
 /obj/structure/closet/crate/chest/refilling/weapon,
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "IF" = (
@@ -5870,8 +5871,8 @@
 	})
 "IG" = (
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods{
@@ -5963,8 +5964,8 @@
 "Ji" = (
 /obj/structure/flora/newtree,
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods{
@@ -6029,8 +6030,8 @@
 "JA" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/roguetree/happyrandom{
-	icon_state = "t3";
-	desc = "An old, beloved tree that even elves could love."
+	desc = "An old, beloved tree that even elves could love.";
+	icon_state = "t3"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
@@ -6250,8 +6251,8 @@
 	})
 "KG" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 4
+	dir = 4;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/woods/overgrownfort)
@@ -6347,8 +6348,8 @@
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "Ll" = (
 /obj/structure/flora/roguetree/happyrandom{
-	icon_state = "t3";
-	desc = "An old, beloved tree that even elves could love."
+	desc = "An old, beloved tree that even elves could love.";
+	icon_state = "t3"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods/wraithhouse)
@@ -6460,9 +6461,9 @@
 "LU" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort{
@@ -6530,8 +6531,8 @@
 "Mk" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/woods{
@@ -6540,9 +6541,9 @@
 "Ml" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -6609,6 +6610,12 @@
 /obj/structure/closet/crate/chest/refilling/treasure,
 /turf/open/water/swamp,
 /area/rogue/indoors/shelter/woods/overgrownfort)
+"MG" = (
+/obj/structure/spawner/invisible/goblin,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Deepwoods"
+	})
 "MI" = (
 /obj/machinery/light/rogue/hearth,
 /turf/open/floor/rogue/twig,
@@ -6625,10 +6632,17 @@
 /area/rogue/outdoors/river)
 "MM" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 8
+	dir = 8;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Deepwoods"
+	})
+"MO" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/spawner/invisible/monster/troll,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
@@ -6658,9 +6672,9 @@
 "MW" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/tribalfort{
@@ -6778,10 +6792,6 @@
 /obj/structure/flora/rogueshroom2,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/cave/underdark)
-"NR" = (
-/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith3,
-/turf/open/water/swamp,
-/area/rogue/outdoors/woods/wraithhouse)
 "NS" = (
 /obj/structure/flora/roguegrass/water,
 /turf/open/water/river{
@@ -6833,13 +6843,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"Od" = (
-/obj/structure/flora/roguegrass/water,
-/turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 4
-	},
-/area/rogue/outdoors/river)
 "Of" = (
 /obj/effect/mist,
 /turf/open/water/river{
@@ -6857,12 +6860,12 @@
 	})
 "Ok" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 4
+	dir = 4;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "Om" = (
@@ -6924,13 +6927,6 @@
 "OE" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/town/dwarf)
-"OG" = (
-/obj/item/natural/rock,
-/turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 4
-	},
-/area/rogue/outdoors/river)
 "OJ" = (
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/blocks,
@@ -6952,8 +6948,8 @@
 /area/rogue/indoors/cave/underdark)
 "OO" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 8
+	dir = 8;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/woods/overgrownfort)
@@ -7015,8 +7011,8 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "Pg" = (
@@ -7062,8 +7058,8 @@
 	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "Ps" = (
@@ -7113,8 +7109,8 @@
 	})
 "PG" = (
 /obj/structure/flora/roguetree/happyrandom{
-	icon_state = "t3";
-	desc = "An old, beloved tree that even elves could love."
+	desc = "An old, beloved tree that even elves could love.";
+	icon_state = "t3"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -7199,9 +7195,9 @@
 "Qh" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/closed/wall/mineral/rogue/wooddark/slitted,
 /area/rogue/outdoors/tribalfort{
@@ -7236,8 +7232,8 @@
 	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "Qq" = (
@@ -7245,8 +7241,8 @@
 	dir = 4
 	},
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 4
+	dir = 4;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/woods/overgrownfort)
@@ -7273,8 +7269,8 @@
 "Qw" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "QB" = (
@@ -7307,8 +7303,8 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "QK" = (
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/woods{
@@ -7365,8 +7361,8 @@
 /obj/structure/flora/newtree,
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/tribalfort{
@@ -7391,8 +7387,8 @@
 "Ro" = (
 /obj/item/natural/rock,
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods{
@@ -7444,8 +7440,8 @@
 "RN" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
+	dir = 1;
+	icon_state = "tablewood1"
 	},
 /obj/item/signal_horn,
 /turf/open/floor/rogue/metal,
@@ -7572,6 +7568,13 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
+"SG" = (
+/obj/structure/spider/stickyweb{
+	icon_state = "stickyweb2"
+	},
+/obj/structure/spawner/invisible/monster/spider,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/indoors/shelter/woods/overgrownfort)
 "SH" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor4-old"
@@ -7607,8 +7610,8 @@
 "SQ" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "SS" = (
@@ -7684,8 +7687,8 @@
 "Tn" = (
 /obj/structure/closet/crate/chest/refilling/treasure,
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "Tp" = (
@@ -7787,8 +7790,8 @@
 "Uh" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 4
+	dir = 4;
+	icon_state = "rockwd"
 	},
 /area/rogue/outdoors/river)
 "Uk" = (
@@ -7848,8 +7851,8 @@
 	})
 "UA" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 8
+	dir = 8;
+	icon_state = "stickyweb2"
 	},
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
 /turf/open/floor/rogue/cobblerock,
@@ -7869,8 +7872,8 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "UI" = (
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods{
@@ -7885,8 +7888,8 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "wooden_floor2";
-	dir = 1
+	dir = 1;
+	icon_state = "wooden_floor2"
 	},
 /area/rogue/under/cavewet/spidermines)
 "US" = (
@@ -8001,8 +8004,8 @@
 	})
 "VC" = (
 /obj/structure/table/wood{
-	icon_state = "longtable_mid";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable_mid"
 	},
 /obj/structure/fluff/walldeco/bigpainting/lake,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
@@ -8071,8 +8074,8 @@
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "VX" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 1
+	dir = 1;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods{
@@ -8134,8 +8137,8 @@
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "Ws" = (
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /obj/structure/spacevine,
 /turf/open/floor/rogue/grass,
@@ -8183,9 +8186,9 @@
 "WJ" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/fluff/statue/femalestatue{
+	desc = "A maiden of Viiritri, perhaps. This statue watches sternly yeat beautifully, from behind the bathing maiden.";
 	icon_state = "2";
-	name = "Forest Nymph Statue";
-	desc = "A maiden of Viiritri, perhaps. This statue watches sternly yeat beautifully, from behind the bathing maiden."
+	name = "Forest Nymph Statue"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -8220,8 +8223,8 @@
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "WP" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 8
+	dir = 8;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/woods/overgrownfort)
@@ -8271,17 +8274,6 @@
 	},
 /turf/open/water/swamp/deep,
 /area/rogue/indoors/cave/underdark)
-"Xo" = (
-/obj/structure/fluff/railing/wood{
-	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
-	},
-/turf/open/floor/rogue/twig,
-/area/rogue/outdoors/tribalfort{
-	first_time_text = "The Woodland Tribe";
-	name = "Wood elf Tribes"
-	})
 "Xp" = (
 /obj/structure/spacevine,
 /turf/open/water/cleanshallow,
@@ -8333,9 +8325,9 @@
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -8369,8 +8361,8 @@
 	})
 "XN" = (
 /turf/open/floor/rogue/rooftop{
-	icon_state = "roof";
-	dir = 8
+	dir = 8;
+	icon_state = "roof"
 	},
 /area/rogue/outdoors/tribalfort{
 	first_time_text = "The Woodland Tribe";
@@ -8397,9 +8389,9 @@
 "XT" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/shroud,
 /area/rogue/outdoors/tribalfort{
@@ -8437,8 +8429,8 @@
 /area/rogue/outdoors/river)
 "Yg" = (
 /obj/structure/flora/grass/jungle/b{
-	name = "Vines";
-	layer = 2.1
+	layer = 2.1;
+	name = "Vines"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
@@ -8520,6 +8512,12 @@
 /obj/structure/flora/roguegrass/water/reeds,
 /turf/open/water/swamp/deep,
 /area/rogue/indoors/cave/underdark)
+"YH" = (
+/obj/structure/spawner/invisible/goblin,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/indoors/shelter/woods/overgrownfort)
 "YJ" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/grass/jungle/b,
@@ -8587,9 +8585,9 @@
 /obj/structure/fluff/railing/wood,
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort{
@@ -8612,8 +8610,8 @@
 "Zk" = (
 /obj/structure/spacevine,
 /obj/structure/flora/roguetree/happyrandom{
-	icon_state = "t3";
-	desc = "An old, beloved tree that even elves could love."
+	desc = "An old, beloved tree that even elves could love.";
+	icon_state = "t3"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -8638,18 +8636,6 @@
 /turf/closed/wall/mineral/rogue/decostone/mossy,
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
-	})
-"Zu" = (
-/obj/structure/fluff/railing/wood,
-/obj/structure/fluff/railing/wood{
-	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
-	},
-/turf/open/floor/rogue/twig,
-/area/rogue/outdoors/tribalfort{
-	first_time_text = "The Woodland Tribe";
-	name = "Wood elf Tribes"
 	})
 "Zy" = (
 /obj/structure/fluff/railing/border,
@@ -8686,8 +8672,8 @@
 	})
 "ZT" = (
 /obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2";
-	dir = 1
+	dir = 1;
+	icon_state = "stickyweb2"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods{
@@ -21860,7 +21846,7 @@ Ly
 hQ
 hQ
 aZ
-BJ
+hI
 BJ
 aZ
 aZ
@@ -22798,7 +22784,7 @@ wT
 iB
 bK
 iB
-BJ
+hI
 BJ
 aZ
 wT
@@ -23990,7 +23976,7 @@ Ly
 Jt
 VU
 iB
-hd
+ff
 wT
 JT
 xx
@@ -40350,7 +40336,7 @@ Ly
 BP
 BJ
 bK
-bX
+yC
 BP
 BP
 BP
@@ -40747,7 +40733,7 @@ Ly
 Ly
 Ly
 BP
-bu
+SG
 WP
 BJ
 BJ
@@ -40882,7 +40868,7 @@ Ly
 BP
 bX
 BJ
-CM
+BJ
 BJ
 Se
 OO
@@ -40902,7 +40888,7 @@ wO
 wO
 wO
 PJ
-pn
+gv
 pn
 jJ
 ut
@@ -41168,7 +41154,7 @@ wO
 wO
 wO
 PJ
-nw
+pn
 Zd
 ST
 ut
@@ -41308,8 +41294,8 @@ zU
 fZ
 fZ
 fZ
-pn
-BF
+gv
+IR
 wO
 wO
 wO
@@ -41421,7 +41407,7 @@ CM
 lC
 BJ
 iB
-BJ
+hI
 dV
 BP
 BP
@@ -42097,13 +42083,13 @@ FN
 wO
 fZ
 at
-nw
+pn
 pn
 fZ
 fZ
 fZ
 GU
-Dv
+gH
 bq
 Dv
 pn
@@ -42220,7 +42206,7 @@ CM
 BJ
 Lc
 BJ
-mM
+al
 BP
 Ly
 Ly
@@ -42379,7 +42365,7 @@ xT
 zU
 zU
 VM
-pZ
+pn
 pn
 oA
 DO
@@ -42499,7 +42485,7 @@ SS
 at
 pn
 pn
-pn
+gv
 pn
 zU
 fZ
@@ -42630,7 +42616,7 @@ wO
 wO
 et
 sb
-nw
+pn
 zU
 zU
 zU
@@ -42779,7 +42765,7 @@ wO
 wO
 oA
 Dv
-Dv
+gH
 Dv
 oA
 DO
@@ -43044,7 +43030,7 @@ wO
 wO
 wO
 IR
-cQ
+Dv
 Dv
 ft
 Mo
@@ -44922,7 +44908,7 @@ AN
 zc
 tu
 HX
-Tt
+MO
 NI
 NI
 NI
@@ -45603,8 +45589,8 @@ Sn
 FD
 FD
 FD
-dz
-dz
+aT
+aT
 el
 Nm
 NI
@@ -45736,8 +45722,8 @@ FD
 FD
 RW
 RW
-dz
-dz
+aT
+aT
 lK
 Nm
 uB
@@ -45869,8 +45855,8 @@ Nm
 Nm
 Eo
 EF
-dz
-dz
+aT
+aT
 lK
 Nm
 Nm
@@ -46002,8 +45988,8 @@ mb
 mb
 Sb
 Nm
-dz
-dz
+aT
+aT
 EF
 lX
 lX
@@ -46135,8 +46121,8 @@ xq
 lK
 Nm
 lK
-dz
-dz
+aT
+aT
 el
 EF
 EF
@@ -46270,8 +46256,8 @@ yK
 yK
 yK
 yK
-dz
-dz
+aT
+aT
 EF
 EF
 EF
@@ -46403,8 +46389,8 @@ yK
 yK
 yK
 cM
-EU
-dz
+Rr
+aT
 EF
 EF
 EF
@@ -46536,8 +46522,8 @@ yK
 yK
 On
 yK
-dz
-dz
+aT
+aT
 Yy
 yK
 yK
@@ -46549,8 +46535,8 @@ On
 yK
 yK
 yK
-dz
-dz
+aT
+aT
 EF
 Nm
 mb
@@ -46682,8 +46668,8 @@ yK
 yK
 yK
 cM
-dz
-dz
+aT
+aT
 EF
 lX
 lX
@@ -46787,8 +46773,8 @@ Mx
 uB
 lX
 lK
-dz
-dz
+aT
+aT
 lK
 lX
 EV
@@ -46815,8 +46801,8 @@ yK
 yK
 yK
 cM
-EU
-dz
+Rr
+aT
 EF
 EF
 EF
@@ -46920,8 +46906,8 @@ Ng
 Mx
 lX
 EF
-dz
-dz
+aT
+aT
 lK
 EV
 hF
@@ -46954,7 +46940,7 @@ yK
 yK
 yK
 yK
-dz
+aT
 EF
 CT
 Nm
@@ -47053,8 +47039,8 @@ NI
 NI
 KU
 EF
-dz
-dz
+aT
+aT
 EF
 KU
 NI
@@ -47087,9 +47073,9 @@ yK
 cM
 cM
 yK
-dz
+aT
 yK
-dz
+aT
 YK
 gc
 Nt
@@ -47186,8 +47172,8 @@ NI
 NI
 KU
 EF
-dz
-dz
+aT
+aT
 EF
 KU
 NI
@@ -47222,7 +47208,7 @@ yK
 yK
 yK
 yK
-dz
+aT
 av
 gc
 Nt
@@ -47319,8 +47305,8 @@ hF
 NI
 KU
 EF
-EU
-dz
+Rr
+aT
 lK
 lX
 tS
@@ -47356,7 +47342,7 @@ yK
 cM
 cM
 Yy
-dz
+aT
 gc
 Nt
 DF
@@ -47391,7 +47377,7 @@ yK
 yK
 yK
 yK
-dz
+aT
 iT
 EF
 EF
@@ -47452,8 +47438,8 @@ Mx
 Ng
 lX
 EF
-EU
-dz
+Rr
+aT
 EF
 lX
 tS
@@ -47489,7 +47475,7 @@ yK
 yK
 cM
 yK
-dz
+aT
 gc
 Nt
 DF
@@ -47524,7 +47510,7 @@ On
 yK
 yK
 yK
-dz
+aT
 EF
 EF
 qZ
@@ -47585,8 +47571,8 @@ NI
 Ng
 lX
 lK
-dz
-dz
+aT
+aT
 EF
 Eo
 Ng
@@ -47634,7 +47620,7 @@ yK
 yK
 yK
 yK
-tl
+bM
 EF
 yK
 yK
@@ -47686,7 +47672,7 @@ yK
 yK
 yK
 yK
-dz
+aT
 EF
 EF
 EF
@@ -47718,8 +47704,8 @@ NI
 Mx
 Eo
 lK
-dz
-dz
+aT
+aT
 lK
 Eo
 Mx
@@ -47767,7 +47753,7 @@ yK
 yK
 mG
 mG
-tl
+bM
 mb
 qZ
 EF
@@ -47826,7 +47812,7 @@ yK
 yK
 yK
 yK
-dz
+aT
 EF
 EF
 EF
@@ -47851,8 +47837,8 @@ Ng
 Ng
 Eo
 lK
-dz
-dz
+aT
+aT
 lK
 mb
 Ng
@@ -47900,7 +47886,7 @@ yK
 yK
 yK
 mG
-tl
+bM
 mb
 lX
 lX
@@ -47959,10 +47945,10 @@ yK
 yK
 yK
 yK
-dz
+aT
 yK
 yK
-dz
+aT
 EF
 EF
 EF
@@ -47984,8 +47970,8 @@ AN
 Ng
 lX
 EF
-dz
-dz
+aT
+aT
 lK
 lX
 Ng
@@ -48117,8 +48103,8 @@ AN
 Ng
 lX
 EF
-dz
-dz
+aT
+aT
 EF
 lX
 NI
@@ -48250,8 +48236,8 @@ AN
 Ng
 lX
 lK
-dz
-dz
+aT
+aT
 EF
 lX
 Ng
@@ -48657,7 +48643,7 @@ yK
 yK
 yK
 yK
-EU
+Rr
 lK
 lX
 KU
@@ -48791,7 +48777,7 @@ yK
 yK
 aT
 aT
-EU
+Rr
 xq
 lX
 NI
@@ -48925,7 +48911,7 @@ cM
 aT
 aT
 aT
-EU
+Rr
 lK
 EV
 JV
@@ -49323,9 +49309,9 @@ Ng
 Ng
 uB
 EF
-dz
-dz
-dz
+aT
+aT
+aT
 qZ
 Ie
 IB
@@ -49456,9 +49442,9 @@ kL
 Ng
 Ng
 EF
-dz
-dz
-dz
+aT
+aT
+aT
 EF
 eZ
 JK
@@ -49589,9 +49575,9 @@ dF
 Ng
 Ng
 EF
-dz
-EU
-dz
+aT
+Rr
+aT
 EF
 ih
 KF
@@ -49722,9 +49708,9 @@ Mx
 Ng
 Ng
 EF
-dz
-EU
-dz
+aT
+Rr
+aT
 EF
 ih
 KF
@@ -49798,7 +49784,7 @@ sX
 nh
 nh
 yk
-NR
+iw
 Kt
 Kt
 Kt
@@ -49855,9 +49841,9 @@ NI
 Ng
 Ng
 EF
-dz
-dz
-dz
+aT
+aT
+aT
 EF
 ih
 nl
@@ -49931,7 +49917,7 @@ BI
 nh
 yk
 Kt
-Kt
+Gu
 Kt
 Mh
 Kt
@@ -49988,9 +49974,9 @@ NI
 AN
 Ng
 EF
-dz
-dz
-dz
+aT
+aT
+aT
 lK
 eZ
 JV
@@ -50121,9 +50107,9 @@ NI
 NI
 Ng
 EF
-dz
-dz
-EU
+aT
+aT
+Rr
 lK
 ih
 JV
@@ -50254,9 +50240,9 @@ NI
 NI
 Ng
 EF
-dz
-dz
-EU
+aT
+aT
+Rr
 lK
 ih
 yH
@@ -50387,9 +50373,9 @@ NI
 NI
 Ng
 EF
-dz
-dz
-dz
+aT
+aT
+aT
 lK
 eZ
 hZ
@@ -50520,9 +50506,9 @@ Ng
 Ng
 Ng
 EF
-dz
-dz
-dz
+aT
+aT
+aT
 lK
 ih
 KF
@@ -50653,9 +50639,9 @@ NI
 dF
 Ng
 EF
-dz
-Od
-dz
+aT
+NS
+aT
 EF
 TK
 JV
@@ -50665,7 +50651,7 @@ JV
 JV
 Jx
 KY
-Xo
+Eg
 hx
 DS
 li
@@ -50786,9 +50772,9 @@ kL
 dF
 Ng
 EF
-dz
-dz
-dz
+aT
+aT
+aT
 EF
 GW
 JV
@@ -50919,9 +50905,9 @@ kL
 NI
 Ng
 EF
-Od
-dz
-dz
+NS
+aT
+aT
 EF
 LY
 JV
@@ -51052,9 +51038,9 @@ NI
 NI
 Ng
 EF
-dz
-EU
-dz
+aT
+Rr
+aT
 EF
 JV
 JV
@@ -51185,9 +51171,9 @@ Ng
 Ng
 Ng
 EF
-dz
-EU
-dz
+aT
+Rr
+aT
 EF
 JV
 JV
@@ -51318,9 +51304,9 @@ Ng
 AN
 AN
 EF
-dz
-EU
-dz
+aT
+Rr
+aT
 EF
 JV
 JV
@@ -51451,9 +51437,9 @@ Ng
 Ng
 AN
 EF
-OG
-dz
-dz
+nm
+aT
+aT
 EF
 JV
 JV
@@ -51584,9 +51570,9 @@ Ng
 Ng
 Ng
 EF
-dz
-dz
-dz
+aT
+aT
+aT
 EF
 JV
 JV
@@ -51717,9 +51703,9 @@ Ng
 Ng
 uB
 lK
-dz
-dz
-dz
+aT
+aT
+aT
 qZ
 TM
 nx
@@ -51850,9 +51836,9 @@ Ng
 Ng
 tS
 lK
-dz
-dz
-dz
+aT
+aT
+aT
 qZ
 jS
 SN
@@ -51983,9 +51969,9 @@ NI
 Ng
 tS
 lK
-EU
-dz
-dz
+Rr
+aT
+aT
 qZ
 SN
 SN
@@ -52116,9 +52102,9 @@ NI
 Ng
 uB
 lK
-EU
-dz
-dz
+Rr
+aT
+aT
 EF
 SN
 SN
@@ -52249,9 +52235,9 @@ Ng
 Ng
 AN
 lK
-EU
-dz
-dz
+Rr
+aT
+aT
 EF
 SN
 SN
@@ -52382,9 +52368,9 @@ Ng
 Ng
 AN
 lK
-dz
-dz
-dz
+aT
+aT
+aT
 iT
 jS
 SN
@@ -52515,9 +52501,9 @@ Ng
 AN
 uB
 EF
-dz
-dz
-dz
+aT
+aT
+aT
 iT
 jS
 KF
@@ -52648,9 +52634,9 @@ Ng
 Ng
 SD
 EE
-dz
-Od
-OG
+aT
+NS
+nm
 EF
 Cq
 JV
@@ -52781,9 +52767,9 @@ Ng
 mb
 YK
 EF
-dz
-dz
-dz
+aT
+aT
+aT
 lK
 TM
 aJ
@@ -52914,9 +52900,9 @@ Ng
 lK
 av
 EF
-dz
-dz
-dz
+aT
+aT
+aT
 lK
 cc
 OP
@@ -53047,9 +53033,9 @@ tS
 lK
 EF
 EF
-dz
-EU
-dz
+aT
+Rr
+aT
 EF
 lK
 lX
@@ -53180,9 +53166,9 @@ NI
 lK
 EF
 EF
-dz
-Od
-dz
+aT
+NS
+aT
 FD
 EF
 lK
@@ -53727,7 +53713,7 @@ yK
 yK
 yK
 yK
-dz
+aT
 pg
 ja
 ja
@@ -53860,7 +53846,7 @@ cM
 cM
 yK
 yK
-EU
+Rr
 pg
 WA
 pg
@@ -53990,10 +53976,10 @@ KU
 lK
 Ei
 EF
-EU
-dz
+Rr
+aT
 Uh
-EU
+Rr
 tK
 pg
 pg
@@ -54003,7 +53989,7 @@ tK
 Uk
 yK
 cM
-tl
+bM
 BT
 EF
 EF
@@ -54124,9 +54110,9 @@ EF
 BT
 BT
 yK
-dz
+aT
 Uh
-dz
+aT
 tK
 tK
 tK
@@ -54135,8 +54121,8 @@ tK
 yK
 yK
 mG
-tl
-tl
+bM
+bM
 BT
 xq
 EF
@@ -54401,7 +54387,7 @@ yK
 yK
 yK
 mG
-tl
+bM
 yK
 cM
 Ei
@@ -54533,7 +54519,7 @@ HA
 yK
 Gz
 cM
-tl
+bM
 BT
 lK
 EF
@@ -58323,7 +58309,7 @@ Rq
 Bc
 BP
 yD
-db
+YH
 db
 ZV
 Wr
@@ -58837,7 +58823,7 @@ Vl
 BP
 BP
 gW
-Cg
+cy
 Cg
 ew
 ew
@@ -59110,7 +59096,7 @@ Or
 sO
 BP
 Cu
-RX
+as
 iq
 Cu
 AP
@@ -60978,7 +60964,7 @@ Hr
 Hr
 Ng
 Ng
-Ng
+MG
 NI
 to
 hi
@@ -68499,7 +68485,7 @@ Ac
 Ac
 Ac
 Ac
-do
+Ym
 tp
 Pc
 Pc
@@ -68888,7 +68874,7 @@ Xq
 Xq
 Xq
 Xq
-do
+Ym
 Ri
 Ri
 Xq
@@ -69423,7 +69409,7 @@ cE
 hx
 cE
 Yq
-Zu
+ck
 Ac
 Ac
 Ac
@@ -77475,7 +77461,7 @@ Pc
 Pc
 Tm
 lV
-db
+YH
 db
 JY
 BP

@@ -103,9 +103,9 @@
 "aQ" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor{
@@ -129,9 +129,9 @@
 "bd" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern2,
 /area/rogue/under/cavewet)
@@ -166,9 +166,9 @@
 "bP" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
@@ -202,6 +202,10 @@
 "ci" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/rogue/grass,
+/area/rogue/under/cavewet)
+"cr" = (
+/obj/structure/spawner/invisible/ghost/wraiths,
+/turf/open/water/swamp,
 /area/rogue/under/cavewet)
 "cs" = (
 /obj/structure/rack/rogue,
@@ -241,8 +245,8 @@
 /obj/structure/fluff/railing/wood,
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/grass,
@@ -272,9 +276,9 @@
 /area/rogue)
 "dv" = (
 /obj/structure/fluff/traveltile{
-	name = "travel to Ashlands";
 	aportalgoesto = "ashlandsout2";
-	aportalid = "ashlandsin2"
+	aportalid = "ashlandsin2";
+	name = "travel to Ashlands"
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
@@ -294,9 +298,9 @@
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
@@ -309,8 +313,8 @@
 /area/rogue)
 "en" = (
 /turf/open/floor/rogue/rooftop{
-	icon_state = "roof";
-	dir = 4
+	dir = 4;
+	icon_state = "roof"
 	},
 /area/rogue/under/cavewet)
 "eq" = (
@@ -487,8 +491,8 @@
 /area/rogue)
 "gz" = (
 /obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
+	dir = 1;
+	icon_state = "tablewood1"
 	},
 /obj/item/rogueweapon/huntingknife/cleaver,
 /turf/open/floor/rogue/dirt/road,
@@ -543,8 +547,8 @@
 /area/rogue/indoors/shelter/town)
 "hn" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 10
+	dir = 10;
+	icon_state = "largetable"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor{
@@ -569,8 +573,8 @@
 /area/rogue/under/cavewet)
 "hv" = (
 /obj/structure/table/wood{
-	icon_state = "longtable_mid";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable_mid"
 	},
 /obj/structure/table/wood{
 	icon_state = "2,2"
@@ -633,8 +637,8 @@
 	})
 "hW" = (
 /obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
+	dir = 1;
+	icon_state = "tablewood1"
 	},
 /obj/item/candle/skull/lit,
 /turf/open/floor/rogue/herringbone,
@@ -696,9 +700,9 @@
 "iv" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -808,8 +812,8 @@
 /area/rogue/under/cavewet)
 "jU" = (
 /obj/structure/table/wood{
-	icon_state = "longtable";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/town)
@@ -977,8 +981,8 @@
 /area/rogue)
 "mo" = (
 /obj/structure/table/wood{
-	icon_state = "longtable";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable"
 	},
 /obj/item/reagent_containers/glass/cup/skull,
 /obj/item/reagent_containers/glass/cup/skull,
@@ -1061,8 +1065,8 @@
 /area/chapel/main)
 "nc" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 4
+	dir = 4;
+	icon_state = "largetable"
 	},
 /turf/open/floor/rogue/blocks/stone,
 /area/rogue/indoors/town/manor{
@@ -1145,8 +1149,8 @@
 	})
 "of" = (
 /obj/structure/table/wood{
-	icon_state = "longtable_mid";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable_mid"
 	},
 /obj/structure/table/wood{
 	icon_state = "1,2"
@@ -1234,8 +1238,8 @@
 	})
 "oU" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 6
+	dir = 6;
+	icon_state = "largetable"
 	},
 /turf/open/floor/rogue/blocks/stone,
 /area/rogue/indoors/town/manor{
@@ -1309,8 +1313,8 @@
 	icon_state = "chains2"
 	},
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 4
+	dir = 4;
+	icon_state = "largetable"
 	},
 /obj/item/candle/skull/lit,
 /turf/open/floor/rogue/hexstone,
@@ -1401,6 +1405,16 @@
 "qo" = (
 /turf/closed/mineral/rogue,
 /area/rogue)
+"qt" = (
+/obj/effect/decal/remains/human/grave{
+	icon_state = "remainslarva"
+	},
+/obj/effect/spawner/lootdrop/roguetown/refilling_chest/randomspawner,
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/town/manor{
+	first_time_text = "Underkeep";
+	name = "Underkeep"
+	})
 "qw" = (
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/manor{
@@ -1436,15 +1450,15 @@
 "rj" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
@@ -1592,7 +1606,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/town)
 "st" = (
-/mob/living/simple_animal/hostile/rogue/gravelord,
+/obj/effect/spawner/lootdrop/roguetown/refilling_chest/randomspawner,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Underkeep";
@@ -1890,8 +1904,8 @@
 /area/rogue)
 "vR" = (
 /obj/structure/mineral_door/wood/red{
-	name = "Smithy Door";
-	lockid = "townblacksmith"
+	lockid = "townblacksmith";
+	name = "Smithy Door"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/town)
@@ -1940,8 +1954,8 @@
 	})
 "wq" = (
 /obj/structure/table/wood{
-	icon_state = "longtable_mid";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable_mid"
 	},
 /obj/structure/table/wood{
 	icon_state = "1,2"
@@ -1966,8 +1980,8 @@
 	})
 "ws" = (
 /obj/structure/table/wood{
-	icon_state = "longtable";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable"
 	},
 /obj/structure/table/wood{
 	icon_state = "2,2"
@@ -2104,8 +2118,8 @@
 /area/rogue/under/cavewet)
 "xO" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 10
+	dir = 10;
+	icon_state = "largetable"
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
@@ -2154,7 +2168,6 @@
 /area/rogue/under/cavewet)
 "yB" = (
 /obj/structure/fluff/walldeco/chains,
-/obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner/undead/easy,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Underkeep";
@@ -2187,6 +2200,14 @@
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/cavewet)
+"yU" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/spawner/invisible,
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/town/manor{
+	first_time_text = "Underkeep";
+	name = "Underkeep"
+	})
 "yZ" = (
 /obj/structure/table/church{
 	icon_state = "churchtable_mid"
@@ -2307,6 +2328,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/town)
+"Av" = (
+/obj/effect/spawner/lootdrop/roguetown/refilling_chest/randomspawner,
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/town/manor{
+	first_time_text = "Underkeep";
+	name = "Underkeep"
+	})
 "Ay" = (
 /turf/closed/mineral/rogue,
 /area/rogue/under/cavewet)
@@ -2321,8 +2349,8 @@
 /obj/structure/fluff/railing/wood,
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
@@ -2367,9 +2395,9 @@
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
@@ -2400,9 +2428,9 @@
 "BH" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/flora/roguegrass/bush/wall/tall,
 /turf/open/floor/rogue/dirt/road,
@@ -2473,13 +2501,17 @@
 /area/rogue/under/cavewet)
 "Cw" = (
 /obj/structure/table/wood{
-	icon_state = "longtable_mid";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable_mid"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/town)
 "Cy" = (
 /turf/closed/wall/mineral/rogue/wood/window,
+/area/rogue/under/cavewet)
+"CA" = (
+/obj/structure/spawner/invisible/ghost/wraiths,
+/turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
 "CG" = (
 /obj/structure/stairs/stone{
@@ -2494,9 +2526,9 @@
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
@@ -2504,7 +2536,7 @@
 /obj/structure/fluff/walldeco/chains{
 	icon_state = "chains2"
 	},
-/obj/effect/spawner/lootdrop/roguetown/dungeon_mob_spawner/undead/easy,
+/obj/structure/spawner/invisible/skeleton,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Underkeep";
@@ -2562,8 +2594,8 @@
 /area/rogue)
 "Df" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 10
+	dir = 10;
+	icon_state = "largetable"
 	},
 /obj/item/candle/skull/lit,
 /turf/open/floor/rogue/cobble,
@@ -2621,16 +2653,16 @@
 "DL" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/under/cavewet)
 "DZ" = (
 /obj/machinery/light/rogue/torchholder{
-	pixel_y = 26;
-	dir = 1
+	dir = 1;
+	pixel_y = 26
 	},
 /turf/closed/wall/mineral/rogue/stone/red_moss,
 /area/rogue/under/cavewet)
@@ -2982,8 +3014,8 @@
 /area/rogue/indoors/shelter/town)
 "II" = (
 /obj/structure/table/wood{
-	icon_state = "longtable_mid";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable_mid"
 	},
 /obj/structure/table/wood{
 	icon_state = "1,0"
@@ -3003,8 +3035,8 @@
 	})
 "Ja" = (
 /obj/machinery/light/rogue/torchholder{
-	pixel_y = 26;
-	dir = 1
+	dir = 1;
+	pixel_y = 26
 	},
 /turf/closed/wall/mineral/rogue/decostone/mossy/red/cand,
 /area/rogue/indoors/town/manor{
@@ -3013,8 +3045,8 @@
 	})
 "Jc" = (
 /obj/machinery/light/rogue/torchholder{
-	pixel_y = 26;
-	dir = 1
+	dir = 1;
+	pixel_y = 26
 	},
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/shelter/town)
@@ -3029,8 +3061,8 @@
 "Jj" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 4;
-	lockid = "nightman";
-	locked = 1
+	locked = 1;
+	lockid = "nightman"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/town)
@@ -3045,8 +3077,8 @@
 /obj/structure/fluff/railing/wood,
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /obj/structure/flora/roguegrass/bush/wall/tall,
 /turf/open/floor/rogue/grass,
@@ -3125,11 +3157,18 @@
 	first_time_text = "Underkeep";
 	name = "Underkeep"
 	})
+"Ki" = (
+/obj/structure/spawner/invisible/skeleton,
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/town/manor{
+	first_time_text = "Underkeep";
+	name = "Underkeep"
+	})
 "Kj" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /obj/structure/fluff/railing/wood,
 /obj/structure/flora/roguegrass/bush/wall/tall,
@@ -3214,8 +3253,8 @@
 /area/rogue)
 "Lv" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 6
+	dir = 6;
+	icon_state = "largetable"
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
@@ -3275,8 +3314,8 @@
 "LU" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
-	pixel_x = 8;
-	layer = 2.8
+	layer = 2.8;
+	pixel_x = 8
 	},
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/grass,
@@ -3290,7 +3329,6 @@
 	name = "Underkeep"
 	})
 "LY" = (
-/mob/living/simple_animal/hostile/rogue/gravelord,
 /obj/structure/chair/wood/rogue/throne,
 /obj/item/rogueweapon/sword/long/vlord,
 /turf/open/floor/rogue/dirt,
@@ -3348,9 +3386,9 @@
 "MO" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 2;
-	layer = 2.7
+	pixel_y = 7
 	},
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/under/cavewet)
@@ -3547,7 +3585,6 @@
 	})
 "PF" = (
 /obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/rogue/gravelord,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Underkeep";
@@ -3606,9 +3643,9 @@
 /area/rogue/under/cavewet)
 "QO" = (
 /obj/structure/fluff/traveltile{
-	name = "travel to Ashlands";
 	aportalgoesto = "ashlandsout1";
-	aportalid = "ashlandsin1"
+	aportalid = "ashlandsin1";
+	name = "travel to Ashlands"
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
@@ -3667,8 +3704,8 @@
 	})
 "RB" = (
 /obj/structure/table/wood{
-	icon_state = "tablewood1";
-	dir = 1
+	dir = 1;
+	icon_state = "tablewood1"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/town)
@@ -3725,8 +3762,8 @@
 	})
 "RR" = (
 /obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 8
+	dir = 8;
+	icon_state = "largetable"
 	},
 /obj/item/candle/skull/lit,
 /turf/open/floor/rogue/cobble,
@@ -3801,9 +3838,9 @@
 "Tu" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
-	pixel_y = 7;
+	layer = 2.7;
 	pixel_x = 1;
-	layer = 2.7
+	pixel_y = 7
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 4
@@ -4020,6 +4057,13 @@
 	first_time_text = "Underkeep";
 	name = "Underkeep"
 	})
+"VL" = (
+/obj/structure/spawner/invisible,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors/town/manor{
+	first_time_text = "Underkeep";
+	name = "Underkeep"
+	})
 "VR" = (
 /obj/structure/fluff/railing/border{
 	dir = 5
@@ -4165,8 +4209,8 @@
 /area/rogue)
 "Xp" = (
 /obj/structure/table/wood{
-	icon_state = "longtable_mid";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable_mid"
 	},
 /obj/item/reagent_containers/glass/cup/skull,
 /obj/item/reagent_containers/glass/cup/skull,
@@ -4276,6 +4320,10 @@
 "YW" = (
 /obj/structure/fermenting_barrel/water,
 /turf/open/floor/rogue/cobble,
+/area/rogue/under/cavewet)
+"YY" = (
+/obj/structure/spawner/invisible/ghost/wraiths,
+/turf/open/water/swamp/deep,
 /area/rogue/under/cavewet)
 "YZ" = (
 /turf/open/transparent/openspace,
@@ -7120,7 +7168,7 @@ EW
 EW
 EW
 BM
-BM
+cr
 BM
 BM
 BM
@@ -7722,7 +7770,7 @@ BM
 yR
 Oq
 Oq
-BM
+cr
 EW
 EW
 BM
@@ -8367,7 +8415,7 @@ Oq
 VG
 Qm
 BM
-Qm
+CA
 Qm
 EW
 BM
@@ -9631,7 +9679,7 @@ aU
 aU
 yR
 EW
-EW
+YY
 BM
 BM
 BM
@@ -10785,11 +10833,11 @@ aE
 aE
 wR
 yB
+Ki
 jI
 jI
 jI
-jI
-jI
+Av
 wR
 aE
 tG
@@ -11319,7 +11367,7 @@ fx
 Ag
 pC
 wj
-wj
+VL
 wj
 Yg
 Lc
@@ -11434,14 +11482,14 @@ im
 aE
 LY
 tK
-tK
+yU
 tK
 tK
 tK
 cA
 ko
 ko
-wj
+VL
 nV
 VI
 wR
@@ -11566,9 +11614,9 @@ im
 wR
 zv
 ow
-ih
+qt
 pO
-jI
+Av
 ow
 pC
 wj
