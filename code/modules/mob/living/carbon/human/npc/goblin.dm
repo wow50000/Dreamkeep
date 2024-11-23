@@ -341,7 +341,7 @@
 		qdel(src)
 		return
 	var/should_update = FALSE
-	if(amount > 6 MINUTES)
+	if(amount > 8 MINUTES)
 		C.visible_message(span_notice("The Goblin decomposes..."))
 		qdel(C)
 		/*
@@ -349,7 +349,7 @@
 			if(!B.skeletonized)
 				B.skeletonized = TRUE
 				should_update = TRUE*/
-	else if(amount > 3 MINUTES)
+	else if(amount > 4 MINUTES)
 		for(var/obj/item/bodypart/B in C.bodyparts)
 			if(!B.rotted)
 				B.rotted = TRUE
@@ -359,11 +359,11 @@
 				if(istype(T))
 					T.add_pollutants(/datum/pollutant/rot, 1)
 	if(should_update)
-		if(amount > 6 MINUTES)
+		if(amount > 8 MINUTES)
 			C.update_body()
 			qdel(src)
 			return
-		else if(amount > 3 MINUTES)
+		else if(amount > 4 MINUTES)
 			C.update_body()
 
 /////

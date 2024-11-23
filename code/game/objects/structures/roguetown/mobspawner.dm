@@ -32,7 +32,7 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 
 	proc/spawn_and_continue()
 		if (total_spawned_mobs < max_total_spawned_mobs)
-			spawn_random_mobs(3) // Attempt to spawn 3 mobs each time
+			spawn_random_mobs(2) // Attempt to spawn 2 mobs each time
 		start_spawning()
 
 	proc/spawn_random_mobs(var/num_to_spawn)
@@ -55,7 +55,7 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 
 	proc/get_random_valid_turf()
 		var/list/valid_turfs = list()
-		for (var/turf/T in range(3, src))
+		for (var/turf/T in range(4, src))
 			if (is_valid_spawn_turf(T))
 				valid_turfs += T
 		if (valid_turfs.len == 0)
@@ -70,7 +70,7 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 		for (var/L in adventurer_landmarks)
 			if (get_dist(T, L) < 10)
 				return FALSE
-		if (players_nearby(T, 5))
+		if (players_nearby(T, 10))
 			return FALSE
 		return TRUE
 
