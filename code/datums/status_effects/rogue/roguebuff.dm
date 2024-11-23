@@ -310,6 +310,17 @@
 	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -healing_on_tick)
 	owner.adjustCloneLoss(-healing_on_tick, 0)
 
+/atom/movable/screen/alert/status_effect/buff/healing/musicalhealing
+	name = "Musical Regeneration"
+	desc = "Sweet music eases the pain, if only a little..."
+	icon_state = "buff"
+
+/datum/status_effect/buff/healing/musicalhealing
+	id = "musicalhealing"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/healing/musicalhealing
+	duration = 30 SECONDS
+	healing_on_tick = 0.01
+
 /atom/movable/screen/alert/status_effect/buff/fortify
 	name = "Fortifying Miracle"
 	desc = "Divine intervention bolsters me and aids my recovery."
