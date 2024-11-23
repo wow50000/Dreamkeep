@@ -30,8 +30,8 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 2, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, pick(0,1), TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/misc/music, pick(4,5), TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/music, 5, TRUE)
 			head = /obj/item/clothing/head/roguetown/bardhat
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			pants = /obj/item/clothing/under/roguetown/tights/random
@@ -65,7 +65,7 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3 , TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 3, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/misc/music, rand(3,5), TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/music, 4, TRUE)
 			head = /obj/item/clothing/head/roguetown/bardhat
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			pants = /obj/item/clothing/under/roguetown/tights/random
@@ -95,8 +95,8 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 1, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 2, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, pick(0,1), TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/misc/music, pick(4,5), TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/music, 5, TRUE)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/spitfire)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
