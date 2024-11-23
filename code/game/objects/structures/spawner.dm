@@ -225,8 +225,7 @@
 	/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow = 3,
 	/mob/living/simple_animal/hostile/rogue/skeleton/bow = 4,
 	/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard = 2,
-	/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear = 2,
-	/mob/living/simple_animal/hostile/rogue/gravelord = 1)
+	/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear = 2)
 	spawn_text = "jumps out in ambush!"
 	faction = list("undead")
 
@@ -323,3 +322,14 @@
 	/mob/living/simple_animal/hostile/retaliate/rogue/goblin = 3)		//archer
 	spawn_text = "appears out of hiding!"
 	faction = list("orcs")
+
+/obj/effect/mob_spawner/goblin
+	max_spawned_mobs = 6
+	valid_area = /area/rogue/indoors/shelter/woods/overgrownfort
+
+	ambush_mobs = list(
+	/mob/living/carbon/human/species/goblin/npc = 6,		//archer
+	/mob/living/carbon/human/species/goblin/npc/hell = 1,
+	/mob/living/carbon/human/species/goblin/npc/cave = 4,
+	/mob/living/carbon/human/species/goblin/npc/sea= 1,
+	/mob/living/carbon/human/species/goblin/npc/moon = 1)

@@ -2,6 +2,8 @@ var/global/total_spawned_mobs = 0
 var/global/max_total_spawned_mobs = 30 // New global variable for the total limit
 
 /obj/effect/mob_spawner
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "random_loot"
 	var/spawn_timer
 	var/max_spawned_mobs = 1
 	var/current_spawned_mobs = 0
@@ -18,7 +20,7 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 
 	New()
 		..() // Call the parent constructor
-		spawn_interval = rand(600, 1200) // RNG between 60 seconds and 120 seconds
+		spawn_interval = rand(2400, 3600) // RNG between 4 minutes and 6 minutes
 		adventurer_landmarks = get_all_adventurer_landmarks()
 		if (!is_in_valid_area(src))
 			del src  // Delete the spawner if it's not in the valid area
@@ -30,7 +32,7 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 
 	proc/spawn_and_continue()
 		if (total_spawned_mobs < max_total_spawned_mobs)
-			spawn_random_mobs(1) // Attempt to spawn 3 mobs each time
+			spawn_random_mobs(3) // Attempt to spawn 3 mobs each time
 		start_spawning()
 
 	proc/spawn_random_mobs(var/num_to_spawn)
@@ -53,7 +55,7 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 
 	proc/get_random_valid_turf()
 		var/list/valid_turfs = list()
-		for (var/turf/T in range(7, src))
+		for (var/turf/T in range(3, src))
 			if (is_valid_spawn_turf(T))
 				valid_turfs += T
 		if (valid_turfs.len == 0)
@@ -61,20 +63,14 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 		return pick(valid_turfs)
 
 	proc/is_valid_spawn_turf(turf/T)
-		if (!(istype(T, /turf/open/floor/rogue/dirt) || \
-			  istype(T, /turf/open/floor/rogue/grass) || \
-			  istype(T, /turf/open/water)))
-			return FALSE
 		if (istype(T, /turf/closed))
 			return FALSE
 		if (!is_in_valid_area(T))
 			return FALSE
-		if (T.get_lumcount() > 0.2)
-			return FALSE
 		for (var/L in adventurer_landmarks)
 			if (get_dist(T, L) < 10)
 				return FALSE
-		if (players_nearby(T, 15))
+		if (players_nearby(T, 5))
 			return FALSE
 		return TRUE
 
