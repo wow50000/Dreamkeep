@@ -286,6 +286,17 @@
 	/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 8)
 	faction = list("wolfs")
 
+/obj/structure/spawner/invisible/monster/werewolf
+	max_mobs = 1
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf/werewolf = 5,
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf/werewolf/horny = 8)
+	faction = list("wolfs")
+
+/obj/structure/spawner/invisible/monster/werewolf/safe
+	mob_types = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/wolf/werewolf/safe/horny = 8)
+
 /obj/structure/spawner/invisible/monster/spider
 	max_mobs = 2
 	mob_types = list(

@@ -218,8 +218,7 @@
 	minimum_distance = 5
 	ranged_cooldown_time = 60
 	check_friendly_fire = 1
-	loot = list(
-			/obj/effect/decal/cleanable/blood)
+	loot = list(/obj/effect/decal/cleanable/blood)
 	maxHealth = 50
 	health = 50
 
@@ -271,8 +270,7 @@
 	defdrain = 20
 	obj_damage = 1
 	speak_emote = list("grunts")
-	loot = list(
-			/obj/effect/decal/cleanable/blood)
+	loot = list(/obj/effect/decal/cleanable/blood)
 	faction = list("orcs")
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	del_on_death = FALSE
@@ -286,8 +284,7 @@
 	icon_state = "goblinarcher2"
 	icon_living = "goblinarcher2"
 	icon_dead = "goblinarcher2_dead"
-	loot = list(,
-			/obj/effect/decal/cleanable/blood)
+	loot = list(/obj/effect/decal/cleanable/blood)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goblin/simple_limb_hit(zone)
 	if(!zone)
