@@ -88,34 +88,6 @@
 	icon_dead = ""
 	loot = list(/obj/item/natural/bone,	/obj/item/natural/bone, /obj/item/natural/bone,	/obj/item/rogueweapon/sword/iron, /obj/item/rogueweapon/shield/tower, /obj/item/skull)
 
-/obj/item/ammo_casing/caseless/rogue/bolt/npc
-	name = "bolt"
-	desc = "A wooden shaft with a pointy iron end."
-	projectile_type = /obj/projectile/bullet/bolt/npc
-	caliber = "bolt"
-	icon = 'icons/roguetown/weapons/ammo.dmi'
-	icon_state = "bolt"
-	force = 7
-	dropshrink = 0.6
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
-	max_integrity = 1
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/projectile/bullet/bolt/npc
-	name = "bolt"
-	damage = 20
-	damage_type = BRUTE
-	armor_penetration = 60
-	icon = 'icons/roguetown/weapons/ammo.dmi'
-	icon_state = "bolt_proj"
-	ammo_type = /obj/item/ammo_casing/caseless/rogue/bolt/npc
-	range = 15
-	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
-	embedchance = 100
-	woundclass = BCLASS_STAB
-	flag = "bullet"
-	speed = 2
-
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow
 	base_intents = list(/datum/intent/simple/claw/skeleton_unarmed)
 	icon_state = "skeleton_guard_xbow"
