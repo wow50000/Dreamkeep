@@ -207,7 +207,7 @@
 	name = ""
 	desc = ""
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF 
-	spawn_time = 3000
+	spawn_time = 3600
 	max_mobs = 1
 	mob_types = list(
 	/mob/living/simple_animal/hostile/rogue/gravelord = 1)
@@ -316,7 +316,7 @@
 	/mob/living/simple_animal/hostile/retaliate/rogue/cavetroll = 4)
 
 /obj/structure/spawner/invisible/goblin
-	max_mobs = 2
+	max_mobs = 1
 	mob_types = list(
 	/mob/living/simple_animal/hostile/retaliate/rogue/goblin/cave = 3,		//archer
 	/mob/living/simple_animal/hostile/retaliate/rogue/goblin = 3)		//archer
