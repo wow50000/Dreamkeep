@@ -117,7 +117,7 @@
 
 /datum/component/rot/simple/process()
 	..()
-	var/mob/living/L = parent
+	var/mob/living/simple_animal/L = parent
 	if(L.stat != DEAD)
 		qdel(src)
 		return
@@ -133,9 +133,6 @@
 		var/datum/reagents/R = new/datum/reagents(20)
 		R.my_atom = src
 		R.add_reagent(/datum/pollutant/rot, 20)
-		var/datum/effect_system/smoke_spread/chem/smoke = new
-		smoke.set_up(R, 2, get_turf(L), FALSE)
-		smoke.start()
 		//stonehedge simple mob decomposition end
 		qdel(src)
 		return L.dust(drop_items=TRUE)

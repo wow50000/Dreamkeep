@@ -30,6 +30,7 @@
 	icon_state = "dungeon_chest_1"
 	base_icon_state = "dungeon_chest_1"
 	anchored = TRUE //bet some dude would try to take this home.
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/found = FALSE
 	var/time_to_reset = 10 MINUTES
 	var/reset_timer

@@ -31,7 +31,7 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 		spawn_timer = addtimer(CALLBACK(src, .proc/spawn_and_continue), spawn_interval, TIMER_STOPPABLE)
 
 	proc/spawn_and_continue()
-		if (total_spawned_mobs < max_total_spawned_mobs)
+		if (total_spawned_mobs < max_total_spawned_mobs && current_spawned_mobs < max_spawned_mobs)
 			spawn_random_mobs(3) // Attempt to spawn 3 mobs each time
 		start_spawning()
 
