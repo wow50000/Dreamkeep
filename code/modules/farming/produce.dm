@@ -125,7 +125,6 @@
 	can_distill = TRUE
 	mill_result = /obj/item/reagent_containers/powder/heal
 	distill_reagent = /datum/reagent/medicine/shroomt
-	mill_result = /obj/item/reagent_containers/powder/flour // mushroom flour. it exists. and its gross.
 
 /obj/item/reagent_containers/food/snacks/grown/apple/On_Consume(mob/living/eater)
 	..()
