@@ -45,6 +45,7 @@
 
 /obj/item/rogue/instrument/attack_self(mob/living/user)
 	var/stressevent = /datum/stressevent/music
+	var/healthbonus = 0.01
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 	if(.)
@@ -59,16 +60,22 @@
 			switch(user.mind.get_skill_level(/datum/skill/misc/music))
 				if(1)
 					stressevent = /datum/stressevent/music
+					healthbonus = 0.01
 				if(2)
 					stressevent = /datum/stressevent/music/two
+					healthbonus = 0.05
 				if(3)
 					stressevent = /datum/stressevent/music/three
+					healthbonus = 0.1
 				if(4)
 					stressevent = /datum/stressevent/music/four
+					healthbonus = 0.25
 				if(5)
 					stressevent = /datum/stressevent/music/five
+					healthbonus = 0.5
 				if(6)
 					stressevent = /datum/stressevent/music/six
+					healthbonus = 1
 			START_PROCESSING(SSobj, src)
 
 		if(playing)
@@ -90,6 +97,8 @@
 			soundloop.start()
 		for(var/mob/living/carbon/human/L in viewers(7))
 			L.add_stress(stressevent)
+			var/datum/status_effect/buff/healing/musicalhealing/heal_effect = L.apply_status_effect(/datum/status_effect/buff/healing/musicalhealing)
+			heal_effect.healing_on_tick = healthbonus
 	else
 		playing = FALSE
 		soundloop.stop()
