@@ -741,6 +741,10 @@
 /obj/structure/mirror/fancy,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/shelter/town/dwarf)
+"en" = (
+/obj/structure/spawner/invisible/monster/werewolf/safe,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors/cave)
 "eo" = (
 /obj/structure/spacevine,
 /turf/open/floor/rogue/dirt,
@@ -3785,10 +3789,6 @@
 "wd" = (
 /turf/closed/mineral/random/rogue/med,
 /area/rogue/outdoors/mountains)
-"we" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf/werewolf/safe/horny,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/cave)
 "wl" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
@@ -3839,10 +3839,6 @@
 /obj/item/clothing/neck/roguetown/psicross/dendor,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/woods/overgrownfort)
-"wD" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf/werewolf/safe/horny,
-/turf/open/water/cleanshallow,
-/area/rogue/indoors/cave)
 "wE" = (
 /obj/structure/closet/crate/chest/dungeon/generic_item,
 /obj/item/rogueweapon/flail,
@@ -41582,7 +41578,7 @@ RP
 Rw
 Rw
 bT
-we
+qQ
 qQ
 Pd
 bT
@@ -41850,7 +41846,7 @@ qQ
 qQ
 qQ
 qQ
-qQ
+en
 qQ
 bT
 Rw
@@ -42117,7 +42113,7 @@ qQ
 Pd
 qQ
 qQ
-we
+qQ
 qQ
 qQ
 qQ
@@ -42786,7 +42782,7 @@ bT
 bT
 qQ
 qQ
-we
+qQ
 Rw
 Rw
 Rw
@@ -42910,14 +42906,14 @@ RP
 RP
 RP
 Yb
-qQ
+en
 qQ
 qQ
 qQ
 bT
 bT
 qQ
-qQ
+en
 qQ
 qQ
 Pd
@@ -43176,7 +43172,7 @@ RP
 RP
 RP
 Pd
-we
+qQ
 qQ
 qQ
 qQ
@@ -43719,7 +43715,7 @@ qQ
 qQ
 qQ
 qQ
-we
+qQ
 Rw
 wO
 FN
@@ -43986,7 +43982,7 @@ qQ
 qQ
 qQ
 qQ
-qQ
+en
 wO
 wO
 wO
@@ -44112,7 +44108,7 @@ qQ
 Rw
 rJ
 rJ
-wD
+rJ
 rJ
 Rw
 qQ
@@ -44249,7 +44245,7 @@ rJ
 pM
 Rw
 qQ
-we
+qQ
 qQ
 qQ
 qQ
