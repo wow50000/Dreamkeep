@@ -480,6 +480,8 @@
 	accessory_type = /datum/sprite_accessory/eyes/moth
 	eye_color = "000000"
 	second_color = "000000"
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+	see_in_dark = 24
 
 /obj/item/organ/eyes/snail
 	name = "snail eyes"
