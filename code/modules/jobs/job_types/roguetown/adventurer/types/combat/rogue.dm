@@ -184,6 +184,7 @@
 	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC) //funny nose grab.
 	H.change_stat("strength", 1)
 	H.change_stat("speed", 2)
+	H.change_stat("perception", 1)
 	H.change_stat("intelligence", 2)
 	H.visible_message(span_info("I trained as a swashbuckler. I have some skills and tricks under my cape."))
 
@@ -215,6 +216,7 @@
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
 	backpack_contents = list(/obj/item/lockpick)
+	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC) //extra damage to groin (dirty fighting)
