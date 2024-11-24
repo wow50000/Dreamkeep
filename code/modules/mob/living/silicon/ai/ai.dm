@@ -454,7 +454,7 @@
 			to_chat(src, span_warning("Exosuit is no longer near active cameras."))
 			return
 		if(!isturf(loc))
-			to_chat(src, span_warning("I aren't in my core!"))
+			to_chat(src, span_warning("I'm not in my core!"))
 			return
 		if(M)
 			M.transfer_ai(AI_MECH_HACK, src, usr) //Called om the mech itself.

@@ -39,7 +39,7 @@
 			list -= A
 	return list
 
-/proc/get_cone_turfs(turf/starter_turf, var/dir_to_use, cone_levels = 3)
+/proc/get_cone_turfs(turf/starter_turf, dir_to_use, cone_levels = 3)
 	var/list/turfs_to_return = list()
 	var/turf/turf_to_use = starter_turf
 	var/turf/left_turf

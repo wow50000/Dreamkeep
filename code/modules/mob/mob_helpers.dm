@@ -595,7 +595,7 @@
 		if(hud_used.cmode_button)
 			hud_used.cmode_button.update_icon()
 
-/mob/proc/set_cmode(var/new_cmode)
+/mob/proc/set_cmode(new_cmode)
 	if(cmode == new_cmode)
 		return
 	cmode = new_cmode

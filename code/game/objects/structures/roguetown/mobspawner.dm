@@ -32,7 +32,7 @@ GLOBAL_VAR_INIT(max_total_spawned_mobs, 100) // New global variable for the tota
 		spawn_random_mobs(mobs_to_spawn)
 	start_spawning()
 
-/obj/effect/mob_spawner/proc/spawn_random_mobs(var/num_to_spawn)
+/obj/effect/mob_spawner/proc/spawn_random_mobs(num_to_spawn)
 	var/spawn_chance = 100 // 100% chance to spawn if conditions are met
 	if (prob(spawn_chance) && GLOB.total_spawned_mobs < GLOB.max_total_spawned_mobs)
 		var/turf/spawn_turf

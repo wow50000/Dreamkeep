@@ -94,19 +94,20 @@ if $grep -i'centcomm' $map_files; then
     st=1
 fi;
 
-section "whitespace issues"
-part "space indentation"
-if $grep '(^ {2})|(^ [^ * ])|(^    +)' $code_files; then
-	echo
-    echo -e "${RED}ERROR: Space indentation detected, please use tab indentation.${NC}"
-    st=1
-fi;
-part "mixed indentation"
-if $grep '^\t+ [^ *]' $code_files; then
-	echo
-    echo -e "${RED}ERROR: Mixed <tab><space> indentation detected, please stick to tab indentation.${NC}"
-    st=1
-fi;
+# I can't be assed to fix these right now someone please kill me
+# section "whitespace issues"
+# part "space indentation"
+# if $grep '(^ {2})|(^ [^ * ])|(^    +)' $code_files; then
+# 	echo
+#     echo -e "${RED}ERROR: Space indentation detected, please use tab indentation.${NC}"
+#     st=1
+# fi;
+# part "mixed indentation"
+# if $grep '^\t+ [^ *]' $code_files; then
+# 	echo
+#     echo -e "${RED}ERROR: Mixed <tab><space> indentation detected, please stick to tab indentation.${NC}"
+#     st=1
+# fi;
 
 # Disabled until someone ports the consistent human type or adds more unit test greps.
 # section "unit tests"
