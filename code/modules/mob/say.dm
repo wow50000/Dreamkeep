@@ -75,7 +75,7 @@
 
 	return
 
-	if(GLOB.say_disabled)	//This is here to try to identify lag problems
+/* 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
@@ -114,7 +114,7 @@
 	log_talk(message, LOG_SAY, tag="DEAD")
 	if(SEND_SIGNAL(src, COMSIG_MOB_DEADSAY, message) & MOB_DEADSAY_SIGNAL_INTERCEPT)
 		return
-	deadchat_broadcast(rendered, source, follow_target = src, speaker_key = key)
+	deadchat_broadcast(rendered, source, follow_target = src, speaker_key = key) */
 
 ///Check if this message is an emote
 /mob/proc/check_emote(message, forced)

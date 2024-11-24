@@ -153,17 +153,6 @@
 
 /datum/component/storage/proc/update_actions()
 	QDEL_NULL(modeswitch_action)
-	return
-	if(!isitem(parent) || !allow_quick_gather)
-		return
-	var/obj/item/I = parent
-	modeswitch_action = new(I)
-	RegisterSignal(modeswitch_action, COMSIG_ACTION_TRIGGER, PROC_REF(action_trigger))
-	if(I.obj_flags & IN_INVENTORY)
-		var/mob/M = I.loc
-		if(!istype(M))
-			return
-		modeswitch_action.Grant(M)
 
 /datum/component/storage/proc/change_master(datum/component/storage/concrete/new_master)
 	if(new_master == src || (!isnull(new_master) && !istype(new_master)))
