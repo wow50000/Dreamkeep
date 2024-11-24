@@ -25,7 +25,7 @@ var/global/max_total_spawned_mobs = 100 // New global variable for the total lim
 		start_spawning()
 
 /obj/effect/mob_spawner/proc/start_spawning()
-	spawn_timer = addtimer(CALLBACK(src, .proc/spawn_and_continue), spawn_interval, TIMER_STOPPABLE)
+	spawn_timer = addtimer(CALLBACK(src, PROC_REF(spawn_and_continue)), spawn_interval, TIMER_STOPPABLE)
 
 /obj/effect/mob_spawner/proc/spawn_and_continue()
 	if (total_spawned_mobs < max_total_spawned_mobs && current_spawned_mobs < max_spawned_mobs)
@@ -47,7 +47,7 @@ var/global/max_total_spawned_mobs = 100 // New global variable for the total lim
 				if (new_mob)
 					current_spawned_mobs++
 					total_spawned_mobs++
-					RegisterSignal(new_mob, COMSIG_PARENT_QDELETING, .proc/on_mob_destroy)
+					RegisterSignal(new_mob, COMSIG_PARENT_QDELETING, PROC_REF(on_mob_destroy))
 			i++
 
 /obj/effect/mob_spawner/proc/get_random_valid_turf()
