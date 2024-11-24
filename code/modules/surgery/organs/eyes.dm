@@ -188,6 +188,12 @@
 	desc = ""
 	see_in_dark = 14
 
+/obj/item/organ/eyes/darkvision
+	name = "luminous eyes"
+	desc = ""
+	see_in_dark = 7
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+
 /obj/item/organ/eyes/halfelf
 	name = "half-elf eyes"
 	desc = ""
@@ -197,8 +203,8 @@
 /obj/item/organ/eyes/goblin
 	name = "goblin eyes"
 	desc = ""
-	see_in_dark = 15
-	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	see_in_dark = 24
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 
 ///Robotic
 
