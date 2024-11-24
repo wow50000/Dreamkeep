@@ -1,6 +1,6 @@
 var/global/total_spawned_mobs = 0
 var/global/max_total_spawned_mobs = 30 // New global variable for the total limit
-
+// A lot of these hardcoded values need to be converted into vars for this spawner to handle mobs other than just goblins in one specific area.
 /obj/effect/mob_spawner
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "random_loot"

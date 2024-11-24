@@ -147,6 +147,8 @@
 	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith2 = 1,
 	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith3 = 1)
 
+//Destructible mob spawners. Have a faster respawn rate, useful for events.
+
 /obj/structure/spawner/monster
 	name = "monster hole"
 	desc = ""
@@ -202,6 +204,8 @@
 	mob_types = list(
 	/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 4,
 	/mob/living/simple_animal/hostile/retaliate/rogue/cavetroll = 4)
+
+//Indestructible invisible mob spawners. Use these for areas with respawning chests.
 
 /obj/structure/spawner/invisible
 	name = ""
@@ -322,6 +326,8 @@
 	/mob/living/simple_animal/hostile/retaliate/rogue/goblin = 3)		//archer
 	spawn_text = "appears out of hiding!"
 	faction = list("orcs")
+
+//Carbon mob spawner. See code/game/objects/structures/roguetown/mobspawner for more information. Needs to be expanded to handle more than just goblins.
 
 /obj/effect/mob_spawner/goblin
 	max_spawned_mobs = 6
