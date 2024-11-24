@@ -70,7 +70,7 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/labor/fishing, 1, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 4, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 1, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 1, TRUE)
@@ -91,6 +91,7 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 			H.change_stat("intelligence", -1) // The hunter is smarter, more skilled -- but not as tough.
 			H.change_stat("strength", 2)
+			H.change_stat("perception", 1)
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 3)
 			H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()

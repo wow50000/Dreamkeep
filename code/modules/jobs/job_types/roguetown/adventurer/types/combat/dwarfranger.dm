@@ -35,7 +35,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 5, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
@@ -48,3 +48,4 @@
 	H.change_stat("endurance", 1)
 	H.change_stat("speed", 1)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
