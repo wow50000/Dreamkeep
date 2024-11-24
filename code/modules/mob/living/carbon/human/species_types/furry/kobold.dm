@@ -60,7 +60,7 @@
 		ORGAN_SLOT_HORNS = /obj/item/organ/horns,
 		)
 	customizers = list(
-		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/organ/eyes/darkvision,
 		/datum/customizer/bodypart_feature/hair/head/humanoid/bald_default,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid/shaved_default,
 		/datum/customizer/bodypart_feature/accessory,
