@@ -34,10 +34,9 @@
 	else
 		r_hand = /obj/item/rogueweapon/halberd
 		beltl = /obj/item/rogueweapon/huntingknife
-		
 
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 4, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
@@ -45,6 +44,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 1, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/labor/mining, 1, TRUE)
+
 	H.change_stat("constitution", 3) // Eight points just like Warrior. They already get a debuff racial to speed. Please do not stack it God please.
 	H.change_stat("perception", 1)
 	H.change_stat("strength", 2)
