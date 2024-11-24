@@ -82,6 +82,13 @@
 	customizer_choices = list(/datum/customizer_choice/organ/eyes/elf)
 	default_choice = /datum/customizer_choice/organ/eyes/elf
 
+/datum/customizer_choice/organ/eyes/darkvision
+	organ_type = /obj/item/organ/eyes/darkvision
+
+/datum/customizer/organ/eyes/darkvision
+	customizer_choices = list(/datum/customizer_choice/organ/eyes/darkvision)
+	default_choice = /datum/customizer_choice/organ/eyes/darkvision
+
 /datum/customizer/organ/eyes/moth
 	customizer_choices = list(/datum/customizer_choice/organ/eyes/moth)
 	default_choice = /datum/customizer_choice/organ/eyes/moth
