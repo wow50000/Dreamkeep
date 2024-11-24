@@ -253,7 +253,7 @@ proc/magic_word()
 		"necra", 
 		"noc", 
 		"psydon", 
-		"zizo"
+		"levishth"
 		)
 	return pick(magic_word)
 

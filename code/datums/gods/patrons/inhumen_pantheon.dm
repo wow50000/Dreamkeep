@@ -48,6 +48,7 @@
 	t1 = /obj/effect/proc_holder/spell/invoked/Joy_takes_flight
 	t2 = /obj/effect/proc_holder/spell/invoked/Laughing_god
 	t3 = /obj/effect/proc_holder/spell/invoked/Smokebomb
+	t4 = /obj/effect/proc_holder/spell/invoked/revive_inhumen/thief
 	confess_lines = list(
 		"I TAKE WITH SKILLED AND NIMBLE HANDS!",
 		"THIEFLORD'S GIFT CONSUME YOU!",

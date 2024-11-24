@@ -134,3 +134,5 @@
 		return TRUE
 	return FALSE
 
+/obj/effect/proc_holder/spell/invoked/revive_inhumen/thief
+	name = "Steal Death"

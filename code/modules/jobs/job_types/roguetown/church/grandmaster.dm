@@ -25,27 +25,27 @@
 	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
 	cloak = /obj/item/clothing/cloak/templar/psydon
 	switch(H.patron.name)
-		if("Astrata")
+		if("Elysius")
 			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
 			cloak = /obj/item/clothing/cloak/templar/astrata
-		if("Dendor")
+		if("Sylvarn")
 			wrists = /obj/item/clothing/neck/roguetown/psicross/dendor
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 			cloak = /obj/item/clothing/cloak/templar/dendor
-		if("Necra")
+		if("Yamais")
 			wrists = /obj/item/clothing/neck/roguetown/psicross/necra
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
 			cloak = /obj/item/clothing/cloak/templar/necra
-		if("Pestra")
+		if("Hermeir")
 			wrists = /obj/item/clothing/neck/roguetown/psicross/pestra
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
 			cloak = /obj/item/clothing/cloak/templar/pestra
-		if("Noc")
+		if("Lune")
 			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 			cloak = /obj/item/clothing/cloak/templar/noc
-		if("Eora") //Eora content from Stonekeep
+		if("Viiritri") //Eora content from Stonekeep
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/eorahelm
 			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
 			cloak = /obj/item/clothing/cloak/templar/eora
@@ -53,15 +53,15 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/ravoxhelm
 			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox
 			cloak = /obj/item/clothing/cloak/templar/ravox
-		if("Xylix")
+		if("Onder")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/xylixhelm
 			wrists = /obj/item/clothing/neck/roguetown/psicross/xylix
 			cloak = /obj/item/clothing/cloak/templar/xylix
-		if("Malum")
+		if("Svaeryog")
 			head = /obj/item/clothing/head/roguetown/helmet/malumhelmet
 			wrists = /obj/item/clothing/neck/roguetown/psicross/malum
 			cloak = /obj/item/clothing/cloak/templar/malum
-		if("Abyssor")
+		if("Abyssia")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/abyssorhelm
 			wrists = /obj/item/clothing/neck/roguetown/psicross/abyssor
 			cloak = /obj/item/clothing/cloak/templar/abyssor
