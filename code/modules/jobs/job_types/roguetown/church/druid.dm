@@ -12,7 +12,7 @@
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_patrons = ALL_DIVINE_PATRONS //gets set to dendor on the outfit anyways lol
 	outfit = /datum/outfit/job/roguetown/druid
-	tutorial = "You have always been drawn to the wild, and the wild drawn to you. When your calling came, it was from Sylvarn. Your patron claims dominion over all of nature and promises bounty to those who act in his name to bring balance to His domain. The Wilds are the most comfortable place for you, toiling alongside soilsons and soilbrides although sometimes what lies beyond the gates fills your soul with a feral yearning."
+	tutorial = "You have always been drawn to the wild, and the wild drawn to you. When your calling came, it was from Nature and it's deities. You act as a medium between the natural and magickal worlds, often caught between it and the changing pace of society. The people still depend on you for wisdom and balance in this city; and it is often up to you and the various orders who survey the woodland realm to maintain any form of law: be it the lands or the peoples."
 
 	display_order = JDO_DRUID
 	give_bank_account = FALSE
