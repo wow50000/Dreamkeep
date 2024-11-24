@@ -53,46 +53,46 @@ section "map issues"
     # echo -e "${RED}ERROR: Non-TGM formatted map detected. Please convert it using Map Merger!${NC}"
     # st=1
 # fi;
-# part "comments"
-# if $grep '//' $map_files | $grep -v '//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE' | $grep -v 'name|desc'; then
-# 	echo
-# 	echo -e "${RED}ERROR: Unexpected commented out line detected in this map file. Please remove it.${NC}"
-# 	st=1
-# fi;
-# part "iconstate tags"
-# if $grep '^\ttag = "icon' $map_files;	then
-# 	echo
-#     echo -e "${RED}ERROR: Tag vars from icon state generation detected in maps, please remove them.${NC}"
-#     st=1
-# fi;
-# part "invalid map procs"
-# if $grep '(new|newlist|icon|matrix|sound)\(.+\)' $map_files;	then
-# 	echo
-# 	echo -e "${RED}ERROR: Using unsupported procs in variables in a map file! Please remove all instances of this.${NC}"
-# 	st=1
-# fi;
-# part "armor lists"
-# if $grep '\tarmor = list' $map_files; then
-# 	echo
-# 	echo -e "${RED}ERROR: Outdated armor list in map file.${NC}"
-# 	st=1
-# fi;
-# part "common spelling mistakes"
-# if $grep -i 'nanotransen' $map_files; then
-# 	echo
-#     echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in maps, please remove the extra N(s).${NC}"
-#     st=1
-# fi;
-# if $grep 'NanoTrasen' $map_files; then
-# 	echo
-#     echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in maps, please uncapitalize the T(s).${NC}"
-#     st=1
-# fi;
-# if $grep -i'centcomm' $map_files; then
-# 	echo
-#     echo -e "${RED}ERROR: Misspelling(s) of CentCom detected in maps, please remove the extra M(s).${NC}"
-#     st=1
-# fi;
+part "comments"
+if $grep '//' $map_files | $grep -v '//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE' | $grep -v 'name|desc'; then
+	echo
+	echo -e "${RED}ERROR: Unexpected commented out line detected in this map file. Please remove it.${NC}"
+	st=1
+fi;
+part "iconstate tags"
+if $grep '^\ttag = "icon' $map_files;	then
+	echo
+    echo -e "${RED}ERROR: Tag vars from icon state generation detected in maps, please remove them.${NC}"
+    st=1
+fi;
+part "invalid map procs"
+if $grep '(new|newlist|icon|matrix|sound)\(.+\)' $map_files;	then
+	echo
+	echo -e "${RED}ERROR: Using unsupported procs in variables in a map file! Please remove all instances of this.${NC}"
+	st=1
+fi;
+part "armor lists"
+if $grep '\tarmor = list' $map_files; then
+	echo
+	echo -e "${RED}ERROR: Outdated armor list in map file.${NC}"
+	st=1
+fi;
+part "common spelling mistakes"
+if $grep -i 'nanotransen' $map_files; then
+	echo
+    echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in maps, please remove the extra N(s).${NC}"
+    st=1
+fi;
+if $grep 'NanoTrasen' $map_files; then
+	echo
+    echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in maps, please uncapitalize the T(s).${NC}"
+    st=1
+fi;
+if $grep -i'centcomm' $map_files; then
+	echo
+    echo -e "${RED}ERROR: Misspelling(s) of CentCom detected in maps, please remove the extra M(s).${NC}"
+    st=1
+fi;
 
 section "whitespace issues"
 part "space indentation"
