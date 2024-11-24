@@ -330,7 +330,7 @@
 //Invisible spawners capable of handling carbon mobs. Use in dungeons and areas with respawning chests.
 
 /obj/effect/mob_spawner/goblin
-	max_spawned_mobs = 21
+	max_spawned_mobs = 14
 	mobs_to_spawn = 7
 	spawn_interval = 3000 //5 minutes
 	spawn_range = 10
