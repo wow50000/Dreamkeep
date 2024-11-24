@@ -8,7 +8,7 @@
 	icon_aggro = "imp"
 	icon_dead = "imp_dead"
 	icon_gib = "syndicate_gib"
-	projectiletype = /obj/projectile/magic/aoe/fireball/rogue2  //obj/item/projectile/magic/impfireball
+	projectiletype = /obj/projectile/magic/aoe/fireball/rogue2  //obj/projectile/magic/impfireball
 	projectilesound = 'modular_hearthstone/sound/misc/impranged.wav'
 	ranged = 1
 	ranged_message = "shoots a fireball"
@@ -81,7 +81,7 @@
 	. = ..()
 	playsound(src, 'modular_hearthstone/sound/misc/impinjured.wav', rand(25,100), -1) //HURT ME PLENTY
 
-/mob/living/simple_animal/hostile/asteroid/imp/bullet_act(obj/item/projectile/P)
+/mob/living/simple_animal/hostile/asteroid/imp/bullet_act(obj/projectile/P)
 	. = ..()
 	playsound(src, 'modular_hearthstone/sound/misc/impinjured.wav', rand(25,100), -1)
 
@@ -98,7 +98,7 @@
 
 
 
-/*/obj/item/projectile/magic/impfireball //bobyot y u no use child of fireball
+/*/obj/projectile/magic/impfireball //bobyot y u no use child of fireball
 	name = "demonic fireball" //because it fucking explodes and deals brute damage even when values are set to -1
 	icon_state = "fireball"
 	damage = 10
@@ -107,7 +107,7 @@
 	armor_penetration = 20
 	var/firestacks = 5
 
-/obj/item/projectile/magic/impfireball/on_hit(target)
+/obj/projectile/magic/impfireball/on_hit(target)
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/C = target
