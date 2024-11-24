@@ -1,3 +1,7 @@
+//By DREAMKEEP, Vide Noir https://github.com/EaglePhntm.
+//SOURCE IMAGES CREATED USING CIVITAI, PONY DIFFUSION XL WITH DARKEST DUNGEON LORA.
+//SPRITES MADE ON PAINT.NET AND IMPORTED TO DMI
+
 /obj/structure/fluff/statue/lewd
 	name = "lewd statue"
 	desc = "Who made those..?"

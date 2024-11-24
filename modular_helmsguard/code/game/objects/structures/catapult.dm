@@ -1,3 +1,4 @@
+//By HELMSGUARD, by Stoned Elf https://github.com/Feralape
 /obj/structure/catapult
 	name = "Siege Catapult"
 	desc = "An ancient siege engine for hurling projectiles over long distances."

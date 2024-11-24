@@ -97,6 +97,9 @@
 					if(attack_sound)
 						playsound(src, pick(attack_sound), 100, TRUE, -1)
 					stop_automated_movement = TRUE
+					if(!L.has_quirk(/datum/quirk/monsterhunter)) //one more check incase this is somehow the wrong target who dont have the quirk.
+						stoppedfucking()
+						return
 					if(L.cmode)
 						L.SetImmobilized(40)
 						L.SetKnockdown(40)
@@ -265,6 +268,9 @@
 			if(src.Adjacent(L))
 				if(iscarbon(L))
 					chasesfuck = FALSE
+					if(!L.has_quirk(/datum/quirk/monsterhunter)) //one more check incase this is somehow the wrong target who dont have the quirk.
+						stoppedfucking()
+						return
 					if(L.cmode)
 						L.SetImmobilized(40)
 						L.SetKnockdown(40)

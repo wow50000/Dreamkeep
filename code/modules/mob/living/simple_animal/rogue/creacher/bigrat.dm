@@ -182,4 +182,6 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/shapeshift
+	health = 200
+	maxHealth = 200
 	erpable = TRUE

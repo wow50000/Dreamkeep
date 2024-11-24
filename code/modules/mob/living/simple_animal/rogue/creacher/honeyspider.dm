@@ -169,4 +169,6 @@
 	deaggroprob = 30
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/shapeshift
+	health = 150
+	maxHealth = 150
 	erpable = TRUE

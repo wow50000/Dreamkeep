@@ -1,3 +1,4 @@
+//By HELMSGUARD, by Stoned Elf https://github.com/Feralape
 /obj/structure/barricade/wood_spike
 	name = "wooden barrier"
 	desc = "A defensive barrier made of sharp wooden stakes,"

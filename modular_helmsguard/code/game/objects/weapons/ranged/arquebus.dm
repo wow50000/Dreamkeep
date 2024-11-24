@@ -1,4 +1,4 @@
-
+//By HELMSGUARD, by Stoned Elf https://github.com/Feralape
 /obj/item/gun/ballistic/arquebus
 	name = "arquebus rifle"
 	desc = "A gunpowder weapon that shoots an armor piercing metal ball."

@@ -1,3 +1,4 @@
+//By DREAMKEEP, Vide Noir https://github.com/EaglePhntm.
 //Bloat
 //added and removed by filling_organs
 /datum/status_effect/debuff/bloatone

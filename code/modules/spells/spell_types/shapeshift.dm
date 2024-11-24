@@ -163,12 +163,17 @@
 	if(death)
 		stored.death()
 	else if(source.convert_damage)
-		stored.revive(full_heal = TRUE, admin_revive = FALSE)
+		stored.revive(full_heal = FALSE, admin_revive = FALSE)
 
 		var/damage_percent = (shape.maxHealth - shape.health)/shape.maxHealth;
 		var/damapply = stored.maxHealth * damage_percent
 
 		stored.apply_damage(damapply, source.convert_damage_type, forced = TRUE)
+		//fuck you, now you cant be immortal.
+		source.charge_counter = 0
+		source.start_recharge()
+		if(source.action)
+			source.action.UpdateButtonIcon()
 	qdel(shape)
 	qdel(src)
 

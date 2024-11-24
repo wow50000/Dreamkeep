@@ -1,4 +1,4 @@
-//by vide noir https://github.com/EaglePhntm
+//By DREAMKEEP, Vide Noir https://github.com/EaglePhntm.
 //allows class selection for non adventurer roles.
 /obj/item/class_selector
 	name = "Book of memories"

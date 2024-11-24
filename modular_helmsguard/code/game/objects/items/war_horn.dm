@@ -1,3 +1,4 @@
+//by Vide Noir https://github.com/EaglePhntm and Stoned Elf https://github.com/Feralape
 /obj/item/war_horn
 	name = "generic war horn"
 	desc = "Used to coordiante troops in the field."

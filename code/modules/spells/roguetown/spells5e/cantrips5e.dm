@@ -881,10 +881,8 @@
 	name = "Infestation"
 	overlay_state = "null"
 	releasedrain = 50
-	chargetime = 3
+	chargetime = 10
 	charge_max = 20 SECONDS
-	//chargetime = 10
-	//charge_max = 30 SECONDS
 	range = 8
 	warnie = "spellwarning"
 	movement_interrupt = FALSE
@@ -911,7 +909,7 @@
 /datum/status_effect/buff/infestation5e
 	id = "infestation"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/infestation5e
-	duration = 15 SECONDS
+	duration = 5 SECONDS
 	effectedstats = list("constitution" = -2)
 	var/static/mutable_appearance/rotten = mutable_appearance('icons/roguetown/mob/rotten.dmi', "rotten")
 

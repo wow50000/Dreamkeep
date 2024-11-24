@@ -1,4 +1,4 @@
-//by vide noir https://github.com/EaglePhntm
+//By DREAMKEEP, Vide Noir https://github.com/EaglePhntm.
 //Chests that are meant to make a replayable dungeon experience for long rounds.
 
 //stole the loot lists from dungeon_chest
