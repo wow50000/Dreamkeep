@@ -16,7 +16,7 @@
 	outfit = /datum/outfit/job/roguetown/highking
 
 	display_order = JDO_HIGHKING
-	min_pq = 5
+	min_pq = 10
 	max_pq = null
 	cmode_music = 'sound/music/combat_viking.ogg'
 
@@ -50,17 +50,18 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 1, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/labor/fishing, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/firearms, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 2, TRUE)
 
 		H.change_stat("strength", 3) //Less strength than royal guard. Same as Captain
 		H.change_stat("intelligence", 3)

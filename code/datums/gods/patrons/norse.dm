@@ -5,12 +5,12 @@
 	worshippers = "Kings, Warriors, Chieftains."
 	associated_faith = /datum/faith/norse
 	mob_traits = list(TRAIT_KNEESTINGER_IMMUNITY, TRAIT_VIKINGCAMP, TRAIT_NORTHMAN)
-	undead_hater = FALSE
+	undead_hater = TRUE
 	confess_lines = list(
-		"ODIN SMILES UPON ME AND THE VALYKRIES WILL SUMMON ME HOME!",
-		"THIS WORLD IS BUT ONE OF MANY! ODIN HAS SHOWN ME!",
-		"NINE WORLDS I KNEW AND NINE SHALL WELCOME ME! ODIN, MY SHEPARD!",
-		"ODIN, WISE AND POWERFUL RULER OF ASGAR!",
+		"Summer courts oath, I serve the Summer King!",
+		"This plane is one of many, lodestar protect!",
+		"GOOD-KING PROTECT ME!!",
+		"lathrandyr, GUIDE ME!",
 	)
 
 /datum/patron/norse/loki
@@ -19,11 +19,11 @@
 	desc = "Winter and it's personifications flow through her. Those who follow her are often said to be cold and deeply emotive. They form icicles in their hearts and wield them as daggers."
 	worshippers = "Those who follow the court of winter."
 	associated_faith = /datum/faith/norse
-	mob_traits = list(TRAIT_ORGAN_EATER, TRAIT_VIKINGCAMP, TRAIT_NORTHMAN)
+	mob_traits = list(TRAIT_EMPATH, TRAIT_VIKINGCAMP, TRAIT_NORTHMAN)
 	undead_hater = FALSE
 	confess_lines = list(
-		"THE MADNESS SHALL NEVER END! LOKI GUIDES ME!",
-		"I FEAR NOT DEATH! LOKI SHALL WELCOME ME!",
-		"NINE WORLDS I KNEW AND NINE SHALL WELCOME ME! LOKI, MY SHEPARD!",
-		"THIS WORLD IS BUT ONE OF MANY! LOKI HAS SHOWN ME THE TRUTH!",
+		"Winter courts oath, I serve the Winter-Queen!",
+		"I FEAR NOT THE FROZEN CLASP OF DEATH!",
+		"ICEQUEEN, FORSAKE THEM!",
+		"TASHARI, CURSE THEM!",
 	)

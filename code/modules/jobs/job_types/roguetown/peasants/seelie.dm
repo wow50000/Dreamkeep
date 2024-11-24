@@ -28,7 +28,7 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 1, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, pick(0,1), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, pick(2,3), TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing , 2, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 3, TRUE)

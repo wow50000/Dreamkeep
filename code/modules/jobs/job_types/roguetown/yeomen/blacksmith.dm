@@ -32,9 +32,9 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
 		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 1, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 1, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 1, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 2, TRUE)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
