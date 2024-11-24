@@ -57,7 +57,7 @@
 		/datum/bodypart_feature/hair/facial,
 	)
 	customizers = list(
-		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/organ/eyes/darkvision,
 		/datum/customizer/bodypart_feature/hair/head/humanoid/vulpkian,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
