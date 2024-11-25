@@ -11,7 +11,7 @@
 	chargedloop = null
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	sound = 'sound/magic/webspin.ogg'
-	invocation = "Take my strength and grant me swiftness!"
+	invocation = "Sap my strength and speed my step!"
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
@@ -39,7 +39,7 @@
 	movement_interrupt = FALSE
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	sound = 'sound/magic/webspin.ogg'
-	invocation = "Take their time!"
+	invocation = "Take their time and make it mine!"
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
@@ -66,7 +66,7 @@
 	range = 0
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
-	invocation = "Steal away their sight!"
+	invocation = "Steal away their sight so your work may be done!"
 	invocation_type = "whisper"
 	sound = 'sound/misc/area.ogg'
 	associated_skill = /datum/skill/magic/holy

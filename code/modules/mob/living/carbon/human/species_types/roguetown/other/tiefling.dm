@@ -53,7 +53,7 @@
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/full_darksight, // The eyes get replaced by the customizer, so this is here for a backup or in case of admin shenanigans
 		ORGAN_SLOT_EARS = /obj/item/organ/ears/tiefling,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
@@ -66,13 +66,15 @@
 		/datum/bodypart_feature/hair/facial,
 	)
 	customizers = list(
-		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/organ/eyes/full_darksight,
 		/datum/customizer/bodypart_feature/hair/head/humanoid,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/*
 		/datum/customizer/organ/horns/humanoid/tiefling,
 		/datum/customizer/organ/tail/tiefling,
+		*/ // Duplicates
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/horns/humanoid/tiefling,
 		/datum/customizer/organ/tail/tiefling,

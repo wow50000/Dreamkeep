@@ -50,7 +50,7 @@
 	race_bonus = list(STAT_CONSTITUTION = 1)
 	enflamed_icon = "widefire"
 	customizers = list(
-		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/organ/eyes/full_darksight,
 		/datum/customizer/bodypart_feature/hair/head/humanoid,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,

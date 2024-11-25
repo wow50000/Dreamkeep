@@ -204,7 +204,7 @@
 	add_cum_floor(get_turf(target))
 	after_ejaculation()
 
-/datum/sex_controller/proc/cum_into(oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE)
+/datum/sex_controller/proc/cum_into(oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE, girljuice = FALSE)
 	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
 	if(!issimple(target) && target.mind)
 		log_combat(user, target, "Came inside [target]")
@@ -224,8 +224,15 @@
 				target.adjust_triumphs(1)
 				target.add_stress(/datum/stressevent/cummax)
 				to_chat(target, span_love("Our sex was a true TRIUMPH!"))
-	else
-		target.add_stress(/datum/stressevent/cumok)
+		else
+			target.add_stress(/datum/stressevent/cumok)
+	if(girljuice)
+		if(!issimple(target))
+			target.reagents.add_reagent(/datum/reagent/water/pussjuice, 10)
+			after_ejaculation()
+		else
+			after_ejaculation()
+		return
 	if(issimple(target))
 		if(testes) //simple target just remove the coom.
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)

@@ -172,7 +172,7 @@ datum/quirk/fan_mime
 	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
 	if(!eyes || eyes.lighting_alpha)
 		return
-	eyes.see_in_dark = 7
+	eyes.see_in_dark = 7 // Same as half-darksight eyes
 	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	eyes.Insert(H)
 

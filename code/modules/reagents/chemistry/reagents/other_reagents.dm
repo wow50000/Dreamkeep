@@ -134,6 +134,10 @@
 	var/hydration = 12
 	alpha = 100
 
+/datum/reagent/water/pussjuice
+	name = "pussy juice"
+	description = "A strange slightly gooey substance."
+
 /datum/chemical_reaction/grosswaterify
 	name = "grosswater"
 	id = /datum/reagent/water/gross

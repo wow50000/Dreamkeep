@@ -183,16 +183,20 @@
 	name = "fung-eye"
 	desc = ""
 
-/obj/item/organ/eyes/night_vision/elf
-	name = "elf eyes"
+// Standardized darksight eyes
+
+/obj/item/organ/eyes/night_vision/full_darksight
+	name = "darksight eyes"
 	desc = ""
 	see_in_dark = 14
 
-/obj/item/organ/eyes/halfelf
-	name = "half-elf eyes"
+/obj/item/organ/eyes/half_darksight
+	name = "half-darksight eyes"
 	desc = ""
 	see_in_dark = 7
-	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+
+//
 
 /obj/item/organ/eyes/goblin
 	name = "goblin eyes"

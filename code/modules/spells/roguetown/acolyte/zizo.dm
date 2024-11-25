@@ -136,3 +136,5 @@
 
 /obj/effect/proc_holder/spell/invoked/revive_inhumen/thief
 	name = "Steal Death"
+	invocation = "Steal their soul from the grasp of Yamais!"
+	invocation_type = "shout"
