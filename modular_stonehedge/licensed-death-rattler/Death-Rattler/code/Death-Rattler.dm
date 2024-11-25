@@ -1,14 +1,15 @@
 // This code is part of Death-Rattler
-// Copyright (C) 2024 Moribund/Luctus-Comptus
-// Unauthorized use, modification, or distribution of this code is prohibited without copyright holders approval. See LICENSE.md
+// Copyright (C) 2024 Moribund/Luctus-Comptus and Sutures/noelle-lavenza
+// This code is subject to additional terms as described in modular_stonehenge/licensed-death-rattler/LICENSE.md
 
-// I hate doing this. basically if you are anyone but ratwood/gyran DM me first and you can use whatever the fuck your heart wants from this. not only did he brag about theft and how easy it is he tryed to pull this same shit.
+// I hate doing this. basically if you are anyone but ratwood/gyran DM me (Moribund) first and you can use whatever the fuck your heart wants from this. not only did he brag about theft and how easy it is he tryed to pull this same shit.
 
 
 
 
 /obj/item/storage/fancy/shhig
-	name = "Shhig Brand Zigs"
+	name = "\improper Shhig Brand Zigs"
+	gender = PLURAL
 	desc = "Dr. V's Shhig's; much like the image of serpents these zigs are synonymous with both healing and killing. Your life expectancy isnt very high anyway."
 	icon = 'modular_stonehedge/licensed-death-rattler/Death-Rattler/icon/smokable.dmi'
 	icon_state = "smokebox"
@@ -34,14 +35,20 @@
 
 /obj/item/reagent_containers/hypospray/medipen/sty/snekbt
 	name = "Snake Bite"
-	desc = "Dr. V's;.....vim....and- Ask yourself this; What am I doing? It is litterally a fucking glowing viscous sludge you are about to put into your vascular system..."
+	desc = "Dr. V's... vim... and... Ask yourself this: 'What am I doing?' It is a glowing viscous sludge you are about to put into your body. This can't be a good idea, can it?"
+	icon = 'modular_stonehedge/licensed-death-rattler/Death-Rattler/icon/smokable.dmi'
+	icon_state = "bite"
+	has_cap = FALSE // no icons
 	volume = 10
 	amount_per_transfer_from_this = 10
 	list_reagents = list(/datum/reagent/drug/snekbt = 5, /datum/reagent/toxin/venom = 5)
 
 /obj/item/reagent_containers/hypospray/medipen/sty/nourish
 	name = "NOURISH"
-	desc = "Dr. V's nutritional suppliment; normal people eat and drink, but true champions NOURISH."
+	desc = "Dr. V's nutritional supplement: normal people eat and drink, but true champions NOURISH."
+	icon = 'modular_stonehedge/licensed-death-rattler/Death-Rattler/icon/smokable.dmi'
+	icon_state = "nourish"
+	has_cap = FALSE // no icons
 	volume = 135
 	amount_per_transfer_from_this = 135
 	list_reagents = list(/datum/reagent/consumable/honey = 30, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/water = 100) // as much water as a bucket so full hydrate. enough honey to IF good rng rolls get 30hp. 33% chance to decay into sugar, sugar has a 33% chance to decay into nutrients. so saturation varies.
@@ -59,13 +66,7 @@
 		M.remove_status_effect(/datum/status_effect/debuff/sleepytime)
 	if(M.has_flaw(/datum/charflaw/addiction/junkie))
 		M.sate_addiction()
-	..()
-
-
-/datum/reagent/drug/snekbt/on_mob_metabolize(mob/living/M)
-	..()
-	M.update_body_parts_head_only()
-	M.overlay_fullscreen("snekbt", /atom/movable/screen/fullscreen/snekbt)
+	return ..()
 
 /atom/movable/screen/fullscreen/snekbt
 	icon_state = "curse1"
@@ -75,20 +76,14 @@
 	alpha = 255
 	show_when_dead = FALSE
 
-/datum/reagent/drug/snekbt/on_mob_end_metabolize(mob/living/M)
-	M.rogstam_add(-2500)
-	M.rogfat_add(2500) // crash you fucking junkie.
-	..()
-	. = 1
-
-/atom/movable/screen/fullscreen/bittensm/Initialize()
-	..()
-	filters += filter(type="angular_blur",x=5,y=5,size=1)
+/atom/movable/screen/fullscreen/snekbt/Initialize()
+	. = ..()
+	add_filter("snakebt_blur", 2, list(type="angular_blur",x=5,y=5,size=1))
 
 /datum/reagent/drug/snekbt/overdose_start(mob/living/M, can_overdose = TRUE)
 	if(HAS_TRAIT(M, TRAIT_CRACKHEAD))// boathian bullshit isnt going to help you here. its a toxin not a drug
 		can_overdose = TRUE
-	to_chat(M, span_danger("you really..... really shouldnt of done that..."))
+	to_chat(M, span_userdanger("You really, really shouldn't have done that!"))
 	M.ForceContractDisease(new /datum/disease/heart_failure(), FALSE, TRUE)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
 
@@ -99,29 +94,24 @@
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, 5)
 	M.adjustOxyLoss(5*REM, 0)
 	..()
+	return TRUE
 
 /datum/status_effect/buff/snekbt
 	id = "Snake Bite"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/druqks
 	effectedstats = list("strength" = 2, "constitution" = 2, "speed" = -3)
-	duration = 31+13+22.6 SECONDS
+	duration = 27 SECONDS
 
 /datum/stressevent/snekbt
 	stressadd = -15
-	desc = span_blue("How many will you take with you?...")
-	timer = 31+13+22.6 SECONDS
-
+	desc = span_blue("How many will you take with you...?")
+	timer = 27 SECONDS
 
 /datum/status_effect/buff/snekbt/on_apply()
 	. = ..()
-	if(owner?.client)
-		if(owner.client.screen && owner.client.screen.len)
-			var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in owner.client.screen
-			PM.backdrop(owner)
-			PM = locate(/atom/movable/screen/plane_master/game_world_fov_hidden) in owner.client.screen
-			PM.backdrop(owner)
-			PM = locate(/atom/movable/screen/plane_master/game_world_above) in owner.client.screen
-			PM.backdrop(owner)
+	if(!.) // cancelled somehow
+		return
+	owner.overlay_fullscreen("snekbt", /atom/movable/screen/fullscreen/snekbt)
 	owner.add_stress(/datum/stressevent/snekbt)
 	ADD_TRAIT(owner, TRAIT_PROSOPAGNOSIA, TRAIT_GENERIC)
 	ADD_TRAIT(owner, TRAIT_FAKEDEATH, TRAIT_GENERIC)
@@ -133,19 +123,10 @@
 	ADD_TRAIT(owner, TRAIT_ANTIMAGIC, TRAIT_GENERIC)
 
 /datum/status_effect/buff/snekbt/on_remove()
-	if(owner?.client)
-		if(owner.client.screen && owner.client.screen.len)
-			var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in owner.client.screen
-			PM.backdrop(owner)
-			PM = locate(/atom/movable/screen/plane_master/game_world_fov_hidden) in owner.client.screen
-			PM.backdrop(owner)
-			PM = locate(/atom/movable/screen/plane_master/game_world_above) in owner.client.screen
-			PM.backdrop(owner)
 	owner.remove_stress(/datum/stressevent/snekbt)
 	owner.clear_fullscreen("snekbt")
 	owner.rogstam_add(-2500)
 	owner.rogfat_add(2500) // crash you fucking junkie.
-	owner.update_body_parts_head_only()
 	REMOVE_TRAIT(owner, TRAIT_PROSOPAGNOSIA, TRAIT_GENERIC)
 	REMOVE_TRAIT(owner, TRAIT_FAKEDEATH, TRAIT_GENERIC)
 	REMOVE_TRAIT(owner, TRAIT_NODISMEMBER, TRAIT_GENERIC)
@@ -154,5 +135,4 @@
 	REMOVE_TRAIT(owner, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	REMOVE_TRAIT(owner, TRAIT_SCHIZO_AMBIENCE, TRAIT_GENERIC)
 	REMOVE_TRAIT(owner, TRAIT_ANTIMAGIC, TRAIT_GENERIC)
-	. = ..()
-	. = 1
+	..()

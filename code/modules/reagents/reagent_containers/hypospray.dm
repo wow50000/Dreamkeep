@@ -1,5 +1,5 @@
 
-/obj/item/reagent_containers/hypospray               ////// I absolutely hate this stupid retarded shit why the fuck is TG garbage even in this stupid fucking indian built codebase. fuck you seth. fuck you.
+/obj/item/reagent_containers/hypospray
 	name = "hypospray"
 	desc = ""
 	icon = 'icons/roguetown/items/surgery.dmi'
