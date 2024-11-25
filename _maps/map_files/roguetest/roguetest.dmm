@@ -243,6 +243,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
 "aM" = (
+/turf,
 /area/rogue/outdoors)
 "aN" = (
 /obj/structure/table/wood{
@@ -937,6 +938,7 @@
 	name = "BoxStation emergency evac bay";
 	width = 15
 	},
+/turf,
 /area/rogue/outdoors)
 "cq" = (
 /turf/closed/mineral/rogue/bedrock,
