@@ -197,7 +197,7 @@ do
         if [ ! -f $filename ]
         then
 			echo
-            echo -e "${RED}ERROR: Found an invalid file reference to $filename in _maps/$json ${NC}"
+            echo -e "${RED}ERROR: Found an invalid file reference to $filename in $json ${NC}"
             st=1
         fi
     done < <(jq -r '[.map_file] | flatten | .[]' $json)
