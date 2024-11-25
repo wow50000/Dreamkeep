@@ -100,7 +100,7 @@
 	associated_skill = /datum/skill/magic/holy
 	invocation = "Nature spirits, come to me.."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
-	devotion_cost = 300
+	devotion_cost = 60
 
 /obj/effect/proc_holder/spell/targeted/conjure_glowshroom/cast(list/targets, mob/user = usr)
 	. = ..()

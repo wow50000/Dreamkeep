@@ -1067,10 +1067,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"gv" = (
-/obj/structure/spawner/invisible/monster/minotaur,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave/minotaurcave)
 "gy" = (
 /obj/structure/spider/stickyweb{
 	icon_state = "stickyweb2"
@@ -1121,10 +1117,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"gH" = (
-/obj/structure/spawner/invisible/monster/minotaur,
-/turf/open/floor/grass,
-/area/rogue/indoors/cave/minotaurcave)
 "gN" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/rogue/blocks,
@@ -1909,10 +1901,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"ln" = (
-/obj/effect/mob_spawner/goblin,
-/turf/open/floor/rogue/blocks,
-/area/rogue/indoors/shelter/woods/overgrownfort)
 "lq" = (
 /obj/structure/flora/roguegrass/fungus_bush,
 /turf/open/floor/rogue/dirt,
@@ -2828,12 +2816,12 @@
 /obj/structure/spacevine,
 /turf/open/water/river,
 /area/rogue/outdoors/river)
-"qI" = (
-/obj/machinery/light/rogue/torchholder{
-	pixel_y = 26
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/woods/overgrownfort)
+"qL" = (
+/obj/effect/mob_spawner/wilderness/hostile,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Deepwoods"
+	})
 "qM" = (
 /turf/open/floor/rogue/rooftop,
 /area/rogue/outdoors/woods{
@@ -5953,6 +5941,13 @@
 	first_time_text = "The Woodland Tribe";
 	name = "Wood elf Tribes"
 	})
+"Jf" = (
+/obj/effect/wisp,
+/obj/effect/mob_spawner/wilderness/hostile,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Deepwoods"
+	})
 "Ji" = (
 /obj/structure/flora/newtree,
 /obj/structure/flora/grass/jungle/b{
@@ -7441,6 +7436,10 @@
 /mob/living/carbon/human/species/goblin/npc/hell,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods/overgrownfort)
+"RM" = (
+/obj/structure/spawner/invisible/goblin,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/shelter/woods/overgrownfort)
 "RN" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/table/wood{
@@ -7820,6 +7819,7 @@
 /obj/structure/rack/rogue,
 /obj/item/flashlight/flare/torch/lantern,
 /obj/item/flashlight/flare/torch/lantern,
+/obj/effect/mob_spawner/goblin,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/woods/overgrownfort)
 "Us" = (
@@ -40888,7 +40888,7 @@ wO
 wO
 wO
 PJ
-gv
+pn
 pn
 jJ
 ut
@@ -41294,7 +41294,7 @@ zU
 fZ
 fZ
 fZ
-gv
+pn
 IR
 wO
 wO
@@ -42089,7 +42089,7 @@ fZ
 fZ
 fZ
 GU
-gH
+Dv
 bq
 Dv
 pn
@@ -42485,7 +42485,7 @@ SS
 at
 pn
 pn
-gv
+pn
 pn
 zU
 fZ
@@ -42765,7 +42765,7 @@ wO
 wO
 oA
 Dv
-gH
+Dv
 Dv
 oA
 DO
@@ -54170,7 +54170,7 @@ Ja
 Ja
 Ja
 uB
-uB
+qL
 NI
 NI
 dp
@@ -55725,7 +55725,7 @@ JP
 iu
 Ng
 Ng
-Ng
+uB
 Ja
 Ja
 Ja
@@ -55839,7 +55839,7 @@ Ja
 Ja
 Ja
 Ja
-Ja
+uB
 mb
 mb
 EV
@@ -55974,7 +55974,7 @@ Ja
 Ja
 Ja
 Ja
-Ja
+uB
 Mx
 Ng
 dF
@@ -55990,7 +55990,7 @@ NI
 NI
 NI
 NI
-Ng
+uB
 Ja
 Ja
 Ja
@@ -56372,7 +56372,7 @@ NI
 Ng
 NI
 dF
-Ja
+uB
 Ja
 Ja
 Ja
@@ -56506,7 +56506,7 @@ NI
 NI
 dF
 dF
-Ja
+uB
 Ja
 Ja
 Ja
@@ -56639,10 +56639,10 @@ NI
 NI
 NI
 NI
-Ng
-Ng
-Ng
-Ng
+uB
+uB
+uB
+uB
 NI
 IH
 Ng
@@ -56787,7 +56787,7 @@ NI
 NI
 NI
 dF
-mw
+Jf
 Ng
 Ng
 NI
@@ -58395,8 +58395,8 @@ Ng
 Ng
 Ng
 Ng
-uB
-uB
+Ng
+Ng
 Ng
 Ng
 dF
@@ -58438,8 +58438,8 @@ Lk
 Vd
 zv
 bK
-BJ
-BJ
+RX
+RX
 BP
 db
 db
@@ -58529,7 +58529,7 @@ Ng
 Ng
 NI
 NI
-uB
+Ng
 Ng
 Ng
 dF
@@ -58570,9 +58570,9 @@ Cu
 AP
 AL
 bK
-BJ
-BJ
-BJ
+RX
+RX
+RX
 Vo
 RX
 aN
@@ -58690,7 +58690,7 @@ tS
 BP
 BP
 Bi
-ew
+RM
 ew
 ew
 ew
@@ -58703,8 +58703,8 @@ pI
 BP
 AL
 bK
-BJ
-BJ
+RX
+RX
 bK
 Wr
 Lm
@@ -58836,8 +58836,8 @@ Cu
 AP
 AL
 El
-BJ
-BJ
+RX
+RX
 Gn
 BP
 BP
@@ -58969,8 +58969,8 @@ pI
 bl
 gS
 bK
-BJ
-BJ
+RX
+RX
 Gn
 Ug
 rq
@@ -59102,9 +59102,9 @@ Cu
 AP
 af
 Gn
-BJ
-WQ
-BJ
+RX
+gW
+RX
 WN
 FU
 sG
@@ -59235,9 +59235,9 @@ xp
 BP
 oH
 Gn
-BJ
-BJ
-WQ
+RX
+RX
+gW
 WQ
 WX
 Bw
@@ -59368,9 +59368,9 @@ sQ
 AP
 Wf
 bK
-BJ
-WQ
-WQ
+RX
+gW
+gW
 BJ
 fB
 ra
@@ -59501,8 +59501,8 @@ BP
 Lk
 gS
 bK
-BJ
-WQ
+RX
+gW
 Gn
 Ug
 iI
@@ -59634,8 +59634,8 @@ Kp
 BP
 AL
 El
-BJ
-BJ
+RX
+RX
 bK
 BP
 BP
@@ -59758,7 +59758,7 @@ ew
 ew
 ew
 ew
-ln
+RX
 BP
 MT
 RX
@@ -59767,8 +59767,8 @@ Kp
 OJ
 AL
 bK
-BJ
-BJ
+RX
+RX
 bK
 SF
 uB
@@ -59900,8 +59900,8 @@ Ou
 BP
 bK
 bK
-BJ
-BJ
+RX
+RX
 Gn
 hi
 uB
@@ -60032,9 +60032,9 @@ RX
 RX
 BP
 Vt
-BJ
-BJ
-BJ
+RX
+RX
+RX
 Gn
 hi
 uB
@@ -60164,10 +60164,10 @@ RX
 RX
 RX
 BP
-qI
-BJ
-BJ
-BJ
+oR
+RX
+RX
+RX
 bK
 hi
 uB
@@ -60297,10 +60297,10 @@ RX
 RX
 RX
 LN
-BJ
-BJ
-BJ
-BJ
+RX
+RX
+RX
+RX
 bK
 hi
 uB
@@ -60430,10 +60430,10 @@ RX
 RX
 RX
 BP
-qI
-BJ
-BJ
-BJ
+oR
+RX
+RX
+RX
 bK
 hi
 uB
@@ -60564,9 +60564,9 @@ NT
 BP
 BP
 jY
-BJ
-BJ
-BJ
+RX
+RX
+RX
 bK
 hi
 uB
