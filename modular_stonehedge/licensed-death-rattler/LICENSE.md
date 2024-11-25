@@ -26,4 +26,8 @@
      explicit written permission from the copyright holder.
   d) This file must include this copyright notice and license information
      in any copies or substantial portions of the file.
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> upstream/main
