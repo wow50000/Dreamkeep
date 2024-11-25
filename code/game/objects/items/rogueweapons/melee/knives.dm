@@ -338,6 +338,6 @@
 	desc = "This ominous, jeweled dagger was crafted by the assassin race of nite elves."
 	force = 22
 	sellprice = 75
-	icon = 'modular_stonehedge/icons/roguetown/weapons/32.dmi'
+	icon = 'modular_stonehedge/licensed-eaglephntm/icons/roguetown/weapons/32.dmi'
 	icon_state = "drowdagger"
 	item_state = "drowdag"

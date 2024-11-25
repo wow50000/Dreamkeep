@@ -2,7 +2,7 @@
 /obj/structure/barricade/wood_spike
 	name = "wooden barrier"
 	desc = "A defensive barrier made of sharp wooden stakes,"
-	icon = 'modular_helmsguard/icons/obj/structure/spike_barricades.dmi'
+	icon = 'modular_helmsguard/licensed-feralope/icons/obj/structure/spike_barricades.dmi'
 	icon_state = "barricade"
 	max_integrity = 250
 	proj_pass_rate = 80

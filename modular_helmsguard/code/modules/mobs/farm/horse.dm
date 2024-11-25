@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/horse
-	icon = 'modular_helmsguard/icons/mob/horse.dmi'
+	icon = 'modular_helmsguard/licensed-feralope/icons/mob/horse.dmi'
 	name = "horse"
 	desc = ""
 	icon_state = "horsewhite"
@@ -122,7 +122,7 @@
 // FOAL
 
 /mob/living/simple_animal/hostile/retaliate/rogue/foal
-	icon = 'modular_helmsguard/icons/mob/horse.dmi'
+	icon = 'modular_helmsguard/licensed-feralope/icons/mob/horse.dmi'
 	name = "foal"
 	desc = ""
 	icon_state = "foal"

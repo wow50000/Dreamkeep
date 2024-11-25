@@ -2,7 +2,7 @@
 /obj/structure/catapult
 	name = "Siege Catapult"
 	desc = "An ancient siege engine for hurling projectiles over long distances."
-	icon = 'modular_helmsguard/icons/obj/structure/catapult.dmi'
+	icon = 'modular_helmsguard/licensed-feralope/icons/obj/structure/catapult.dmi'
 	icon_state = "catapult_ready"
 	anchored = 1
 	density = 1
@@ -236,7 +236,7 @@
 
 /obj/item/boulder
 	name = "boulder"
-	icon = 'modular_helmsguard/icons/obj/structure/cata_ammo.dmi'
+	icon = 'modular_helmsguard/licensed-feralope/icons/obj/structure/cata_ammo.dmi'
 	icon_state = "b-1"
 	w_class = 5
 	var/launched = FALSE
@@ -251,7 +251,7 @@
 
 
 /*/obj/item/boulder/flying
-	icon = 'modular_helmsguard/icons/obj/structure/cata_ammo.dmi'
+	icon = 'modular_helmsguard/licensed-feralope/icons/obj/structure/cata_ammo.dmi'
 	icon_state = "boulder"*/
 
 

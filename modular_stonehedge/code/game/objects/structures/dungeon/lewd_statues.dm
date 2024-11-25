@@ -5,7 +5,7 @@
 /obj/structure/fluff/statue/lewd
 	name = "lewd statue"
 	desc = "Who made those..?"
-	icon = 'modular_stonehedge/icons/roguetown/misc/tallstructure.dmi'
+	icon = 'modular_stonehedge/licensed-eaglephntm/icons/roguetown/misc/tallstructure.dmi'
 	icon_state = "lewd1"
 
 /obj/structure/fluff/statue/lewd/random/Initialize(mapload)

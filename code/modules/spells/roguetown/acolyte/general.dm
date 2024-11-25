@@ -210,7 +210,7 @@
 	name = "Stabalizing Syringe"
 	overlay_state = "stable"
 	range = 1
-	sound = 'modular/Smoker/sound/inject.ogg'
+	sound = 'modular_stonehedge/licensed-death-rattler/Death-Rattler/sound/inject.ogg'
 	associated_skill = /datum/skill/misc/medicine
 	antimagic_allowed = TRUE
 	include_user = TRUE

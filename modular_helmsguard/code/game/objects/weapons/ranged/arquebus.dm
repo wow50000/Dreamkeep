@@ -2,7 +2,7 @@
 /obj/item/gun/ballistic/arquebus
 	name = "arquebus rifle"
 	desc = "A gunpowder weapon that shoots an armor piercing metal ball."
-	icon = 'modular_helmsguard/icons/weapons/arquebus.dmi'
+	icon = 'modular_helmsguard/licensed-feralope/icons/weapons/arquebus.dmi'
 	icon_state = "arquebus"
 	item_state = "arquebus"
 	force = 10
@@ -551,7 +551,7 @@
 
 /obj/item/ramrod
 	name = "ramrod"
-	icon = 'modular_helmsguard/icons/obj/items/arquebus_items.dmi'
+	icon = 'modular_helmsguard/licensed-feralope/icons/obj/items/arquebus_items.dmi'
 	desc = "A ramrod used for reloading a firearm."
 	icon_state = "ramrod"
 	item_state = "ramrod"
@@ -561,7 +561,7 @@
 
 /obj/item/powderflask
 	name = "firepowder flask"
-	icon = 'modular_helmsguard/icons/obj/items/arquebus_items.dmi'
+	icon = 'modular_helmsguard/licensed-feralope/icons/obj/items/arquebus_items.dmi'
 	desc = "A flask of gunpowder used for reloading a firearm."
 	icon_state = "powderflask"
 	item_state = "powderflask"

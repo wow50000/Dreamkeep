@@ -70,7 +70,7 @@
 /atom/movable/screen/alert/status_effect/debuff/stealthcd
 	name = "Stealth Broken"
 	desc = "I've either been found or recently dealt a sneak attack and can't sneak again for a short while"
-	icon = 'modular_stonehedge/icons/mob/screen_alert.dmi'
+	icon = 'modular_stonehedge/licensed-eaglephntm/icons/mob/screen_alert.dmi'
 	icon_state = "stealthcd"
 
 /datum/status_effect/debuff/stealthcd/on_apply()
@@ -356,7 +356,7 @@
 /atom/movable/screen/alert/status_effect/debuff/bigboobs
 	name = "Enchanted Endowment" //was gonna name it a curse but it isn't a technically one.
 	desc = "They feel as heavy as gold and are massive... My back hurts."
-	icon = 'modular_stonehedge/icons/mob/screen_alert.dmi'
+	icon = 'modular_stonehedge/licensed-eaglephntm/icons/mob/screen_alert.dmi'
 	icon_state = "bigboobs"
 
 /datum/status_effect/debuff/bigboobs/on_apply()

@@ -235,7 +235,7 @@
 /obj/item/reagent_containers/powder/gunpowder
 	name = "firepowder"
 	desc = "Not so useful in this state."
-	icon = 'modular_stonehedge/icons/roguetown/items/produce.dmi'
+	icon = 'modular_stonehedge/licensed-eaglephntm/icons/roguetown/items/produce.dmi'
 	icon_state = "gunpowder"
 	possible_transfer_amounts = list()
 	volume = 15

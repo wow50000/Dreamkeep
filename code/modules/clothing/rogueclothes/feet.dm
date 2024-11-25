@@ -268,6 +268,9 @@
 	name = "fur lined boots"
 	desc = "Leather boots lined with fur."
 	gender = PLURAL
+	icon = 'modular_stonehedge/licensed-dreamkeep/icons/roguetown/clothing/feet.dmi'
+	mob_overlay_icon = 'modular_stonehedge/licensed-dreamkeep/icons/roguetown/clothing/onmob/feet.dmi'
+	sleeved = 'modular_stonehedge/licensed-dreamkeep/icons/roguetown/clothing/onmob/feet.dmi'
 	icon_state = "furlinedboots"
 	item_state = "furlinedboots"
 	sewrepair = TRUE
@@ -277,6 +280,9 @@
 	name = "fur lined anklets"
 	desc = "Leather anklets lined with fur, foot remains bare."
 	gender = PLURAL
+	icon = 'modular_stonehedge/licensed-dreamkeep/icons/roguetown/clothing/feet.dmi'
+	mob_overlay_icon = 'modular_stonehedge/licensed-dreamkeep/icons/roguetown/clothing/onmob/feet.dmi'
+	sleeved = 'modular_stonehedge/licensed-dreamkeep/icons/roguetown/clothing/onmob/feet.dmi'
 	icon_state = "furlinedanklets"
 	item_state = "furlinedanklets"
 	sewrepair = TRUE

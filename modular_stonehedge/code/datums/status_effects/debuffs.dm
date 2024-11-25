@@ -9,7 +9,7 @@
 /atom/movable/screen/alert/status_effect/bloatone
 	name = "Bloated"
 	desc = "Bit full..."
-	icon = 'modular_stonehedge/icons/mob/screen_alert.dmi'
+	icon = 'modular_stonehedge/licensed-eaglephntm/icons/mob/screen_alert.dmi'
 	icon_state = "bloat1"
 
 /datum/status_effect/debuff/bloattwo
@@ -21,5 +21,5 @@
 /atom/movable/screen/alert/status_effect/bloattwo
 	name = "Bloated"
 	desc = "So full..."
-	icon = 'modular_stonehedge/icons/mob/screen_alert.dmi'
+	icon = 'modular_stonehedge/licensed-eaglephntm/icons/mob/screen_alert.dmi'
 	icon_state = "bloat2"

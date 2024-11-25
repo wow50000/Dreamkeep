@@ -2,7 +2,7 @@
 /obj/item/gun/ballistic/handgonne
 	name = "handgonne"
 	desc = "A gunpowder weapon that shoots an armor piercing metal ball."
-	icon = 'modular_helmsguard/icons/weapons/handgonne.dmi'
+	icon = 'modular_helmsguard/licensed-feralope/icons/weapons/handgonne.dmi'
 	icon_state = "handgonne"
 	item_state = "handgonne"
 	force = 10
