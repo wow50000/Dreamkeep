@@ -4052,6 +4052,15 @@
 /obj/structure/flora/roguegrass/water/reeds,
 /turf/open/water/swamp,
 /area/rogue/outdoors/river)
+"dfT" = (
+/obj/structure/roguemachine/vendor{
+	keycontrol = "mage"
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/exposed/magiciantower{
+	first_time_text = "Ravenloft Academy";
+	name = "Schoolgrounds"
+	})
 "dgg" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -4376,6 +4385,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 4
 	},
+/obj/structure/bars/steel,
 /turf/open/floor/rogue/blocks/stone/stonepattern3,
 /area/rogue/indoors/town/magician{
 	first_time_text = "Ravenloft Academy";
@@ -13035,6 +13045,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 8
 	},
+/obj/structure/bars/steel,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/exposed/magiciantower{
 	first_time_text = "Ravenloft Academy";
@@ -115975,7 +115986,7 @@ viE
 viE
 viE
 viE
-viE
+dfT
 vZW
 xBi
 viE
@@ -146674,7 +146685,7 @@ aZy
 aZy
 mYC
 egl
-nLN
+cTS
 rHo
 iqN
 eFM
@@ -146688,7 +146699,7 @@ eFM
 eFM
 iqN
 rHo
-rUO
+hjD
 egl
 egl
 mYC
@@ -147078,7 +147089,7 @@ aZy
 aZy
 mYC
 egl
-nLN
+cTS
 rHo
 wQO
 eFQ
@@ -147092,7 +147103,7 @@ eFQ
 eFQ
 iqN
 rHo
-rUO
+hjD
 egl
 egl
 mYC
@@ -148098,11 +148109,11 @@ egl
 egl
 egl
 egl
-nLN
+cTS
 lwf
 lwi
 lwf
-rUO
+hjD
 egl
 egl
 mYC
@@ -148704,11 +148715,11 @@ egl
 egl
 egl
 egl
-nLN
+cTS
 lwf
 lwi
 lwf
-rUO
+hjD
 egl
 egl
 mYC
