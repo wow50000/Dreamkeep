@@ -1,6 +1,6 @@
 // This code is part of Death-Rattler
 // Copyright (C) 2024 Moribund/Luctus-Comptus and Sutures/noelle-lavenza
-// This code is subject to additional terms as described in modular_stonehenge/licensed-death-rattler/LICENSE.md
+// This code is subject to additional terms as described in modular_stonehedge/licensed-death-rattler/LICENSE.md
 
 // I hate doing this. basically if you are anyone but ratwood/gyran DM me (Moribund) first and you can use whatever the fuck your heart wants from this. not only did he brag about theft and how easy it is he tryed to pull this same shit.
 

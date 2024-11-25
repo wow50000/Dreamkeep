@@ -3,7 +3,7 @@
   Copyright (C) 2024 Moribund aka Luctus-Comptus and Sutures aka noelle-lavenza
 
   This file is part of Death-Rattler. All Dream Maker code files in
-  modular_stonehenge/licensed-death-rattler are subject to the following
+  modular_stonehedge/licensed-death-rattler are subject to the following
   additional terms.
 
   Additional Terms:
