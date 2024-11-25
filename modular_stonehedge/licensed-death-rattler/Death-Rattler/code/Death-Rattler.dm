@@ -10,7 +10,7 @@
 /obj/item/storage/fancy/shhig
 	name = "Shhig Brand Zigs"
 	desc = "Dr. V's Shhig's; much like the image of serpents these zigs are synonymous with both healing and killing. Your life expectancy isnt very high anyway."
-	icon = 'modular_stonehedge\licensed-death-rattler\Death-Rattler\icon\smokable.dmi'
+	icon = 'modular_stonehedge/licensed-death-rattler/Death-Rattler/icon/smokable.dmi'
 	icon_state = "smokebox"
 	icon_type = "smoke"
 	item_state = "smokebox"
