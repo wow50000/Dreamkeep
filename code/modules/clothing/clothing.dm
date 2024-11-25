@@ -241,6 +241,12 @@
 	if(user.used_intent.type != INTENT_HARM && ismoth(M))
 		var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
 		clothing_as_food.name = name
+		if(clothing_as_food.obj_integrity <= 10)
+			to_chat(M, span_notice("There is nothing left to eat on that..."))
+			return
+		if(clothing_as_food.smeltresult) //if its a smeltable damn thing its probably metal.
+			to_chat(M, span_notice("I can't eat that."))
+			return
 		if(clothing_as_food.attack(M, user, def_zone))
 			take_damage(15, sound_effect=FALSE)
 		qdel(clothing_as_food)

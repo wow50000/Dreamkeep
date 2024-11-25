@@ -39,10 +39,11 @@
 		var/obj/item/bodypart/BPG = target.get_bodypart(BODY_ZONE_PRECISE_GROIN)
 		var/obj/item/bodypart/BPC = target.get_bodypart(BODY_ZONE_CHEST)
 		if(user.sexcon.force > SEX_FORCE_LOW)
-			BPC.add_wound(/datum/wound/fracture/chest)
-			BPG.add_wound(/datum/wound/fracture/groin)
-		target.apply_damage(15, BRUTE, BPC)
-		target.apply_damage(15, BRUTE, BPG)
+			if(prob(20))
+				BPC.add_wound(/datum/wound/fracture/chest)
+				BPG.add_wound(/datum/wound/fracture/groin)
+		target.apply_damage(5, BRUTE, BPC)
+		target.apply_damage(5, BRUTE, BPG)
 	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))	//Seelie on Humen
 		user.visible_message(span_warning("[user] tries and fails to insert their tiny tail into [target]'s butt!"))
 	else

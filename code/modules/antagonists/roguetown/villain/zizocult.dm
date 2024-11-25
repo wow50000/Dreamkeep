@@ -167,13 +167,13 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 /mob/living/carbon/human/proc/praise()
 	set name = "Praise the Godhead!"
-	set category = "ZIZO"
-	audible_message("[src] praises " + span_bold("Zizo") + "!")
+	set category = "LEVISHTH"
+	audible_message("[src] praises " + span_bold("Levishth") + "!")
 	playsound(src.loc, 'sound/vo/cult/praise.ogg', 45, 1)
 
 /mob/living/carbon/human/proc/communicate()
 	set name = "Communicate"
-	set category = "ZIZO"
+	set category = "LEVISHTH"
 
 	var/datum/game_mode/chaosmode/C = SSticker.mode
 	var/speak = input("What do you speak of?", "HEARTHSTONE") as text|null
@@ -398,7 +398,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 /mob/living/carbon/human/proc/draw_sigil()
 	set name = "Draw Sigil"
-	set category = "ZIZO"
+	set category = "LEVISHTH"
 
 	var/list/runes = list("Servantry", "Transmutation", "Fleshcrafting")
 
@@ -415,7 +415,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 /mob/living/carbon/human/proc/release_minion()
 	set name = "Release follower"
-	set category = "ZIZO"
+	set category = "LEVISHTH"
 
 	var/datum/game_mode/chaosmode/C = SSticker.mode
 	var/list/mob/living/carbon/human/possible = list()

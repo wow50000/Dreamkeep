@@ -1,27 +1,24 @@
 var/global/total_spawned_mobs = 0
-var/global/max_total_spawned_mobs = 30 // New global variable for the total limit
-// A lot of these hardcoded values need to be converted into vars for this spawner to handle mobs other than just goblins in one specific area.
+var/global/max_total_spawned_mobs = 100 // New global variable for the total limit
+
 /obj/effect/mob_spawner
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "random_loot"
 	var/spawn_timer
 	var/max_spawned_mobs = 1
+	var/mobs_to_spawn = 0
 	var/current_spawned_mobs = 0
-	var/spawn_interval = 600 // Default to 60 seconds
-	var/list/ambush_mobs = list(
-		/mob/living/carbon/human/species/skeleton/npc/ambush = 20,
-		/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 40,
-		/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 60,
-		/mob/living/simple_animal/hostile/retaliate/rogue/spider = 40,
-		/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30
-	)
+	var/spawn_interval = 3600 //6 minutes
+	var/spawn_range = 10 //radius in which mobs can be spawned
+	var/player_range = 15 //range at which a nearby player will pause the spawner
+	var/list/accepted_turfs = list(/turf/open/floor/rogue/dirt) //prevents mobs from being spawned on unwanted turfs outside your dungeon
+	var/list/ambush_mobs = list(/mob/living/carbon/human/species/skeleton/npc/ambush = 20)
 	var/list/adventurer_landmarks = list() // Store landmarks here
-	var/area/valid_area = /area/rogue/outdoors/bog // Define the valid area
+	var/area/valid_area = /area/rogue/outdoors/bog //Useful for randomly generated maps, will delete spawners created outside this area.
 
 	New()
 		..() // Call the parent constructor
-		spawn_interval = rand(2400, 3600) // RNG between 4 minutes and 6 minutes
-		adventurer_landmarks = get_all_adventurer_landmarks()
+		adventurer_landmarks = get_all_adventurer_landmarks() //prevents spawners from being placed near player spawns
 		if (!is_in_valid_area(src))
 			del src  // Delete the spawner if it's not in the valid area
 		else
@@ -32,7 +29,7 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 
 	proc/spawn_and_continue()
 		if (total_spawned_mobs < max_total_spawned_mobs && current_spawned_mobs < max_spawned_mobs)
-			spawn_random_mobs(2) // Attempt to spawn 2 mobs each time
+			spawn_random_mobs(mobs_to_spawn)
 		start_spawning()
 
 	proc/spawn_random_mobs(var/num_to_spawn)
@@ -55,7 +52,7 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 
 	proc/get_random_valid_turf()
 		var/list/valid_turfs = list()
-		for (var/turf/T in range(4, src))
+		for (var/turf/T in range(spawn_range, src))
 			if (is_valid_spawn_turf(T))
 				valid_turfs += T
 		if (valid_turfs.len == 0)
@@ -63,6 +60,8 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 		return pick(valid_turfs)
 
 	proc/is_valid_spawn_turf(turf/T)
+		if (istype(T, accepted_turfs))
+			return FALSE
 		if (istype(T, /turf/closed))
 			return FALSE
 		if (!is_in_valid_area(T))
@@ -70,7 +69,7 @@ var/global/max_total_spawned_mobs = 30 // New global variable for the total limi
 		for (var/L in adventurer_landmarks)
 			if (get_dist(T, L) < 10)
 				return FALSE
-		if (players_nearby(T, 10))
+		if (players_nearby(T, player_range))
 			return FALSE
 		return TRUE
 

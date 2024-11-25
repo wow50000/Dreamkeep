@@ -60,7 +60,8 @@
 			dressup(H, inventory_items)
 		if("Rogue")
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rogue_vanish)
-			inventory_items = list(/obj/item/storage/belt/rogue/pouch/coins/rich,
+			inventory_items = list(
+				/obj/item/clothing/neck/roguetown/bervor,
 				/obj/item/clothing/shoes/roguetown/boots/armor,
 				/obj/item/storage/belt/rogue/leather,
 				/obj/item/clothing/gloves/roguetown/chain,
@@ -70,8 +71,9 @@
 				/obj/item/quiver/Pbolts,
 				/obj/item/rogueweapon/sword/estoc,
 				/obj/item/lockpickring/mundane,
-				/obj/item/rogueweapon/huntingknife/idagger/steel/parrying = 1,
-				/obj/item/storage/keyring/veteran = 1
+				/obj/item/rogueweapon/huntingknife/idagger/steel/parrying,
+				/obj/item/storage/keyring/veteran,
+				/obj/item/storage/belt/rogue/pouch/coins/rich,
 			)
 			if(H.gender == FEMALE) //funny
 				inventory_items += /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini
@@ -125,8 +127,8 @@
 				/obj/item/storage/belt/rogue/pouch/coins/rich,
 				/obj/item/storage/backpack/rogue/satchel,
 				/obj/item/rogueweapon/shield/wood,
-				/obj/item/rogueweapon/huntingknife/idagger/steel/parrying = 1,
-				/obj/item/storage/keyring/veteran = 1
+				/obj/item/rogueweapon/huntingknife/idagger/steel/parrying,
+				/obj/item/storage/keyring/veteran,
 			)
 			var/datum/devotion/C = new /datum/devotion(H, H.patron)
 			switch(H.patron?.type)

@@ -1309,7 +1309,7 @@
 	if(!L || !message)
 		return FALSE
 	var/message2recognize = sanitize_hear_message(message)
-	if(findtext(message2recognize, "zizo"))
+	if(findtext(message2recognize, "levishth"))
 		L.add_stress(/datum/stressevent/psycurse)
 		L.adjust_fire_stacks(100)
 		L.IgniteMob()

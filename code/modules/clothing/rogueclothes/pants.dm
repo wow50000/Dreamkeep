@@ -124,6 +124,8 @@
 	name = "studded skirt"
 	icon = 'modular_stonehedge/icons/armor/pants.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/pants.dmi'
+	//slightly better than normal iron chain by 10 blunt and stab.
+	armor = list("blunt" = 50, "slash" = 80, "stab" = 50, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	desc = "Short studded skirt made of fine leather and iron."
 	icon_state = "studdedskirt"
 	genitalaccess = TRUE

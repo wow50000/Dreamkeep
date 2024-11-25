@@ -239,6 +239,9 @@
 		if(M.name in friends)
 			return FALSE
 
+	if(ignore_laying) //used for bosses etc.
+		ignore_lying = FALSE
+
 	if(ishuman(the_target))
 		var/mob/living/carbon/human/th = the_target
 		if(ignore_lying && th.lying && !th.get_active_held_item()) //if is laying and holding nothing, and not in cmode. Ignore.

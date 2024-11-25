@@ -1,6 +1,8 @@
 //BE SPECIAL converted most to regular quirk traits for consistency in characters -- vide noir.
 //Will need rebalancing costs and stuff.
 
+//includes non special related, original traits aswell cuz we dumb.
+
 /datum/quirk/greaternightvision
 	name = "Darkvision"
 	desc = "I can easily see in the dark."
@@ -581,3 +583,13 @@
 /datum/quirk/pacifist/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_PACIFISM, QUIRK_TRAIT)
+
+
+/datum/quirk/pacifist
+	name = "Endowment Curse"
+	desc = "I was cursed with endowment... This makes life hard."
+	value = -2
+
+/datum/quirk/pacifist/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_ENDOWMENT, QUIRK_TRAIT)

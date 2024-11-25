@@ -107,6 +107,7 @@
 			H.change_stat("endurance", 2)
 			H.change_stat("speed", 1)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/conjure_glowshroom)
 		// HEARTHSTONE ADD: cloistered cleric subclass (lighter armored and equipped)

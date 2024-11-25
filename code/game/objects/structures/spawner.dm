@@ -211,7 +211,7 @@
 	name = ""
 	desc = ""
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF 
-	spawn_time = 3600
+	spawn_time = 4200 //7 minutes
 	max_mobs = 1
 	mob_types = list(
 	/mob/living/simple_animal/hostile/rogue/gravelord = 1)
@@ -277,10 +277,10 @@
 /obj/structure/spawner/invisible/monster/minotaur
 	max_mobs = 1
 	mob_types = list(
-	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur = 4,
-	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe = 3,
-	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/female = 4,
-	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe/female = 3)
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur = 5,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe = 1,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/female = 5,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe/female = 1)
 
 /obj/structure/spawner/invisible/monster/wolf
 	max_mobs = 2
@@ -327,15 +327,41 @@
 	spawn_text = "appears out of hiding!"
 	faction = list("orcs")
 
-//Carbon mob spawner. See code/game/objects/structures/roguetown/mobspawner for more information. Needs to be expanded to handle more than just goblins.
+//Invisible spawners capable of handling carbon mobs. Use in dungeons and areas with respawning chests.
 
 /obj/effect/mob_spawner/goblin
-	max_spawned_mobs = 6
-	valid_area = /area/rogue/indoors/shelter/woods/overgrownfort
-
+	max_spawned_mobs = 14
+	mobs_to_spawn = 7
+	spawn_interval = 3000 //5 minutes
+	spawn_range = 10
+	player_range = 15
+	valid_area = /area/rogue
+	accepted_turfs = list(
+		/turf/open/floor/rogue/cobblerock,
+		/turf/open/floor/rogue/ruinedwood/spiral,
+		/turf/open/floor/rogue/blocks)
 	ambush_mobs = list(
-	/mob/living/carbon/human/species/goblin/npc = 6,		//archer
-	/mob/living/carbon/human/species/goblin/npc/hell = 1,
-	/mob/living/carbon/human/species/goblin/npc/cave = 4,
-	/mob/living/carbon/human/species/goblin/npc/sea= 1,
-	/mob/living/carbon/human/species/goblin/npc/moon = 1)
+		/mob/living/carbon/human/species/goblin/npc = 6,
+		/mob/living/carbon/human/species/goblin/npc/hell = 1,
+		/mob/living/carbon/human/species/goblin/npc/cave = 4,
+		/mob/living/carbon/human/species/goblin/npc/sea= 1,
+		/mob/living/carbon/human/species/goblin/npc/moon = 1)
+
+/obj/effect/mob_spawner/skeleton
+	max_spawned_mobs = 10
+	mobs_to_spawn = 5
+	spawn_interval = 3600 //6 minutes
+	spawn_range = 10
+	player_range = 15
+	valid_area = /area/rogue
+	accepted_turfs = list(
+		/turf/open/floor/rogue/cobblerock,
+		/turf/open/water/swamp,
+		/turf/open/floor/rogue/dirt/road)
+	ambush_mobs = list(
+		/mob/living/simple_animal/hostile/rogue/skeleton/guard/shield = 40,
+		/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow = 30,
+		/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard = 20,
+		/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear = 20,
+		/mob/living/carbon/human/species/skeleton/npc/dungeon = 30,
+		/mob/living/carbon/human/species/skeleton/npc/dungeon/boss = 5)

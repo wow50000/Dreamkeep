@@ -36,5 +36,6 @@
 /datum/outfit/job/roguetown/veteran/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	cloak = /obj/item/clothing/cloak/half/vet
+	r_hand = /obj/item/scomstone
 	l_hand = /obj/item/class_selector/veteran //this is where they equip shit.
 	H.verbs |= /mob/proc/haltyell

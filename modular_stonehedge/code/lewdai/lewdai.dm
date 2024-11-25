@@ -197,6 +197,12 @@
 		Lewd_Tick()
 	. = ..()
 
+/mob/living/simple_animal/hostile/retaliate/rogue/Retaliate()
+	. = ..()
+	if(sexcon)
+		if(sexcon.current_action)
+			stoppedfucking()
+
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	if(erpable)

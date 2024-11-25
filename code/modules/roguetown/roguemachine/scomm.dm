@@ -173,8 +173,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = HEAR_1
 	muteinmouth = TRUE
-	var/listening = TRUE
-	var/speaking = FALSE //Start muted its weird.
+	var/listening = FALSE //Start muted its weird.
+	var/speaking = TRUE
 	sellprice = 50
 //wip
 /obj/item/scomstone/attack_right(mob/user)
@@ -195,7 +195,7 @@
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	listening = !listening
 	speaking = !speaking
-	to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the scomstone."))
+	to_chat(user, span_info("I turn the scomstone to [speaking ? "listening" : "broadcasting"] mode."))
 	update_icon()
 
 /obj/item/scomstone/Destroy()

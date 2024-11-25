@@ -69,7 +69,7 @@
 			backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/reagent_containers/glass/bottle/rogue/trekkersdelight = 1)
 			beltl = /obj/item/quiver/arrows
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 2, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)

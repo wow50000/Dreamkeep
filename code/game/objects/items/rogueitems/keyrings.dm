@@ -259,7 +259,7 @@
 	keys = list(/obj/item/roguekey/farm, /obj/item/roguekey/butcher)
 
 /obj/item/storage/keyring/veteran
-	keys = list(/obj/item/roguekey/veteran, /obj/item/roguekey/vault)
+	keys = list(/obj/item/roguekey/veteran, /obj/item/roguekey/vault, /obj/item/roguekey/steward, /obj/item/roguekey/keep_dungeon, /obj/item/roguekey/town_dungeon, /obj/item/roguekey/bog_barracks, /obj/item/roguekey/keep_barracks, /obj/item/roguekey/walls, /obj/item/roguekey/graveyard)
 
 /obj/item/storage/keyring/sheriff
 	keys = list(/obj/item/roguekey/sheriff_office, /obj/item/roguekey/keep_dungeon, /obj/item/roguekey/town_dungeon, /obj/item/roguekey/bog_barracks, /obj/item/roguekey/keep_barracks, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)

@@ -55,7 +55,8 @@
 		var/oxyloss = 1.3
 		if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
 			oxyloss*=2
-		user.sexcon.perform_sex_action(target, 0, 7, FALSE)
+		if(!isseelie(user)) //cock too small
+			user.sexcon.perform_sex_action(target, 0, 7, FALSE)
 		user.sexcon.perform_deepthroat_oxyloss(target, oxyloss)
 	target.sexcon.handle_passive_ejaculation()
 

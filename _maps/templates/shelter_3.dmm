@@ -62,6 +62,13 @@
 	},
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors)
+"fY" = (
+/obj/structure/chair/wood/rogue/fancy{
+	dir = 8
+	},
+/obj/structure/roguemachine/scomm,
+/turf/open/floor/rogue/greenstone,
+/area/rogue/indoors)
 "gi" = (
 /obj/structure/table/vtable/v2,
 /obj/structure/lever/wall{
@@ -349,9 +356,8 @@
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors)
 "UK" = (
-/obj/structure/roguemachine/merchantvend{
-	icon_state = "goldvendor";
-	locked = 0
+/obj/structure/roguemachine/merchantvend/public{
+	icon_state = "goldvendor"
 	},
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors)
@@ -452,7 +458,7 @@ oF
 fW
 rV
 FX
-Kf
+fY
 Kf
 ld
 ld

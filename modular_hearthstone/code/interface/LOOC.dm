@@ -34,9 +34,11 @@
 	if(!msg)
 		return
 
+/*
 	if(!(prefs.chat_toggles & CHAT_OOC))
 		to_chat(src, "<span class='danger'> You have OOC muted.</span>")
 		return
+*/
 
 	if(!holder)
 		if(findtext(msg, "byond://"))

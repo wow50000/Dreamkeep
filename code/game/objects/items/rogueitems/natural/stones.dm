@@ -100,7 +100,7 @@ GLOBAL_LIST_INIT(stone_personalities, list(
 	"Goring",
 	"Destruction",
 	"Hell",
-	"Zizo",
+	"Levishth",
 	"Flames",
 	"Darkness",
 	"Light",

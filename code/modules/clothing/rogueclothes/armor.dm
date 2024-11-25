@@ -308,6 +308,7 @@
 	desc = "Half plate in bikini form, still just as protective somehow."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	sleeved = 'modular_stonehedge/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'	
 	icon_state = "halfplatekini"
 	item_state = "halfplatekini"
 	allowed_sex = list(FEMALE)
@@ -340,6 +341,7 @@
 	desc = "Full plate in bikini form, full package and full exposure."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	sleeved = 'modular_stonehedge/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'	
 	icon_state = "platekini"
 	allowed_sex = list(FEMALE)
 	armor_class = ARMOR_CLASS_HEAVY
@@ -613,6 +615,7 @@
 	desc = "Flexible cowhide armor. Lightweight, better than nothing. Now in tasteful bikini shape."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	sleeved = 'modular_stonehedge/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	icon_state = "leatherkini"
 	item_state = "leatherkini"
 	allowed_sex = list(FEMALE)
@@ -631,6 +634,7 @@
 	desc = "Studded leather is the most durable of all hides and leathers and about as light. This one is in bikini form."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	sleeved = 'modular_stonehedge/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	icon_state = "studleatherkini"
 	item_state = "studleatherkini"
 	allowed_sex = list(FEMALE)
@@ -649,6 +653,7 @@
 	desc = "A light armor of wildbeast hide. Far more durable than leather. This will not keep a person warm though..."
 	icon = 'modular_stonehedge/icons/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/armor/onmob/armor.dmi'
+	sleeved = 'modular_stonehedge/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'	
 	icon_state = "hidearmorkini"
 	item_state = "hidearmorkini"
 	allowed_sex = list(FEMALE)

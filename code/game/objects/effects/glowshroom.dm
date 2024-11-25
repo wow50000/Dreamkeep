@@ -4,6 +4,7 @@
 	name = "kneestingers"
 	desc = ""
 	anchored = TRUE
+	max_integrity = 10
 	opacity = 0
 	density = FALSE
 	icon = 'icons/roguetown/misc/foliage.dmi'
@@ -84,3 +85,58 @@
 	var/obj/effect/decal/cleanable/molten_object/I = new (get_turf(src))
 	I.desc = ""
 	qdel(src)
+
+/obj/structure/safeglowshroom
+	name = "glowshroom"
+	desc = "the actually liked sibling of kneestingers."
+	anchored = TRUE
+	opacity = 0
+	max_integrity = 10
+	density = FALSE
+	icon = 'icons/roguetown/misc/foliage.dmi'
+	icon_state = "glowshroom1" //replaced in New
+	color = "#00fffb"
+	layer = ABOVE_NORMAL_TURF_LAYER
+	max_integrity = 30
+	blade_dulling = DULLING_CUT
+	resistance_flags = FLAMMABLE
+	debris = list(/obj/item/natural/fibers = 1, /obj/item/reagent_containers/food/snacks/grown/shroom = 1)
+
+/obj/structure/safeglowshroom/fire_act(added, maxstacks)
+	visible_message(span_warning("[src] catches fire!"))
+	var/turf/T = get_turf(src)
+	qdel(src)
+	new /obj/effect/hotspot(T)
+
+/obj/structure/safeglowshroom/New(loc, obj/item/seeds/newseed, mutate_stats)
+	..()
+	set_light(1.5, 1.5, "#00fffb")
+
+	icon_state = "glowshroom[rand(1,3)]"
+
+	pixel_x = rand(-4, 4)
+	pixel_y = rand(0,5)
+
+/obj/structure/safeglowshroom/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	if(damage_type == BURN && damage_amount)
+		playsound(src.loc, 'sound/blank.ogg', 100, TRUE)
+
+/obj/structure/safeglowshroom/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if(exposed_temperature > 300)
+		take_damage(5, BURN, 0, 0)
+
+/obj/structure/safeglowshroom/acid_act(acidpwr, acid_volume)
+	. = 1
+	visible_message(span_danger("[src] melts away!"))
+	var/obj/effect/decal/cleanable/molten_object/I = new (get_turf(src))
+	I.desc = ""
+	qdel(src)
+
+/obj/structure/safeglowshroom/Destroy()
+	var/datum/reagents/R = new/datum/reagents(5)
+	R.my_atom = src
+	R.add_reagent(/datum/reagent/berrypoison, 5)
+	var/datum/effect_system/smoke_spread/chem/smoke = new
+	smoke.set_up(R, 4, get_turf(src), FALSE)
+	smoke.start()
+	. = ..()

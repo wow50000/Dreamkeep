@@ -249,7 +249,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/monk
-	name = "Priest"
+	name = "Monk"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/druid

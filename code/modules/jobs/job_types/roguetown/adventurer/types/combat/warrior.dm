@@ -40,7 +40,8 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
 			H.change_stat("strength", 2)
-			H.change_stat("endurance", 2) // 7 stat points total as a low-skill martial role without magic. Compared to Pally with 5 points.
+			H.change_stat("perception", 1)
+			H.change_stat("endurance", 2) // 8 stat points total as a low-skill martial role without magic. Compared to Pally with 7 points.
 			H.change_stat("constitution", 2)
 			H.change_stat("speed", 1)
 			shoes = /obj/item/clothing/shoes/roguetown/boots
@@ -103,7 +104,7 @@
 			H.change_stat("endurance", 1) // Weaker endurance compared to a traditional warrior/soldier. Smarter due to study of rare magical beasts.
 			H.change_stat("constitution", 2)
 			H.change_stat("intelligence", 1)
-			H.change_stat("speed", 1)
+			H.change_stat("perception", 1)
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			gloves = /obj/item/clothing/gloves/roguetown/leather
 			belt = /obj/item/storage/belt/rogue/leather
@@ -162,7 +163,8 @@
 			ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_DECEIVING_MEEKNESS, TRAIT_GENERIC)
-			H.change_stat("strength", 2)
+			H.change_stat("strength", 1)
+			H.change_stat("perception", 1)
 			H.change_stat("endurance", 1)
 			H.change_stat("speed", 2)
 			H.change_stat("intelligence", 2)
