@@ -143,8 +143,8 @@ datum/quirk/fan_mime
 
 /datum/quirk/musician
 	name = "Musician"
-	desc = "I am good at playing music."
-	value = 1
+	desc = "I am good at playing music. I've also hidden a lute!"
+	value = 2
 	mob_trait = TRAIT_MUSICIAN
 	gain_text = span_notice("I know everything about musical instruments.")
 	lose_text = span_danger("I forget how musical instruments work.")
@@ -152,12 +152,8 @@ datum/quirk/fan_mime
 
 /datum/quirk/musician/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/choice_beacon/music/B = new(get_turf(H))
-	var/list/slots = list (
-		"backpack" = SLOT_IN_BACKPACK,
-		"hands" = SLOT_HANDS,
-	)
-	H.equip_in_one_of_slots(B, slots , qdel_on_fail = TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/music, 3, TRUE)
+	H.mind.special_items["Lute"] = /obj/item/rogue/instrument/lute
 
 /datum/quirk/night_vision
 	name = "Low Light Vision"
