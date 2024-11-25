@@ -17,7 +17,7 @@
 
 	//gender = FEMALE
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)	//Default shit that ever race gets
-	inherent_traits = list(TRAIT_NOMOBSWAP)	//Use this to add custom Fae traits
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_EASYDISMEMBER, TRAIT_CRITICAL_WEAKNESS)	//Use this to add custom Fae traits
 	default_features = MANDATORY_FEATURE_LIST
 	use_skintones = 1
 	skinned_type = /obj/item/stack/sheet/animalhide/human
@@ -44,12 +44,12 @@
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
 	specstats = list(
-		"perception" = 4,
+		"perception" = 1,
 		"intelligence" = 2,
 		"constitution" = -1,
-		"endurance" = 0,
-		"speed" = 7,
-		"fortune" = 2
+		"strength" = -2,
+		"speed" = 2, // 7? are you absolutely fucking insane?
+		"fortune" = 1
 		)
 	enflamed_icon = "widefire"
 	organs = list(
