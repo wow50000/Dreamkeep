@@ -28,7 +28,7 @@ GLOBAL_VAR_INIT(max_total_spawned_mobs, 100) // New global variable for the tota
 	spawn_timer = addtimer(CALLBACK(src, PROC_REF(spawn_and_continue)), spawn_interval, TIMER_STOPPABLE)
 
 /obj/effect/mob_spawner/proc/spawn_and_continue()
-	if (GLOB.total_spawned_mobs < GLOB.max_total_spawned_mobs && GLOB.current_spawned_mobs < GLOB.max_spawned_mobs)
+	if (GLOB.total_spawned_mobs < GLOB.max_total_spawned_mobs && current_spawned_mobs < max_spawned_mobs)
 		spawn_random_mobs(mobs_to_spawn)
 	start_spawning()
 

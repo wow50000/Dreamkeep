@@ -70,9 +70,6 @@
 
 ///Speak as a dead person (ghost etc)
 /mob/proc/say_dead(message)
-	var/name = real_name
-	var/alt_name = ""
-
 	return
 
 /* 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
