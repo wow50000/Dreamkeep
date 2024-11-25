@@ -11,10 +11,10 @@ var/global/max_total_spawned_mobs = 100 // New global variable for the total lim
 	var/spawn_interval = 3600 //6 minutes
 	var/spawn_range = 10 //radius in which mobs can be spawned
 	var/player_range = 15 //range at which a nearby player will pause the spawner
-	var/list/accepted_turfs = list(/turf/open/floor/rogue/dirt) //prevents mobs from being spawned on unwanted turfs outside your dungeon
 	var/list/ambush_mobs = list(/mob/living/carbon/human/species/skeleton/npc/ambush = 20)
 	var/list/adventurer_landmarks = list() // Store landmarks here
-	var/area/valid_area = /area/rogue/outdoors/bog //Useful for randomly generated maps, will delete spawners created outside this area.
+	var/area/valid_area = /area/rogue //Useful for randomly generated maps, will delete spawners created outside this area.
+	var/turf/accepted_turf = /turf/open/floor/rogue
 
 	New()
 		..() // Call the parent constructor
@@ -60,7 +60,7 @@ var/global/max_total_spawned_mobs = 100 // New global variable for the total lim
 		return pick(valid_turfs)
 
 	proc/is_valid_spawn_turf(turf/T)
-		if (istype(T, accepted_turfs))
+		if (!(istype(T, accepted_turf)))
 			return FALSE
 		if (istype(T, /turf/closed))
 			return FALSE

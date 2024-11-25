@@ -333,13 +333,8 @@
 	max_spawned_mobs = 14
 	mobs_to_spawn = 7
 	spawn_interval = 3000 //5 minutes
-	spawn_range = 10
-	player_range = 15
-	valid_area = /area/rogue
-	accepted_turfs = list(
-		/turf/open/floor/rogue/cobblerock,
-		/turf/open/floor/rogue/ruinedwood/spiral,
-		/turf/open/floor/rogue/blocks)
+	spawn_range = 9
+	player_range = 13
 	ambush_mobs = list(
 		/mob/living/carbon/human/species/goblin/npc = 6,
 		/mob/living/carbon/human/species/goblin/npc/hell = 1,
@@ -350,14 +345,9 @@
 /obj/effect/mob_spawner/skeleton
 	max_spawned_mobs = 10
 	mobs_to_spawn = 5
-	spawn_interval = 3600 //6 minutes
+	spawn_interval = 3600
 	spawn_range = 10
 	player_range = 15
-	valid_area = /area/rogue
-	accepted_turfs = list(
-		/turf/open/floor/rogue/cobblerock,
-		/turf/open/water/swamp,
-		/turf/open/floor/rogue/dirt/road)
 	ambush_mobs = list(
 		/mob/living/simple_animal/hostile/rogue/skeleton/guard/shield = 40,
 		/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow = 30,
@@ -365,3 +355,44 @@
 		/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear = 20,
 		/mob/living/carbon/human/species/skeleton/npc/dungeon = 30,
 		/mob/living/carbon/human/species/skeleton/npc/dungeon/boss = 5)
+
+/obj/effect/mob_spawner/minotaur
+	max_spawned_mobs = 8
+	mobs_to_spawn = 4
+	spawn_interval = 3600
+	spawn_range = 10
+	player_range = 15
+	ambush_mobs = list(
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur = 20,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe = 5,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/female = 20,
+	/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe/female = 5)
+
+/obj/effect/mob_spawner/mossback
+	max_spawned_mobs = 8
+	mobs_to_spawn = 4
+	spawn_interval = 3000
+	spawn_range = 10
+	player_range = 15
+	accepted_turf = /turf/open/water/cleanshallow
+	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/mossback)
+
+/obj/effect/mob_spawner/wilderness
+	max_spawned_mobs = 6
+	mobs_to_spawn = 3
+	spawn_interval = 3000
+	spawn_range = 15
+	player_range = 20
+	accepted_turf = /turf/open/floor/rogue/dirt
+	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/saiga = 10,
+	/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck = 15,
+	/mob/living/simple_animal/hostile/retaliate/rogue/goat = 10,
+	/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 15)
+
+/obj/effect/mob_spawner/wilderness/hostile
+	max_spawned_mobs = 8
+	mobs_to_spawn = 4
+	spawn_interval = 6000
+	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 10,
+	/mob/living/simple_animal/hostile/retaliate/rogue/spider = 5,
+	/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 15)

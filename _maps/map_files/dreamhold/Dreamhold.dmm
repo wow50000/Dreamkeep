@@ -2801,6 +2801,10 @@
 	first_time_text = "Emerald Shores";
 	name = "Shores of the Emerald Coast"
 	})
+"cmM" = (
+/obj/structure/closet/crate/chest/refilling/weapon,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/caves)
 "cnd" = (
 /obj/structure/flora/roguegrass/bush,
 /obj/structure/flora/grass/jungle/b,
@@ -6636,8 +6640,8 @@
 	})
 "fdl" = (
 /mob/living/simple_animal/hostile/rogue/skeleton/bow{
-	name = "Vint";
-	faction = list("undead", "noble"ssssss)
+	faction = list("undead", "noble"ssssss);
+	name = "Vint"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison{
@@ -9438,11 +9442,6 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
-"hyR" = (
-/obj/effect/mist,
-/obj/structure/spawner/invisible/monster/minotaur,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/caves)
 "hze" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/rogue/dirt,
@@ -10222,6 +10221,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"idA" = (
+/obj/effect/mob_spawner/mossback,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/river)
 "idV" = (
 /obj/structure/flora/wildplant/wild_poppy,
 /turf/open/floor/rogue/grass,
@@ -15774,6 +15777,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"mzM" = (
+/obj/effect/mob_spawner/mossback,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/caves)
 "mzV" = (
 /obj/structure/fluff/statue/pillar{
 	name = "Wooden Support"
@@ -16853,10 +16860,6 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
-"nqF" = (
-/obj/structure/spawner/invisible/monster/mossback,
-/turf/open/water/cleanshallow,
-/area/rogue/outdoors/caves)
 "nqU" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -21256,8 +21259,7 @@
 	name = "Shores of the Emerald Coast"
 	})
 "qRm" = (
-/obj/structure/closet/crate/chest,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
+/obj/structure/closet/crate/chest/refilling/treasure,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/caves)
 "qRz" = (
@@ -25576,6 +25578,10 @@
 	first_time_text = "Druids Grove";
 	name = "Grove"
 	})
+"ujF" = (
+/obj/structure/closet/crate/chest/refilling/trait,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/caves)
 "ujI" = (
 /obj/structure/closet/crate/chest,
 /obj/item/clothing/mask/cigarette/pipe,
@@ -25808,12 +25814,6 @@
 	first_time_text = "Stonehedge Borders";
 	name = "far stonehedge"
 	})
-"uuw" = (
-/obj/structure/flora/grass/jungle,
-/obj/effect/mist,
-/obj/structure/spawner/invisible/monster/minotaur,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/caves)
 "uuF" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4;
@@ -27481,6 +27481,12 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/caves)
+"vMR" = (
+/obj/effect/mob_spawner/wilderness,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods{
+	first_time_text = "The Twilight Woods"
+	})
 "vMS" = (
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/outdoors{
@@ -29390,6 +29396,10 @@
 	first_time_text = "Ravenloft Academy";
 	name = "Ravenloft Academy"
 	})
+"xtS" = (
+/obj/effect/mob_spawner/minotaur,
+/turf/closed/wall/shroud,
+/area/rogue/outdoors/caves)
 "xuQ" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy/blue{
 	icon_state = "decostone-cand-blue"
@@ -81487,7 +81497,7 @@ lyF
 lyF
 prw
 prw
-xDh
+idA
 xDh
 xDh
 lzV
@@ -88756,7 +88766,7 @@ rxm
 cVH
 qRm
 tmk
-tmk
+cmM
 wdl
 rxm
 rxm
@@ -89763,7 +89773,7 @@ rxm
 wdl
 tmk
 tmk
-nqF
+tmk
 tmk
 tmk
 cVH
@@ -89962,7 +89972,7 @@ rxm
 rxm
 rxm
 rxm
-tmk
+ujF
 tmk
 tmk
 tmk
@@ -90570,7 +90580,7 @@ rxm
 rxm
 rxm
 vYZ
-tmk
+mzM
 tmk
 tmk
 qWQ
@@ -91380,7 +91390,7 @@ tmk
 tmk
 cVH
 tmk
-nqF
+tmk
 tmk
 tmk
 ifi
@@ -91849,7 +91859,7 @@ vrx
 vrx
 vrx
 vrx
-vrx
+jmV
 nVt
 vrx
 nVt
@@ -92049,7 +92059,7 @@ vrx
 vbT
 vrx
 nVt
-jmV
+vrx
 vrx
 jhB
 nVt
@@ -92177,7 +92187,7 @@ nVt
 btg
 diU
 tmk
-nqF
+tmk
 tmk
 tmk
 tmk
@@ -92444,7 +92454,7 @@ rxm
 rxm
 qXK
 uPU
-hyR
+vrx
 hfS
 hfS
 qXK
@@ -92852,12 +92862,12 @@ hfS
 hfS
 qXK
 nVt
-nVt
+xtS
 vrx
 vrx
 rer
 vbT
-uuw
+oEi
 vbT
 vrx
 nVt
@@ -93450,7 +93460,7 @@ nVt
 nVt
 vrx
 vrx
-hyR
+vrx
 vbT
 vrx
 hfS
@@ -93661,7 +93671,7 @@ qXK
 qXK
 qXK
 vrx
-hyR
+vrx
 nVt
 vrx
 jhB
@@ -93993,7 +94003,7 @@ xVg
 nVt
 btg
 tmk
-nqF
+tmk
 wdl
 tmk
 qIX
@@ -104730,7 +104740,7 @@ miB
 miB
 oZS
 mVp
-mVp
+vMR
 aYm
 aYm
 mVp
@@ -117694,7 +117704,7 @@ miB
 eUJ
 kHM
 xyW
-mVp
+vMR
 eUJ
 mVp
 miB
