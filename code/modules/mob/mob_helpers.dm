@@ -90,7 +90,7 @@
 		if ((copytext_char(te, p, p + 1) == " " || prob(pr)))
 			t = text("[][]", t, copytext_char(te, p, p + 1))
 		else
-			t = text("[]*", t)
+			t = text("[]&#42;", t) // stopgap until the custom say verb character is changed
 	if(n > MAX_BROADCAST_LEN)
 		t += "..." //signals missing text
 	return t
