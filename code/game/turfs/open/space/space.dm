@@ -1,7 +1,7 @@
 /turf/open/space
 	icon = 'icons/turf/space.dmi'
 	icon_state = "0"
-	name = "\proper phlogiston"
+	name = "\proper nothing"
 	intact = 0
 
 	temperature = TCMB

@@ -14,9 +14,15 @@ mkdir -p \
     $1/icons/effects \
     $1/icons/mob/clothing \
     $1/icons/mob/inhands \
-    $1/icons/mob/simple \
     $1/icons/obj \
     $1/strings \
+    $1/modular_hearthstone/icons/obj \
+    $1/modular_helmsguard/licensed-eaglephntm \
+    $1/modular_helmsguard/licensed-feralope \
+    $1/modular_stonehedge/licensed-eaglephntm \
+    $1/modular_stonehedge/licensed-feralope \
+    $1/modular_stonehedge/licensed-feralope \
+    $1/modular_stonehedge/icons \
 
 if [ -d ".git" ]; then
   mkdir -p $1/.git/logs

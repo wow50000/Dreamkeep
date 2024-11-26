@@ -12,7 +12,9 @@
   */
 /world
 	mob = /mob/dead/new_player
-	turf = /turf/closed
+	// DO NOT set this to any turf type that has ANY on-new or on-initialize functionality
+	// doing that breaks hotloading zlevels!
+	turf = /turf/open/space/basic
 	area = /area/rogue
 	view = "15x15"
 	hub = "Exadv1.spacestation13"
