@@ -146,6 +146,21 @@
 				if(istype(I))
 					I.afterchange()
 
+/obj/item/rogueweapon/mace/stunmace/hedgeknight/funny_attack_effects(mob/living/target, mob/living/user, nodmg)
+	. = ..()
+	if(on)
+		target.electrocute_act(15, src)
+		target.Paralyze(10 SECONDS)//STR maxxers cannot be reliably chained, so electrocution may be used as an alternative.
+		charge -= 25
+		if(charge <= 0)
+			on = FALSE
+			charge = 0
+			update_icon()
+			if(user.a_intent)
+				var/datum/intent/I = user.a_intent
+				if(istype(I))
+					I.afterchange()
+
 /obj/item/rogueweapon/mace/stunmace/update_icon()
 	if(on)
 		icon_state = "stunmace1"
@@ -231,7 +246,7 @@
 		charge--
 	else
 		if(charge < 1000)
-			charge++
+			charge += 25
 	if(charge <= 0)
 		on = FALSE
 		charge = 0
