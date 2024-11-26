@@ -203,7 +203,7 @@
 	force_wielded = 15
 	name = "hedgeknight stunmace"
 	icon_state = "stunmace0"
-	desc = "Upon closer inspection, this mace has kneestingers all throughout it, rather than being powered by a battery. Only the Hedgeknights themselves bear the fortitude to hold it."
+	desc = "Upon closer inspection, this mace has kneestingers growing all throughout it, rather than being powered by a battery. Only the Hedgeknights themselves bear the fortitude to hold it."
 	gripped_intents = null
 	w_class = WEIGHT_CLASS_NORMAL
 	possible_item_intents = list(/datum/intent/mace/strike/stunner, /datum/intent/mace/smash/stunner)
@@ -213,10 +213,18 @@
 	var/charge = 1000
 	var/on = FALSE
 
+/obj/item/rogueweapon/mace/stunmace/hedgeknight/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(!HAS_TRAIT(H, TRAIT_SHOCKIMMUNE)) || if(HAS_TRAIT(H, TRAIT_RAVOX_CURSE))
+		to_chat(H, span_danger("As you grasp the hedgeknight mace, you touch its kneestingers and feel a powerful and excruciating shock radiate through your body!"))
+		H.electrocute_act(30, src)
+		H.Paralyze(10 SECONDS, ignore_canstun = TRUE)
+
 /obj/item/rogueweapon/mace/stunmace/hedgeknight/process()
 	var/mob/user = loc
 	if(istype(user))
-		if(!HAS_TRAIT(user, TRAIT_SHOCKIMMUNE)) || if(!HAS_TRAIT(user, TRAIT_RAVOX_CURSE))
+		if(!HAS_TRAIT(user, TRAIT_SHOCKIMMUNE)) || if(HAS_TRAIT(user, TRAIT_RAVOX_CURSE))
 			to_chat(user, span_danger("As you grasp the hedgeknight mace, you touch its kneestingers and feel a powerful and excruciating shock radiate through your body!"))
 			user.Paralyze(10 SECONDS, ignore_canstun = TRUE)
 	if(on)
