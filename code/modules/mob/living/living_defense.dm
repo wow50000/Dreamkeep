@@ -523,7 +523,7 @@
 	shock_damage *= siemens_coeff
 	if((flags & SHOCK_TESLA) && (flags_1 & TESLA_IGNORE_1))
 		return FALSE
-	if(HAS_TRAIT(src, TRAIT_SHOCKIMMUNE))
+	if(HAS_TRAIT(src, TRAIT_SHOCKIMMUNE) && !HAS_TRAIT(src, TRAIT_RAVOX_CURSE))//Minhur's ire will make even a Hedgeknight vulnerable to the justice of their fellows
 		return FALSE
 	if(shock_damage < 1)
 		return FALSE
