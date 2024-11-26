@@ -299,10 +299,13 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/Zs_too = FALSE
 	if(is_eavesdroppable)
 		eavesdrop_range = EAVESDROP_EXTRA_RANGE
-	if(message_mode != MODE_WHISPER)
-		if(say_test(message) == "2")
+	if(say_test(message) == "2") // shouting
+		if(!is_eavesdroppable)
 			message_range += 10
 			Zs_too = TRUE
+		else // keep your damn voice down!
+			message_range += 1
+			eavesdrop_range += 1
 	var/list/listening = get_hearers_in_view(message_range+eavesdrop_range, source)
 	var/list/the_dead = list()
 	// fun fact: roguetown broke this which broke eavesdropping on whispers lmao
