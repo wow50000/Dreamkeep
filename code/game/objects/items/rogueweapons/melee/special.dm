@@ -239,7 +239,7 @@
 /obj/item/rogueweapon/mace/stunmace/hedgeknight/process()
 	var/mob/user = loc
 	if(istype(user))
-		if(!HAS_TRAIT(user, TRAIT_SHOCKIMMUNE)) || if(HAS_TRAIT(user, TRAIT_RAVOX_CURSE))
+		if(!HAS_TRAIT(user, TRAIT_SHOCKIMMUNE) || if(HAS_TRAIT(user, TRAIT_RAVOX_CURSE))
 			to_chat(user, span_danger("As you grasp the hedgeknight mace, you touch its kneestingers and feel a powerful and excruciating shock radiate through your body!"))
 			user.Paralyze(10 SECONDS, ignore_canstun = TRUE)
 	if(on)
