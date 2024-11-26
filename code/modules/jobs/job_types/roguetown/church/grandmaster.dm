@@ -75,17 +75,16 @@
 	belt = /obj/item/storage/belt/rogue/leather/black
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltr = /obj/item/rogueweapon/flail/sflail
-	r_hand = /obj/item/rogueweapon/sword/long
 	id = /obj/item/clothing/ring/silver
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 5, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 4, TRUE) // actual ass, but worse. Good luck.
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 5, TRUE) // Might be utterly disgusting. Good luck.
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 4, TRUE)
