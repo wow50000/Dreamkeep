@@ -231,7 +231,7 @@
 /obj/item/rogueweapon/mace/stunmace/hedgeknight/pickup(mob/user)
 	. = ..()
 	var/mob/living/carbon/human/H = user
-	if(!HAS_TRAIT(H, TRAIT_SHOCKIMMUNE)) || if(HAS_TRAIT(H, TRAIT_RAVOX_CURSE))
+	if(!HAS_TRAIT(H, TRAIT_SHOCKIMMUNE) || if(HAS_TRAIT(H, TRAIT_RAVOX_CURSE))
 		to_chat(H, span_danger("As you grasp the hedgeknight mace, you touch its kneestingers and feel a powerful and excruciating shock radiate through your body!"))
 		H.electrocute_act(30, src)
 		H.Paralyze(10 SECONDS, ignore_canstun = TRUE)
