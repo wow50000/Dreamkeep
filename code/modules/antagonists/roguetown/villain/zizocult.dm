@@ -1,3 +1,6 @@
+/*
+
+
 GLOBAL_LIST_EMPTY(ritualslist)
 
 /datum/antagonist/zizocultist
@@ -941,3 +944,5 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				V.add_stress(/datum/stressevent/hatezizo)
 		CM.roundvoteend = TRUE
 		break
+
+	*/

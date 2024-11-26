@@ -159,33 +159,22 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 				if("Lich")
 					pick_lich()
 					log_game("Minor Antagonist: Lich")	
-				if("Cultists")
-					pick_cultist()
-					log_game("Major Antagonist: Cultists")
 				if("Extended")
 					log_game("Major Antagonist: Extended")
 		return TRUE
 
 	var/major_roll = rand(1,100)
 	switch(major_roll)
-/*
 		if(0 to 25)
 			pick_rebels()
 			log_game("Major Antagonist: Rebellion")
-		if(26 to 51)
-			pick_cultist()
-			log_game("Major Antagonist: Extended")
-		if(52 to 76)
+		if(26 to 76)
 			//WWs and Vamps now normally roll together
 			// pick_vampires()
 			pick_werewolves()
 			log_game("Major Antagonist: Werewolves")
 		if(77 to 99)
 			log_game("Major Antagonist: Extended") //gotta put something here.
-*/
-		if(0 to 25)
-			pick_cultist()
-			log_game("Major Antagonist: Cultists")
 		if(26 to 51)
 			pick_werewolves()
 			log_game("Major Antagonist: Werewolves and Vampires")
@@ -373,7 +362,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	for(var/antag in pre_villains)
 		GLOB.pre_setup_antags |= antag
 	restricted_jobs = list()
-
+/*
 /datum/game_mode/chaosmode/proc/pick_cultist()
 	var/remaining = 3 // 1 heresiarch, 2 cultists
 	restricted_jobs = list("Monarch",
@@ -404,7 +393,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	for(var/antag in pre_cultists)
 		GLOB.pre_setup_antags |= antag
 	restricted_jobs = list()
-
+*/
 /datum/game_mode/chaosmode/proc/pick_lich()
 
 	// High pop only
@@ -549,7 +538,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 		addtimer(CALLBACK(traitor, TYPE_PROC_REF(/datum/mind, add_antag_datum), new_antag), rand(10,100))
 		GLOB.pre_setup_antags -= traitor
 		villains += traitor
-
+/*
 ///////////////// CULTIST
 
 	pre_cultists = shuffle(pre_cultists)
@@ -566,7 +555,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 			addtimer(CALLBACK(cultist, TYPE_PROC_REF(/datum/mind, add_antag_datum), new_antag), rand(10,100))
 			GLOB.pre_setup_antags -= cultist
 			cultists += cultist
-
+*/
 ///////////////// LICH
 	for(var/datum/mind/lichman in pre_liches)
 		var/datum/antagonist/new_antag = new /datum/antagonist/lich()

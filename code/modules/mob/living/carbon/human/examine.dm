@@ -119,9 +119,6 @@
 
 		if(name in GLOB.heretical_players)
 			. += span_userdanger("HERETIC'S BRAND! SHAME!")
-		if(iszizocultist(user) || iszizolackey(user))
-			if(virginity)
-				. += "<span class='userdanger'>VIRGIN!</span>"
 
 		if(name in GLOB.outlawed_players)
 			. += span_userdanger("OUTLAW!")

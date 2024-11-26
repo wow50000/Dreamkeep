@@ -14,7 +14,7 @@
 #define ROLE_DELF				"Dark Elf"
 #define ROLE_PREBEL				"Peasant Rebel"
 #define ROLE_ASPIRANT			"Aspirant"
-#define ROLE_ZIZOIDCULTIST		"Cultist"
+//#define ROLE_ZIZOIDCULTIST		"Cultist"
 #define ROLE_LICH				"Lich"
 
 #define ROLE_SYNDICATE			"Syndicate"
@@ -77,7 +77,7 @@ GLOBAL_LIST_INIT(special_roles_rogue, list(
 	ROLE_BANDIT = /datum/antagonist/bandit,
 	ROLE_ASPIRANT = /datum/antagonist/aspirant,
 	ROLE_WEREWOLF = /datum/antagonist/werewolf,
-	ROLE_ZIZOIDCULTIST = /datum/antagonist/zizocultist,
+//	ROLE_ZIZOIDCULTIST = /datum/antagonist/zizocultist,
 	ROLE_NBEAST = /datum/antagonist/vampirelord,
 	ROLE_LICH = /datum/antagonist/lich
 ))
