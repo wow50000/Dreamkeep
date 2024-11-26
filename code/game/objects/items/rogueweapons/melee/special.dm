@@ -198,6 +198,43 @@
 		update_icon()
 		playsound(src, pick('sound/items/stunmace_toggle (1).ogg','sound/items/stunmace_toggle (2).ogg','sound/items/stunmace_toggle (3).ogg'), 100, TRUE)
 
+/obj/item/rogueweapon/mace/stunmace/hedgeknight
+	force = 15
+	force_wielded = 15
+	name = "hedgeknight stunmace"
+	icon_state = "stunmace0"
+	desc = "Upon closer inspection, this mace has kneestingers all throughout it, rather than being powered by a battery. Only the Hedgeknights themselves bear the fortitude to hold it."
+	gripped_intents = null
+	w_class = WEIGHT_CLASS_NORMAL
+	possible_item_intents = list(/datum/intent/mace/strike/stunner, /datum/intent/mace/smash/stunner)
+	wbalance = 0
+	minstr = 5
+	wdefense = 0
+	var/charge = 1000
+	var/on = FALSE
+
+/obj/item/rogueweapon/mace/stunmace/hedgeknight/process()
+	var/mob/user = loc
+	if(istype(user))
+		if(!HAS_TRAIT(user, TRAIT_SHOCKIMMUNE)) || if(!HAS_TRAIT(user, TRAIT_RAVOX_CURSE))
+			to_chat(user, span_danger("As you grasp the hedgeknight mace, you touch its kneestingers and feel a powerful and excruciating shock radiate through your body!"))
+			user.Paralyze(10 SECONDS, ignore_canstun = TRUE)
+	if(on)
+		charge--
+	else
+		if(charge < 1000)
+			charge++
+	if(charge <= 0)
+		on = FALSE
+		charge = 0
+		update_icon()
+		if(istype(user))
+			if(user.a_intent)
+				var/datum/intent/I = user.a_intent
+				if(istype(I))
+					I.afterchange()
+		playsound(src, pick('sound/items/stunmace_toggle (1).ogg','sound/items/stunmace_toggle (2).ogg','sound/items/stunmace_toggle (3).ogg'), 100, TRUE)
+
 /obj/item/rogueweapon/katar
 	slot_flags = ITEM_SLOT_HIP
 	force = 16
