@@ -220,3 +220,8 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 /config/ezdb.txt
 tgui/src/images/syndicate.svg
 tgui/src/images/nanotrasen.svg
+
+/prof.dll
+
+# OpenDream-compiled DME
+/roguetown.json
