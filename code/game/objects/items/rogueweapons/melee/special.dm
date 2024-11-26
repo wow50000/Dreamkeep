@@ -225,8 +225,8 @@
 	wbalance = 0
 	minstr = 5
 	wdefense = 0
-	var/charge = 1000
-	var/on = FALSE
+	charge = 1000
+	on = FALSE
 
 /obj/item/rogueweapon/mace/stunmace/hedgeknight/pickup(mob/user)
 	. = ..()
