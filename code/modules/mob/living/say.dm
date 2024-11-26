@@ -168,11 +168,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(!language)
 		language = get_default_language()
 
-	if(language.signlang)
-		var/mob/M = src
-		var/emote = pick(language.signlang_verb)
-		M.emote(emote)
-
 	//Detection of language needs to be before inherent channels, because
 	//AIs use inherent channels for the holopad. Most inherent channels
 	//ignore the language argument however.
@@ -180,7 +175,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(saymode && !saymode.handle_message(src, message, language))
 		return
 
-	if(!can_speak_vocal(message))
+	var/datum/language/language_datum = GLOB.language_datum_instances[language]
+	if(language_datum.flags & SIGNLANG)
+		emote(pick(language_datum.signlang_verb), intentional = TRUE)
+	else if(!can_speak_vocal(message)) // don't block sign languages
 //		visible_message("<b>[src]</b> makes a muffled noise.")
 		to_chat(src, span_warning("I can't talk."))
 		return
@@ -278,11 +276,16 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/deaf_type
 	if(speaker != src)
 		if(!radio_freq) //These checks have to be seperate, else people talking on the radio will make "You can't hear yourself!" appear when hearing people over the radio while deaf.
-			deaf_message = "<span class='name'>[speaker]</span> [speaker.verb_say] something but you cannot hear [speaker.p_them()]."
+			deaf_message = "<span class='name'>[speaker]</span> [speaker.verb_say] something but I cannot hear [speaker.p_them()]."
 			deaf_type = 1
 	else
-		deaf_message = span_notice("I can't hear yourself!")
-		deaf_type = 2 // Since you should be able to hear myself without looking
+		deaf_message = span_notice("I can't hear myself!")
+		deaf_type = 2 // Since you should be able to hear yourself without looking
+
+	if(message_language)
+		var/datum/language/heard_lang = GLOB.language_datum_instances[message_language]
+		if(heard_lang?.flags & LANGUAGE_HIDE_NOT_UNDERSTOOD && !has_language(message_language) && !check_language_hear(message_language))
+			return // you don't notice a thing...
 
 	// Create map text prior to modifying message for goonchat
 	if(can_see_runechat(speaker) && can_hear())

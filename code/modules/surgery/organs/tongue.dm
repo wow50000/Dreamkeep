@@ -46,6 +46,9 @@
 	M.RegisterSignal(M, COMSIG_MOB_SAY, TYPE_PROC_REF(/mob/living/carbon, handle_tongueless_speech))
 
 /obj/item/organ/tongue/could_speak_in_language(datum/language/dt)
+	var/datum/language/language_datum = GLOB.language_datum_instances[dt]
+	if(language_datum.flags & (TONGUELESS_SPEECH | SIGNLANG))
+		return TRUE
 	return is_type_in_typecache(dt, languages_possible)
 
 /obj/item/organ/tongue/lizard
