@@ -82,4 +82,5 @@
 
 	backpack_contents = list(/obj/item/roguekey/mercenary)
 
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
