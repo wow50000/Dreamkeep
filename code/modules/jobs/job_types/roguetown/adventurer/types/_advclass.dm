@@ -39,9 +39,13 @@
 
 	//sleep(1)
 	//testing("[H] spawn troch")
+
+/* // This is what put the torch in adventurers' hands, causing the spam
 	var/obj/item/flashlight/flare/torch/T = new()
 	T.spark_act()
 	H.put_in_hands(T, forced = TRUE)
+*/
+
 	//framework for being able to list spells instead of individually input them
 	var/list/skills
 	var/list/roundstart_experience
