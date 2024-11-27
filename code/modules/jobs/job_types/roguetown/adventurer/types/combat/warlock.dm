@@ -319,7 +319,10 @@
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
-	armor = /obj/item/clothing/suit/roguetown/armor/gambeson // Armor downgrade from hauberk to gambeson
+	if(H.gender == MALE)
+		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+	else 
+		shirt = /obj/item/clothing/suit/roguetown/armor/armordress // Armor downgrade from hauberk to gambeson
 	beltl = /obj/item/rogueweapon/huntingknife
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 
