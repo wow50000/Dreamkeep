@@ -151,6 +151,7 @@
 	t1 = /obj/effect/proc_holder/spell/invoked/bud
 	t2 = /obj/effect/proc_holder/spell/invoked/eoracurse
 	t3 = /obj/effect/proc_holder/spell/invoked/enrapture
+	t4 = /obj/effect/proc_holder/spell/invoked/torsion
 	confess_lines = list(
 		"VIIRITRI BRINGS US TOGETHER!",
 		"HER BEAUTY IS EVEN IN THIS TORMENT!",
