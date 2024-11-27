@@ -61,8 +61,6 @@
 		new I(src)
 /obj/structure/closet/crate/chest/gold/lootbox/trait/PopulateContents()
 	var/list/loot = list(/obj/item/rogueweapon/huntingknife/idagger/silver=33,
-		/obj/item/book/granter/trait/war/undying=13,
-		/obj/item/book/granter/trait/war/relentless=13,
 		/obj/item/book/granter/trait/mobility/bogtrek=33,
 		/obj/item/book/granter/trait/defense/mediumarmor=40,
 		/obj/item/book/granter/trait/defense/heavyarmor=40,

@@ -90,7 +90,7 @@
 			H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 2, TRUE) //Hearthstone change.
 			H.change_stat("perception", 2)
 			H.change_stat("endurance", 1)
-			H.change_stat("speed", 3)
+			H.change_stat("speed", 2)
 
 			ADD_TRAIT(H, TRAIT_BLINDFIGHTING, TRAIT_GENERIC)
 			if(!HAS_TRAIT(H, TRAIT_NIGHT_VISION))

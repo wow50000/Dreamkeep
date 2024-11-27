@@ -19,25 +19,22 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors)
 "d" = (
-/turf/closed/wall/mineral/rogue/decowood,
+/turf/closed/wall/mineral/rogue/pipe,
 /area/rogue/indoors)
 "e" = (
 /obj/item/roguebin/water,
 /obj/machinery/light/rogue/wallfire/candle/l,
-/turf/open/floor/rogue/hexstone,
-/turf/open/floor/rogue/hexstone,
-/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/metal,
 /area/rogue/indoors)
 "f" = (
 /obj/machinery/anvil/crafted,
 /obj/item/rogueweapon/tongs,
 /obj/item/rogueweapon/hammer/claw,
-/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/metal,
 /area/rogue/indoors)
 "g" = (
 /obj/machinery/light/rogue/forge,
-/turf/open/floor/rogue/hexstone,
-/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/metal,
 /area/rogue/indoors)
 "i" = (
 /obj/structure/fluff/grindwheel,
@@ -45,13 +42,11 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors)
 "l" = (
-/obj/machinery/light/rogue/smelter/improved,
-/turf/open/floor/rogue/hexstone,
+/obj/machinery/light/rogue/smelter/great,
+/turf/open/floor/rogue/metal,
 /area/rogue/indoors)
 "m" = (
-/turf/open/floor/rogue/hexstone,
-/turf/open/floor/rogue/hexstone,
-/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/metal,
 /area/rogue/indoors)
 "o" = (
 /obj/structure/lever/wall{
@@ -66,11 +61,6 @@
 "p" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors)
-"q" = (
-/turf/closed/wall/mineral/rogue/wooddark{
-	icon_state = "wooddark-k"
-	},
-/area/rogue/indoors)
 "r" = (
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors)
@@ -82,11 +72,13 @@
 "t" = (
 /obj/structure/chair/stool/rogue,
 /obj/structure/roguemachine/atm,
+/obj/structure/roguemachine/drugmachine{
+	pixel_x = -32
+	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors)
 "u" = (
 /obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/hexstone,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors)
 "v" = (
@@ -154,7 +146,7 @@ d
 (2,1,1) = {"
 d
 e
-w
+m
 p
 t
 y
@@ -163,11 +155,11 @@ d
 (3,1,1) = {"
 d
 f
-r
+m
 l
 u
 z
-q
+d
 "}
 (4,1,1) = {"
 d

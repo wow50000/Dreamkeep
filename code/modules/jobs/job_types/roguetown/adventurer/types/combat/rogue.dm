@@ -88,9 +88,8 @@
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SEEPRICES_SHITTY, TRAIT_GENERIC)
-	H.change_stat("strength", -1)
 	H.change_stat("perception", 2)
-	H.change_stat("speed", 4)
+	H.change_stat("speed", 2)
 	H.change_stat("intelligence", 2)
 
 //Assassin, nearly same as rogue but not versatile in weapon skills yet specialized in knives.
@@ -132,8 +131,8 @@
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) //they are killers
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-	H.change_stat("perception", 1)
-	H.change_stat("speed", 4)
+	H.change_stat("perception", 2)
+	H.change_stat("speed", 2)
 	H.change_stat("intelligence", 2)
 	H.visible_message(span_info("I honed my skills as an assassin through the years. My bracers have a hidden blade, and my boots have a bottle of berry poison."))
 	backpack_contents = list(/obj/item/lockpickring/mundane, /obj/item/rogueweapon/huntingknife/idagger/steel)
@@ -268,7 +267,7 @@
 	ADD_TRAIT(H, TRAIT_SOUL_EXAMINE, TRAIT_GENERIC) //can determine if someone has their soul.
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 1)
-	H.change_stat("speed", 3)
+	H.change_stat("speed", 2)
 	H.change_stat("intelligence", 2)
 	H.visible_message(span_info("I am a conduit between the living and the dead, half in, half out, a phantom that hears the whispers of the departed and uses them for my personal gain."))
 

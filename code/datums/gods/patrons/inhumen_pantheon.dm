@@ -16,7 +16,7 @@
 	mob_traits = list(TRAIT_NASTY_EATER, TRAIT_SNEK, TRAIT_ZOMBIE_IMMUNE) //had to add zombie immune so as not to double dip when making the infection immune
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal_inhumen
 	t1 = /obj/effect/proc_holder/spell/invoked/invisibility
-	t2 = /obj/effect/proc_holder/spell/targeted/soulspeak
+	t2 = /obj/effect/proc_holder/spell/invoked/eldritchhealing/any
 	t3 = /obj/effect/proc_holder/spell/invoked/projectile/sickness
 	t4 = /obj/effect/proc_holder/spell/invoked/revive_inhumen
 	confess_lines = list(

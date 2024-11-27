@@ -135,7 +135,6 @@
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = FALSE
-	antimagic_allowed = FALSE //can you use it if you are antimagicked?
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
@@ -176,6 +175,9 @@
 	target.cut_overlay(ward)
 	target.update_vision_cone()
 	. = ..()
+
+/obj/effect/proc_holder/spell/self/bladeward5e/test
+	antimagic_allowed = TRUE
 
 //==============================================
 //	BOOMING BLADE
@@ -411,7 +413,7 @@
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = FALSE
-	antimagic_allowed = FALSE //can you use it if you are antimagicked?
+	antimagic_allowed = FALSE
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
@@ -426,7 +428,7 @@
 	summon_type = list(
 		/obj/machinery/light/rogue/campfire/createbonfire5e
 	)
-	summon_lifespan = 600
+	summon_lifespan = 15 MINUTES
 	summon_amt = 1
 
 	action_icon_state = "the_traps"
@@ -444,6 +446,9 @@
 	cookonme = TRUE
 	can_damage = TRUE
 	max_integrity = 30
+
+/obj/effect/proc_holder/spell/aoe_turf/conjure/createbonfire5e/test
+	antimagic_allowed = TRUE
 
 //==============================================
 //	DANCING LIGHTS
@@ -638,6 +643,9 @@
 		return TRUE
 	to_chat(user, span_warning("I wasn't able to find a mind to weave here."))
 	revert_cast()
+
+/obj/effect/proc_holder/spell/targeted/encodethoughts5e/test
+	antimagic_allowed = TRUE
 
 //==============================================
 //	FIRE BOLT
@@ -1364,6 +1372,7 @@
 	warnie = "spellwarning"
 	movement_interrupt = FALSE
 	no_early_release = FALSE
+	antimagic_allowed = FALSE
 	chargedloop = null
 	sound = 'sound/magic/whiteflame.ogg'
 	chargedloop = /datum/looping_sound/invokegen
@@ -1404,6 +1413,9 @@
 	else
 		to_chat(user, "<span class='warning'>I couldn't find a good place for this!</span>")
 		revert_cast()
+
+/obj/effect/proc_holder/spell/invoked/poisonspray5e/test
+	antimagic_allowed = TRUE
 
 //==============================================
 //	Primal Savagery
