@@ -409,3 +409,12 @@
 		/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard/lich = 20,
 		/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear/lich = 20,
 		/mob/living/carbon/human/species/skeleton/npc/dungeon/lich = 10)
+
+/obj/effect/mob_spawner/temporary/lich/boss
+	max_spawned_mobs = 1
+	mobs_to_spawn = 1
+	spawn_interval = 600
+	spawn_range = 1
+	player_range = 1
+	temporary = TRUE
+	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/boss/lich)
