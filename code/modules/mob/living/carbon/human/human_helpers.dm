@@ -8,12 +8,10 @@
 /mob/living/carbon/human/check_language_hear(language)
 	if(!language)
 		return
-	if(wear_neck)
-		if(istype(wear_neck, /obj/item/clothing/neck/roguetown/talkstone))
-			return TRUE
-	if(!has_language(language))
-		if(has_flaw(/datum/charflaw/paranoid))
-			add_stress(/datum/stressevent/paratalk)
+	if(istype(wear_neck, /obj/item/clothing/neck/roguetown/talkstone))
+		return TRUE
+	if(!has_language(language) && has_flaw(/datum/charflaw/paranoid))
+		add_stress(/datum/stressevent/paratalk)
 
 
 /mob/living/carbon/human/canBeHandcuffed()

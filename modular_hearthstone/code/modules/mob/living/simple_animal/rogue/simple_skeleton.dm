@@ -105,6 +105,20 @@
 	maxHealth = 100
 	health = 100
 
+/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow/playersentry
+	var/list/friendlyjobs = list("Guild Appraiser", "Guildmaster")
+
+/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow/playersentry/CanAttack(atom/the_target, ignore_lying)
+	if(ishuman(the_target))
+		var/mob/living/carbon/human/madafaka = the_target
+		if(madafaka.job |= friendlyjobs)
+			return FALSE
+		else
+			//funny screaming
+			if(prob(10))
+				src.say(pick("I GOT YOU NOW MADAFAKA!!!", "I SEE A MADA-FFFFFFFFFFFFFAKAAAA HERE!!!!", "WHAT'CHU DOIN HERE MADAFFFFAKA!!!!", "ALERT!! MADAFFFFAKA SPOTTEEEEED!!!"))
+	. = ..()
+
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard
 	name = "Crypt Guard"
 	base_intents = list(/datum/intent/simple/spear)

@@ -220,3 +220,4 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 /config/ezdb.txt
 tgui/src/images/syndicate.svg
 tgui/src/images/nanotrasen.svg
+/data

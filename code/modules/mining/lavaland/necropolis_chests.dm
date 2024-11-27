@@ -756,7 +756,6 @@
 //	var/loot = rand(1,7)
 	var/list/loot = list(/obj/item/book/granter/trait/defense/heavyarmor=35,
 		/obj/item/book/granter/trait/defense/mediumarmor=12,
-		/obj/item/book/granter/trait/war/undying=8,
 		/obj/item/riddleofsteel = 45)
 	if(prob(50))
 		var/I = pickweight(loot)
@@ -1561,13 +1560,11 @@
 /obj/structure/closet/crate/necropolis/sif/PopulateContents()
 	var/list/loot = list(/obj/item/rogueweapon/sword/sword_of_the_forsaken=40,
 		/obj/item/clothing/neck/roguetown/necklace_of_the_forsaken=40,
-		/obj/item/book/granter/trait/war/relentless=10,
 		/obj/item/book/granter/spell/spells5e/frostbite5e = 40,
 		/obj/item/book/granter/spell/spells5e/createbonfire5e = 30,
 		/obj/item/book/granter/spell/spells5e/acidsplash5e = 40,)
 	var/list/loot2 = list(/obj/item/rogueweapon/sword/sword_of_the_forsaken=20,
 		/obj/item/clothing/neck/roguetown/necklace_of_the_forsaken=20,
-		/obj/item/book/granter/trait/war/relentless=5,
 		/obj/item/book/granter/spell/spells5e/frostbite5e = 20,
 		/obj/item/book/granter/spell/spells5e/createbonfire5e = 15,
 		/obj/item/book/granter/spell/spells5e/acidsplash5e = 20,

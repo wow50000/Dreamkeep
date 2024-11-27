@@ -189,6 +189,7 @@
 		LAZYADD(granted_spells, newspell)
 	level = CLERIC_T1
 	max_progression = CLERIC_REQ_4
+	max_devotion = CLERIC_REQ_4
 	passive_devotion_gain = 1
 	passive_progression_gain = 1
 	update_devotion(100, CLERIC_REQ_4, silent = TRUE)
@@ -220,7 +221,8 @@
 		H.mind.AddSpell(newspell)
 		LAZYADD(granted_spells, newspell)
 	level = CLERIC_T0
-	max_progression = CLERIC_REQ_2
+	max_progression = CLERIC_REQ_4
+	max_devotion = CLERIC_REQ_4
 	passive_devotion_gain = 1
 	passive_progression_gain = 1
 	update_devotion(100, CLERIC_REQ_4, silent = TRUE)

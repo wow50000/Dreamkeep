@@ -115,7 +115,7 @@
 	/mob/living/simple_animal/hostile/retaliate/rogue/goblin/cave = 3,		//archer
 	/mob/living/simple_animal/hostile/retaliate/rogue/goblin = 3)		//archer
 	spawn_text = "climbs out of"
-	faction = list("orc")
+	faction = list("orcs")
 
 /obj/structure/spawner/ghost
 	name = "bone pile"

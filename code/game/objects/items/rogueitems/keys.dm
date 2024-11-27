@@ -269,7 +269,7 @@
 	name = "priest's key"
 	desc = "This is the master key of the church."
 	icon_state = "cheesekey"
-	lockid = "Prophet"
+	lockid = "Archpriest"
 
 /obj/item/roguekey/tower
 	name = "tower key"

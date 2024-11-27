@@ -64,22 +64,25 @@
 	icon_living = "ascend"
 	icon = 'icons/mob/32x64.dmi'
 	base_intents = list(/datum/intent/unarmed/ascendedclaw)
-	melee_damage_lower = 250
-	melee_damage_upper = 550
-	health = 666666
-	maxHealth = 666666
-	STACON = 66
-	STASTR = 66
-	STASPD = 66
-	STAEND = 66
+	health = 750
+	maxHealth = 750
+	melee_damage_lower = 55
+	melee_damage_upper = 80
+	STACON = 20
+	STASTR = 20
+	STASPD = 20
+	STAEND = 20
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/examine(mob/user)
 	. = ..()
-	. += "<span class='narsiesmall'>It is impossible to comprehend such a thing.</span>"
+	. += "<span class='cultbigbold'>MY MIND CAN NOT COMPREHEND!!!</span>"
+	if(ishuman(user) && !iscultist(user))
+		var/mob/living/carbon/human/userhuman = user
+		userhuman.freak_out(3) //may give you a heart attack if the initial mass stress is still on you.
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/Initialize()
 	. = ..()
-	set_light(5,5, LIGHT_COLOR_RED)
+	set_light(5,5, LIGHT_COLOR_PURPLE)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended/get_sound(input)
 	switch(input)
@@ -96,6 +99,15 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/death(gibbed)
 	. = ..()
+	var/datum/game_mode/chaosmode/CM = SSticker.mode
+	for(var/mob/living/carbon/V in GLOB.human_list)
+		if(V.mind in CM.cultists)
+			to_chat(V, span_danger("WE FAILED, THE NEW GOD HAS FALLEN!!! I CANT.. OH NO!!! THE DIVINE LIGHT RETURNS TO THIS AREA!!! "))
+			V.gib()
+		else
+			to_chat(V, span_greenannounce("THE DIVINE LIGHT RETURNS TO US!!!"))
+			V.remove_stress(/datum/stressevent/hatezizo)
+			V.add_stress(/datum/stressevent/zizodefeated)
 	gib()
 	qdel(src)
 

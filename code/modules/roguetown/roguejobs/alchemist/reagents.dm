@@ -287,7 +287,7 @@
 	metabolization_rate = 0.1
 
 /datum/reagent/berrypoison/on_mob_life(mob/living/carbon/M)
-	if(!HAS_TRAIT(M, TRAIT_NASTY_EATER || TRAIT_WILD_EATER))
+	if(!HAS_TRAIT(M, TRAIT_NASTY_EATER))
 		M.add_nausea(9)
 		M.adjustToxLoss(3, 0)
 	return ..()
@@ -300,7 +300,7 @@
 	metabolization_rate = 0.1
 
 /datum/reagent/organpoison/on_mob_life(mob/living/carbon/M)
-	if(!HAS_TRAIT(M, TRAIT_NASTY_EATER) && !HAS_TRAIT(M, TRAIT_ORGAN_EATER))
+	if(!HAS_TRAIT(M, TRAIT_NASTY_EATER) && !HAS_TRAIT(M, TRAIT_ORGAN_EATER) && !HAS_TRAIT(M, TRAIT_WILD_EATER))
 		M.add_nausea(9)
 		M.adjustToxLoss(3, 0)
 	return ..()

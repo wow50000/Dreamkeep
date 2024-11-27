@@ -1,12 +1,12 @@
 /datum/job/roguetown/priest
-	title = "Prophet"
+	title = "Archpriest"
 	flag = PRIEST
 	department_flag = CHURCHMEN
 	faction = "Station"
 	total_positions = 5
 	spawn_positions = 5
 	selection_color = JCOLOR_CHURCH
-	f_title = "Prophetess"
+	f_title = "Archpriestess"
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_patrons = ALL_DIVINE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
@@ -72,7 +72,7 @@
 
 /mob/living/carbon/human/proc/coronate_lord()
 	set name = "Coronate"
-	set category = "Prophet"
+	set category = "Archpriest"
 	if(!mind)
 		return
 	if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
@@ -118,7 +118,7 @@
 
 /mob/living/carbon/human/proc/churchexcommunicate()
 	set name = "Curse"
-	set category = "Prophet"
+	set category = "Archpriest"
 	if(stat)
 		return
 	var/inputty = input("Curse someone... (curse them again to remove it)", "Sinner Name") as text|null
@@ -150,7 +150,7 @@
 
 /mob/living/carbon/human/proc/churchannouncement()
 	set name = "Announcement"
-	set category = "Prophet"
+	set category = "Archpriest"
 
 	if(!COOLDOWN_FINISHED(src, church_announcement))
 		to_chat(src, span_warning("I should wait..."))

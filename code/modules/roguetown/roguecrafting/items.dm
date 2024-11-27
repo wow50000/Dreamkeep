@@ -817,26 +817,6 @@
 	skillcraft = /datum/skill/magic/druidic
 	craftdiff = 2 // druids & dendor clerics can craft
 
-// --------- GLASS -----------
-
-/datum/crafting_recipe/roguetown/glassbottle
-	name = "Glass bottle (x2)"
-	reqs = list(/obj/item/ingot/glass)
-	result = list(/obj/item/reagent_containers/glass/bottle/rogue,/obj/item/reagent_containers/glass/bottle/rogue)
-	skillcraft = /datum/skill/craft/smelting
-	structurecraft = /obj/machinery/light/rogue/smelter
-	always_availible = FALSE
-	craftdiff = 1
-
-/datum/crafting_recipe/roguetown/glasssyringe
-	name = "Glass syringe (x3)"
-	reqs = list(/obj/item/ingot/glass)
-	result = list(/obj/item/reagent_containers/syringe,/obj/item/reagent_containers/syringe,/obj/item/reagent_containers/syringe)
-	skillcraft = /datum/skill/craft/smelting
-	structurecraft = /obj/machinery/light/rogue/smelter
-	always_availible = FALSE
-	craftdiff = 2 //small and more detailed in workings i guess.
-
 //gunmaking slop
 /datum/crafting_recipe/roguetown/firingpim
 	name = "Firing pin"

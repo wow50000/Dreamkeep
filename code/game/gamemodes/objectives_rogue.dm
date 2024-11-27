@@ -15,7 +15,7 @@
 		if(C)
 			explanation_text = "Feed [C.banditgoal] mammon to an idol of greed."
 		else
-			explanation_text = "Pray to ZIZO."
+			explanation_text = "Pray to LEVISHTH."
 
 
 /datum/objective/delf
@@ -35,7 +35,7 @@
 		if(C)
 			explanation_text = "Feed [C.delfgoal] honeys to the mother."
 		else
-			explanation_text = "Pray to ZIZO."
+			explanation_text = "Pray to LEVISHTH."
 
 /datum/objective/werewolf
 	name = "conquer"

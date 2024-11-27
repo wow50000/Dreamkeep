@@ -106,7 +106,7 @@
 
 /obj/item/clothing/wrists/roguetown/hiddenblade
 	name = "leather bracers"
-	desc = "Leather bracers worn on the wrists... With a hidden blade within."
+	desc = "Leather bracers worn on the wrists... With a contraption within."
 	body_parts_covered = ARMS
 	icon_state = "lbracers"
 	item_state = "lbracers"
@@ -117,7 +117,7 @@
 	sewrepair = TRUE
 	smeltresult = /obj/item/ingot/steel
 	var/extended = FALSE
-	var/obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden/hid
+	var/obj/item/rogueweapon/huntingknife/idagger/steel/hidden/hid
 
 /obj/item/clothing/wrists/roguetown/hiddenblade/dropped(mob/user)
 	. = ..()
@@ -128,14 +128,14 @@
 	toggleblades(user)
 
 /obj/item/clothing/wrists/roguetown/hiddenblade/attackby(obj/A, mob/living/carbon/human/user, params)
-	if(src == user.get_item_by_slot(SLOT_WRISTS) && (istype(A, /obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden) || !A)) //blade or empty hand.
+	if(src == user.get_item_by_slot(SLOT_WRISTS) && (istype(A, /obj/item/rogueweapon/huntingknife/idagger/steel/hidden) || !A)) //blade or empty hand.
 		toggleblades(user)
-		return ..()
+	. = ..()
 
 /obj/item/clothing/wrists/roguetown/hiddenblade/proc/toggleblades(mob/user)
 
 	if(extended)
-		if(istype(user.get_active_held_item(), /obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden))
+		if(istype(user.get_active_held_item(), /obj/item/rogueweapon/huntingknife/idagger/steel/hidden))
 			user.dropItemToGround(hid, TRUE)
 			user.visible_message("<span class='info'>A blade retracts into [user]'s bracer.</span>", "<span class='notice'>My hidden blade retracts into my bracer.</span>")
 			extended = FALSE
@@ -148,10 +148,9 @@
 		user.put_in_hands(hid, TRUE, FALSE, TRUE)
 		user.visible_message("<span class='info'>A blade ejects out from [user]'s bracer.</span>", "<span class='notice'>My hidden blade ejects out of my bracer.</span>")
 		extended = TRUE
-		ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+		//ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
-
-/obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden
+/obj/item/rogueweapon/huntingknife/idagger/steel/hidden
 	name = "hidden blade"
 	desc = ""
 	embedding = list("embedded_pain_multiplier" = 0, "embed_chance" = 0, "embedded_fall_chance" = 0)

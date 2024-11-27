@@ -118,9 +118,9 @@
 	desc = span_red("I fell. I'm a fool.")
 
 /datum/stressevent/hatezizo
-	timer = 99999 MINUTES
-	stressadd = 666 // :)
-	desc = "<span class='red'>ZIZOZIZOZIZO</span>"
+	timer = 30 MINUTES
+	stressadd = 10 // enough to instill mental breaks with any more stress of any source, and heart attack if too worse.
+	desc = "<span class='red'>A NEW GOD is upon us!</span>"
 
 /datum/stressevent/burntmeal
 	timer = 2 MINUTES

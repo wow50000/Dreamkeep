@@ -489,8 +489,7 @@
 	animname = "cut"
 	blade_class = BCLASS_CHOP
 	hitsound = "genslash"
-	penfactor = 230
-	damfactor = 40
+	penfactor = 80
 	candodge = TRUE
 	canparry = TRUE
 	miss_text = "slashes the air!"

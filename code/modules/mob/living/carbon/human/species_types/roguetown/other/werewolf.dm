@@ -44,8 +44,6 @@
 	offset_features = list(OFFSET_HANDS = list(0,2), OFFSET_HANDS_F = list(0,2))
 	soundpack_m = /datum/voicepack/werewolf
 	soundpack_f = /datum/voicepack/werewolf
-	specstats = list("strength" = 8, "perception" = 7, "intelligence" = -6, "constitution" = 8, "endurance" = 8, "speed" = 3, "fortune" = 0)
-	specstats_f = list("strength" = 8, "perception" = 7, "intelligence" = -6, "constitution" = 8, "endurance" = 8, "speed" = 3, "fortune" = 0)
 	race_bonus = list(STAT_STRENGTH = 8, STAT_PERCEPTION = 7, STAT_INTELLIGENCE = -6, STAT_CONSTITUTION = 8, STAT_ENDURANCE = 8, STAT_SPEED = 3)
 	enflamed_icon = "widefire"
 	organs = list(

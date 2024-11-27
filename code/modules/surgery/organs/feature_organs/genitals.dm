@@ -192,7 +192,6 @@
 	name = "butt"
 	icon = 'modular_stonehedge/licensed-eaglephntm/icons/obj/surgery.dmi'
 	icon_state = "butt"
-	dropshrink = 0.5
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_STOMACH
 	slot = ORGAN_SLOT_BUTT

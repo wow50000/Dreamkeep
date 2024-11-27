@@ -5,11 +5,10 @@
 	ask_verb = "questioningly gestures"
 	exclaim_verb = "angrily gestures"
 	key = "t"
-	flags = LANGUAGE_HIDE_ICON_IF_UNDERSTOOD | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | SIGNLANG | NO_STUTTER
+	flags = LANGUAGE_HIDE_ICON_IF_UNDERSTOOD | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | SIGNLANG | LANGUAGE_HIDE_NOT_UNDERSTOOD | NO_STUTTER
 	space_chance = 66
 	default_priority = 80
 	icon_state = "asse"
-	signlang = TRUE
 	signlang_verb = list(
 		"scrunches their nose",
 		"smiles",

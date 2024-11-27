@@ -168,7 +168,7 @@
 	restricted_jobs = list("Monarch",
 	"Queen",
 	"Merchant",
-	"Prophet")
+	"Archpriest")
 	var/num_bandits = 0
 	if(num_players() >= 10)
 		num_bandits = CLAMP(round(num_players() / 2), 1, 5)
@@ -270,7 +270,7 @@
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_vampires()
-	restricted_jobs = list("Priest","Prophet","Adventurer","Confessor","Watchman","Veteran","Man at Arms","Watchmen Captain")
+	restricted_jobs = list("Priest","Archpriest","Adventurer","Confessor","Watchman","Veteran","Man at Arms","Watchmen Captain")
 /*	var/num_vampires = rand(1,3)
 #ifdef TESTSERVER
 	num_vampires = 100
@@ -297,7 +297,7 @@
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_werewolves()
-	restricted_jobs = list("Priest","Prophet","Adventurer","Confessor","Watchman","Veteran","Man at Arms","Watchmen Captain")
+	restricted_jobs = list("Priest","Archpriest","Adventurer","Confessor","Watchman","Veteran","Man at Arms","Watchmen Captain")
 /*	var/num_werewolves = rand(1,3)
 #ifdef TESTSERVER
 	num_werewolves = 100

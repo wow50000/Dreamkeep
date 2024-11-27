@@ -40,13 +40,15 @@ All original code and assets of this repository are under the [GNU Affero Genera
 
 The following assets are under a custom license as per original author's wishes, assets authored by Dreamkeep indicate collaborative work among it's artists, and may be credited within files.
 
+[ADDITIONAL TERMS](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/ADDITIONAL-TERMS.md)
+
 | Reference                                    | Author        |   License  |
 |----------------------------------------------|---------------|------------|
 | [licensed-dreamkeep](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/licensed-dreamkeep)                   | Dreamkeep    | [License](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/licensed-dreamkeep/LICENSE.md)|
 | [licensed-eaglephntm](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/licensed-eaglephntm)                   | EaglePhntm    | [License](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/licensed-eaglephntm/LICENSE.md)|
 | [licensed-feralope](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/licensed-feralope)                   | Feralope    | [License](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/licensed-feralope/LICENSE.md)|
 | [licensed-feralope (helmsguard)](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_helmsguard/licensed-feralope)                   | Feralope    | [License](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_helmsguard/licensed-feralope/LICENSE.md)|
-| [licensed-death-rattler](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_helmsguard/licensed-death-rattler)                   | Moribund/Luctus-Comptus    | [License](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_helmsguard/licensed-death-rattler/LICENSE.md)|
+| [licensed-death-rattler](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_helmsguard/licensed-death-rattler)                   | Moribund/Luctus-Comptus    | [License](https://github.com/StoneHedgeSS13/StoneHedge/tree/main/modular_stonehedge/licensed-death-rattler/LICENSE.md)|
 
 ## TG
 

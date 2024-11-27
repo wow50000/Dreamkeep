@@ -246,7 +246,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/V = user
 		if(prob(5))
-			V.say(pick("PRAISE ZIZO!", "DEATH TO THE TEN..."))
+			V.say(pick("PRAISE LEVISHTH!", "DEATH TO THE TEN..."))
 		V.add_stress(/datum/stressevent/leechcult)
 
 #undef MAX_LEECH_EVILNESS

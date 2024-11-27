@@ -203,7 +203,7 @@
 			user.say(m)
 
 /obj/item/book/rogue/bibble/attack(mob/living/M, mob/user)
-	if(user.mind && user.mind.assigned_role == "Prophet")
+	if(user.mind && user.mind.assigned_role == "Archpriest")
 		if(!user.can_read(src))
 			to_chat(user, span_warning("I don't understand these scribbly black lines."))
 			return

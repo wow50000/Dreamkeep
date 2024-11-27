@@ -168,11 +168,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(!language)
 		language = get_default_language()
 
-	if(language.signlang)
-		var/mob/M = src
-		var/emote = pick(language.signlang_verb)
-		M.emote(emote)
-
 	//Detection of language needs to be before inherent channels, because
 	//AIs use inherent channels for the holopad. Most inherent channels
 	//ignore the language argument however.
@@ -180,7 +175,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(saymode && !saymode.handle_message(src, message, language))
 		return
 
-	if(!can_speak_vocal(message))
+	var/datum/language/language_datum = GLOB.language_datum_instances[language]
+	if(language_datum.flags & SIGNLANG)
+		emote(pick(language_datum.signlang_verb), intentional = TRUE)
+	else if(!can_speak_vocal(message)) // don't block sign languages
 //		visible_message("<b>[src]</b> makes a muffled noise.")
 		to_chat(src, span_warning("I can't talk."))
 		return
@@ -278,11 +276,16 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/deaf_type
 	if(speaker != src)
 		if(!radio_freq) //These checks have to be seperate, else people talking on the radio will make "You can't hear yourself!" appear when hearing people over the radio while deaf.
-			deaf_message = "<span class='name'>[speaker]</span> [speaker.verb_say] something but you cannot hear [speaker.p_them()]."
+			deaf_message = "<span class='name'>[speaker]</span> [speaker.verb_say] something but I cannot hear [speaker.p_them()]."
 			deaf_type = 1
 	else
-		deaf_message = span_notice("I can't hear yourself!")
-		deaf_type = 2 // Since you should be able to hear myself without looking
+		deaf_message = span_notice("I can't hear myself!")
+		deaf_type = 2 // Since you should be able to hear yourself without looking
+
+	if(message_language)
+		var/datum/language/heard_lang = GLOB.language_datum_instances[message_language]
+		if(heard_lang?.flags & LANGUAGE_HIDE_NOT_UNDERSTOOD && !has_language(message_language) && !check_language_hear(message_language))
+			return // you don't notice a thing...
 
 	// Create map text prior to modifying message for goonchat
 	if(can_see_runechat(speaker) && can_hear())
@@ -294,41 +297,41 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 /mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode, original_message)
 	var/static/list/eavesdropping_modes = list(MODE_WHISPER = TRUE, MODE_WHISPER_CRIT = TRUE)
+	var/is_eavesdroppable = eavesdropping_modes[message_mode]
 	var/eavesdrop_range = 0
 	var/Zs_too = FALSE
-	if(eavesdropping_modes[message_mode])
+	if(is_eavesdroppable)
 		eavesdrop_range = EAVESDROP_EXTRA_RANGE
-	if(message_mode != MODE_WHISPER)
-		if(say_test(message) == "2")	//CIT CHANGE - ditto
+	if(say_test(message) == "2") // shouting
+		if(!is_eavesdroppable)
 			message_range += 10
 			Zs_too = TRUE
+		else // keep your damn voice down!
+			message_range += 1
+			eavesdrop_range += 1
 	var/list/listening = get_hearers_in_view(message_range+eavesdrop_range, source)
 	var/list/the_dead = list()
-//	var/list/yellareas	//CIT CHANGE - adds the ability for yelling to penetrate walls and echo throughout areas
-	for(var/_M in GLOB.player_list)
-		var/mob/M = _M
-//		if(M.stat != DEAD) //not dead, not important
-//			if(yellareas)	//CIT CHANGE - see above. makes yelling penetrate walls
-//				var/area/A = get_area(M)	//CIT CHANGE - ditto
-//				if(istype(A) && A.ambientsounds != SPACE && (A in yellareas))	//CIT CHANGE - ditto
-//					listening |= M	//CIT CHANGE - ditto
-//			continue
-		if(!client) //client is so that ghosts don't have to listen to mice
-			continue
-		if(!M)
-			continue
-		if(!M.client)
-			continue
-		if(get_dist(M, src) > message_range) //they're out of range of normal hearing
-			if(M.client.prefs)
-				if(eavesdropping_modes[message_mode] && !(M.client.prefs.chat_toggles & CHAT_GHOSTWHISPER)) //they're whispering and we have hearing whispers at any range off
-					continue
-				if(!(M.client.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
-					continue
-		if(!is_in_zweb(src.z, M.z))
-			continue
-		listening |= M
-		the_dead[M] = TRUE
+	// fun fact: roguetown broke this which broke eavesdropping on whispers lmao
+	if(client) //client is so that ghosts don't have to listen to mice
+		// check this beforehand to make it so simplemobs don't lag us at highpop
+		for(var/_M in GLOB.player_list)
+			var/mob/M = _M
+			if(M.stat != DEAD) //not dead, not important
+				continue
+			if(!M?.client)
+				continue
+			if(!M.client)
+				continue
+			if(get_dist(M, src) > message_range) //they're out of range of normal hearing
+				if(M.client.prefs)
+					if(is_eavesdroppable && !(M.client.prefs.chat_toggles & CHAT_GHOSTWHISPER)) //they're whispering and we have hearing whispers at any range off
+						continue
+					if(!(M.client.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
+						continue
+			if(!is_in_zweb(src.z, M.z))
+				continue
+			listening |= M
+			the_dead[M] = TRUE
 
 	log_seen(src, null, listening, original_message, SEEN_LOG_SAY)
 
@@ -336,7 +339,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/eavesrendered
 	if(eavesdrop_range)
 		eavesdropping = stars(message)
-		eavesrendered = compose_message(src, message_language, eavesdropping, , spans, message_mode)
+		eavesrendered = compose_message(src, message_language, eavesdropping, null, spans, message_mode)
 
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode)
 	var/turf/self_turf = get_turf(src)
@@ -348,9 +351,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			if(movable_turf.z != self_z)
 				continue
 		if(eavesdrop_range && get_dist(source, AM) > message_range && !(the_dead[AM]))
-			AM.Hear(eavesrendered, src, message_language, eavesdropping, , spans, message_mode, original_message)
+			AM.Hear(eavesrendered, src, message_language, eavesdropping, null, spans, message_mode, original_message)
 		else
-			AM.Hear(rendered, src, message_language, message, , spans, message_mode, original_message)
+			AM.Hear(rendered, src, message_language, message, null, spans, message_mode, original_message)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, message)
 
 	//speech bubble

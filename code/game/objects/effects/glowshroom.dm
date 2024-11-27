@@ -14,6 +14,13 @@
 	blade_dulling = DULLING_CUT
 	resistance_flags = FLAMMABLE
 
+/obj/structure/glowshroom/Initialize(mapload)
+	. = ..()
+	//50% chance on creation to be glowshroom instead of kneestinger
+	if(prob(50) && mapload)
+		new /obj/structure/safeglowshroom(src.loc)
+		qdel(src)
+
 /obj/structure/glowshroom/fire_act(added, maxstacks)
 	visible_message(span_warning("[src] catches fire!"))
 	var/turf/T = get_turf(src)
@@ -133,10 +140,15 @@
 	qdel(src)
 
 /obj/structure/safeglowshroom/Destroy()
-	var/datum/reagents/R = new/datum/reagents(5)
+	var/datum/reagents/R = new/datum/reagents(30)
 	R.my_atom = src
-	R.add_reagent(/datum/reagent/berrypoison, 5)
+	R.add_reagent(/datum/reagent/berrypoison, 30)
 	var/datum/effect_system/smoke_spread/chem/smoke = new
-	smoke.set_up(R, 4, get_turf(src), FALSE)
+	smoke.set_up(R, 5, get_turf(src), FALSE)
 	smoke.start()
+	explosion(loc, 1, 1, 1, 0, 0) //and gas release ig
 	. = ..()
+
+//used by stupid spell
+/obj/structure/glowshroom/proc/destroy()
+    qdel(src)

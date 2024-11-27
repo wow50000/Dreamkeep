@@ -183,13 +183,10 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 		if(77 to 99)
 			log_game("Major Antagonist: Extended") //gotta put something here.
 */
-		if(0 to 25)
-			pick_cultist()
-			log_game("Major Antagonist: Cultists")
-		if(26 to 51)
+		if(0 to 50)
 			pick_werewolves()
 			log_game("Major Antagonist: Werewolves and Vampires")
-		if(52 to 99)
+		if(51 to 99)
 			log_game("Major Antagonist: Extended") //gotta put something here.
 	pick_bandits()
 	log_game("Minor Antagonist: Bandit")
@@ -214,7 +211,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	restricted_jobs = list("Monarch",
 	"Consort",
 	"Merchant Prince",
-	"Prophet",
+	"Archpriest",
 	"Knight")
 	var/num_bandits = 0
 	if(num_players() >= 10)
@@ -414,7 +411,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	restricted_jobs = list(
 	"Monarch",
 	"Consort",
-	"Prophet",
+	"Archpriest",
 	"Wytcher",
 	"Hedgeknight",
 	"Hedgemaster",
@@ -450,7 +447,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Confessor",
 	"Watchman",
 	"Man at Arms",
-	"Prophet",
+	"Archpriest",
 	"Watchmen Captain",
 	"Magician",
 	"Paladin",
@@ -499,7 +496,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Confessor",
 	"Watchman",
 	"Man at Arms",
-	"Prophet",
+	"Archpriest",
 	"Watchmen Captain",
 	"Magician",
 	"Paladin",

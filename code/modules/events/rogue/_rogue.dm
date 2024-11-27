@@ -46,7 +46,7 @@ GLOBAL_LIST_INIT(badomens, list())
 		if(OMEN_SKELETONSIEGE)
 			used = "Unwelcome visitors!"
 		if("ascend")
-			used = "Levishth will rise once again."
+			used = "A new god is born!"
 	if(eventreason && used)
 		priority_announce(used, "Bad Omen", 'sound/misc/evilevent.ogg')
 

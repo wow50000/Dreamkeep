@@ -346,14 +346,14 @@
 /datum/quirk/swift
 	name = "Speedster"
 	desc = "I am very athletic and fast. I can also dodge anything as long as I am not weighted down by medium or heavier armor."
-	value = 5
+	value = 4
 
 /datum/quirk/swift/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, QUIRK_TRAIT)
 	ADD_TRAIT(H, TRAIT_GOODRUNNER, QUIRK_TRAIT)
-	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 5, TRUE)
-	H.change_stat("speed", 3)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
+	H.change_stat("speed", 1)
 
 /datum/quirk/gourmand
 	name = "Gourmand"
@@ -503,7 +503,6 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	var/turf/location = get_spawn_turf_for_job("Pilgrim")
 	H.forceMove(location)
-	grant_lit_torch(H)
 
 /datum/quirk/atrophy
 	name = "Atrophy"

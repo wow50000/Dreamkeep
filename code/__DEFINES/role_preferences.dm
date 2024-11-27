@@ -72,12 +72,12 @@ GLOBAL_LIST_INIT(special_roles, list(
 ))
 
 GLOBAL_LIST_INIT(special_roles_rogue, list(
-	ROLE_MANIAC = /datum/antagonist/maniac,
-	ROLE_PREBEL = /datum/antagonist/prebel,
+//	ROLE_MANIAC = /datum/antagonist/maniac,
+//	ROLE_PREBEL = /datum/antagonist/prebel,
 	ROLE_BANDIT = /datum/antagonist/bandit,
-	ROLE_ASPIRANT = /datum/antagonist/aspirant,
+//	ROLE_ASPIRANT = /datum/antagonist/aspirant,
 	ROLE_WEREWOLF = /datum/antagonist/werewolf,
-	ROLE_ZIZOIDCULTIST = /datum/antagonist/zizocultist,
+//	ROLE_ZIZOIDCULTIST = /datum/antagonist/zizocultist,
 	ROLE_NBEAST = /datum/antagonist/vampirelord,
 	ROLE_LICH = /datum/antagonist/lich
 ))

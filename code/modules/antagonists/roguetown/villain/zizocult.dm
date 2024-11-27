@@ -9,7 +9,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	antag_hud_name = "cultist"
 	confess_lines = list(
 		"DEATH TO THE SUCCESSORS!", 
-		"PRAISE ZIZO!",
+		"PRAISE LEVISHTH!",
 		"THE GODHEAD FAVORS ME!",
 	)
 	var/islesser = TRUE
@@ -176,7 +176,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	set category = "LEVISHTH"
 
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/speak = input("What do you speak of?", "HEARTHSTONE") as text|null
+	var/speak = input("What do you speak of?", "DREAMKEEP") as text|null
 	if(!speak)
 		return
 	whisper("O schlet'a ty'schkotot ty'skvoro...")
@@ -252,7 +252,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			if(path.circle == sigil_type)
 				rituals |= path.name
 
-		var/ritualnameinput = input(user, "Rituals", "HEARTHSTONE") as null|anything in rituals
+		var/ritualnameinput = input(user, "Rituals", "DREAMKEEP") as null|anything in rituals
 		testing("ritualnameinput [ritualnameinput]")
 		var/datum/ritual/pickritual
 		
@@ -406,7 +406,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		to_chat(src, span_danger("My hands aren't bloody enough."))
 		return
 
-	var/input = input("Sigil Type", "HEARTHSTONE") as null|anything in runes
+	var/input = input("Sigil Type", "DREAMKEEP") as null|anything in runes
 	if(!input)
 		return
 	
@@ -425,10 +425,10 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	var/mob/living/carbon/human/choice = input(src, "Whom do you no longer have use for?", "ROGUETOWN") as null|anything in possible
 	if(choice)
-		var/alert = alert(src, "Are you sure?", "HEARTHSTONE", "Yes", "Cancel")
+		var/alert = alert(src, "Are you sure?", "DREAMKEEP", "Yes", "Cancel")
 		if(alert == "Yes")
 			visible_message(span_danger("[src] reaches out, ripping up [choice]'s soul!"))
-			to_chat(choice, span_userdanger("I HAVE FAILED MY LEADER! I HAVE FAILED ZIZO! NOTHING ELSE BUT DEATH REMAINS FOR ME NOW!"))
+			to_chat(choice, span_userdanger("I HAVE FAILED MY LEADER! I HAVE FAILED LEVISHTH! NOTHING ELSE BUT DEATH REMAINS FOR ME NOW!"))
 			sleep(20)
 			choice.gib() // Cooler than dusting.
 			C.cultists -= choice.mind
@@ -477,7 +477,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 				to_chat(user.mind, span_danger("\"The veil is too strong to support more than ten cultists.\""))
 				return
 			var/datum/antagonist/zizocultist/PR = user.mind.has_antag_datum(/datum/antagonist/zizocultist)
-			var/alert = alert(H, "YOU WILL BE SHOWN THE TRUTH. DO YOU RESIST? (Resisting: 1 TRI)", "HEARTHSTONE", "Yield", "Resist")
+			var/alert = alert(H, "YOU WILL BE SHOWN THE TRUTH. DO YOU RESIST? (Resisting: 1 TRI)", "DREAMKEEP", "Yield", "Resist")
 			H.anchored = TRUE
 			if(alert == "Yield")
 				to_chat(H.mind, span_notice("I see the truth now! It all makes so much sense! They aren't HERETICS! They want the BEST FOR US!"))
@@ -648,7 +648,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 /obj/item/pactofunity/attack_self(mob/user)
 	. = ..()
-	var/alert = alert(user, "Rip up the pact of unity?", "HEARTHSTONE", "RIP", "Cancel")
+	var/alert = alert(user, "Rip up the pact of unity?", "DREAMKEEP", "RIP", "Cancel")
 	if(alert == "RIP")
 		user.playsound_local(user, 'sound/foley/cloth_rip.ogg', 50)
 		to_chat(signed.mind, span_userdanger("I FAILED! MY LIFE DWINDLES!"))
@@ -669,7 +669,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		return
 	if(!H.stat)
 		to_chat(user, span_info("I courteously offer \the [src] to [H]."))
-		if(alert(H, "Sign the pact with your blood?", "HEARTHSTONE", "Yes", "No") != "Yes")
+		if(alert(H, "Sign the pact with your blood?", "DREAMKEEP", "Yes", "No") != "Yes")
 			return
 		if(H.stat)
 			return
@@ -763,7 +763,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	for(var/obj/item/paper/P in C.contents)
 		var/info = ""
 		info = sanitize(P.info)
-		var/input = stripped_input(user, "To whom do we send this message?", "HEARTHSTONE")
+		var/input = stripped_input(user, "To whom do we send this message?", "DREAMKEEP")
 		if(!input)
 			return
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
@@ -908,8 +908,10 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	circle = "Fleshcrafting"
 	center_requirement = /mob/living/carbon/human // cult leader
 
-	n_req = /mob/living/carbon/human // the ruler
-	s_req = /mob/living/carbon/human // virgin
+	n_req = /mob/living/carbon/human // virgin
+	s_req = /mob/living/carbon/human // anyone
+	e_req = /mob/living/carbon/human // anyone
+	w_req = /mob/living/carbon/human // anyone
 	
 	function = /proc/ascend
 
@@ -919,25 +921,43 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	for(var/mob/living/carbon/human/H in C.contents)
 		if(!iszizocultist(H))
 			return
-		for(var/mob/living/carbon/human/RULER in get_step(src, NORTH))
-			if(RULER != SSticker.rulermob && RULER.stat != DEAD)
-				break
-			RULER.gib()
-		for(var/mob/living/carbon/human/VIRGIN in get_step(src, SOUTH))
+		for(var/mob/living/carbon/human/VIRGIN in get_step(src, NORTH))
 			if(!VIRGIN.virginity && VIRGIN.stat != DEAD)
 				break
 			VIRGIN.gib()
+		for(var/mob/living/carbon/human/SOMEDUDE in get_step(src, EAST))
+			if(SOMEDUDE.stat != DEAD)
+				break
+			SOMEDUDE.gib()
+		for(var/mob/living/carbon/human/SOMEDUDE in get_step(src, SOUTH))
+			if(SOMEDUDE.stat != DEAD)
+				break
+			SOMEDUDE.gib()
+		for(var/mob/living/carbon/human/SOMEDUDE in get_step(src, WEST))
+			if(SOMEDUDE.stat != DEAD)
+				break
+			SOMEDUDE.gib()
 		CM.cultascended = TRUE
 		addomen("ascend")
-		to_chat(user.mind, span_danger("I HAVE DONE IT! I HAVE REACHED A HIGHER FORM! SOON THERE WILL BE NO GODS. ONLY MASTERS!"))
+		to_chat(user.mind, span_danger("I HAVE DONE IT! Now I will die... BUT THE REFLECTION OF -ME- AS A NEW GOD WILL RISE!!!"))
 		var/mob/living/trl = new /mob/living/simple_animal/hostile/retaliate/rogue/troll/blood/ascended(C)
+		trl.name = "[user.real_name] the NEW GOD of ULTRAVIOLENCE"
 		trl.ckey = H.ckey
 		H.gib()
-		to_chat(world, "\n<font color='purple'>15 minutes remain.</font>")
 		for(var/mob/living/carbon/V in GLOB.human_list)
-			if(V.mind in CM.cultists)
-				V.add_stress(/datum/stressevent/lovezizo)
-			else
+			if(!V.mind in CM.cultists)
+				to_chat(V, span_danger("I CAN --FEEL-- SOMETHING -HORRIBLE- HAS AWAKENED...!!"))
+				V.do_freakout_scream()
 				V.add_stress(/datum/stressevent/hatezizo)
-		CM.roundvoteend = TRUE
+		GLOB.todoverride = "night"
+		settod()
+		spawn(6000)
+			GLOB.todoverride = null
+		priority_announce("The Sun is torn from the sky!", "Terrible Omen", 'sound/misc/astratascream.ogg')
+		addomen(OMEN_SUNSTEAL)
+		for(var/mob/living/carbon/human/astrater in GLOB.human_list)
+			if(!istype(astrater.patron, /datum/patron/divine/astrata) || !length(astrater.mind?.antag_datums))
+				continue
+			to_chat(astrater, span_userdanger("You feel the pain of [astrater.patron.name]!"))
+			astrater.emote_scream()
 		break
