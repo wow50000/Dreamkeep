@@ -413,8 +413,8 @@
 /obj/effect/mob_spawner/temporary/lich/boss
 	max_spawned_mobs = 1
 	mobs_to_spawn = 1
-	spawn_interval = 600
-	spawn_range = 1
+	spawn_interval = 3000
+	spawn_range = 0
 	player_range = 1
 	temporary = TRUE
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/boss/lich)

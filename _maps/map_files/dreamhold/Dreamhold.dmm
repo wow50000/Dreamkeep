@@ -3783,9 +3783,9 @@
 /area/rogue/indoors/shelter/town)
 "cVE" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/fluff/sellsign{
-	desc = "Danger - Large numbers of skeletons have been observed moving in and out of this recently unearthed ruin. Do not enter alone";
-	name = "Danger Sign"
+/obj/structure/fluff/customsign{
+	name = "Warning Sign";
+	wrotesign = "Large groups of skeletons have been observed moving in and out of these recently uncovered ruins. Proceed with extreme caution, and in a group"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/under/cavewet/bogcaves)
@@ -10845,10 +10845,6 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Deepwoods"
 	})
-"ikG" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow/lich,
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/under/cavewet)
 "ikT" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -25055,7 +25051,7 @@
 	})
 "teB" = (
 /obj/structure/chair/wood/rogue/throne,
-/mob/living/simple_animal/hostile/retaliate/rogue/boss/lich,
+/obj/effect/mob_spawner/temporary/lich/boss,
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/under/cavewet)
 "teC" = (
@@ -25760,10 +25756,6 @@
 /area/rogue/indoors/town/bath{
 	first_time_text = "The Dreamers Demesne.."
 	})
-"tEy" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard/lich,
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/under/cavewet)
 "tEM" = (
 /obj/machinery/light/rogue/lanternpost{
 	dir = 1
@@ -45788,13 +45780,13 @@ rOl
 viu
 cVE
 kwk
-tEy
+vCu
 uEh
 vCu
 vCu
 vCu
 vCu
-ikG
+vCu
 uEh
 vCu
 vCu
@@ -46192,13 +46184,13 @@ rOl
 eHu
 rOl
 kwk
-tEy
+vCu
 uEh
 vCu
 vCu
 vCu
 vCu
-ikG
+vCu
 uEh
 vCu
 vCu

@@ -1,4 +1,11 @@
-//modified paper wizard and megafauna abilities for a Lich themed boss. Can summon skeletons, use a variety of spells. Should be impossible to solo.
+/*
+Lich boss. Has two summoning spells, one spawning simple mobs and the other fully armored carbon mobs. Uses random magic projectiles with
+each attack, like the staff of chaos. Will use blink on cooldown followed by a magic shotgun attack using code from the Colossus megafauna.
+This also uses random magic projectiles. Below 33% health it can use a much stronger shotgun attack that can't be blocked with shields.
+On death drops a key to unlock the loot chests in the room.
+
+Will require a group to kill, recommend 5+ people.
+*/
 /mob/living/simple_animal/hostile/retaliate/rogue/boss/lich
 	name = "Lich"
 	desc = ""
@@ -9,7 +16,7 @@
 	icon = 'icons/mob/evilpope.dmi'
 	icon_state = "EvilPope"
 	wander = 0
-	vision_range = 4 
+	vision_range = 6 
 	aggro_vision_range = 18
 	ranged = 1
 	rapid = 3
@@ -46,7 +53,7 @@
 	var/obj/effect/proc_holder/spell/targeted/turf_teleport/blink/blink = null
 	var/next_cast = 0
 	var/next_blink = 0
-	var/minions_to_spawn = 8
+	var/minions_to_spawn = 10
 	var/next_summon = 0
 	var/next_blaststrong = 0
 	var/mob_type
@@ -113,7 +120,7 @@
 			next_cast = world.time + 20
 			next_blink = world.time + 120
 			return .
-	if(target && next_cast < world.time && health < maxHealth * 0.25 && next_blaststrong < world.time)
+	if(target && next_cast < world.time && health < maxHealth * 0.33 && next_blaststrong < world.time)
 		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, say), "I am immortal, you are NOTHING!", null, list("colossus", "yell"))
 		playsound(get_turf(src), 'sound/magic/antimagic.ogg', 70, TRUE)
 		blaststrong()
@@ -316,7 +323,6 @@
 	gloves = /obj/item/clothing/gloves/roguetown/plate/blk/death
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/blkknight/death
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/blkknight/death
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	pants = /obj/item/clothing/under/roguetown/platelegs/blk/death
 	neck = /obj/item/clothing/neck/roguetown/bervor
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/knight/black
