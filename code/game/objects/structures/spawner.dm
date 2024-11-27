@@ -396,3 +396,16 @@
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 10,
 	/mob/living/simple_animal/hostile/retaliate/rogue/spider = 5,
 	/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 15)
+
+/obj/effect/mob_spawner/skeleton/lich
+	max_spawned_mobs = 10
+	mobs_to_spawn = 10
+	spawn_interval = 3000
+	spawn_range = 7
+	player_range = 20
+	ambush_mobs = list(
+		/mob/living/simple_animal/hostile/rogue/skeleton/guard/shield/lich = 20,
+		/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow/lich = 20,
+		/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard/lich = 20,
+		/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear/lich = 20,
+		/mob/living/carbon/human/species/skeleton/npc/dungeon/lich = 10)

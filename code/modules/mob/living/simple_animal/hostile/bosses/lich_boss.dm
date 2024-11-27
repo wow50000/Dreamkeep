@@ -46,7 +46,7 @@
 	var/obj/effect/proc_holder/spell/targeted/turf_teleport/blink/blink = null
 	var/next_cast = 0
 	var/next_blink = 0
-	var/minions_to_spawn = 6
+	var/minions_to_spawn = 8
 	var/next_summon = 0
 	var/next_blaststrong = 0
 	var/mob_type
@@ -114,7 +114,7 @@
 			next_blink = world.time + 120
 			return .
 	if(target && next_cast < world.time && health < maxHealth * 0.25 && next_blaststrong < world.time)
-		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, say), "I am immortal!", null, list("colossus", "yell"))
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, say), "I am immortal, you are NOTHING!", null, list("colossus", "yell"))
 		playsound(get_turf(src), 'sound/magic/antimagic.ogg', 70, TRUE)
 		blaststrong()
 		next_cast = world.time + 100
@@ -192,7 +192,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/boss/lich/proc/get_random_valid_turf()
 	var/list/valid_turfs = list()
-	for (var/turf/T in range(5, src))
+	for (var/turf/T in range(6, src))
 		if (is_valid_spawn_turf(T))
 			valid_turfs += T
 	if (valid_turfs.len == 0)
@@ -207,7 +207,7 @@
 	return TRUE
 
 /obj/effect/temp_visual/lich_dying
-	name = "unholy energy"
+	name = "Lich"
 	desc = ""
 	layer = ABOVE_OPEN_TURF_LAYER
 	icon = 'icons/mob/evilpope.dmi'
@@ -219,6 +219,7 @@
 /obj/effect/temp_visual/lich_dying/Initialize()
 	. = ..()
 	visible_message(span_boldannounce("The Lich collapses into a pile of dust and bone, unholy energy dispersing into the air!"))
+	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, say), "Impossible!", null, list("colossus", "yell"))
 
 /obj/effect/temp_visual/lich_dying/Destroy()
 	for(var/mob/M in range(7,src))
@@ -226,7 +227,6 @@
 	var/turf/T = get_turf(src)
 	playsound(T,'sound/vo/mobs/gravelord/glord_die.ogg', 80, TRUE, TRUE)
 	new /obj/item/roguekey/mage/lich(T)
-	new /obj/item/clothing/head/collectable/paper(T)
 	return ..()
 
 
@@ -287,22 +287,25 @@
 	item_d_type = "stab"
 
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/shield/lich
+	wander = FALSE
 	STAPER = 20
 	del_on_deaggro = 30
 	faction = list("lich")
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow/lich
+	wander = FALSE
 	STAPER = 20
 	del_on_deaggro = 30
 	faction = list("lich")
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard/lich
+	wander = FALSE
 	STAPER = 20
 	del_on_deaggro = 30
 	faction = list("lich")
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear/lich
+	wander = FALSE
 	STAPER = 20
 	del_on_deaggro = 30
 	faction = list("lich")
-
 
 /mob/living/carbon/human/species/skeleton/npc/dungeon/lich
 	skel_outfit = /datum/outfit/job/roguetown/npc/skeleton/dungeon/lich
@@ -325,6 +328,7 @@
 	H.STAEND = 20
 	H.STAINT = 1
 	H.faction = list("lich")
+	H.wander = FALSE
 
 	if(H.mind)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 1, TRUE)
@@ -366,3 +370,9 @@
 	desc = "A strange key the Lich dropped."
 	icon_state = "eyekey"
 	lockid = "lich"
+
+/obj/structure/closet/crate/chest/reward/lich
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	locked = TRUE
+	lockid = "lich"
+	masterkey = FALSE
