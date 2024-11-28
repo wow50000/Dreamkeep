@@ -8,7 +8,7 @@
 	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/pirate
 	category_tags = list(CTAG_ADVENTURER)
-	maximum_possible_slots = 5
+	maximum_possible_slots = 10
 	cmode_music = 'sound/music/combat_pirate.ogg'
 
 /datum/outfit/job/roguetown/adventurer/pirate

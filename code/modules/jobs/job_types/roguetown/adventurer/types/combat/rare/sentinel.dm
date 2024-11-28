@@ -9,8 +9,8 @@
 		/datum/species/elf/wood,
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/sentinal
-	maximum_possible_slots = 5
-	pickprob = 50
+	maximum_possible_slots = 10
+	pickprob = 100
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_DODGEEXPERT, TRAIT_BOG_TREKKING, TRAIT_PERFECT_TRACKER)
 	category_tags = list(CTAG_ADVENTURER)
 

@@ -1,11 +1,11 @@
 /datum/advclass/cavalry
-	name = "Cavalry" // Medium armor fighter, melee-focused, expert at 1 weapon + some wrestling proefficiency, mediocre at rest. 
+	name = "Cavalry" // Medium armor fighter, melee-focused, expert at 1 weapon + some wrestling proefficiency, mediocre at rest.
 	tutorial = "You wandered off from your home seeking adventure, roaming to greener pastures for honor and chilvalry. You became an instrument of war, sitting atop a saiga, weapon and shield in hand! What will await here?"
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/roguetown/adventurer/cavalry
-	maximum_possible_slots = 4 // Seems like an OK number??? May remove cap otherwise but lower pick prob too
+	maximum_possible_slots = 5 // Seems like an OK number??? May remove cap otherwise but lower pick prob too
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_STEELHEARTED)
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_cavalry.ogg' // Spanish guitars fuck, don't @ me
@@ -19,7 +19,7 @@
 	var/classchoice = input("Choose your path", "Available archetypes","Who are you, really?") as anything in classes
 
 	switch(classchoice)
-	
+
 		if("Cataphract")
 			H.set_blindness(0)
 			to_chat(H, span_warning("Some call you a madman. Others, an idiot. Yet you ride on, with your spear in one hand, and your shield in the other. When life itself seems lunatic, who knows where madness lies?"))

@@ -5,7 +5,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/roguetown/adventurer/knighterrant
-	maximum_possible_slots = 3		//For testing!
+	maximum_possible_slots = 10		//For testing!
 	category_tags = list(CTAG_ADVENTURER)
 
 
@@ -24,7 +24,7 @@
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	backl = /obj/item/rogueweapon/shield/tower
 	backr = /obj/item/rogueweapon/sword/iron/short
-		
+
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 1, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 2, TRUE)

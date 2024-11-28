@@ -6,7 +6,7 @@
 		/datum/species/elf/dark,
 		/datum/species/elf/wood,
 	)
-	maximum_possible_slots = 2
+	maximum_possible_slots = 5
 	traits_applied = list(TRAIT_MEDIUMARMOR)
 	category_tags = list(CTAG_ADVENTURER)
 

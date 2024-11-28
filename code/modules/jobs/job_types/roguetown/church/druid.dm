@@ -28,22 +28,22 @@
 	..()
 	shoes = /obj/item/clothing/shoes/roguetown/boots/forestershoes
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
-	belt = /obj/item/storage/belt/rogue/leather/rope
+	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/sickle
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/woodstaff/wise
 	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
+	var/wrist = /obj/item/clothing/wrists/roguetown/bracers/leather
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 	gloves = /obj/item/clothing/gloves/roguetown/forestergauntlets
-	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
-	cloak = /obj/item/clothing/cloak/raincloak/green
+	cloak = /obj/item/clothing/cloak/templar/dendor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	backpack_contents = list(
-		/obj/item/seeds/wheat = 1,
-		/obj/item/seeds/apple = 1,
-		/obj/item/seeds/shroom = 1,
-		/obj/item/seeds/sweetleaf = 1,
+		/obj/item/rope = 1,
+		/obj/item/clothing/neck/roguetown/psicross/silver = 1,
+		/obj/item/rogueweapon/whip = 1,
+		/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot = 1,
 	)
 	if(H.mind)
@@ -54,6 +54,9 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)// added so they can cook meals in the wild slightly more from the start.
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 2, TRUE)// added so they can make leather goods.
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)// added so they can make light cloth goods etc, similiar to why rangers have it.
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)

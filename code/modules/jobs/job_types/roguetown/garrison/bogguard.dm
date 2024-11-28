@@ -36,7 +36,7 @@
 	. = ..()
 	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/foresterarmor
-	cloak = /obj/item/clothing/cloak/raincloak/green
+	cloak = /obj/item/clothing/cloak/templar/dendor
 	neck = /obj/item/clothing/neck/roguetown/bervor
 	gloves = /obj/item/clothing/gloves/roguetown/forestergauntlets
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
@@ -50,7 +50,7 @@
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	id = /obj/item/scomstone
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/signal_horn = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/signal_horn = 1, /obj/item/rope =1)
 	if(H.mind)
 		assign_skills(H)
 	H.verbs |= /mob/proc/haltyell
@@ -84,9 +84,11 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 3, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)//Forester Armor remaking
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 4, TRUE) //Hearthstone change.
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 2, TRUE)// added so they can make/renew armor basics of leather
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 2, TRUE)//added so they can make/renew armor and gear basics of gambeson or bandages
 	H.change_stat("perception", 4)
 	H.change_stat("constitution", 4)
 	H.change_stat("endurance", 4)
