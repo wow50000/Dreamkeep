@@ -153,10 +153,10 @@
 	if(summoned_spirit)
 		var/mob/living/carbon/spirit/SS = summoned_spirit
 		to_chat(user, "You dismiss the spirit to the underworld.")
-		to_chat(SS, "[user.real_name] returns you to the underworld. If you are wrongfully denied your reward by your summoner, please open a ticket.")
+		to_chat(SS, "[user.real_name] has returned you to the underworld. If you are wrongfully denied your reward by your summoner, please open a ticket.")
 		for(var/obj/effect/landmark/underworld/A in GLOB.landmarks_list)
 			for(var/obj/item/I in SS.held_items)
-				if(!istype(I, /obj/item/roguecoin/silver) || !istype(I, /obj/item/flashlight/lantern/shrunken))
+				if(!istype(I, /obj/item/roguecoin/silver) && !istype(I, /obj/item/flashlight/lantern/shrunken))
 					. |= SS.dropItemToGround(I)
 				if(istype(I, /obj/item/roguecoin/silver))
 					to_chat(SS, "As you return across the veil to the underworld, the silver coin in your hand is transformed.")
@@ -203,15 +203,12 @@
 				capturedsoul.loc = A.loc
 				capturedsoul.invisibility = initial(capturedsoul.invisibility)
 				for(var/obj/item/I in capturedsoul.held_items)
+					if(!istype(I, /obj/item/roguecoin/silver) && !istype(I, /obj/item/flashlight/lantern/shrunken))
+						. |= capturedsoul.dropItemToGround(I)
 					if(istype(I, /obj/item/roguecoin/silver))
-						qdel(I)
 						to_chat(capturedsoul, "As you return across the veil to the underworld, the silver coin in your hand is transformed.")
 						var/obj/item/underworld/coin/C = new
-						capturedsoul.put_in_hands(C)
-					if(istype(I, /obj/item/flashlight/lantern/shrunken))
-						return
-					else
-						. |= capturedsoul.dropItemToGround(I)
+						capturedsoul.put_in_hand(C)
 			summoned_spirit = null
 		to_chat(user, "<font color='blue'>I feel a cold chill run down my spine; the spirit has arrived.</font>")
 		capturedsoul.Immobilize(10 SECONDS)
