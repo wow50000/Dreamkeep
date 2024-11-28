@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(treasury)
 	wait = 1
 	priority = FIRE_PRIORITY_WATER_LEVEL
 	var/tax_value = 0.11
-	var/queens_tax = 0.15
+	var/queens_tax = 0.2
 	var/treasury_value = 0
 	var/list/bank_accounts = list()
 	var/list/stockpile_datums = list()
