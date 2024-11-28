@@ -65,7 +65,7 @@
 /obj/effect/proc_holder/spell/targeted/seance/proc/add_buff_timer(mob/living/user)
 	ADD_TRAIT(user, TRAIT_SEESPIRITS, MAGIC_TRAIT)
 	ADD_TRAIT(user, TRAIT_SIXTHSENSE, MAGIC_TRAIT)
-	user.remove_language(/datum/language_holder/abyssal)
+	user.grant_language(/datum/language_holder/abyssal)
 	user.update_sight()
 	addtimer(CALLBACK(src, PROC_REF(remove_buff), user), wait = 5 MINUTES)
 	to_chat(user, span_notice("My eyes and ears become aware of the spectral."))
