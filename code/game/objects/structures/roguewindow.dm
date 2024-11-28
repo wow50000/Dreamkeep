@@ -59,13 +59,16 @@
 			return
 
 /obj/structure/roguewindow/proc/wallpress(mob/living/user)
-	if(user.wallpressed)
+	if(user.wallpressed) {
+		// Release wallpressed state if already pressed
+		release_wallpress(user)
 		return
+	}
 	if(user.pixelshifted)
 		return
 	if(!(user.mobility_flags & MOBILITY_STAND))
 		return
-	var/dir2wall = get_dir(user,src)
+	var/dir2wall = get_dir(user, src)
 	if(!(dir2wall in GLOB.cardinals))
 		return
 	user.wallpressed = dir2wall
@@ -84,6 +87,11 @@
 		if(WEST)
 			user.setDir(EAST)
 			user.set_mob_offsets("wall_press", _x = -12, _y = 0)
+
+/obj/structure/roguewindow/proc/release_wallpress(mob/living/user)
+	user.wallpressed = null
+	user.update_wallpress_slowdown()
+	user.set_mob_offsets("reset_wall_press", _x = 0, _y = 0)
 
 /obj/structure/roguewindow/stained
 	icon_state = null
