@@ -174,33 +174,52 @@
 	// Randomly select one of the suitable locations
 	return safepick(suitable_locations)
 
-	return null
+// working on fixing this, it's much better than the above system
+// - ophelia
 
 //this does not work for some reason unfortunately
 /*
 /mob/living/carbon/human/species/human/smartnpc/townguard/npc_idle()
+	var/static/foliage_turfs // turf types we shouldn't move to as a fallback
+	if(!foliage_turfs)
+		foliage_turfs = typecacheof(list(/turf/open/floor/rogue/dirt, /turf/open/floor/rogue/grass))
 	. = ..()
+	if(mobility_flags & MOBILITY_MOVE || !isturf(loc) || !patrol)
+		return
 	//im not smart enough to make a good patrol system but here.
-	if((mobility_flags & MOBILITY_MOVE) && isturf(loc) && patrol)
-		if(prob(20))
-			if(world.time > lastpatroltime + 10 SECONDS) //give em some time to reach and whatever
-			var/foundpatrolpoints
-			for(var/obj/effect/landmark/townpatrol/patrolpoint in orange(30,src))
-				foundpatrolpoints += patrolpoint
-			if(foundpatrolpoints)
-				var/pickedpoint = get_closest_atom(/obj/effect/landmark/townpatrol, foundpatrolpoints, src)
-				if(pickedpoint)
-					walk2derpless(pickedpoint)
-					lastpatroltime = world.time
-			else
-				//make them randomly go to a distant tile thats not foilage, if there is no patrol landmark around
-				var/turf/open/T = oview(pick(13,24),src)
-				if(!istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/floor/rogue/dirt) && !istype(T, /turf/open/floor/rogue/grass))
-					walk2derpless(T)
+	if(prob(20) && world.time > lastpatroltime + 10 SECONDS) //give em some time to reach and whatever
+		var/obj/effect/landmark/townpatrol/closest_point
+		var/min_distance = INFINITY
+		for(var/obj/effect/landmark/townpatrol/patrolpoint in GLOB.patrol_points)
+			var/candidate_dist = get_dist(src, patrolpoint)
+			if(candidate_dist < 1 || candidate_dist > 30) // too close or too far away
+				continue
+			if(candidate_dist < min_distance)
+				min_distance = candidate_dist
+				closest_point = patrolpoint
+		if(closest_point)
+			walk2derpless(pickedpoint)
+			lastpatroltime = world.time
+		else // this is expensive but should be a last resort for if they've been dragged off to the woods or something
+			//make them randomly go to a distant tile thats not foilage, if there is no patrol landmark around
+			var/turf/open/T = oview(rand(13,24),src)
+			if(!isgroundlessturf(T) && !foliage_turfs)
+			if(!istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/floor/rogue/dirt) && !istype(T, /turf/open/floor/rogue/grass))
+				walk2derpless(T)
+*/
 
+// Currently unused pending map changes.
+GLOBAL_LIST_EMPTY_TYPED(patrol_points, /obj/effect/landmark/townpatrol)
 /obj/effect/landmark/townpatrol
 	name = "patrol-point"
-*/
+
+/obj/effect/landmark/townpatrol/Initialize()
+	. = ..()
+	GLOB.patrol_points += src
+
+/obj/effect/landmark/townpatrol/Destroy()
+	GLOB.patrol_points -= src
+	return ..()
 
 /mob/living/carbon/human/species/human/smartnpc/townguard/brute
 
