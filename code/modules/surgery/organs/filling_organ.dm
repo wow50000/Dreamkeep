@@ -52,7 +52,7 @@
 	//updates size caps
 	if(!issimple(H) && H.mind)
 		var/athletics = H.mind?.get_skill_level(/datum/skill/misc/athletics)
-		var/captarget = max_reagents+(athletics*4)
+		var/captarget = max_reagents+(athletics*4)+(5+storage_per_size+(storage_per_size*organ_size)) // Updates the max_reagents in case the organ size changes
 		if(damage)
 			captarget -= damage
 		if(contents.len)
