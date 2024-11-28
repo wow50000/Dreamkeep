@@ -63,6 +63,7 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/stable)//Spare the dying
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/purge)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/cure_rot)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/seance)
 		H.grant_language(/datum/language_holder/abyssal)
 		H.grant_language(/datum/language_holder/celestial)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
