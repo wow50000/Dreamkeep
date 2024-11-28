@@ -171,6 +171,9 @@
 	if(istype(loc, /turf/open/floor/rogue/grass))
 		var/turf/T = loc
 		T.ChangeTurf(/turf/open/floor/rogue/dirt)
+	// Add the nut with a 25% chance
+	if(prob(25))
+		static_debris += /obj/item/reagent_containers/food/snacks/grown/nut
 
 /obj/structure/flora/newtree/proc/build_trees()
 	var/turf/target = get_step_multiz(src, UP)
