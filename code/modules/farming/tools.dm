@@ -400,6 +400,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
+	wdefense = 6
 	improvised = TRUE
 
 /datum/intent/axe/chop/battle/scythe
