@@ -25,20 +25,20 @@
 	. = ..()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/bog))
+		if(istype(H.cloak, /obj/item/clothing/cloak/templar/dendor))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
 			if(index)
 				index = copytext(H.real_name, 1,index)
 			if(!index)
 				index = H.real_name
-			S.name = "bog master tabard ([index])"
+			S.name = "Hedgemaster tabard ([index])"
 
 /datum/outfit/job/roguetown/bogmaster/pre_equip(mob/living/carbon/human/H)
 	. = ..()
-	head = /obj/item/clothing/head/roguetown/helmet/leather
+	head = /obj/item/clothing/head/roguetown/helmet/elfbarbutewings
 	pants = /obj/item/clothing/under/roguetown/chainlegs
-	cloak = /obj/item/clothing/cloak/raincloak/green
+	cloak = /obj/item/clothing/cloak/templar/dendor
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
 	neck = /obj/item/clothing/neck/roguetown/bervor
@@ -66,25 +66,23 @@
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 6, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
-		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 4, TRUE) //Hearthstone change.
 		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 3, TRUE)
 		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)	//Peasent levy, so some skill
-		H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, pick(1,2,2), TRUE)		//Peasent levy, so some skill
+		H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, 2, TRUE)		//Peasent levy, so some skill
 		H.change_stat("constitution", 4)
-		H.change_stat("perception", 4)
+		H.change_stat("perception", 3)
 		H.change_stat("endurance", 4)
 		H.change_stat("speed", 2)
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_WILD_EATER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BLINDFIGHTING, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_NOPAINSTUN, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_DARKVISION, TRAIT_GENERIC)
 
 /obj/effect/proc_holder/spell/self/convertrole/bog
 	name = "Recruit Hedgeknight"

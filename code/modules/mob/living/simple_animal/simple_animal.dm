@@ -250,7 +250,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 /mob/living/simple_animal/hostile
 	var/retreating
-	var/ignore_laying = FALSE
+	var/attack_laying = FALSE
 
 /mob/living/simple_animal/hostile/updatehealth()
 	..()

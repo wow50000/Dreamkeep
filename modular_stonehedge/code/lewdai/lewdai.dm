@@ -49,7 +49,7 @@
 		for(var/mob/living/carbon/human/fucktarg in around)
 			if(!src.aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
 				continue
-			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && CanAttack(fucktarg, FALSE))
+			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && CanAttack(fucktarg, TRUE))
 				chasesfuck = TRUE
 				if(src.gender == MALE)
 					src.visible_message(span_boldwarning("[src] has his eyes on [fucktarg], cock throbbing!"))
@@ -108,13 +108,15 @@
 						L.SetKnockdown(60)
 					if(!L.lying)
 						L.emote("gasp")
-					if(!L.cmode && L.wear_pants) //pants off if not in cmode
-						src.visible_message(span_danger("[src] manages to rip [L]'s [L.wear_pants.name] off!"))
-						var/obj/item/clothing/thepants = L.wear_pants
-						L.dropItemToGround(thepants)
-						thepants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
-					else if(L.cmode && L.wear_pants)
-						src.visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
+					if(L.wear_pants)
+						if(L.wear_pants.flags_inv & HIDECROTCH && !L.wear_pants.genitalaccess)
+							if(!L.cmode) //pants off if not in cmode
+								src.visible_message(span_danger("[src] manages to rip [L]'s [L.wear_pants.name] off!"))
+								var/obj/item/clothing/thepants = L.wear_pants
+								L.dropItemToGround(thepants)
+								thepants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
+							else if(L.cmode)
+								src.visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
 					enemies = list()
 					target = null
 					approaching_target = FALSE
@@ -137,19 +139,19 @@
 					log_admin("[src] is trying to init sex on [L]")
 					var/current_action = /datum/sex_action/npc_rimming
 					if(src.gender == FEMALE && L.gender == MALE)
-						switch(rand(2))
+						switch(rand(1,2))
 							if(2) //anal
 								current_action = /datum/sex_action/npc_anal_ride_sex
 							if(3) //vaginal
 								current_action = /datum/sex_action/npc_vaginal_ride_sex
 					if(src.gender == MALE && L.gender == MALE)
-						switch(rand(2))
+						switch(rand(1,2))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_throat_sex
 							if(2) //anal
 								current_action = /datum/sex_action/npc_anal_sex
 					if(src.gender == MALE && L.gender == FEMALE)
-						switch(rand(3))
+						switch(rand(1,3))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_throat_sex
 							if(2) //anal
@@ -157,7 +159,7 @@
 							if(3) //vaginal
 								current_action = /datum/sex_action/npc_vaginal_sex
 					if(src.gender == FEMALE && L.gender == FEMALE)
-						switch(rand(3))
+						switch(rand(1,3))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_facesitting
 							if(2) //anal
@@ -232,7 +234,7 @@
 		for(var/mob/living/carbon/human/fucktarg in around)
 			if(!src.aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
 				continue
-			if(fucktarg.has_quirk(/datum/quirk/monsterhunter)) //normally checks !sexcon.beingfucked but carbon mobs arent directly on top of the mob to fuck so its probably fine to get ganged.
+			if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && should_target(fucktarg, TRUE)) //normally checks !sexcon.beingfucked but carbon mobs arent directly on top of the mob to fuck so its probably fine to get ganged.
 				chasesfuck = TRUE
 				if(lewd_talk)
 					if(src.gender == MALE)
@@ -266,7 +268,7 @@
 	if(sexcon.current_action && fuckcd > 0)
 		return
 	for(var/mob/living/carbon/human/fucktarg in around)
-		if(fucktarg.has_quirk(/datum/quirk/monsterhunter) && should_target(fucktarg))
+		if(fucktarg.has_quirk(/datum/quirk/monsterhunter))
 			foundfuckmeat += fucktarg
 			L = fucktarg
 			STOP_PROCESSING(SShumannpc,src)
@@ -285,20 +287,23 @@
 						L.SetKnockdown(60)
 					if(!L.lying) //i guess if already targeted but got up somehow.
 						L.emote("gasp")
-					if(!L.cmode && L.wear_pants) //pants off if not in cmode
-						src.visible_message(span_danger("[src] manages to rip [L]'s [L.wear_pants.name] off!"))
-						var/obj/item/clothing/thepants = L.wear_pants
-						L.dropItemToGround(thepants)
-						thepants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
-					else if(L.cmode && L.wear_pants)
-						src.visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
+					if(L.wear_pants)
+						if(L.wear_pants.flags_inv & HIDECROTCH && !L.wear_pants.genitalaccess)
+							if(!L.cmode) //pants off if not in cmode
+								src.visible_message(span_danger("[src] manages to rip [L]'s [L.wear_pants.name] off!"))
+								var/obj/item/clothing/thepants = L.wear_pants
+								L.dropItemToGround(thepants)
+								thepants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
+							else if(L.cmode)
+								src.visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
 					if(aggressive)
 						sexcon.force = SEX_FORCE_MAX
 					else
 						sexcon.force = SEX_FORCE_MID
 					if(!Adjacent(L)) //are we at the same tile?
 						walk2derpless(Adjacent(L)) //get next to them since it looks like shit tweaks out.
-					start_pulling(L)
+					if(!pulling)
+						start_pulling(L)
 					src.visible_message(span_danger("[src] starts to breed [L]!"))
 					if(sexcon.force == SEX_FORCE_MAX)
 						src.visible_message(span_danger("[src] pins [L] down for a savage fucking!"))
@@ -310,19 +315,19 @@
 					log_admin("[src] is trying to init sex on [L]")
 					var/current_action = /datum/sex_action/npc_rimming
 					if(src.gender == FEMALE && L.gender == MALE)
-						switch(rand(2))
+						switch(rand(1,2))
 							if(1) //anal
 								current_action = /datum/sex_action/npc_anal_ride_sex
 							if(2) //vaginal
 								current_action = /datum/sex_action/npc_vaginal_ride_sex
 					if(src.gender == MALE && L.gender == MALE)
-						switch(rand(2))
+						switch(rand(1,2))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_throat_sex
 							if(2) //anal
 								current_action = /datum/sex_action/npc_anal_sex
 					if(src.gender == MALE && L.gender == FEMALE)
-						switch(rand(3))
+						switch(rand(1,3))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_throat_sex
 							if(2) //anal
@@ -330,7 +335,7 @@
 							if(3) //vaginal
 								current_action = /datum/sex_action/npc_vaginal_sex
 					if(src.gender == FEMALE && L.gender == FEMALE)
-						switch(rand(3))
+						switch(rand(1,3))
 							if(1) //oral
 								current_action = /datum/sex_action/npc_facesitting
 							if(2) //anal

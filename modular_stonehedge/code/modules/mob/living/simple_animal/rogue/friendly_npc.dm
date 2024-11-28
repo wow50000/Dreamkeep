@@ -1,8 +1,7 @@
 //By Vide Noir https://github.com/EaglePhntm.
 //templated on hearthstone sea raiders.
 
-/mob/living/carbon/human/species/human/friendlynpc
-	aggressive=1
+/mob/living/carbon/human/species/human/smartnpc
 	race = /datum/species/elf/wood
 	mode = AI_IDLE
 	faction = list("Station")
@@ -12,30 +11,53 @@
 	possible_rmb_intents = list()
 	erpable = TRUE
 	wander = TRUE
+	d_intent = INTENT_DODGE
 	show_genitals = TRUE
 	var/list/friendlyfactions = list("Station", "neutral", "rogueanimal", "saiga", "chickens", "goats", "cows", "turtles", "rats", "crabs", "horse")
+	//using friendlyjobs will make this mob hostile to everyone not of those jobs, unless they are in friendlyfactions.
 	var/list/friendlyjobs
 	//quotes from skyrim cause we love skyrim.
 	var/list/calmmessages = list()
 	var/list/aggromessages = list()
 	var/mob/living/lasthitter = null
+	var/punish_attacking = FALSE
 
 //would be great if we could make them follow stone roads while idle.
-/mob/living/carbon/human/species/human/friendlynpc/should_target(mob/living/L)
+/mob/living/carbon/human/species/human/smartnpc/should_target(mob/living/L)
+	if(!L)
+		return FALSE
+
 	if(L == src)
 		return FALSE
+
+	if(HAS_TRAIT(src, TRAIT_PACIFISM))
+		return FALSE
+
+	if(!is_in_zweb(src.z,L.z))
+		return FALSE
+
+	if(L.alpha <= 100) //if mostly invisible dont see it, surely this wont go wrong.
+		return FALSE
+
+	if(L.InFullCritical())
+		return FALSE
+
+	if(L.name in friends)
+		return FALSE
+
 	if(L.stat != CONSCIOUS)
 		return FALSE
+
 	if(L.lying && !L.get_active_held_item())
 		if(ishuman(L))
 			var/mob/living/carbon/human/badboi = L
 			if(badboi == lasthitter && Adjacent(badboi) && !badboi.handcuffed)
 				//untested but yeah.
 				say("I got you now, criminal scum.")
-				scom_announce("I caught the criminal scum [badboi.real_name] at [get_area(src)].")
+				scom_announce("I caught the criminal scum [badboi.real_name] at [get_area_name(get_area(src))].")
 				var/obj/item/rope/ropey = new /obj/item/rope
 				ropey.apply_cuffs(badboi, src)
-				start_pulling(badboi)
+				start_pulling(badboi, GRAB_AGGRESSIVE)
 		return FALSE
 	if(L == lasthitter && L.alpha > 100)
 		return TRUE
@@ -44,17 +66,27 @@
 		if(madafaka.Adjacent(src) && mode != AI_HUNT && madafaka.mind && madafaka.alpha > 100)
 			if(prob(10))
 				face_atom(madafaka)
-				emote(pick("turns to [madafaka].", "faces [madafaka]."))
+				visible_message(span_emote(pick("[src] turns to [madafaka].", "[src] faces [madafaka].")))
 				say(pick(calmmessages))
 		if(friendlyfactions)
-			if(madafaka.faction |= friendlyfactions && target != lasthitter)
+			var/list/madafaction = madafaka.faction
+			if(find_match_in_list(madafaction, friendlyfactions) && lasthitter != target)
 				return FALSE
+			else
+				return TRUE
 		if(friendlyjobs)
-			if(madafaka.job |= friendlyjobs && target != lasthitter)
+			var/list/madajob = madafaka.job
+			if((madajob in friendlyjobs) && lasthitter != target)
 				return FALSE
-	. = ..()
+			else
+				return TRUE
 
-/mob/living/carbon/human/species/human/friendlynpc/MobBump(mob/M)
+	if(enemies[L])
+		return TRUE
+
+	return FALSE
+
+/mob/living/carbon/human/species/human/smartnpc/MobBump(mob/M)
 	if(ishuman(M))
 		var/mob/living/carbon/human/L = M
 		if(lasthitter == L)
@@ -64,12 +96,12 @@
 			retaliate(L)
 		else
 			face_atom(L)
-			emote(pick("turns to [L].", "faces [L]."))
+			visible_message(span_emote(pick("[src] turns to [L].", "[src] faces [L].")))
 			if(prob(10))
 				say(pick(calmmessages))
 	. = ..()
 
-/mob/living/carbon/human/species/human/friendlynpc/townguard
+/mob/living/carbon/human/species/human/smartnpc/townguard
 	friendlyfactions = list("Station", "neutral")
 	calmmessages = list(
 		"Let me guess... someone stole your sweetroll.", 
@@ -108,9 +140,40 @@
 	var/patrol = TRUE
 	var/lastpatroltime
 
+
+// Custom idle behavior
+/mob/living/carbon/human/species/human/smartnpc/townguard/npc_idle()
+	if(patrol)
+		if(world.time < next_idle + rand(30,50))
+			return
+		next_idle = world.time + rand(30,50)
+		if(mode != AI_OFF)
+			if(prob(50))
+				var/turf/target_loc = find_suitable_location()
+				if(target_loc)
+					walk2derpless(target_loc)
+	else
+		. = ..()
+
+
+// Find a suitable location to move to
+/mob/living/carbon/human/species/human/smartnpc/townguard/proc/find_suitable_location()
+	var/list/suitable_locations = list()
+
+	// Collect all nearby stone road tiles
+	for(var/turf/T in world)
+		if((!istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/floor/rogue/dirt) && !istype(T, /turf/open/floor/rogue/grass) && !istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/lava) && !istype(T, /turf/open/lava/acid)) && get_dist(src, T) < 12) // Adjust distance as needed
+			suitable_locations += T
+
+	// Randomly select one of the suitable locations
+	if(suitable_locations.len)
+		return pick(suitable_locations)
+
+	return null
+
 //this does not work for some reason unfortunately
 /*
-/mob/living/carbon/human/species/human/friendlynpc/townguard/npc_idle()
+/mob/living/carbon/human/species/human/smartnpc/townguard/npc_idle()
 	. = ..()
 	//im not smart enough to make a good patrol system but here.
 	if((mobility_flags & MOBILITY_MOVE) && isturf(loc) && patrol)
@@ -134,31 +197,65 @@
 	name = "patrol-point"
 */
 
-/mob/living/carbon/human/species/human/friendlynpc/townguard/brute
+/mob/living/carbon/human/species/human/smartnpc/townguard/brute
 
-/mob/living/carbon/human/species/human/friendlynpc/townguard/brute/after_creation()
-	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/friendlynpc/townguard/brute)
+/mob/living/carbon/human/species/human/smartnpc/townguard/brute/after_creation()
+	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/smartnpc/townguard/brute)
 
 
-/mob/living/carbon/human/species/human/friendlynpc/townguard/retaliate(mob/living/L)
+/mob/living/carbon/human/species/human/smartnpc/townguard/retaliate(mob/living/L)
 	var/newtarg = target
+	if(L.job in list("Hedgeknight", "Hedgemaster"))
+		return
+	if(lasthitter != target)
+		say(pick(aggromessages))
 	lasthitter = target
 	.=..()
 	if(target)
-		aggressive=1
-		wander = TRUE
 		if(target == newtarg)
-			say(pick(aggromessages))
 			linepoint(target)
+			if(ishuman(target) && Adjacent(target))
+				//i really REALLY want to punish players who try to strip those guys for loot, also they can do those badass moves on goblins too ig.
+				if(prob(20) && !target.IsOffBalanced())
+					say(pick("Aha!", "Parry this!", "Ha-haa!"))
+					visible_message(span_emote("[src] feints an attack at [target]!"))
+					target.OffBalance(50) //since they cant defeat the parries might aswell give them a fat feint.
+				else if(prob(10))
+					say(pick("Sit the fuck down.", "Fuck away from me.", "Stay down."))
+					visible_message(span_emote("[src] bashes [target] away!"))
+					playsound(src,"punch_hard",100,TRUE)
+					target.Knockdown(25) //may end up getting you tied real fast.
+					target.throw_at(target, pick(2,3), 1, src, FALSE, TRUE)
+				else if(prob(5) && target.get_active_held_item())
+					var/obj/item/activeitem = target.get_active_held_item()
+					if(!HAS_TRAIT(activeitem, TRAIT_NODROP))
+						say(pick("You are done.", "Ha! There goes your [activeitem.name]!", "You fucked up now!"))
+						visible_message(span_emote("[src] disarms [target]!"))
+						playsound(src,"bladedmedium",100,TRUE)
+						target.OffBalance(15)
+						target.throw_at(activeitem, get_step_away(activeitem, target, 3), 1, target, TRUE, FALSE)
+				if(punish_attacking)
+					var/bounty_exists = FALSE
+					for(var/datum/bounty/b in GLOB.head_bounties)
+						if(b.target == target.real_name)
+							bounty_exists = TRUE
+					if(!bounty_exists)
+						add_bounty(L.real_name, 500, FALSE, "Attacking a town guardsman.", "Town of Stonehedge")
+						var/bounty_announcement = "[target] is accused of attacking a town guardsman at [get_area_name(get_area(src))], wanted with a bounty of 500 mammons."
+						say("Stop right there, criminal scum!")
+						scom_announce(bounty_announcement)
+						to_chat(L, span_notice("I got a bounty on my head now!"))
+					else
+						scom_announce("the criminal [target] is reported attacking a townsguard at [get_area_name(get_area(src))].")
 
-/mob/living/carbon/human/species/human/friendlynpc/townguard/Initialize()
+/mob/living/carbon/human/species/human/smartnpc/townguard/Initialize()
 	gender = pick(MALE,FEMALE)
 	. = ..()
 	spawn(10)
 		after_creation()
 	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
 
-/mob/living/carbon/human/species/human/friendlynpc/townguard/after_creation()
+/mob/living/carbon/human/species/human/smartnpc/townguard/after_creation()
 	..()
 	job = "Town Guardsman"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
@@ -167,20 +264,20 @@
 	ADD_TRAIT(src, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
-	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/friendlynpc/townguard)
+	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/smartnpc/townguard)
 	var/obj/item/organ/eyes/organ_eyes = getorgan(/obj/item/organ/eyes/night_vision/full_darksight) //elf eyes
 	if(organ_eyes)
 		organ_eyes.eye_color = pick("27becc", "35cc27", "000000")
 	update_hair()
 	update_body()
 
-/mob/living/carbon/human/species/human/friendlynpc/townguard/handle_combat()
+/mob/living/carbon/human/species/human/smartnpc/townguard/handle_combat()
 	if(mode == AI_HUNT)
 		if(prob(10))
 			emote("rage")
 	. = ..()
 
-/datum/outfit/job/roguetown/human/species/human/friendlynpc/townguard/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/human/species/human/smartnpc/townguard/pre_equip(mob/living/carbon/human/H)
 	if(prob(50))
 		wrists = /obj/item/clothing/wrists/roguetown/bracers
 	cloak = /obj/item/clothing/cloak/templar/dendor
@@ -192,10 +289,11 @@
 	pants = /obj/item/clothing/under/roguetown/tights
 	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
 	H.STASPD = 8
-	H.STACON = 4
+	H.STAPER = 10
+	H.STACON = 14
 	H.STAEND = 15
-	H.STAINT = 5
-	H.STASTR = rand(11,16)
+	H.STAINT = 12
+	H.STASTR = rand(13,16)
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/sword
 	else
@@ -214,7 +312,7 @@
 		H.name = pick( world.file2list("strings/rt/names/elf/elfwf.txt") )
 		H.real_name = H.name
 
-/datum/outfit/job/roguetown/human/species/human/friendlynpc/townguard/brute/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/human/species/human/smartnpc/townguard/brute/pre_equip(mob/living/carbon/human/H)
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	cloak = /obj/item/clothing/cloak/templar/dendor
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
@@ -225,10 +323,11 @@
 		mask = /obj/item/clothing/mask/rogue/facemask
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	H.STASPD = 9
-	H.STACON = 8
-	H.STAEND = 15
-	H.STAINT = 5
-	H.STASTR = rand(15,18)
+	H.STAPER = 10
+	H.STACON = 16
+	H.STAEND = 16
+	H.STAINT = 14
+	H.STASTR = rand(14,16)
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/halberd/bardiche
 	else
@@ -242,14 +341,26 @@
 		H.name = pick( world.file2list("strings/rt/names/elf/elfwf.txt") )
 		H.real_name = H.name
 
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry
 	patrol = FALSE
 	wander = FALSE
+	var/turf/spawned_loc
 
-/mob/living/carbon/human/species/human/friendlynpc/townguard/sentry/after_creation()
-	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/friendlynpc/townguard/sentry)
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry/Initialize()
+	. = ..()
+	spawned_loc = get_turf(src)
+	addtimer(CALLBACK(src, PROC_REF(return_to_post)), 5 MINUTES, TIMER_STOPPABLE)
 
-/datum/outfit/job/roguetown/human/species/human/friendlynpc/townguard/sentry/pre_equip(mob/living/carbon/human/H)
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry/proc/return_to_post()
+	if(src.loc != spawned_loc)
+		walk2derpless(spawned_loc)
+		wander = FALSE
+	addtimer(CALLBACK(src, PROC_REF(return_to_post)), 5 MINUTES, TIMER_STOPPABLE)
+
+/mob/living/carbon/human/species/human/smartnpc/townguard/sentry/after_creation()
+	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/smartnpc/townguard/sentry)
+
+/datum/outfit/job/roguetown/human/species/human/smartnpc/townguard/sentry/pre_equip(mob/living/carbon/human/H)
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	cloak = /obj/item/clothing/cloak/templar/dendor
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
@@ -260,10 +371,11 @@
 		mask = /obj/item/clothing/mask/rogue/facemask
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	H.STASPD = 9
-	H.STACON = 8
-	H.STAEND = 15
-	H.STAINT = 5
-	H.STASTR = rand(15,18)
+	H.STAPER = 10
+	H.STACON = 16
+	H.STAEND = 16
+	H.STAINT = 14
+	H.STASTR = rand(14,16)
 	r_hand = /obj/item/rogueweapon/halberd
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armoriron
 	neck = /obj/item/clothing/neck/roguetown/chaincoif

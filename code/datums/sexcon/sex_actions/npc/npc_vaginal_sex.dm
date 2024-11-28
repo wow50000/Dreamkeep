@@ -18,6 +18,8 @@
 
 /datum/sex_action/npc_vaginal_sex/on_perform(mob/living/user, mob/living/target)
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s cunt."))
+	
+	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 	do_thrust_animate(user, target)
 
 	if(user.sexcon.check_active_ejaculation())
@@ -36,8 +38,12 @@
 
 /datum/sex_action/npc_vaginal_sex/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] pulls his cock out of [target]'s cunt."))
-	var/mob/living/simple_animal/hostile/retaliate/rogue/usermob = user
-	usermob.stoppedfucking(target)
+	if(issimple(user))
+		var/mob/living/simple_animal/hostile/retaliate/rogue/simpleuser = user
+		simpleuser.stoppedfucking(target)
+	else
+		var/mob/living/carbon/human/humanuser = user
+		humanuser.stoppedfucking(target)
 
 /datum/sex_action/npc_vaginal_sex/is_finished(mob/living/user, mob/living/target)
 	if(user.sexcon.finished_check())

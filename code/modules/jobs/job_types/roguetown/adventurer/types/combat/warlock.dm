@@ -70,7 +70,8 @@
 		"love", //ring of soulbinding
 		"friendship", //Pact of the Chain
 		"power", //empowered eldritch blast
-		"purpose" //Pact of the Star Chain
+		"purpose", //Pact of the Star Chain
+		"revenge" //give curse
 	)
 
 	var/boonchoice = input("What did you sell your faith for?", "Available boons") as anything in boons
@@ -128,6 +129,7 @@
 
 	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/mage
+	shoes = /obj/item/clothing/shoes/roguetown/sandals
 	r_hand = /obj/item/rogueweapon/woodstaff
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	belt = /obj/item/storage/belt/rogue/leather/rope
@@ -149,18 +151,21 @@
 	H.visible_message(span_info("I made a deal with an archseelie from the wild."))
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/celestialpatron(mob/living/carbon/human/H, patronchoice)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+	// armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+	if(H.gender == MALE)
+		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+	else 
+		shirt = /obj/item/clothing/suit/roguetown/armor/armordress
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	pants = /obj/item/clothing/under/roguetown/trou/leather
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	pants = /obj/item/clothing/under/roguetown/tights/random
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/rogueweapon/mace
+	r_hand = /obj/item/rogueweapon/spear
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife)
 
 	//caster stats (must be 5 stat point total)
@@ -190,7 +195,7 @@
 		head = /obj/item/clothing/head/roguetown/fisherhat
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
 	cloak = /obj/item/clothing/cloak/raincloak/yellow
-	gloves = /obj/item/clothing/gloves/roguetown/plate/zybantinegauntlets
+	// gloves = /obj/item/clothing/gloves/roguetown/plate/zybantinegauntlets // No plate gloves for you
 	wrists = /obj/item/rope
 	r_hand = /obj/item/rogueweapon/pitchfork
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
@@ -314,20 +319,10 @@
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
-	if(prob(70))
-		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	else if(prob(50))
-		armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
-	else
-		armor = /obj/item/clothing/suit/roguetown/armor/plate/scale
-	if(prob(20))
-		mask = /obj/item/clothing/mask/rogue/facemask
-	else if(prob(60))
-		head = /obj/item/clothing/head/roguetown/helmet/leather
-	else if(prob(20))
-		head = /obj/item/clothing/head/roguetown/helmet/skullcap
-	else
-		head = /obj/item/clothing/head/roguetown/helmet/kettle
+	if(H.gender == MALE)
+		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+	else 
+		shirt = /obj/item/clothing/suit/roguetown/armor/armordress // Armor downgrade from hauberk to gambeson
 	beltl = /obj/item/rogueweapon/huntingknife
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 
@@ -349,40 +344,27 @@
 	H.visible_message(span_info("I made a deal with a sentient weapon."))
 
 /datum/outfit/job/roguetown/adventurer/warlock/proc/undeadpatron(mob/living/carbon/human/H, patronchoice)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
 
-	if(prob(20))
-		head = /obj/item/clothing/head/roguetown/knitcap
-	else
-		head = null
-	if(prob(10))
-		cloak = /obj/item/clothing/cloak/raincloak/brown
-	else
-		cloak = null
-	if(prob(10))
-		gloves = /obj/item/clothing/gloves/roguetown/fingerless
-	else
-		gloves = /obj/item/clothing/gloves/roguetown/brigandinegauntlets
-		armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
-		pants = /obj/item/clothing/under/roguetown/tights/vagrant
-		if(prob(50))
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-		if(prob(50))
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
-	wrists = /obj/item/clothing/wrists/roguetown/bracers
+	cloak = /obj/item/clothing/cloak/raincloak/brown
+	gloves = /obj/item/clothing/gloves/roguetown/angle
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
+	pants = /obj/item/clothing/under/roguetown/tights/random
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+	wrists = /obj/item/clothing/wrists/roguetown/vambraces
 	neck = /obj/item/clothing/neck/roguetown/gorget
-	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armoriron
+	head = /obj/item/clothing/head/roguetown/helmet/ironpothelmet
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/rogueweapon/mace
-	backl = /obj/item/rogueweapon/sword/iron/short
-
+	beltl = /obj/item/rogueweapon/sword/iron/short
+	backl = /obj/item/rogueweapon/shield/tower
+	// They're the tank subclass, so I'm keeping their armor in. If it's a problem, it's pretty easy to comment it out and give them hauberks instead
 	//tank stats (must be 5 stat point total)
 	H.change_stat("strength", 1)
 	H.change_stat("endurance", 2)
@@ -392,7 +374,7 @@
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/infestation5e)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/chilltouch5e) // decay-themed magic and a skeletal hand to attack people with
 
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	// ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) // Unnecessary with the heavy armor trait
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 

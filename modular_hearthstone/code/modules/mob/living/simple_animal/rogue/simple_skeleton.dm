@@ -108,7 +108,7 @@
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow/playersentry
 	var/list/friendlyjobs = list("Guild Appraiser", "Guildmaster")
 
-/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow/playersentry/CanAttack(atom/the_target, ignore_lying)
+/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow/playersentry/CanAttack(atom/the_target, attack_lying)
 	if(ishuman(the_target))
 		var/mob/living/carbon/human/madafaka = the_target
 		if(madafaka.job |= friendlyjobs)

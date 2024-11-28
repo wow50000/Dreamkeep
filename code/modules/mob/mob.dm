@@ -1378,3 +1378,17 @@ GLOBAL_VAR_INIT(mobids, 1)
 		return FALSE
 	else
 		return TRUE
+
+/proc/find_match_in_list(list/list_A, list/list_B, exact_match)
+	var/list/match_list
+	if(!list_A || !list_B)
+		return
+	if(exact_match)
+		match_list = list_A&list_B //only items in both lists
+		var/length = LAZYLEN(match_list)
+		if(length)
+			return (length == LAZYLEN(list_A)) //if they're not the same len(gth) or we don't have a len, then this isn't an exact match.
+	else
+		match_list = list_A&list_B
+		return LAZYLEN(match_list)
+	return FALSE

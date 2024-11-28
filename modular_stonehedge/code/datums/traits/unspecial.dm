@@ -36,6 +36,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NOHUNGER, QUIRK_TRAIT)
 	ADD_TRAIT(H, TRAIT_NOBREATH, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_NOSLEEP, QUIRK_TRAIT)
 	H.change_stat("endurance", 1)
 
 /datum/quirk/deadened
@@ -289,6 +290,7 @@
 	H.grant_language(/datum/language/orcish)
 	H.grant_language(/datum/language/beast)
 	H.grant_language(/datum/language/draconic)
+	H.grant_language(/datum/language/faexin)
 
 /datum/quirk/civilizedbarbarian
 	name = "Tavern Brawler"
@@ -585,11 +587,11 @@
 	ADD_TRAIT(H, TRAIT_PACIFISM, QUIRK_TRAIT)
 
 
-/datum/quirk/pacifist
+/datum/quirk/endowed
 	name = "Endowment Curse"
 	desc = "I was cursed with endowment... This makes life hard."
 	value = -2
 
-/datum/quirk/pacifist/on_spawn()
+/datum/quirk/endowed/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_ENDOWMENT, QUIRK_TRAIT)
+	H.apply_status_effect(/datum/status_effect/debuff/bigboobs/permanent)

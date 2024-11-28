@@ -23,20 +23,20 @@
 	. = ..()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/bog))
+		if(istype(H.cloak, /obj/item/clothing/cloak/templar/dendor))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
 			if(index)
 				index = copytext(H.real_name, 1,index)
 			if(!index)
 				index = H.real_name
-			S.name = "bogman tabard ([index])"
+			S.name = "Hedgeknight tabard ([index])"
 
 /datum/outfit/job/roguetown/bogguardsman/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	head = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/foresterarmor
-	cloak = /obj/item/clothing/cloak/raincloak/green
+	cloak = /obj/item/clothing/cloak/templar/dendor
 	neck = /obj/item/clothing/neck/roguetown/bervor
 	gloves = /obj/item/clothing/gloves/roguetown/forestergauntlets
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
@@ -48,23 +48,21 @@
 	beltr = /obj/item/rogueweapon/mace/stunmace/hedgeknight
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	id = /obj/item/scomstone
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1, /obj/item/signal_horn = 1)
 	if(H.mind)
 		assign_skills(H)
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_WILD_EATER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BLINDFIGHTING, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_NOPAINSTUN, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_DARKVISION, TRAIT_GENERIC)
 
-/*Design philosophy: Protectors of Stonehedge, whose holy maces are the bane of any who violate the Guild's few laws. While they are not as physically strong as more conventional warriors, they are swift and their endurance is second to none.*/
+/*Design philosophy: Protectors of Stonehedge, whose holy maces are the bane of any who violate the Guild's few laws.
+While they are not as physically strong as more conventional warriors, they are swift and their endurance is second to none.*/
 /datum/outfit/job/roguetown/bogguardsman/proc/assign_skills(mob/living/carbon/human/H)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 5, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 4, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 4, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 4, TRUE)
@@ -87,7 +85,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 2, TRUE)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 4, TRUE) //Hearthstone change.
-	H.change_stat("perception", 4)
+	H.change_stat("perception", 2)
 	H.change_stat("constitution", 4)
 	H.change_stat("endurance", 4)
 	H.change_stat("speed", 2)

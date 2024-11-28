@@ -570,6 +570,7 @@
 	craftdiff = 3
 	sellprice = 12
 
+/* // These are plate-level gloves and boots, and have their own smithing recipe.
 /datum/crafting_recipe/roguetown/sewing/zybantinegauntlets
 	name = "zybantine gauntlets"
 	result = list(/obj/item/clothing/gloves/roguetown/plate/zybantinegauntlets)
@@ -583,6 +584,7 @@
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
+*/
 
 /datum/crafting_recipe/roguetown/sewing/stockdress
 	name = "dress"

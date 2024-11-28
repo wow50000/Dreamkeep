@@ -227,20 +227,20 @@
 		last_special = world.time + CLICK_CD_BREAKOUT
 		cuff_resist(I)
 
-/mob/living/carbon/human/proc/should_target(mob/living/L)
+/mob/living/carbon/human/proc/should_target(mob/living/L, attack_lying = FALSE)
 	if(!L)
 		return FALSE
 
 	//those are here for proc dependancy.
-	if(L.lying && !L.get_active_held_item()) //laying with no items in hand, no threat.
+	if(!attack_lying && L.lying && !L.get_active_held_item()) //laying with no items in hand, no threat.
 		if(prob(4) && L.has_quirk(/datum/quirk/monsterhunter) && erpable) //tiny chance to trigger abuss.
 			fuckcd = 0
 		return FALSE
 
-	var/mob/living/carbon/lcarbon = L
-	if(istype(lcarbon, /mob/living/carbon)) //leave alone if handcuffed.
-		if(lcarbon.handcuffed)
-			if(prob(8) && lcarbon.has_quirk(/datum/quirk/monsterhunter) && erpable) //small chance to trigger abuss.
+	if(ishuman(L)) //leave alone if handcuffed.
+		var/mob/living/carbon/human/lhuman = L
+		if(lhuman.handcuffed)
+			if(prob(8) && lhuman.has_quirk(/datum/quirk/monsterhunter) && erpable) //small chance to trigger abuss.
 				fuckcd = 0
 			return FALSE
 

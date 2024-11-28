@@ -353,6 +353,9 @@
 	var/initialball
 	var/initialbreasts
 
+/datum/status_effect/debuff/bigboobs/permanent
+	duration = -1 //used for quirk
+
 /atom/movable/screen/alert/status_effect/debuff/bigboobs
 	name = "Enchanted Endowment" //was gonna name it a curse but it isn't a technically one.
 	desc = "They feel as heavy as gold and are massive... My back hurts."

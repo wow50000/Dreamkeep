@@ -31,6 +31,9 @@
 	farholdsound = 'modular_helmsguard/sound/items/horns/h_hold_distant.ogg'
 	farchargesound = 'modular_helmsguard/sound/items/horns/h_charge_distant.ogg'
 
+/obj/item/war_horn/human/elf
+	name = "elven war horn"
+
 /obj/item/war_horn/orc
 	name = "Orcish war horn"
 	icon_state = "orchorn"

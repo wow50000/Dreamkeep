@@ -225,7 +225,7 @@
 	wbalance = 0
 	minstr = 5
 	wdefense = 0
-	charge = 1000
+	charge = 300
 	on = FALSE
 
 /obj/item/rogueweapon/mace/stunmace/hedgeknight/pickup(mob/user)
@@ -233,20 +233,19 @@
 	var/mob/living/carbon/human/H = user
 	if(!HAS_TRAIT(H, TRAIT_SHOCKIMMUNE) || HAS_TRAIT(H, TRAIT_RAVOX_CURSE))
 		to_chat(H, span_danger("As you grasp the hedgeknight mace, you touch its kneestingers and feel a powerful and excruciating shock radiate through your body!"))
-		H.electrocute_act(30, src)
-		H.Paralyze(10 SECONDS, ignore_canstun = TRUE)
+		H.electrocute_act(15, src) //nobody likes this, its been proven at tgmc but i guess its too late now
 
 /obj/item/rogueweapon/mace/stunmace/hedgeknight/process()
 	var/mob/living/user = loc
 	if(istype(user))
 		if(!HAS_TRAIT(user, TRAIT_SHOCKIMMUNE) || HAS_TRAIT(user, TRAIT_RAVOX_CURSE))
 			to_chat(user, span_danger("As you grasp the hedgeknight mace, you touch its kneestingers and feel a powerful and excruciating shock radiate through your body!"))
-			user.Paralyze(10 SECONDS, ignore_canstun = TRUE)
+			user.electrocute_act(15, src)
 	if(on)
 		charge--
 	else
-		if(charge < 1000)
-			charge += 25
+		if(charge < 300)
+			charge += 10
 	if(charge <= 0)
 		on = FALSE
 		charge = 0

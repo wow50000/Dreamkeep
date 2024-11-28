@@ -153,7 +153,7 @@
 		cloak = /obj/item/clothing/cloak/raincloak/furcloak
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 	// HEARTHSTONE ADD: cloistered devout custom outfits
-	else if (classchoice == "Cloistered Devout")
+	else if (classchoice == "Temple Devout")
 		// do the generic stuff first then replace it w/ patron specific things... if it exists
 		// for reference, cloistered devouts are lightly armored/unarmored but get patron-specific stuff (if applicable) and a devo regen
 		head = /obj/item/clothing/head/roguetown/roguehood/black
@@ -201,7 +201,7 @@
 	// HEARTHSTONE ADDITION END
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	// HEARTHSTONE ADDITION: cloistered devout devo regen & tier buff
-	if (classchoice == "Cloistered Devout")
+	if (classchoice == "Temple Devout")
 		if(H.patron?.type == /datum/patron/divine/noc)
 			C.grant_spells_devout_noc(H)
 		else

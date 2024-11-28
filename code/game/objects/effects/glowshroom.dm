@@ -59,7 +59,7 @@
 	if(isliving(user) && W && user.z == z)
 		if(W.flags_1 & CONDUCT_1)
 			var/mob/living/L = user
-			if(L.electrocute_act(5, src)) // The kneestingers will let you pass if you worship dendor, but they won't take your stupid ass hitting them.
+			if(L.electrocute_act(15, src)) // The kneestingers will let you pass if you worship dendor, but they won't take your stupid ass hitting them.
 				L.emote("painscream")
 				L.consider_ambush()
 				if(L.throwing)
@@ -140,13 +140,12 @@
 	qdel(src)
 
 /obj/structure/safeglowshroom/Destroy()
-	var/datum/reagents/R = new/datum/reagents(30)
+	var/datum/reagents/R = new/datum/reagents(25)
 	R.my_atom = src
-	R.add_reagent(/datum/reagent/berrypoison, 30)
+	R.add_reagent(/datum/reagent/berrypoison, 25)
 	var/datum/effect_system/smoke_spread/chem/smoke = new
-	smoke.set_up(R, 5, get_turf(src), FALSE)
+	smoke.set_up(R, 6, get_turf(src), FALSE)
 	smoke.start()
-	explosion(loc, 1, 1, 1, 0, 0) //and gas release ig
 	. = ..()
 
 //used by stupid spell

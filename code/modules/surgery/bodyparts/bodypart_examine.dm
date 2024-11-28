@@ -127,25 +127,25 @@
 						salami = TRUE
 						penisAdd = 1
 			var/mob/living/carbon/human/ownerussy = owner
-			if(ownerussy.has_penis() || salami)
-				var/obj/item/organ/penis/ownerussypenis = ownerussy.getorgan(/obj/item/organ/penis)
+			if(ownerussy.getorganslot(ORGAN_SLOT_PENIS) || salami)
+				var/obj/item/organ/penis/ownerussypenis = ownerussy.getorganslot(ORGAN_SLOT_PENIS)
 				if (ownerussypenis)
 					bodypart_status += "[ownerussy] has a [find_key_by_value(GLOB.uns_named_penis_sizes, ownerussypenis.organ_size+penisAdd)] penis."
 				else
 					bodypart_status += "[ownerussy] has a [find_key_by_value(GLOB.uns_named_penis_sizes, 1)] penis."
-			if(ownerussy.has_testicles())
-				var/obj/item/organ/filling_organ/testicles/ownerussyballs = ownerussy.getorgan(/obj/item/organ/filling_organ/testicles)
+			if(ownerussy.getorganslot(ORGAN_SLOT_TESTICLES))
+				var/obj/item/organ/filling_organ/testicles/ownerussyballs = ownerussy.getorganslot(ORGAN_SLOT_TESTICLES)
 				bodypart_status += "[ownerussy] has [find_key_by_value(GLOB.uns_named_ball_sizes, ownerussyballs.organ_size)] testicles."
-			if(ownerussy.has_breasts())
-				var/obj/item/organ/filling_organ/breasts/ownerussybreasts = ownerussy.getorgan(/obj/item/organ/filling_organ/breasts)
+			if(ownerussy.getorganslot(ORGAN_SLOT_BREASTS))
+				var/obj/item/organ/filling_organ/breasts/ownerussybreasts = ownerussy.getorganslot(ORGAN_SLOT_BREASTS)
 				bodypart_status += "[ownerussy] has [find_key_by_value(GLOB.uns_named_breast_sizes, ownerussybreasts.organ_size)] breasts."
-			if(ownerussy.has_belly())
-				var/obj/item/organ/belly/ownerussybelly = ownerussy.getorgan(/obj/item/organ/belly)
+			if(ownerussy.getorganslot(ORGAN_SLOT_BELLY))
+				var/obj/item/organ/belly/ownerussybelly = ownerussy.getorganslot(ORGAN_SLOT_BELLY)
 				bodypart_status += "[ownerussy] has a [find_key_by_value(GLOB.named_belly_sizes, ownerussybelly.organ_size)] belly."
-			if(ownerussy.has_butt())
-				var/obj/item/organ/butt/ownerussybutt = ownerussy.getorgan(/obj/item/organ/butt)
+			if(ownerussy.getorganslot(ORGAN_SLOT_BUTT))
+				var/obj/item/organ/butt/ownerussybutt = ownerussy.getorganslot(ORGAN_SLOT_BUTT)
 				bodypart_status += "[ownerussy] has a [find_key_by_value(GLOB.uns_named_butt_sizes, ownerussybutt.organ_size)] butt."
-			if(ownerussy.has_vagina())
+			if(ownerussy.getorganslot(ORGAN_SLOT_VAGINA))
 				bodypart_status += "[ownerussy] has a vagina."
 
 	return bodypart_status
