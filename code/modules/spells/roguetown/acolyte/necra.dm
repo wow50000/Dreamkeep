@@ -62,7 +62,7 @@
 			else
 				add_buff_timer(person)
 	else
-		to_chat(user, span_warning("I need to be holding ashes in my hand to cast this.")
+		to_chat(user, span_warning("I need to be holding ashes in my hand to cast this."))
 
 /obj/effect/proc_holder/spell/targeted/seance/proc/add_buff_timer(mob/living/user)
 	ADD_TRAIT(user, TRAIT_SEESPIRITS, MAGIC_TRAIT)
