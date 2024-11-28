@@ -1,5 +1,5 @@
 /obj/item/clothing/suit/roguetown/shirt/robe
-	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK|ITEM_SLOT_CLOAK
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK|ITEM_SLOT_SHIRT
 	name = "robe"
 	desc = ""
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
@@ -274,7 +274,7 @@
 	icon = 'icons/roguetown/clothing/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
 	icon_state = "feldrobe"
-	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK|ITEM_SLOT_SHIRT
 	sleeved = null
 	boobed = TRUE
 	color = null
@@ -288,7 +288,7 @@
 	icon = 'icons/roguetown/clothing/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
 	icon_state = "surgrobe"
-	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK|ITEM_SLOT_SHIRT
 	sleeved = null
 	boobed = TRUE
 	color = null
