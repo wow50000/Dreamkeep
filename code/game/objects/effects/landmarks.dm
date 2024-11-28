@@ -42,14 +42,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	if(delete_after_roundstart)
 		qdel(src)
 
-/obj/effect/landmark/start/New()
+/obj/effect/landmark/start/Initialize()
 	GLOB.start_landmarks_list += src
 	if(jobspawn_override.len)
 		for(var/X in jobspawn_override)
-			if(!GLOB.jobspawn_overrides[X])
-				GLOB.jobspawn_overrides[X] = list()
-			GLOB.jobspawn_overrides[X] += src
-	..()
+			LAZYADD(GLOB.jobspawn_overrides[X], src)
+	. = ..()
 	if(name != "start")
 		tag = "start*[name]"
 
@@ -64,7 +62,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "generic_event"
 
 /obj/effect/landmark/events/haunts/Initialize(mapload)
-	..()
+	. = ..()
 	GLOB.hauntstart += src
 	icon_state = ""
 
@@ -75,7 +73,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	var/aportalloc = "a"
 
 /obj/effect/landmark/events/testportal/Initialize(mapload)
-	..()
+	. = ..()
 //	GLOB.hauntstart += loc
 #ifdef TESTSERVER
 	var/obj/structure/fluff/testportal/T = new /obj/structure/fluff/testportal(loc)
@@ -420,6 +418,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/adventurer
 	name = "Adventurer"
 	icon_state = "arrow"
+	delete_after_roundstart = FALSE // used by mob spawners
 
 //yrf
 
@@ -725,7 +724,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "wiznerd_spawn"
 
 /obj/effect/landmark/start/wizard/Initialize()
-	..()
+	. = ..()
 	GLOB.wizardstart += loc
 
 /obj/effect/landmark/start/nukeop
@@ -734,7 +733,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "snukeop_spawn"
 
 /obj/effect/landmark/start/nukeop/Initialize()
-	..()
+	. = ..()
 	GLOB.nukeop_start += loc
 
 /obj/effect/landmark/start/bandit
@@ -743,7 +742,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/bandit/Initialize()
-	..()
+	. = ..()
 	GLOB.bandit_starts += loc
 
 
@@ -753,7 +752,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/delf/Initialize()
-	..()
+	. = ..()
 	GLOB.delf_starts += loc
 
 
@@ -763,7 +762,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "snukeop_leader_spawn"
 
 /obj/effect/landmark/start/nukeop_leader/Initialize()
-	..()
+	. = ..()
 	GLOB.nukeop_leader_start += loc
 
 // Must be immediate because players will
@@ -774,7 +773,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "New Player"
 
 /obj/effect/landmark/start/new_player/Initialize()
-	..()
+	. = ..()
 	GLOB.newplayer_start += loc
 
 /obj/effect/landmark/latejoin

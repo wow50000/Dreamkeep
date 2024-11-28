@@ -55,7 +55,7 @@
 	pixel_y = -8
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/Initialize()
-	..()
+	. = ..()
 	gender = MALE
 	if(prob(50))
 		gender = FEMALE
@@ -182,6 +182,7 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/shapeshift
+	faction = list("rats", "Station")
 	health = 200
 	maxHealth = 200
 	erpable = TRUE

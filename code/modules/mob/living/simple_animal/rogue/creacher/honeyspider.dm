@@ -58,7 +58,7 @@
 	maxHealth = 130
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/Initialize()
-	..()
+	. = ..()
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE
@@ -169,6 +169,8 @@
 	deaggroprob = 30
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/shapeshift
+
+	faction = list("spiders", "Station")
 	health = 150
 	maxHealth = 150
 	erpable = TRUE

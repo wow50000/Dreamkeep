@@ -356,6 +356,7 @@
 	update_icon()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/shapeshift
+	faction = list("saiga", "Station")
 	health = 200
 	maxHealth = 200
 	erpable = TRUE

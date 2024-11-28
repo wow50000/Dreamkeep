@@ -247,7 +247,7 @@
 	. = 1
 
 /obj/item/riddleofsteel/Initialize()
-	..()
+	. = ..()
 	set_light(2, 1, "#ff0d0d")
 
 /obj/item/reagent_containers/powder/mfire/Initialize()

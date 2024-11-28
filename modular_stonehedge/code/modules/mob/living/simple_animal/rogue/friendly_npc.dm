@@ -49,7 +49,7 @@
 		return FALSE
 
 	if(L.lying && !L.get_active_held_item())
-		if(ishuman(L))
+		if(ishuman(L) && L.mind)
 			var/mob/living/carbon/human/badboi = L
 			if(badboi == lasthitter && Adjacent(badboi) && !badboi.handcuffed)
 				//untested but yeah.
@@ -137,6 +137,7 @@
 		"Fool!",
 		"You will pay, with your blood!",
 		)
+	punish_attacking = TRUE
 	var/patrol = TRUE
 	var/lastpatroltime
 
@@ -161,41 +162,65 @@
 	var/list/suitable_locations = list()
 
 	// Collect all nearby stone road tiles
-	for(var/turf/T in world)
-		if((!istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/floor/rogue/dirt) && !istype(T, /turf/open/floor/rogue/grass) && !istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/lava) && !istype(T, /turf/open/lava/acid)) && get_dist(src, T) < 12) // Adjust distance as needed
-			suitable_locations += T
+	// Adjust distance as needed, please keep it relatively low
+	var/const/search_distance = 12 // allow them to move slightly out of their view range
+	// It's genuinely faster to do three separate checks because BYOND does internal optimizations for it
+	for(var/turf/open/floor/rogue/blocks/T in range(search_distance))
+		suitable_locations += T
+	for(var/turf/open/floor/rogue/cobble/T in range(search_distance))
+		suitable_locations += T
+	for(var/turf/open/floor/rogue/cobblerock/T in range(search_distance))
+		suitable_locations += T
 
 	// Randomly select one of the suitable locations
-	if(suitable_locations.len)
-		return pick(suitable_locations)
+	return safepick(suitable_locations)
 
-	return null
+// working on fixing this, it's much better than the above system
+// - ophelia
 
 //this does not work for some reason unfortunately
 /*
 /mob/living/carbon/human/species/human/smartnpc/townguard/npc_idle()
+	var/static/foliage_turfs // turf types we shouldn't move to as a fallback
+	if(!foliage_turfs)
+		foliage_turfs = typecacheof(list(/turf/open/floor/rogue/dirt, /turf/open/floor/rogue/grass))
 	. = ..()
+	if(mobility_flags & MOBILITY_MOVE || !isturf(loc) || !patrol)
+		return
 	//im not smart enough to make a good patrol system but here.
-	if((mobility_flags & MOBILITY_MOVE) && isturf(loc) && patrol)
-		if(prob(20))
-			if(world.time > lastpatroltime + 10 SECONDS) //give em some time to reach and whatever
-			var/foundpatrolpoints
-			for(var/obj/effect/landmark/townpatrol/patrolpoint in orange(30,src))
-				foundpatrolpoints += patrolpoint
-			if(foundpatrolpoints)
-				var/pickedpoint = get_closest_atom(/obj/effect/landmark/townpatrol, foundpatrolpoints, src)
-				if(pickedpoint)
-					walk2derpless(pickedpoint)
-					lastpatroltime = world.time
-			else
-				//make them randomly go to a distant tile thats not foilage, if there is no patrol landmark around
-				var/turf/open/T = oview(pick(13,24),src)
-				if(!istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/floor/rogue/dirt) && !istype(T, /turf/open/floor/rogue/grass))
-					walk2derpless(T)
+	if(prob(20) && world.time > lastpatroltime + 10 SECONDS) //give em some time to reach and whatever
+		var/obj/effect/landmark/townpatrol/closest_point
+		var/min_distance = INFINITY
+		for(var/obj/effect/landmark/townpatrol/patrolpoint in GLOB.patrol_points)
+			var/candidate_dist = get_dist(src, patrolpoint)
+			if(candidate_dist < 1 || candidate_dist > 30) // too close or too far away
+				continue
+			if(candidate_dist < min_distance)
+				min_distance = candidate_dist
+				closest_point = patrolpoint
+		if(closest_point)
+			walk2derpless(pickedpoint)
+			lastpatroltime = world.time
+		else // this is expensive but should be a last resort for if they've been dragged off to the woods or something
+			//make them randomly go to a distant tile thats not foilage, if there is no patrol landmark around
+			var/turf/open/T = oview(rand(13,24),src)
+			if(!isgroundlessturf(T) && !foliage_turfs)
+			if(!istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/floor/rogue/dirt) && !istype(T, /turf/open/floor/rogue/grass))
+				walk2derpless(T)
+*/
 
+// Currently unused pending map changes.
+GLOBAL_LIST_EMPTY_TYPED(patrol_points, /obj/effect/landmark/townpatrol)
 /obj/effect/landmark/townpatrol
 	name = "patrol-point"
-*/
+
+/obj/effect/landmark/townpatrol/Initialize()
+	. = ..()
+	GLOB.patrol_points += src
+
+/obj/effect/landmark/townpatrol/Destroy()
+	GLOB.patrol_points -= src
+	return ..()
 
 /mob/living/carbon/human/species/human/smartnpc/townguard/brute
 
@@ -212,6 +237,7 @@
 	lasthitter = target
 	.=..()
 	if(target)
+		wander = TRUE
 		if(target == newtarg)
 			linepoint(target)
 			if(ishuman(target) && Adjacent(target))
@@ -224,9 +250,9 @@
 					say(pick("Sit the fuck down.", "Fuck away from me.", "Stay down."))
 					visible_message(span_emote("[src] bashes [target] away!"))
 					playsound(src,"punch_hard",100,TRUE)
+					target.throw_at(target, pick(1,3), 1, src, FALSE, TRUE)
 					target.Knockdown(25) //may end up getting you tied real fast.
-					target.throw_at(target, pick(2,3), 1, src, FALSE, TRUE)
-				else if(prob(5) && target.get_active_held_item())
+				else if(prob(5) && target.get_active_held_item() != null)
 					var/obj/item/activeitem = target.get_active_held_item()
 					if(!HAS_TRAIT(activeitem, TRAIT_NODROP))
 						say(pick("You are done.", "Ha! There goes your [activeitem.name]!", "You fucked up now!"))
@@ -234,7 +260,7 @@
 						playsound(src,"bladedmedium",100,TRUE)
 						target.OffBalance(15)
 						target.throw_at(activeitem, get_step_away(activeitem, target, 3), 1, target, TRUE, FALSE)
-				if(punish_attacking)
+				if(punish_attacking && target.mind)
 					var/bounty_exists = FALSE
 					for(var/datum/bounty/b in GLOB.head_bounties)
 						if(b.target == target.real_name)

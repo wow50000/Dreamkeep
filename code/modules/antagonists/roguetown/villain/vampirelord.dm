@@ -73,7 +73,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
 		ADD_TRAIT(owner.current, TRAIT_TOXIMMUNE, "[type]")
 		ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, "[type]")
-	owner.current.faction = list("undead")
+		owner.current.faction = list("undead")
 	for(var/obj/structure/fluff/traveltile/vampire/tile in GLOB.traveltiles)
 		tile.show_travel_tile(owner.current)
 	owner.current.cmode_music = 'sound/music/combat_vamp.ogg'
@@ -1103,7 +1103,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampirelord/Initialize()
-	..()
+	. = ..()
 	GLOB.vlord_starts += loc
 
 /obj/effect/landmark/start/vampirespawn
@@ -1118,7 +1118,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampirespawn/Initialize()
-	..()
+	. = ..()
 	GLOB.vspawn_starts += loc
 
 /obj/effect/landmark/vteleport

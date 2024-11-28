@@ -29,7 +29,7 @@
 
 /datum/quirk/curseofcain
 	name = "Flawed Immortality"
-	desc = "I don't need to eat or breathe anymore... Is this normal?"
+	desc = "I don't need to eat, sleep or breathe anymore... Is this normal?"
 	value = 5
 
 /datum/quirk/curseofcain/on_spawn()

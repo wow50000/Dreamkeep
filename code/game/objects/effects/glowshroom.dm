@@ -4,7 +4,7 @@
 	name = "kneestingers"
 	desc = ""
 	anchored = TRUE
-	max_integrity = 10
+	max_integrity = 1 //its a stupid mushroom
 	opacity = 0
 	density = FALSE
 	icon = 'icons/roguetown/misc/foliage.dmi'

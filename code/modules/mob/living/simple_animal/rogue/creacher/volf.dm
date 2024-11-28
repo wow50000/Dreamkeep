@@ -141,6 +141,7 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/shapeshift
+	faction = list("wolfs", "Station")
 	health = 200
 	maxHealth = 200
 	erpable = TRUE
