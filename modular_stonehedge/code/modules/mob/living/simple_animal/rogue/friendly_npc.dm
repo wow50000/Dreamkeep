@@ -161,13 +161,18 @@
 	var/list/suitable_locations = list()
 
 	// Collect all nearby stone road tiles
-	for(var/turf/T in world)
-		if((!istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/floor/rogue/dirt) && !istype(T, /turf/open/floor/rogue/grass) && !istype(T, /turf/open/transparent/openspace) && !istype(T, /turf/open/lava) && !istype(T, /turf/open/lava/acid)) && get_dist(src, T) < 12) // Adjust distance as needed
-			suitable_locations += T
+	// Adjust distance as needed, please keep it relatively low
+	var/const/search_distance = 12 // allow them to move slightly out of their view range
+	// It's genuinely faster to do three separate checks because BYOND does internal optimizations for it
+	for(var/turf/open/floor/rogue/blocks/T in range(search_distance))
+		suitable_locations += T
+	for(var/turf/open/floor/rogue/cobble/T in range(search_distance))
+		suitable_locations += T
+	for(var/turf/open/floor/rogue/cobblerock/T in range(search_distance))
+		suitable_locations += T
 
 	// Randomly select one of the suitable locations
-	if(suitable_locations.len)
-		return pick(suitable_locations)
+	return safepick(suitable_locations)
 
 	return null
 
