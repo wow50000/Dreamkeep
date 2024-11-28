@@ -48,7 +48,7 @@ Will require a group to kill, recommend 5+ people.
 	patron = /datum/patron/inhumen/zizo
 	footstep_type = FOOTSTEP_MOB_SHOE
 	stat_attack = UNCONSCIOUS
-	ignore_laying = TRUE
+	attack_laying = TRUE
 
 	var/obj/effect/proc_holder/spell/targeted/turf_teleport/blink/blink = null
 	var/next_cast = 0
