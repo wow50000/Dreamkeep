@@ -122,9 +122,7 @@ SUBSYSTEM_DEF(maturity_guard)
 	// There should be only one, we're querying by the primary key; if it returns more than one row something is very wrong
 	var/result = query_age_from_db.NextRow()
 	if(result)
-		qdel(query_age_from_db)
 		return query_age_from_db.item
-	qdel(query_age_from_db)
 	return FALSE
 
 
@@ -148,10 +146,8 @@ SUBSYSTEM_DEF(maturity_guard)
 	)
 
 	if(!add_age_to_db.warn_execute())
-		qdel(add_age_to_db)
 		return FALSE
 
-	qdel(add_age_to_db)
 	return TRUE
 
 // Logic inspired by S.P.L.U.R.T age_gate

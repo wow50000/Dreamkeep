@@ -14,7 +14,7 @@
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/bogguardsman
 	give_bank_account = 60
-	min_pq = 15
+	min_pq = 0
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_bog.ogg'
@@ -30,7 +30,7 @@
 				index = copytext(H.real_name, 1,index)
 			if(!index)
 				index = H.real_name
-			S.name = "Hedgeknight tabard ([index])"
+			S.name = "Hedge Knight tabard ([index])"
 
 /datum/outfit/job/roguetown/bogguardsman/pre_equip(mob/living/carbon/human/H)
 	. = ..()

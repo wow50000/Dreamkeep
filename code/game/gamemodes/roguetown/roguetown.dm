@@ -413,7 +413,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Consort",
 	"Archpriest",
 	"Wytcher",
-	"Hedgeknight",
+	"Hedge Knight",
 	"Hedgemaster",
 	"Royal Guard",
 	"Gravesinger",
