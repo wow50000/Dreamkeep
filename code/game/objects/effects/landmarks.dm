@@ -42,14 +42,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	if(delete_after_roundstart)
 		qdel(src)
 
-/obj/effect/landmark/start/New()
+/obj/effect/landmark/start/Initialize()
 	GLOB.start_landmarks_list += src
 	if(jobspawn_override.len)
 		for(var/X in jobspawn_override)
-			if(!GLOB.jobspawn_overrides[X])
-				GLOB.jobspawn_overrides[X] = list()
-			GLOB.jobspawn_overrides[X] += src
-	..()
+			LAZYADD(GLOB.jobspawn_overrides[X], src)
+	. = ..()
 	if(name != "start")
 		tag = "start*[name]"
 
@@ -420,6 +418,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/adventurer
 	name = "Adventurer"
 	icon_state = "arrow"
+	delete_after_roundstart = FALSE // used by mob spawners
 
 //yrf
 
