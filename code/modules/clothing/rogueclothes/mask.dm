@@ -179,8 +179,8 @@
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	resistance_flags = FIRE_PROOF
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
-	flags_inv = HIDEFACE
-	body_parts_covered = FACE
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	body_parts_covered = FACE|EYES|MOUTH|HEAD|HAIR
 	block2add = FOV_BEHIND
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	experimental_onhip = TRUE
