@@ -137,6 +137,7 @@
 		"Fool!",
 		"You will pay, with your blood!",
 		)
+	punish_attacking = TRUE
 	var/patrol = TRUE
 	var/lastpatroltime
 
