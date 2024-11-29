@@ -7515,6 +7515,13 @@
 /area/rogue/outdoors{
 	first_time_text = "Stonehedge"
 	})
+"fDe" = (
+/obj/effect/landmark/townpatrol,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge Borders";
+	name = "far stonehedge"
+	})
 "fDk" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/rogue/dirt,
@@ -13309,6 +13316,13 @@
 /area/rogue/indoors/town/garrison{
 	first_time_text = "Adventurers Guild";
 	name = "Adventurers Guild"
+	})
+"kfa" = (
+/obj/effect/landmark/townpatrol,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge Borders";
+	name = "far stonehedge"
 	})
 "kfO" = (
 /obj/structure/flora/roguegrass/bush,
@@ -26975,6 +26989,12 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"uyo" = (
+/obj/effect/landmark/townpatrol,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
+	})
 "uyu" = (
 /obj/item/natural/rock/gem,
 /turf/open/floor/rogue/naturalstone,
@@ -28811,6 +28831,12 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/shelter/town)
+"vYY" = (
+/obj/effect/landmark/townpatrol,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors{
+	first_time_text = "Stonehedge"
+	})
 "vYZ" = (
 /obj/structure/flora/roguegrass/water/reeds,
 /obj/structure/flora/roguegrass/water/reeds,
@@ -111257,7 +111283,7 @@ qJZ
 qJZ
 haD
 ycO
-ycO
+kfa
 ycO
 haD
 mYC
@@ -116913,6 +116939,7 @@ qJZ
 tLk
 ucF
 beK
+fDe
 beK
 beK
 beK
@@ -116921,8 +116948,7 @@ beK
 beK
 beK
 beK
-beK
-beK
+fDe
 beK
 beK
 beK
@@ -122780,7 +122806,7 @@ qJZ
 qJZ
 qJZ
 beK
-beK
+fDe
 beK
 rLF
 aeO
@@ -126780,7 +126806,7 @@ fqz
 kJr
 fqz
 fqz
-fqz
+uyo
 fqz
 fqz
 mfo
@@ -128638,7 +128664,7 @@ beK
 beK
 beK
 beK
-beK
+fDe
 nFS
 qJZ
 ucZ
@@ -129830,7 +129856,7 @@ xBY
 xBY
 xBY
 xBY
-xBY
+vYY
 agO
 beK
 beK
@@ -130012,7 +130038,7 @@ sPO
 cMN
 fqz
 ixt
-xBY
+vYY
 xBY
 xBY
 xBY
@@ -157056,7 +157082,7 @@ nPY
 sPO
 nPY
 fqz
-fqz
+uyo
 fqz
 wLq
 sPO
@@ -161705,7 +161731,7 @@ fqz
 fqz
 fqz
 fqz
-fqz
+uyo
 fqz
 fqz
 fqz
