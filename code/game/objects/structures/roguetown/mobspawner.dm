@@ -9,6 +9,7 @@ var/global/max_total_spawned_mobs = 100 // New global variable for the total lim
 	var/mobs_to_spawn = 0
 	var/current_spawned_mobs = 0
 	var/spawn_interval = 3600 //6 minutes
+	var/temporary = FALSE
 	var/spawn_range = 10 //radius in which mobs can be spawned
 	var/player_range = 15 //range at which a nearby player will pause the spawner
 	var/list/ambush_mobs = list(/mob/living/carbon/human/species/skeleton/npc/ambush = 20)
@@ -31,7 +32,9 @@ var/global/max_total_spawned_mobs = 100 // New global variable for the total lim
 		if (total_spawned_mobs < max_total_spawned_mobs && current_spawned_mobs < max_spawned_mobs)
 			spawn_random_mobs(mobs_to_spawn)
 		start_spawning()
-
+		if (temporary)
+			QDEL_IN(src, 30)
+			return
 	proc/spawn_random_mobs(var/num_to_spawn)
 		var/spawn_chance = 100 // 100% chance to spawn if conditions are met
 		if (prob(spawn_chance) && total_spawned_mobs < max_total_spawned_mobs)
