@@ -123,7 +123,8 @@ SUBSYSTEM_DEF(maturity_guard)
 	var/result = query_age_from_db.NextRow()
 	if(result)
 		qdel(query_age_from_db)
-		return query_age_from_db.item
+		var/list/itemreturn = query_age_from_db.item.Copy()
+		return itemreturn
 	qdel(query_age_from_db)
 	return FALSE
 

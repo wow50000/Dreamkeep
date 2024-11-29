@@ -730,6 +730,8 @@
 /mob/living/carbon/update_sight()
 	if(!client)
 		return
+	if(HAS_TRAIT(src, TRAIT_SEESPIRITS))//DK Change
+		see_invisible = SEE_INVISIBLE_OBSERVER
 //	if(stat == DEAD)
 //		sight = (SEE_TURFS|SEE_MOBS|SEE_OBJS)
 //		see_in_dark = 8

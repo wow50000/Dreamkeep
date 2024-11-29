@@ -257,6 +257,10 @@
 				H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 6, TRUE)
 				H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
 				H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 6, TRUE)
+				H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 6, TRUE) // testing smith item qualities
+				H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 6, TRUE)
+				H.mind.adjust_skillrank_up_to(/datum/skill/craft/weaponsmithing, 6, TRUE)
+				H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 6, TRUE)
 				H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 3, TRUE)
 			H.change_stat("strength", 3)
 			H.change_stat("constitution", 3)

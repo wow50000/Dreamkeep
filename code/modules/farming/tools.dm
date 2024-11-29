@@ -383,8 +383,8 @@
 /obj/item/rogueweapon/sickle/scythe
 	force = 15
 	force_wielded = 25
-	possible_item_intents = list(DAGGER_CUT)
-	gripped_intents = list(SPEAR_BASH,DAGGER_CUT)
+	possible_item_intents = list(/datum/intent/axe/cut)
+	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop/battle/scythe,SPEAR_BASH)
 	name = "scythe"
 	desc = "A curved blade used to sow harvest."
 	icon_state = "scythe"
@@ -400,7 +400,12 @@
 	slot_flags = ITEM_SLOT_BACK
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
+	wdefense = 6
 	improvised = TRUE
+
+/datum/intent/axe/chop/battle/scythe
+	reach = 2
+	swingdelay = 5
 
 /obj/item/rogueweapon/sickle/scythe/getonmobprop(tag)
 	. = ..()

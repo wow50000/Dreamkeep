@@ -41,6 +41,7 @@
 #define TRAIT_SEEDKNOW "Seed Knower"
 #define TRAIT_GOODRUNNER "Good Runner"
 #define TRAIT_TINY "Tiny"
+#define TRAIT_SEESPIRITS "Spectral Sight"
 // ROGUEspecialTRAITS (description when rmb skills button)
 #define TRAIT_CIVILIZEDBARBARIAN "Tavern Brawler"
 #define TRAIT_COMICSANS "Annoying Face"
@@ -195,7 +196,6 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_FIENDKISS = "When I cast projectile magic, the fiend also hurls a fire bolt at the same location.", // Hearthstone change
 	TRAIT_CHARGER = "I can charge into people like a ram.", // Hearthstone change
 	TRAIT_ARTIFICER = "I can use gems to improve items.", // Hearthstone change
-
 	TRAIT_BOG_TREKKING = "Expert in navigating these lands.", // Hearthstone change
 	TRAIT_GOODRUNNER = span_info("I can run without breaking a sweat!"),
 	TRAIT_NUDE_SLEEPER = span_warning("I can't fall asleep unless I'm nude and in bed."),
@@ -204,6 +204,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NIGHT_VISION = span_info("Whether because of my species, my career choice, or by some boon of my patron, my eyes have adapted to see well in the dark."),
 	TRAIT_SUPER_NV = span_info("My ability to see in the dark extends further than that of most others, and I can consciously control how bright my surroundings appear to me."),
 	TRAIT_BLINDFIGHTING = span_info("I have an incredible sense of awareness, allowing me to dodge and parry attacks even when I can't see them coming, If i am in high awareness, I can even prevent sneak attacks."),
+	TRAIT_SEESPIRITS = span_necrosis("My eyes peer beyond the veil of life and death, allowing me to perceive spirits."),
 ))
 
 // trait accessor defines
