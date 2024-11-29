@@ -32,9 +32,9 @@ var/global/max_total_spawned_mobs = 100 // New global variable for the total lim
 		if (total_spawned_mobs < max_total_spawned_mobs && current_spawned_mobs < max_spawned_mobs)
 			spawn_random_mobs(mobs_to_spawn)
 		start_spawning()
-		if (temporary == TRUE) 
-			sleep(30)
-			del src
+		if (temporary) 
+			QDEL_IN(3 SECONDS)
+			return
 	proc/spawn_random_mobs(var/num_to_spawn)
 		var/spawn_chance = 100 // 100% chance to spawn if conditions are met
 		if (prob(spawn_chance) && total_spawned_mobs < max_total_spawned_mobs)
