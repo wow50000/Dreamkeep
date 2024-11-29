@@ -7353,6 +7353,10 @@
 	first_time_text = "Emerald Shores";
 	name = "Shores of the Emerald Coast"
 	})
+"fuV" = (
+/obj/structure/fluff/statue/small,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/under/cavewet)
 "fvg" = (
 /turf/open/water/cleanshallow,
 /area/rogue/under/cavewet/bogcaves)
@@ -13167,6 +13171,10 @@
 /obj/effect/landmark/start/bogguardsman,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/shelter/bog)
+"kaS" = (
+/obj/machinery/light/rogue/firebowl/church,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/under/cavewet)
 "kaT" = (
 /obj/structure/flora/roguetree/happyrandom{
 	desc = "An old, beloved tree that even elves could love.";
@@ -20097,6 +20105,10 @@
 /area/rogue/outdoors/woods{
 	first_time_text = "The Twilight Woods"
 	})
+"pux" = (
+/obj/machinery/light/rogue/firebowl/church,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/under/cavewet)
 "puD" = (
 /obj/effect/wisp,
 /obj/structure/spacevine/dendor,
@@ -29300,6 +29312,12 @@
 	},
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/shelter/town)
+"wwV" = (
+/obj/structure/closet/crate/chest/reward/lich,
+/obj/item/gun/magic/staff/chaos/lich,
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/lich,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/under/cavewet)
 "wxp" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /obj/structure/fluff/statue/gargoyle/moss/candles,
@@ -38363,28 +38381,28 @@ jQN
 iMF
 lHY
 pps
-pps
+kaS
 pps
 pps
 edN
 pps
 pps
 pps
+kaS
 pps
 pps
 pps
 pps
 pps
 pps
+kaS
 pps
 pps
 pps
 pps
 pps
 pps
-pps
-pps
-pps
+kaS
 iMF
 fDV
 fDV
@@ -38967,7 +38985,7 @@ jQN
 jQN
 jQN
 iMF
-lHY
+fuV
 pps
 eAZ
 pps
@@ -39169,7 +39187,7 @@ jQN
 jQN
 jQN
 iMF
-lHY
+wwV
 pps
 teB
 pps
@@ -39371,7 +39389,7 @@ jQN
 jQN
 jQN
 iMF
-lHY
+fuV
 pps
 uwp
 pps
@@ -39979,28 +39997,28 @@ jQN
 iMF
 lHY
 pps
-pps
+kaS
 pps
 pps
 edN
 pps
 pps
 pps
+kaS
 pps
 pps
 pps
 pps
 pps
 pps
+kaS
 pps
 pps
 pps
 pps
 pps
 pps
-pps
-pps
-pps
+kaS
 iMF
 fDV
 fDV
@@ -45451,7 +45469,7 @@ vCu
 vCu
 vCu
 vCu
-vCu
+pux
 vCu
 vCu
 vCu
@@ -46663,7 +46681,7 @@ vCu
 vCu
 vCu
 vCu
-vCu
+pux
 vCu
 vCu
 vCu
@@ -48452,9 +48470,9 @@ amU
 kwk
 mhP
 vCu
+pux
 vCu
-vCu
-vCu
+pux
 vCu
 mhP
 kwk

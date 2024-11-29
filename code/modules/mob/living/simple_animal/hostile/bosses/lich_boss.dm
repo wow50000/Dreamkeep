@@ -233,6 +233,7 @@ Will require a group to kill, recommend 5+ people.
 	var/turf/T = get_turf(src)
 	playsound(T,'sound/vo/mobs/gravelord/glord_die.ogg', 80, TRUE, TRUE)
 	new /obj/item/roguekey/mage/lich(T)
+	new /obj/item/book/granter/trait/war/undying(T)
 	return ..()
 
 
@@ -379,14 +380,14 @@ Will require a group to kill, recommend 5+ people.
 	lockid = "lich"
 	masterkey = FALSE
 
-/obj/item/gun/magic/staff/chaos/lich
-	name = "wand of chaos"
-	desc = ""
+/obj/item/gun/magic/staff/chaos/lich //Staff of chaos reworked. Can store three spells at a time, fires them randomly when used. Slow recharge.
+	name = "wand of the lich"
+	desc = "An odd staff imbued with powerful magic."
 	icon_state = "staffofchaos"
 	item_state = "staffofchaos"
 	gripsprite = FALSE
 	fire_sound = 'sound/magic/whiteflame.ogg'
-	ammo_type = /obj/item/ammo_casing/magic/chaos/lich
+	ammo_type = /obj/item/ammo_casing/magic/chaos
 	force = 10
 	possible_item_intents = list(SPEAR_BASH, /datum/intent/shoot)
 	wlength = WLENGTH_SHORT
@@ -400,14 +401,21 @@ Will require a group to kill, recommend 5+ people.
 	wdefense = 3
 	associated_skill = /datum/skill/combat/maces
 	max_charges = 3
-	recharge_rate = 2
+	recharge_rate = 8
 	allowed_projectile_types = list(/obj/projectile/magic/sickness/lich, /obj/projectile/magic/lightning, /obj/projectile/magic/arcane_barrage,
 	/obj/projectile/magic/eldritchblast5e/empowered, /obj/projectile/magic/rayoffrost5e, /obj/projectile/magic/acidsplash5e)
 
-/obj/item/gun/magic/staff/chaos/lich/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-	chambered.projectile_type = pick(allowed_projectile_types)
-	. = ..()
-
-/obj/item/ammo_casing/magic/chaos/lich
-	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect
-
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/lich //Improved spellslinger armor
+	name = "fancy dark robes"
+	desc = "Dark robes taken from the treasure horde of a Lich. It is embroidered with silver and studded with rare gems."
+	icon_state = "vamp"
+	icon = 'icons/roguetown/clothing/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
+	armor = list("blunt" = 40, "slash" = 60, "stab" = 55, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = null
+	smeltresult = /obj/item/ingot/silver
+	sewrepair = TRUE
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	max_integrity = 600
+	armor_class = ARMOR_CLASS_LIGHT
