@@ -91,7 +91,7 @@ Will require a group to kill, recommend 5+ people.
 	icon_icon = 'icons/mob/actions/actions_minor_antag.dmi'
 	button_icon_state = "art_summon"
 	usage_probability = 100
-	boss_cost = 60
+	boss_cost = 70
 	boss_type = /mob/living/simple_animal/hostile/retaliate/rogue/boss/lich
 	needs_target = TRUE
 	say_when_triggered = "Hgf'ant'kthar!"
@@ -118,6 +118,7 @@ Will require a group to kill, recommend 5+ people.
 	if(target && next_cast < world.time && next_blink < world.time) //Triggers a blink spell
 		if(blink.cast_check(0,src))
 			blink.choose_targets(src)
+			blink.invocation = pick(taunt)
 			next_cast = world.time + 20
 			next_blink = world.time + 120
 			return .
