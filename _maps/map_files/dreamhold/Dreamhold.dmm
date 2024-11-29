@@ -13854,7 +13854,7 @@
 	},
 /obj/item/paper{
 	info = "Scouts have reported large numbers of skeletons beneath the old mines west of town, in the mushroom caverns. They appear to have uncovered buried ruins and have been observed digging and building deeper inside.  We need a group of atleast five adventurers to head to the area and investigate.";
-	name = "Quest - Challenging"
+	name = "Quest-Challenging"
 	},
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/indoors/town/garrison{
