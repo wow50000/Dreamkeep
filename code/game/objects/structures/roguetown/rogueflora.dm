@@ -15,7 +15,7 @@
 	plane = GAME_PLANE_UPPER
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	destroy_sound = 'sound/misc/woodhit.ogg'
-	debris = list(/obj/item/grown/log/tree/stick = 8)
+	debris = list(/obj/item/grown/log/tree/stick = 8, /obj/item/reagent_containers/food/snacks/grown/nut = 1)
 	static_debris = list(/obj/item/grown/log/tree/large = 4)
 	alpha = 200
 	leanable = TRUE

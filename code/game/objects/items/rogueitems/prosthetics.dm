@@ -57,6 +57,9 @@
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "prc_arm"
 	prosthetic_prefix = "prc"
+	brute_reduction = 10
+	burn_reduction = 10
+	max_damage = 50
 	fingers = TRUE
 	sellprice = 50
 
@@ -105,6 +108,9 @@
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "prc_arm"
 	prosthetic_prefix = "prc"
+	brute_reduction = 10
+	burn_reduction = 10
+	max_damage = 50
 	fingers = TRUE
 	sellprice = 50
 
@@ -155,6 +161,9 @@
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "prc_leg"
 	prosthetic_prefix = "prc"
+	brute_reduction = 10
+	burn_reduction = 10
+	max_damage = 50
 	organ_slowdown = 0
 	sellprice = 50
 
@@ -205,6 +214,9 @@
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "prc_leg"
 	prosthetic_prefix = "prc"
+	brute_reduction = 10
+	burn_reduction = 10
+	max_damage = 50
 	organ_slowdown = 0
 	sellprice = 50
 

@@ -27,6 +27,8 @@
 
 	// Main Menu
 	var/list/choices = list("Consult bounties", "Set bounty")
+	if(user.job in list("Hedgemaster", "Hedge Knight"))
+		choices += "Remove bounty"
 	var/selection = input(user, "The Excidium listens", src) as null|anything in choices
 
 	switch(selection)
@@ -36,6 +38,9 @@
 
 		if("Set bounty")
 			set_bounty(H)
+
+		if("Remove bounty")
+			remove_bounty(H)
 
 /obj/structure/roguemachine/bounty/attackby(obj/item/P, mob/user, params)
 
@@ -163,6 +168,34 @@
 	scom_announce(bounty_announcement)
 
 	message_admins("[ADMIN_LOOKUPFLW(user)] has set a bounty on [ADMIN_LOOKUPFLW(target)] with the reason of: '[reason]'")
+
+/obj/structure/roguemachine/bounty/proc/remove_bounty(mob/living/carbon/human/user)
+	var/list/eligible_players = list()
+
+	if(user.mind.known_people.len)
+		for(var/datum/bounty/b in GLOB.head_bounties)
+			eligible_players += b.target
+	else
+		to_chat(user, span_warning("I don't know anyone."))
+		return
+	var/mob/living/carbon/target = input(user, "Whose name shall be removed from the wanted list?", src) as null|anything in eligible_players
+	if(isnull(target))
+		say("No target selected.")
+		return
+
+	var/confirm = input(user, "Do you dare release this one?", src) as null|anything in list("Yes", "No")	
+	if(isnull(confirm) || confirm == "No") return
+	for(var/datum/bounty/b in GLOB.head_bounties)
+		if(b.target == target.real_name)
+			GLOB.head_bounties -= b
+
+	//Announce it locally and on scomm
+	playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
+	var/bounty_announcement = "[target] is no longer wanted."
+	say(bounty_announcement)
+	scom_announce(bounty_announcement)
+
+	message_admins("[ADMIN_LOOKUPFLW(user)] has removed a bounty on [ADMIN_LOOKUPFLW(target)]'")
 
 /proc/add_bounty(target_realname, amount, bandit_status, reason, employer_name)
 	var/datum/bounty/new_bounty = new /datum/bounty

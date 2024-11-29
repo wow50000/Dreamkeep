@@ -449,9 +449,10 @@
 	icon_state = "nut"
 	tastes = list("nutty" = 1)
 	filling_color = "#6b4d18"
-	bitesize = 3
+	bitesize = 1
 	foodtype = FRUIT
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	grind_results = list(/datum/reagent/consumable/acorn_powder = 4)
 
 /obj/item/reagent_containers/food/snacks/grown/tomato
 	name = "tomato"

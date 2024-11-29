@@ -52,7 +52,7 @@
 	//updates size caps
 	if(!issimple(H) && H.mind)
 		var/athletics = H.mind?.get_skill_level(/datum/skill/misc/athletics)
-		var/captarget = max_reagents+(athletics*4)
+		var/captarget = max_reagents+(athletics*4)+(5+storage_per_size+(storage_per_size*organ_size)) // Updates the max_reagents in case the organ size changes
 		if(damage)
 			captarget -= damage
 		if(contents.len)
@@ -99,14 +99,14 @@
 		if(owner.nutrition < (NUTRITION_LEVEL_HUNGRY - 25) && hungerhelp) //consumes if hungry and uses nutrient, putting below the limit so person dont get stress message spam.
 			var/remove_amount = min(reagent_generate_rate, reagents.total_volume)
 			if(uses_nutrient) //add nutrient
-				owner.adjust_nutrition(remove_amount*20) //since hunger factor is so tiny compared to the nutrition levels it has to fill
+				owner.adjust_nutrition(remove_amount) //since hunger factor is so tiny compared to the nutrition levels it has to fill
 			reagents.remove_reagent(reagent_to_make, remove_amount)
 		else
 			if((reagents.total_volume < reagents.maximum_volume) && refilling) //if organ is not full.
 				var/max_restore = owner.nutrition > (NUTRITION_LEVEL_WELL_FED) ? reagent_generate_rate * 2 : reagent_generate_rate
 				var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume) // amount restored if fed, capped by reagents.maximum_volume
 				if(uses_nutrient) //consume nutrient
-					owner.adjust_nutrition(-restore_amount*20)
+					owner.adjust_nutrition(-restore_amount)
 				reagents.add_reagent(reagent_to_make, restore_amount)
 	else //if nohunger, should just regenerate stuff for free no matter what, if refilling.
 		if((reagents.total_volume < reagents.maximum_volume) && refilling)
