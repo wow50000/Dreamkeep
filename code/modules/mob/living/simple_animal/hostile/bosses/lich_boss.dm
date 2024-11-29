@@ -53,6 +53,7 @@ Will require a group to kill, recommend 5+ people.
 	var/obj/effect/proc_holder/spell/targeted/turf_teleport/blink/blink = null
 	var/next_cast = 0
 	var/next_blink = 0
+	var/list/taunt = list("Witness my power!", "Die!", "Suffer!")
 	var/minions_to_spawn = 10
 	var/next_summon = 0
 	var/next_blaststrong = 0
@@ -74,7 +75,7 @@ Will require a group to kill, recommend 5+ people.
 	blink.player_lock = 0
 	blink.inner_tele_radius = 5
 	blink.outer_tele_radius = 6
-	blink.invocation = "Witness my power!"
+	blink.invocation = pick(taunt)
 	blink.invocation_type = "shout"
 	AddSpell(blink)
 	REMOVE_TRAIT(src, TRAIT_SIMPLE_WOUNDS, TRAIT_GENERIC)
@@ -84,7 +85,7 @@ Will require a group to kill, recommend 5+ people.
 	projectiletype = pick(allowed_projectile_types)
 	..()
 
-//Summon Ability
+//First Summon Ability. Spawns two fully armored carbon skeletons.
 /datum/action/boss/lich_summon_minions
 	name = "Summon Minions"
 	icon_icon = 'icons/mob/actions/actions_minor_antag.dmi'
@@ -108,26 +109,26 @@ Will require a group to kill, recommend 5+ people.
 
 /mob/living/simple_animal/hostile/retaliate/rogue/boss/lich/handle_automated_action()
 	. = ..()
-	if(target && next_cast < world.time && next_summon < world.time)
+	if(target && next_cast < world.time && next_summon < world.time) //Second summon ability. Spawns a mob of simple skeletons
 		spawn_minions(minions_to_spawn)
 		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, say), "Minions, to me!", null, list("colossus", "yell"))
 		next_cast = world.time + 10
 		next_summon = world.time + 600
 		return .
-	if(target && next_cast < world.time && next_blink < world.time)
+	if(target && next_cast < world.time && next_blink < world.time) //Triggers a blink spell
 		if(blink.cast_check(0,src))
 			blink.choose_targets(src)
 			next_cast = world.time + 20
 			next_blink = world.time + 120
 			return .
-	if(target && next_cast < world.time && health < maxHealth * 0.33 && next_blaststrong < world.time)
+	if(target && next_cast < world.time && health < maxHealth * 0.33 && next_blaststrong < world.time) //Fires a wave of greater fireballs after blinking
 		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, say), "I am immortal, you are NOTHING!", null, list("colossus", "yell"))
 		playsound(get_turf(src), 'sound/magic/antimagic.ogg', 70, TRUE)
 		blaststrong()
 		next_cast = world.time + 100
 		next_blaststrong = world.time + 300
 		return .
-	if(target && next_cast < world.time)
+	if(target && next_cast < world.time) //fires a wave of a random projectile after blinking
 		blast()
 		next_cast = world.time + 100
 		return .
@@ -135,7 +136,6 @@ Will require a group to kill, recommend 5+ people.
 
 /mob/living/simple_animal/hostile/retaliate/rogue/boss/lich/proc/blast(set_angle)
 	var/turf/target_turf = get_turf(target)
-	playsound(src, 'sound/blank.ogg', 200, TRUE, 2)
 	newtonian_move(get_dir(target_turf, src))
 	var/angle_to_target = Get_Angle(src, target_turf)
 	if(isnum(set_angle))
@@ -157,7 +157,6 @@ Will require a group to kill, recommend 5+ people.
 
 /mob/living/simple_animal/hostile/retaliate/rogue/boss/lich/proc/blaststrong(set_angle)
 	var/turf/target_turf = get_turf(target)
-	playsound(src, 'sound/blank.ogg', 200, TRUE, 2)
 	newtonian_move(get_dir(target_turf, src))
 	var/angle_to_target = Get_Angle(src, target_turf)
 	if(isnum(set_angle))
@@ -296,22 +295,18 @@ Will require a group to kill, recommend 5+ people.
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/shield/lich
 	wander = FALSE
 	STAPER = 20
-	del_on_deaggro = 30
 	faction = list("lich")
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow/lich
 	wander = FALSE
 	STAPER = 20
-	del_on_deaggro = 30
 	faction = list("lich")
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard/lich
 	wander = FALSE
 	STAPER = 20
-	del_on_deaggro = 30
 	faction = list("lich")
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear/lich
 	wander = FALSE
 	STAPER = 20
-	del_on_deaggro = 30
 	faction = list("lich")
 
 /mob/living/carbon/human/species/skeleton/npc/dungeon/lich
@@ -371,6 +366,7 @@ Will require a group to kill, recommend 5+ people.
 		r_hand = /obj/item/rogueweapon/greatsword/zwei
 		l_hand = null
 
+//Loot
 /obj/item/roguekey/mage/lich
 	name = "lich's key"
 	desc = "A strange key the Lich dropped."
@@ -382,3 +378,36 @@ Will require a group to kill, recommend 5+ people.
 	locked = TRUE
 	lockid = "lich"
 	masterkey = FALSE
+
+/obj/item/gun/magic/staff/chaos/lich
+	name = "wand of chaos"
+	desc = ""
+	icon_state = "staffofchaos"
+	item_state = "staffofchaos"
+	gripsprite = FALSE
+	fire_sound = 'sound/magic/whiteflame.ogg'
+	ammo_type = /obj/item/ammo_casing/magic/chaos/lich
+	force = 10
+	possible_item_intents = list(SPEAR_BASH, /datum/intent/shoot)
+	wlength = WLENGTH_SHORT
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_HIP
+	blade_dulling = DULLING_BASHCHOP
+	randomspread = 0
+	spread = 0
+	can_parry = TRUE
+	max_integrity = 100
+	wdefense = 3
+	associated_skill = /datum/skill/combat/maces
+	max_charges = 3
+	recharge_rate = 2
+	allowed_projectile_types = list(/obj/projectile/magic/sickness/lich, /obj/projectile/magic/lightning, /obj/projectile/magic/arcane_barrage,
+	/obj/projectile/magic/eldritchblast5e/empowered, /obj/projectile/magic/rayoffrost5e, /obj/projectile/magic/acidsplash5e)
+
+/obj/item/gun/magic/staff/chaos/lich/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	chambered.projectile_type = pick(allowed_projectile_types)
+	. = ..()
+
+/obj/item/ammo_casing/magic/chaos/lich
+	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect
+
